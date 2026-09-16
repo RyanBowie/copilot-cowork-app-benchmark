@@ -1,0 +1,16 @@
+{
+  "devices": [
+    {"id":"DEV001","name":"Surface Laptop 13","category":"Laptop","unitPriceGBP":1200,"availableQuantity":8},
+    {"id":"DEV002","name":"Latitude 14","category":"Laptop","unitPriceGBP":950,"availableQuantity":3},
+    {"id":"DEV003","name":"MacBook Air 13","category":"Laptop","unitPriceGBP":1100,"availableQuantity":0},
+    {"id":"DEV004","name":"USB-C Dock","category":"Accessory","unitPriceGBP":180,"availableQuantity":12},
+    {"id":"DEV005","name":"iPad 128GB","category":"Tablet","unitPriceGBP":450,"availableQuantity":2},
+    {"id":"DEV006","name":"27-inch Monitor","category":"Monitor","unitPriceGBP":280,"availableQuantity":0}
+  ],
+  "requests": [
+    {"id":"REQ001","requester":"Jamie Demo","department":"Engineering","costCentre":"CC100","deviceId":"DEV001","quantity":2,"neededBy":"2026-10-15","justification":"New starter equipment","status":"Pending","rejectionReason":null},
+    {"id":"REQ002","requester":"Taylor Demo","department":"Finance","costCentre":"CC200","deviceId":"DEV002","quantity":1,"neededBy":"2026-10-20","justification":"Replace ageing laptop","status":"Pending","rejectionReason":null},
+    {"id":"REQ003","requester":"Jamie Demo","department":"Engineering","costCentre":"CC100","deviceId":"DEV005","quantity":1,"neededBy":"2026-10-22","justification":"Mobile application testing","status":"Pending","rejectionReason":null},
+    {"id":"REQ004","requester":"Taylor Demo","department":"Finance","costCentre":"CC200","deviceId":"DEV004","quantity":1,"neededBy":"2026-10-15","justification":"Additional desk setup","status":"Rejected","rejectionReason":"Duplicate request"}
+  ]
+}

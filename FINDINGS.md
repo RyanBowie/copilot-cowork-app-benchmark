@@ -1,0 +1,105 @@
+# Findings
+
+## No fully accepted winner
+
+All five pilot builds failed managed persistence. The first Dataverse-backed
+build also remains unaccepted because its write path fails. Choosing a model
+solely from a low credit reading would ignore the missing required capability.
+
+## Test 1: five completed pilot builds
+
+| Run | Selected model / effort | First credits | Final credits | First score | Final score | Corrections |
+|---|---|---:|---:|---:|---:|---:|
+| 01 | Sonnet 5 / Medium | 276 | 317 | 95 | 95 | 0 |
+| 02 | Opus 5 / High | 621 | 892 | 10 | 95 | 1 |
+| 03 | Opus 5 / Medium | 342 | 1,083 | 0 | 95 | 2 |
+| 04 | Sonnet 5 / High | 351 | 530 | 85 | 95 | 1 |
+| 05 | Sonnet 5 / Medium | 174 | 397 | 90 | 95 | 1 |
+
+Final cumulative readings total **3,219 credits**. Every final score still
+contains the critical AC14 persistence failure.
+
+The two Sonnet Medium final readings span **317-397 credits**. This is a small
+observed range, not a price prediction or confidence interval. Sonnet Medium was
+the least expensive observed UI-prototype condition in this pilot; that
+conditional observation excludes the unmet server-persistence requirement.
+
+Opus High initially delivered a shell and Opus Medium a blank preview. Preview
+server/cache recovery contributed to corrective work, so those outcomes cannot
+be assigned solely to intrinsic model quality. Other observed corrections
+included stale requester state and mobile overflow.
+
+## Test 2: one completed attempt, nine paused
+
+| Metric | Run-01: Sonnet 5 / Medium |
+|---|---|
+| First-output task credits | 340 |
+| Final task credits | 1,142 |
+| Post-first-output increment | 802 |
+| First / final score | 10 / 65 |
+| Corrective prompts | 2 |
+| Authorization clarifications | 1 |
+| First completed response observed by | 14m 53s, upper bound |
+| Final reviewed result | 1h 49m 21s, including harness calibration and investigation |
+| Acceptance | Not accepted |
+
+### What worked
+
+The final preview uses normal **Device Procurement** wording and the two business
+tables, **Device List** and **Device Requests**. Live catalogue values and
+dashboard totals match independently captured Dataverse records. Search,
+combined filters, unavailable-device selection, required/quantity/date
+validation, requester switching and keyboard operation were exercised.
+
+The final mobile layout was measured and visually checked. At a 390px viewport,
+the three required views stay within the viewport and their contained table
+scrollers expose stock and approval controls.
+
+### What required guidance
+
+The initial preview's actual Catalogue, New request and Approvals links returned
+`Page not found`; My requests had no visible navigation entry. An ordinary
+preview reload did not repair it. The first correction restarted the stale
+development server; all five routes then worked without source changes.
+
+The second correction repaired a 446px-wide shared header at a 390px viewport.
+It also investigated the write failure. A later authorization clarification
+resolved a separate pending schema-approval condition and allowed a table-mode
+rebind, but did not repair the write path.
+
+### Remaining boundary
+
+A valid request submission still returns:
+
+```text
+HTTP 400
+Invalid organization URL 'null' provided.
+```
+
+Create, approve and reject attempts leave the intended server records unchanged.
+The dependent oversell, repeated-decision, persistence and mutated-reset
+scenarios therefore remain blocked, rather than being credited from source
+claims.
+
+The generated binding exposes organization-aware read operations but uses
+current-environment write operations without an organization parameter. The
+builder reported policy exclusion of the organization-aware write variants.
+The public connector documentation confirms the difference in their parameter
+contracts. No tenant policy, role or permission changes were made.
+
+A connection status of **Connected**, successful schema binding, or a clean
+type-check is not proof of working application CRUD.
+
+The remaining nine runs are paused until an approved write-capable binding is
+established. Repeating the same unresolved backend failure would consume credits
+without producing the intended connected-app comparison.
+
+## Guidance for makers
+
+Evaluate cost together with delivered capabilities, corrective effort and
+evidence of real persistence. Validate the full read/write path before relying
+on a model comparison. Separate setup/authorization boundaries from defects in
+the generated application, and preserve both in the record.
+
+There is not enough accepted connected-app evidence here to recommend a
+model/effort configuration for the complete requirement.

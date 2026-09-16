@@ -1,0 +1,8 @@
+evidence/
+results/
+.browser-profile/
+node_modules/
+.env*
+*.log
+dataverse-target.json
+dataverse.json

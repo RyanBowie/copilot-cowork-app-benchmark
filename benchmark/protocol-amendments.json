@@ -1,0 +1,12 @@
+[
+  {
+    "id": "A01",
+    "recordedOn": "2026-09-16",
+    "effectivePoint": "After run-02 first-output external review; before any user correction prompts",
+    "reason": "A managed-store platform limitation is common to the first two outputs, but run-02 also has an independently observed blank main area and missing navigation. Stopping all work at the storage boundary would prevent measuring whether extra guidance repairs the otherwise testable application.",
+    "clarification": "Stop attempts to cross the managed-persistence provisioning boundary. Independent UI/workflow defects may still receive up to the existing maximum of two symptom-only corrections. Do not provision external tables, publish or access organizational records. Retain the storage failure and do not call the app accepted.",
+    "appliesTo": "Every configuration, including earlier runs if they have an independently observed non-storage defect. Run-01 had none, so no corrective prompt is warranted there.",
+    "unchanged": ["Build prompt", "Seed data", "Acceptance checks and weights", "Model and effort selections", "Correction limit", "Cost measurement semantics"],
+    "disclosure": "This is a documented pilot protocol amendment, not a retrospectively pre-registered rule."
+  }
+]

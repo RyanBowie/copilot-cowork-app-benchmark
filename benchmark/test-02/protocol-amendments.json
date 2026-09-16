@@ -1,0 +1,29 @@
+[
+  {
+    "id": "T2-A01",
+    "recordedOn": "2026-09-16",
+    "reason": "User requested time-to-completion measurement while run-01 was still building.",
+    "appliesTo": "All ten Test 2 runs; timing instrumentation began during run-01.",
+    "changesBuildPrompt": false,
+    "changesScoring": false,
+    "metrics": {
+      "firstBuildResponseSeconds": "Build submission to first observed completed build response. A completed response is not necessarily a usable app.",
+      "finalReviewedResultSeconds": "Build submission to the final external assessment after review, corrections and cost capture.",
+      "timeToAcceptanceSeconds": "Final reviewed-result duration only when the complete acceptance gate passes; otherwise unavailable.",
+      "observedApprovalWaitSeconds": "Sum of observed approval boundaries to recorded approval/cancellation; partial observations are lower bounds.",
+      "recordedInterruptionSeconds": "Explicitly recorded operator interruption intervals, retained within wall-clock totals."
+    },
+    "limits": "Times include service, approval, review and instrumentation delays. They are not pure model execution times. Completion is observed by polling; observation windows and missing coverage must be retained. Do not invent unobserved pilot completion times or rank historical pilot latency as directly comparable."
+  },
+  {
+    "id": "T2-A02",
+    "recordedOn": "2026-09-16",
+    "reason": "The table-mode diagnostic timed out while awaiting a schema-read approval; its retry returned 403 because another approval was pending. This message is not proof of a tenant-admin consent requirement.",
+    "appliesTo": "Scoped schema-read approvals during the continuing first run and subsequent Test 2 runs.",
+    "changesBuildPrompt": false,
+    "changesScoring": false,
+    "control": "With --approve-scoped-schema, the watcher immediately approves and screenshots only an exact single Read table data schema widget for mab_benchmarkdevice or mab_benchmarkrequest. Unknown operations, additional text, multiple actions and other resources still stop for review. No tenant policies, credentials or permissions are changed.",
+    "guidanceAccounting": "One authorization clarification may report that the existing approval is complete and reiterate the original authorized scope. It is not an additional defect/correction request and remains counted among the maximum two clarification replies.",
+    "timingLimit": "Run-01 contains manual approval delays and harness calibration; subsequent automated approvals reduce operator waiting, so wall-clock times are not a clean model-speed comparison."
+  }
+]

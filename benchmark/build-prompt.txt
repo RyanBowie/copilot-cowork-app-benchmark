@@ -1,0 +1,35 @@
+/app
+Build a new, private managed app named "Device Procurement and Availability". Build the working app, not a design document, standalone HTML file or mock screenshot. Do not inspect or reuse any existing apps, previous tasks, work context or organizational data. Do not publish or share it, send messages, place orders or change any existing resources. Use only the synthetic data below, isolated inside this new app. Make reasonable decisions from this specification without asking preference questions.
+
+PURPOSE AND USERS
+Employees find available devices, submit procurement requests and track progress. A procurement approver approves or rejects requests and sees stock changes. Provide a clearly labelled demo persona switch between Jamie Demo (requester, Engineering, CC100), Taylor Demo (requester, Finance, CC200), and Morgan Demo (approver). This is a functional demo, not a claim of secure role-based authorization. Clearly label synthetic data and simulated personas.
+
+REQUIRED VIEWS AND BEHAVIOR
+1. Dashboard: show device model count, total available units, pending request count and total GBP value of pending requests. Values update after changes.
+2. Catalogue: show device ID, name, category, unit price in GBP and available quantity. Search by device name or ID, filter by category and availability, and show a useful no-results state.
+3. New request: select a device, enter positive whole-number quantity, needed-by date and nonblank business justification. Capture the current requester, department and cost centre. Show unit price and calculated total. Require a date today or later. Reject missing required values, zero/negative/fractional quantity, and quantity greater than current stock. Out-of-stock devices cannot be requested. Give clear field-level errors and a success confirmation.
+4. My requests: show the current requester's requests, with request ID, device, quantity, total GBP amount, needed-by date and status.
+5. Approvals: in the approver persona show pending requests with all details. Approval changes Pending to Approved and subtracts quantity from stock exactly once. Rejection requires a reason, changes Pending to Rejected and leaves stock unchanged. Only Pending requests may be acted on. Recheck stock on approval so two pending requests cannot oversell a device. Surface a clear insufficient-stock error without changing the request or stock.
+6. Store changes in this app's managed persistent data store, not just in component memory, a hardcoded mock, or browser localStorage. Reloading and reopening the app must retain new requests, decisions and stock. If managed persistence is unavailable, explicitly report that limitation rather than claiming success.
+7. Add a clearly labelled "Reset demo data" action with confirmation. It must reset only this app's synthetic dataset to the exact seed below, without duplicating records. Seed stock is the authoritative starting stock; do not adjust it again for historical seeded requests.
+8. Use readable, professional styling, visible labels, keyboard-operable controls, clear focus states and a usable layout at desktop width and 390px mobile width. Do not use external images, packages or services unless provided by the managed-app platform itself. No unrelated extra features are needed.
+
+EXACT SEED DATA
+Devices (id | name | category | unitPriceGBP | availableQuantity):
+DEV001 | Surface Laptop 13 | Laptop | 1200 | 8
+DEV002 | Latitude 14 | Laptop | 950 | 3
+DEV003 | MacBook Air 13 | Laptop | 1100 | 0
+DEV004 | USB-C Dock | Accessory | 180 | 12
+DEV005 | iPad 128GB | Tablet | 450 | 2
+DEV006 | 27-inch Monitor | Monitor | 280 | 0
+
+Requests (id | requester | department | costCentre | deviceId | quantity | neededBy | justification | status | rejectionReason):
+REQ001 | Jamie Demo | Engineering | CC100 | DEV001 | 2 | 2026-10-15 | New starter equipment | Pending |
+REQ002 | Taylor Demo | Finance | CC200 | DEV002 | 1 | 2026-10-20 | Replace ageing laptop | Pending |
+REQ003 | Jamie Demo | Engineering | CC100 | DEV005 | 1 | 2026-10-22 | Mobile application testing | Pending |
+REQ004 | Taylor Demo | Finance | CC200 | DEV004 | 1 | 2026-10-15 | Additional desk setup | Rejected | Duplicate request
+
+Initial dashboard must therefore show 6 device models, 25 available units, 3 pending requests, and GBP 3800 pending value.
+
+DELIVERY
+Finish with the private app/preview link, a brief list of implemented capabilities, storage approach, and any limitations or unfinished requirements. Do not claim that untested functionality works.

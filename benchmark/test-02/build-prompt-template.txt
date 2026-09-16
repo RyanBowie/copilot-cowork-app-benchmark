@@ -1,0 +1,50 @@
+/app Build a NEW PRIVATE managed app named "Device Procurement and Availability" for employees to find available equipment, request devices and track approvals, and for IT to manage requests and stock. Build the working business application, not a design document, standalone HTML attachment, connector test console or benchmark dashboard. Do not reuse another app. Do not publish/share, change permissions or schemas, send messages, place real orders, or access unrelated organizational data. Make reasonable decisions without preference questions.
+
+AUTHORIZED BACKEND
+Connect to Microsoft Dataverse at {{ORGANIZATION_URL}} using Device List (mab_benchmarkdevice) and Device Requests (mab_benchmarkrequest), with the signed-in work account and a supported connection.
+These existing tables contain the demo device inventory and equipment requests. Read their schemas and live data; use Dataverse for all persistence, not mock data, localStorage, IndexedDB or component-only state. Do not read unrelated tables or seed/reset on startup.
+The internal mab_benchmarktag field identifies this app's demo rows: CoworkAppBenchmark-Test02-Dataverse-20260916. Preserve it on new requests and filter to it. Keep this field, technical table/row identifiers and all test/benchmark instrumentation out of the business UI. Use normal headings such as Catalogue, New request, My requests and Approvals.
+
+INTERNAL DATAVERSE FIELD MAPPING
+Devices: mab_benchmarkdeviceid is the row GUID; mab_name is the device name; mab_devicecode is the unique logical DEV identifier; mab_category is a local Choice; mab_unitpricegbp is a two-decimal GBP amount (not the environment's base currency); mab_availablequantity is a whole number; mab_benchmarktag is text.
+Requests: mab_benchmarkrequestid is the row GUID; mab_name is the unique request business ID; mab_requester is plain text (NOT a real people lookup); mab_department, mab_costcentre and mab_devicecode are text; mab_quantity is a whole number; mab_neededby has DateOnly behavior; mab_justification is multiline text; mab_requeststatus is a local Choice; mab_rejectionreason is optional multiline text; mab_benchmarktag is required text.
+Category values: Laptop=100000000, Accessory=100000001, Tablet=100000002, Monitor=100000003.
+Request status values: Pending=100000000, Approved=100000001, Rejected=100000002.
+Use current row GUIDs returned by the connector for operations, not business IDs or hardcoded GUIDs. Relate requests to devices through mab_devicecode; this is a text business-key join, not a Dataverse lookup. Display business IDs and choice labels to users and supply correctly typed values to the connector. Do not put credentials or tokens in source or logs.
+
+PURPOSE AND USERS
+Employees find available devices, submit requests and track progress. Morgan approves or rejects requests and sees stock changes. Provide a clearly labelled demo persona switch:
+Jamie Demo - requester, Engineering, CC100.
+Taylor Demo - requester, Finance, CC200.
+Morgan Demo - approver.
+Use only these synthetic identities. This simulated persona switch is NOT secure role-based authorization.
+
+REQUIRED VIEWS AND BEHAVIOR
+1. Dashboard: compute device model count, total available units, pending request count and total GBP pending value from live Dataverse records. Update after writes.
+2. Catalogue: show device ID, name, category, unit price in GBP and available quantity. Search by name or ID; combine category/availability filters; show a useful no-results state.
+3. New request: select a device, enter positive whole-number quantity, date today or later, and nonblank justification. Capture the current requester/department/cost centre. Show unit price and calculated total. Reject missing fields, whitespace-only justification, zero/negative/fractional quantity, over-stock quantities and unavailable devices. Write exactly one Pending Dataverse request, without decrementing stock. Show field-level errors and a success confirmation only after the write succeeds.
+4. My requests: show the current requester's live requests, including ID, device, quantity, total GBP amount, needed-by date and status. Changing personas must update the view.
+5. Approvals: for Morgan, show pending requests with full detail. Approve changes Pending to Approved and subtracts quantity from live device stock exactly once. Recheck the latest stock and request status before approval. Reject requires a reason, persists Rejected/reason and leaves stock unchanged. Non-Pending requests cannot be acted on again. Two pending requests must not oversell a device when approved sequentially. Surface insufficient-stock and connector errors without claiming success. Do not hide partial failures.
+6. Real persistence: new requests, decisions, reasons and stock must be stored in those Dataverse tables and survive app reload/reopen. The external reviewer will independently read the server records. No browser-only or hardcoded fallback. If binding/authentication/platform support blocks this, state the exact limitation.
+7. "Reset demo data": require confirmation, then restore only this app's synthetic records to the exact seed below. Cancel changes nothing. Never delete a table, change its schema/permissions, or touch untagged records. Restore six devices/four requests without duplication. Do not subtract stock again for historical seed requests.
+8. Readable professional styling, visible labels, keyboard-operable controls, clear focus, loading/error states and usable desktop and 390px mobile layouts. No external images, packages or services unless supplied by the managed-app platform. No unrelated features.
+
+EXACT SEED REFERENCE - VERIFY AGAINST THE TABLES, DO NOT SUBSTITUTE THESE CONSTANTS FOR LIVE DATA
+Devices (DeviceId | Name | Category | UnitPriceGBP | AvailableQuantity):
+DEV001 | Surface Laptop 13 | Laptop | 1200 | 8
+DEV002 | Latitude 14 | Laptop | 950 | 3
+DEV003 | MacBook Air 13 | Laptop | 1100 | 0
+DEV004 | USB-C Dock | Accessory | 180 | 12
+DEV005 | iPad 128GB | Tablet | 450 | 2
+DEV006 | 27-inch Monitor | Monitor | 280 | 0
+
+Requests (RequestId | Requester | Department | CostCentre | DeviceId | Quantity | NeededBy | Justification | Status | RejectionReason):
+REQ001 | Jamie Demo | Engineering | CC100 | DEV001 | 2 | 2026-10-15 | New starter equipment | Pending |
+REQ002 | Taylor Demo | Finance | CC200 | DEV002 | 1 | 2026-10-20 | Replace ageing laptop | Pending |
+REQ003 | Jamie Demo | Engineering | CC100 | DEV005 | 1 | 2026-10-22 | Mobile application testing | Pending |
+REQ004 | Taylor Demo | Finance | CC200 | DEV004 | 1 | 2026-10-15 | Additional desk setup | Rejected | Duplicate request
+
+Every seed row carries mab_benchmarktag = CoworkAppBenchmark-Test02-Dataverse-20260916. Initial dashboard: 6 device models, 25 units, 3 pending requests, GBP 3800 pending value.
+
+DELIVERY
+Finish with the private embedded app/preview entry, implemented capabilities, actual Dataverse binding approach, and any limitations or unfinished requirements. Clearly distinguish live tests from source inspection. Do not claim untested behavior works.
