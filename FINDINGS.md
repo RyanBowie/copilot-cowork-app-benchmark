@@ -14,7 +14,21 @@ credits (+355). Its exact initial fixture was isolated under a different
 app-owned storage key; the first app's final records remained unchanged.
 The GBP810 draft was saved, edited and reopened, then survived the connection
 stage unchanged. No repair, clarification or native review prompt has been sent.
-The third planned stage is running; its result and final score are not yet claimed.
+The third stage completed at **1,679 cumulative credits (+763)**. The two Submitted
+seeds migrated to Pending manager without losing their fields, lines or activity.
+Dark/Compact/Engineering, the original draft and the real profile survived
+native reopen. A new GBP1440 request entered Pending finance under the old
+threshold and is preserved for the fourth-stage carryover check.
+
+A historical missing-assets-import warning, explicitly labelled as occurring
+before the page loaded, reappeared after native preview reopen. Both new routes
+rendered, but the warning intercepted a later New request pointer click until
+it was dismissed again. This recurring native-preview friction is retained and
+requires final recheck, not a claim that the warning is permanently resolved.
+The controller also avoided repeating an already completed approval when a
+capture-metadata filename collided with a result filename. No duplicate request
+or approval was created. The fourth planned change is running; a full second-app
+score is not yet claimed.
 
 | First-run milestone | Observed cumulative credits | Increase from preceding reading | Independent observation |
 |---|---:|---:|---|

@@ -26,7 +26,11 @@ does not yet support a cross-model recommendation.
 Opus 5 / High's foundation used **561 credits**. Its actual in-app current-user
 profile read is now independently verified at **916 cumulative credits**
 (**+355**), with the controlled draft unchanged and no repair prompts.
-The approvals/assets/themes stage is underway; there is no final second-app score yet.
+The approvals/assets/themes stage reached **1,679 cumulative credits** (**+763**).
+Saved appearance/preferences and the old-policy finance carryover were verified;
+the fourth planned change is underway. A recurring historical preview-build
+warning required ordinary dismissal and remains flagged for final recheck.
+There is no final second-app score yet.
 The separate metadata-only setup used 40 credits, excluded from app-build totals.
 All planned changes, repairs, stage costs and independent findings are recorded
 separately. Tests 1 and 2 remain complete and are not invalidated by Test 3.
