@@ -16,13 +16,14 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first three fresh runs meet the declared gate; the comparison is not complete:
+The first four fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
 | 01 | Sonnet 5 / Medium | 224 / 224 | 90 / 90 | 0 | 0 |
 | 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 | 0 |
 | 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 | 0 |
+| 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -63,7 +64,17 @@ followed by live catalogue readiness and My requests, verified the same saved
 request against unchanged SharePoint records. The harness now uses that normal
 product reopening path instead of assigning the host-owned iframe URL.
 
-Fresh run-04, Sonnet 5 / High, is running. Six further builds remain. A single
+Sonnet High meets the same gate at **620 credits**, unchanged between the first
+and final observations. Its completed build response was observed between
+**16m 56.281s and 16m 58.305s**; the reviewed result took **31m 37.370s**, including
+controller sidebar calibration. It uses a responsive navigation drawer rather
+than a permanently visible header selector. Opening/dismissing that drawer
+made the same checks operable; its persona is explicitly labelled "not a
+sign-in." A failed assertion expecting that identity outside the closed drawer
+was a controller assumption, not an app defect. BC09 was corrected to untested/
+blocked, not passed. No app repair or additional native review was requested.
+
+Fresh run-05, GPT 5.5 / Medium, is running. Five further builds remain. A single
 observation per configuration does not establish repeatability or a model
 ranking. The ten fresh runs use four views and do not require approval/rejection
 workflows.

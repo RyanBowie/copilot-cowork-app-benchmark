@@ -17,7 +17,9 @@ Run-02, Opus 5 / High, also meets the gate at **90/100**, using **968 first /
 968 final credits** with no controller corrections, clarifications or review
 prompts. Run-03, Opus 5 / Medium, meets the same gate at **90/100** and **417 first /
 417 final credits**, also without extra maker prompts. Run-04, Sonnet 5 / High,
-is running; six further fresh builds remain.
+meets the same gate at **90/100** and **620 first / 620 final credits**, without
+extra maker prompts. Run-05, GPT 5.5 / Medium, is running; five further fresh
+builds remain.
 These are single observations per configuration, not a completed model ranking.
 
 The v5 method uses one implementation-only build prompt, independent controller
