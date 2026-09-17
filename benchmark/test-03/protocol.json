@@ -1,0 +1,45 @@
+{
+  "id": "test-03",
+  "version": "1.0.0",
+  "title": "Test 3: complex multi-prompt virtual-data apps",
+  "backend": "virtual",
+  "backendLabel": "Virtual business tables; read-only Office 365 Users profile",
+  "design": "Five model/effort configurations once each, four identical ordered authoring prompts in each fresh app: build, connect the existing app to Office 365 Users, extend workflows, then change requirements. Independent external review.",
+  "evidenceRoot": "evidence\\test-03\\runs",
+  "acceptancePath": "benchmark\\test-03\\acceptance.json",
+  "acceptanceThreshold": 85,
+  "allCriticalChecksRequired": true,
+  "authorizationPath": "benchmark\\test-03\\authorization.json",
+  "measuredBuildLimit": 5,
+  "automaticExtension": false,
+  "controls": {
+    "identicalBuildPrompt": "benchmark\\test-03\\stage-01-build.txt",
+    "promptFreezePath": "evidence\\test-03\\setup\\protocol-freeze.json",
+    "identityVerificationPath": "evidence\\test-03\\setup\\tenant-verification.json",
+    "browserEndpoint": "http://127.0.0.1:9334",
+    "externalReviewInstructionsPath": "benchmark\\test-03\\external-review-instructions.txt",
+    "reviewMode": "external-only",
+    "nativeSelfReviewAllowed": false,
+    "freshTaskAndAppEachRun": true,
+    "noConcurrentBuilds": true,
+    "promptLimits": { "review": 0, "planned-change": 3, "clarification": 2, "correction": 2, "cost": 12 },
+    "profileGate": "Build the app first; connect Office 365 Users through the existing app in stage 2, not a general Cowork connector. Pause remaining runs at a shared unresolved authorization or managed-app connector blocker.",
+    "storageRule": "Synthetic related virtual/local tables; browser-local persistence is accepted. No managed-server persistence requirement.",
+    "stopRule": "Unresolved common platform/authorization blocker; two defect repairs; thirty observed active-generation minutes per authoring response or ninety per task. No hidden replacement or extra app.",
+    "privacyRule": "Read only the current user's profile through Office 365 Users. No real approvals, transactions, other employee reads, directory writes, admin settings, publication or sharing. Keep profile evidence private.",
+    "comparisonRule": "Compare within this four-stage complex-app scope only. Preserve Test 1/Test 2 as completed separate cohorts. Selected Cowork settings do not prove internal builder routing."
+  },
+  "stages": [
+    { "id": "stage-01", "kind": "build", "prompt": "benchmark\\test-03\\stage-01-build.txt", "title": "Build the relational virtual-data app first" },
+    { "id": "stage-02", "kind": "planned-change", "prompt": "benchmark\\test-03\\stage-02-connect-profile.txt", "title": "Connect the existing managed app to Office 365 Users" },
+    { "id": "stage-03", "kind": "planned-change", "prompt": "benchmark\\test-03\\stage-03-change.txt", "title": "Virtual approvals, asset lifecycle, themes and preferences" },
+    { "id": "stage-04", "kind": "planned-change", "prompt": "benchmark\\test-03\\stage-04-change.txt", "title": "Approval policy change, revisions, cost centres and responsive refinement" }
+  ],
+  "runs": [
+    { "id": "run-01", "model": "Sonnet 5", "modelFamily": "Claude Anthropic", "effort": "Medium", "effortValue": 1, "replicate": 1 },
+    { "id": "run-02", "model": "Opus 5", "modelFamily": "Claude Anthropic", "effort": "High", "effortValue": 2, "replicate": 1 },
+    { "id": "run-03", "model": "Opus 5", "modelFamily": "Claude Anthropic", "effort": "Medium", "effortValue": 1, "replicate": 1 },
+    { "id": "run-04", "model": "Sonnet 5", "modelFamily": "Claude Anthropic", "effort": "High", "effortValue": 2, "replicate": 1 },
+    { "id": "run-05", "model": "GPT 5.5", "modelFamily": "GPT OpenAI", "effort": "Medium", "effortValue": 1, "replicate": 1 }
+  ]
+}

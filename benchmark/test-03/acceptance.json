@@ -1,0 +1,22 @@
+[
+  { "id": "CX01", "capability": "Same private app opens with all seven navigable screens", "points": 5, "critical": true },
+  { "id": "CX02", "capability": "Exact six-device/four-request relational seed and derived initial metrics", "points": 5, "critical": true },
+  { "id": "CX03", "capability": "Catalogue search, combined category/stock filters and zero-stock protection", "points": 5, "critical": false },
+  { "id": "CX04", "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals", "points": 5, "critical": true },
+  { "id": "CX05", "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation", "points": 5, "critical": true },
+  { "id": "CX06", "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs", "points": 5, "critical": true },
+  { "id": "CX07", "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen", "points": 5, "critical": true },
+  { "id": "CX08", "capability": "Virtual manager/finance role gates and approval transitions at the final threshold", "points": 5, "critical": true },
+  { "id": "CX09", "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards", "points": 5, "critical": false },
+  { "id": "CX10", "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history", "points": 5, "critical": false },
+  { "id": "CX11", "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection", "points": 5, "critical": true },
+  { "id": "CX12", "capability": "Good/damaged asset returns and duplicate-return protection", "points": 5, "critical": false },
+  { "id": "CX13", "capability": "Current-user Office 365 Users profile actually reads through supported app binding", "points": 5, "critical": true },
+  { "id": "CX14", "capability": "Profile loading/error/retry and genuinely missing optional fields are honest", "points": 5, "critical": false },
+  { "id": "CX15", "capability": "Explicit light/dark mode applies across all screens and persists on reopen", "points": 5, "critical": true },
+  { "id": "CX16", "capability": "Local preference Save/Cancel, density and default department work without directory writes", "points": 5, "critical": false },
+  { "id": "CX17", "capability": "Cost-centre migration, persistence and department mismatch validation", "points": 5, "critical": false },
+  { "id": "CX18", "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters", "points": 5, "critical": false },
+  { "id": "CX19", "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths", "points": 5, "critical": true },
+  { "id": "CX20", "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors", "points": 5, "critical": false }
+]

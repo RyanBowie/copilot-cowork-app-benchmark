@@ -4,6 +4,16 @@ An evidence-led comparison of the cost, time and delivered capabilities of the
 same **Device Procurement and Availability** business application, using different
 model and effort selections in Copilot Cowork.
 
+**Test 3 is underway: five complex Device Lifecycle Hub apps, four prompts each.**
+[Open Test 3](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-03).
+The first prompt builds the virtual-data app; the second connects Office 365 Users
+through that existing managed app, not a general Cowork connector. Later prompts
+add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
+The first Sonnet 5 / Medium task has started; no complete Test 3 result is claimed.
+The separate metadata-only setup used 40 credits, excluded from app-build totals.
+All planned changes, repairs, stage costs and independent findings are recorded
+separately. Tests 1 and 2 remain complete and are not invalidated by Test 3.
+
 **Complete: ten fresh SharePoint-connected builds, five configurations twice each.**
 These completed results are **Test 2** on the report page:
 [open Test 2](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-02).
@@ -104,6 +114,7 @@ Benchmark instrumentation stays outside the business application.
 
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
+| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 0 / 5; first build started | 0 |
 | Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
 | Test 1, historical virtual-data scope | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 5 |
 | Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |

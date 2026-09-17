@@ -1,0 +1,16 @@
+{
+  "frozenAt": "2026-09-17T20:58:02.208Z",
+  "protocolSha256": "df5feaf15af92906b23619d11aafbfe6a0415eb9e57c75c819007b48471e61cf",
+  "buildPromptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
+  "stagePromptSha256": {
+    "stage-01": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
+    "stage-02": "d93e7faeebce42f6c8069cc473f91638e3257dbb90a9dca9d12b9baf38eb5b8a",
+    "stage-03": "24ad8a7f61e5da9358e1bf9983e31ce35869d4ece2ca51b40b2cae06a883dd50",
+    "stage-04": "7cc28cdfcbf2b9ac48e9423777e25a31680b7cb627d5b06ecb64332ba5826de5"
+  },
+  "acceptanceSha256": "c8aabc2691ccc919393a69369a8fa341ae4faf6f7a931009d489d55b87723215",
+  "externalReviewInstructionsSha256": "04e0422f0612712f457a81051b88cc714c8dfa97f6efdbabe7fcfa646de71bdc",
+  "authorizationSha256": "f330eee303c92b05d7c457937062d1404f3a321b706fe467f89c988719262f1f",
+  "measuredRunsStartedAtFreeze": 0,
+  "note": "Four ordered prompts: build the app first, then connect Office 365 Users within that app. Frozen before any measured submission."
+}

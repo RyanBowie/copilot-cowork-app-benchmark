@@ -1,13 +1,1106 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-09-17T16:12:52.135Z",
-  "activeExperiment": "test-02-sharepoint-clean",
-  "restartNotice": "Previous comparison results are superseded because additional billable Cowork self-review prompts were a controller error. Ten fresh SharePoint-connected builds now use controller-only review. Historical costs remain excluded audit data; no review-cost deduction is estimated.",
-  "app": "Device Procurement and Availability",
+  "schemaVersion": 3,
+  "generatedAt": "2026-09-17T21:01:34.299Z",
+  "activeExperiment": "test-03",
+  "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
+  "app": "Device Procurement and Availability; Device Lifecycle Hub",
   "unitNote": "Observed Cowork task credits, not currency or a tenant invoice. Final cumulative readings are not added to initial readings.",
   "timingNote": "Elapsed wall-clock seconds from build submission to observed first response and final reviewed result. Approval waits and recorded interruptions remain included. These are not pure model execution times; missing completion timestamps are unavailable, not zero. Timing instrumentation began during Test 2 run-01.",
   "evidenceNote": "Exact prompts, visible transcripts, app screenshots, approval records, backend snapshots and raw cost evidence are retained privately. Public data is an explicit allowlisted projection, not a raw transcript export.",
   "experiments": [
+    {
+      "id": "test-03",
+      "route": "test-03",
+      "title": "Test 3: complex multi-prompt virtual-data apps",
+      "design": "Five model/effort configurations once each, four identical ordered authoring prompts in each fresh app: build, connect the existing app to Office 365 Users, extend workflows, then change requirements. Independent external review.",
+      "runs": [
+        {
+          "id": "run-01",
+          "model": "Sonnet 5",
+          "effort": "Medium",
+          "replicate": 1,
+          "block": null,
+          "status": "in progress",
+          "comparisonEligible": true,
+          "first": null,
+          "final": null,
+          "firstCost": null,
+          "finalCost": null,
+          "increment": null,
+          "timing": {
+            "firstBuildResponseSeconds": null,
+            "firstBuildResponseLowerBoundSeconds": null,
+            "firstCompletionObservation": "not-captured",
+            "finalReviewedResultSeconds": null,
+            "timeToAcceptanceSeconds": null,
+            "observedApprovalWaitSeconds": 0,
+            "recordedInterruptionSeconds": 0,
+            "approvalWaitStillOpen": false,
+            "interruptionStillOpen": false,
+            "firstCompletionDetectionWindowSeconds": null,
+            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+          },
+          "reviews": 0,
+          "stages": [
+            {
+              "id": "stage-01",
+              "title": "Build the relational virtual-data app first",
+              "kind": "build",
+              "submitted": true,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-02",
+              "title": "Connect the existing managed app to Office 365 Users",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-03",
+              "title": "Virtual approvals, asset lifecycle, themes and preferences",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-04",
+              "title": "Approval policy change, revisions, cost centres and responsive refinement",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            }
+          ],
+          "plannedChanges": 0,
+          "corrections": 0,
+          "clarifications": 0,
+          "approvals": 0,
+          "screenshotFiles": 13,
+          "archived": false,
+          "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
+          "checks": [
+            {
+              "id": "CX01",
+              "capability": "Same private app opens with all seven navigable screens",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX02",
+              "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX03",
+              "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX04",
+              "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX05",
+              "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX06",
+              "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX07",
+              "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX08",
+              "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX09",
+              "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX10",
+              "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX11",
+              "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX12",
+              "capability": "Good/damaged asset returns and duplicate-return protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX13",
+              "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX14",
+              "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX15",
+              "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX16",
+              "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX17",
+              "capability": "Cost-centre migration, persistence and department mismatch validation",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX18",
+              "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX19",
+              "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX20",
+              "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            }
+          ]
+        },
+        {
+          "id": "run-02",
+          "model": "Opus 5",
+          "effort": "High",
+          "replicate": 1,
+          "block": null,
+          "status": "not started",
+          "comparisonEligible": true,
+          "first": null,
+          "final": null,
+          "firstCost": null,
+          "finalCost": null,
+          "increment": null,
+          "timing": {
+            "firstBuildResponseSeconds": null,
+            "firstBuildResponseLowerBoundSeconds": null,
+            "firstCompletionObservation": "not-captured",
+            "finalReviewedResultSeconds": null,
+            "timeToAcceptanceSeconds": null,
+            "observedApprovalWaitSeconds": 0,
+            "recordedInterruptionSeconds": 0,
+            "approvalWaitStillOpen": false,
+            "interruptionStillOpen": false,
+            "firstCompletionDetectionWindowSeconds": null,
+            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+          },
+          "reviews": 0,
+          "stages": [
+            {
+              "id": "stage-01",
+              "title": "Build the relational virtual-data app first",
+              "kind": "build",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-02",
+              "title": "Connect the existing managed app to Office 365 Users",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-03",
+              "title": "Virtual approvals, asset lifecycle, themes and preferences",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-04",
+              "title": "Approval policy change, revisions, cost centres and responsive refinement",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            }
+          ],
+          "plannedChanges": 0,
+          "corrections": 0,
+          "clarifications": 0,
+          "approvals": 0,
+          "screenshotFiles": 0,
+          "archived": false,
+          "promptSha256": null,
+          "checks": [
+            {
+              "id": "CX01",
+              "capability": "Same private app opens with all seven navigable screens",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX02",
+              "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX03",
+              "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX04",
+              "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX05",
+              "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX06",
+              "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX07",
+              "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX08",
+              "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX09",
+              "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX10",
+              "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX11",
+              "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX12",
+              "capability": "Good/damaged asset returns and duplicate-return protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX13",
+              "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX14",
+              "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX15",
+              "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX16",
+              "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX17",
+              "capability": "Cost-centre migration, persistence and department mismatch validation",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX18",
+              "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX19",
+              "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX20",
+              "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            }
+          ]
+        },
+        {
+          "id": "run-03",
+          "model": "Opus 5",
+          "effort": "Medium",
+          "replicate": 1,
+          "block": null,
+          "status": "not started",
+          "comparisonEligible": true,
+          "first": null,
+          "final": null,
+          "firstCost": null,
+          "finalCost": null,
+          "increment": null,
+          "timing": {
+            "firstBuildResponseSeconds": null,
+            "firstBuildResponseLowerBoundSeconds": null,
+            "firstCompletionObservation": "not-captured",
+            "finalReviewedResultSeconds": null,
+            "timeToAcceptanceSeconds": null,
+            "observedApprovalWaitSeconds": 0,
+            "recordedInterruptionSeconds": 0,
+            "approvalWaitStillOpen": false,
+            "interruptionStillOpen": false,
+            "firstCompletionDetectionWindowSeconds": null,
+            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+          },
+          "reviews": 0,
+          "stages": [
+            {
+              "id": "stage-01",
+              "title": "Build the relational virtual-data app first",
+              "kind": "build",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-02",
+              "title": "Connect the existing managed app to Office 365 Users",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-03",
+              "title": "Virtual approvals, asset lifecycle, themes and preferences",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-04",
+              "title": "Approval policy change, revisions, cost centres and responsive refinement",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            }
+          ],
+          "plannedChanges": 0,
+          "corrections": 0,
+          "clarifications": 0,
+          "approvals": 0,
+          "screenshotFiles": 0,
+          "archived": false,
+          "promptSha256": null,
+          "checks": [
+            {
+              "id": "CX01",
+              "capability": "Same private app opens with all seven navigable screens",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX02",
+              "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX03",
+              "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX04",
+              "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX05",
+              "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX06",
+              "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX07",
+              "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX08",
+              "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX09",
+              "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX10",
+              "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX11",
+              "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX12",
+              "capability": "Good/damaged asset returns and duplicate-return protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX13",
+              "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX14",
+              "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX15",
+              "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX16",
+              "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX17",
+              "capability": "Cost-centre migration, persistence and department mismatch validation",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX18",
+              "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX19",
+              "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX20",
+              "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            }
+          ]
+        },
+        {
+          "id": "run-04",
+          "model": "Sonnet 5",
+          "effort": "High",
+          "replicate": 1,
+          "block": null,
+          "status": "not started",
+          "comparisonEligible": true,
+          "first": null,
+          "final": null,
+          "firstCost": null,
+          "finalCost": null,
+          "increment": null,
+          "timing": {
+            "firstBuildResponseSeconds": null,
+            "firstBuildResponseLowerBoundSeconds": null,
+            "firstCompletionObservation": "not-captured",
+            "finalReviewedResultSeconds": null,
+            "timeToAcceptanceSeconds": null,
+            "observedApprovalWaitSeconds": 0,
+            "recordedInterruptionSeconds": 0,
+            "approvalWaitStillOpen": false,
+            "interruptionStillOpen": false,
+            "firstCompletionDetectionWindowSeconds": null,
+            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+          },
+          "reviews": 0,
+          "stages": [
+            {
+              "id": "stage-01",
+              "title": "Build the relational virtual-data app first",
+              "kind": "build",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-02",
+              "title": "Connect the existing managed app to Office 365 Users",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-03",
+              "title": "Virtual approvals, asset lifecycle, themes and preferences",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-04",
+              "title": "Approval policy change, revisions, cost centres and responsive refinement",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            }
+          ],
+          "plannedChanges": 0,
+          "corrections": 0,
+          "clarifications": 0,
+          "approvals": 0,
+          "screenshotFiles": 0,
+          "archived": false,
+          "promptSha256": null,
+          "checks": [
+            {
+              "id": "CX01",
+              "capability": "Same private app opens with all seven navigable screens",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX02",
+              "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX03",
+              "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX04",
+              "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX05",
+              "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX06",
+              "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX07",
+              "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX08",
+              "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX09",
+              "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX10",
+              "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX11",
+              "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX12",
+              "capability": "Good/damaged asset returns and duplicate-return protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX13",
+              "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX14",
+              "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX15",
+              "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX16",
+              "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX17",
+              "capability": "Cost-centre migration, persistence and department mismatch validation",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX18",
+              "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX19",
+              "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX20",
+              "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            }
+          ]
+        },
+        {
+          "id": "run-05",
+          "model": "GPT 5.5",
+          "effort": "Medium",
+          "replicate": 1,
+          "block": null,
+          "status": "not started",
+          "comparisonEligible": true,
+          "first": null,
+          "final": null,
+          "firstCost": null,
+          "finalCost": null,
+          "increment": null,
+          "timing": {
+            "firstBuildResponseSeconds": null,
+            "firstBuildResponseLowerBoundSeconds": null,
+            "firstCompletionObservation": "not-captured",
+            "finalReviewedResultSeconds": null,
+            "timeToAcceptanceSeconds": null,
+            "observedApprovalWaitSeconds": 0,
+            "recordedInterruptionSeconds": 0,
+            "approvalWaitStillOpen": false,
+            "interruptionStillOpen": false,
+            "firstCompletionDetectionWindowSeconds": null,
+            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+          },
+          "reviews": 0,
+          "stages": [
+            {
+              "id": "stage-01",
+              "title": "Build the relational virtual-data app first",
+              "kind": "build",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-02",
+              "title": "Connect the existing managed app to Office 365 Users",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-03",
+              "title": "Virtual approvals, asset lifecycle, themes and preferences",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            },
+            {
+              "id": "stage-04",
+              "title": "Approval policy change, revisions, cost centres and responsive refinement",
+              "kind": "planned-change",
+              "submitted": false,
+              "responseComplete": false,
+              "cost": null
+            }
+          ],
+          "plannedChanges": 0,
+          "corrections": 0,
+          "clarifications": 0,
+          "approvals": 0,
+          "screenshotFiles": 0,
+          "archived": false,
+          "promptSha256": null,
+          "checks": [
+            {
+              "id": "CX01",
+              "capability": "Same private app opens with all seven navigable screens",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX02",
+              "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX03",
+              "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX04",
+              "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX05",
+              "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX06",
+              "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX07",
+              "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX08",
+              "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX09",
+              "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX10",
+              "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX11",
+              "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX12",
+              "capability": "Good/damaged asset returns and duplicate-return protection",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX13",
+              "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX14",
+              "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX15",
+              "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX16",
+              "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX17",
+              "capability": "Cost-centre migration, persistence and department mismatch validation",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX18",
+              "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX19",
+              "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+              "critical": true,
+              "first": "untested",
+              "final": "untested"
+            },
+            {
+              "id": "CX20",
+              "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+              "critical": false,
+              "first": "untested",
+              "final": "untested"
+            }
+          ]
+        }
+      ],
+      "comparisonEligible": true,
+      "reviewMode": "external-only",
+      "acceptanceCheckCount": 20,
+      "stages": [
+        {
+          "id": "stage-01",
+          "title": "Build the relational virtual-data app first",
+          "kind": "build"
+        },
+        {
+          "id": "stage-02",
+          "title": "Connect the existing managed app to Office 365 Users",
+          "kind": "planned-change"
+        },
+        {
+          "id": "stage-03",
+          "title": "Virtual approvals, asset lifecycle, themes and preferences",
+          "kind": "planned-change"
+        },
+        {
+          "id": "stage-04",
+          "title": "Approval policy change, revisions, cost centres and responsive refinement",
+          "kind": "planned-change"
+        }
+      ],
+      "stageNote": "Build first; connect Office 365 Users through the existing app next. Planned changes are not repairs. First credits are the initial virtual build; the first full-capability assessment follows stage 4. Each stage card is cumulative, not an isolated connector price.",
+      "setupCredits": 40,
+      "buildBudget": null,
+      "setup": null,
+      "protocolSha256": "df5feaf15af92906b23619d11aafbfe6a0415eb9e57c75c819007b48471e61cf"
+    },
     {
       "id": "test-02-sharepoint-clean",
       "route": "test-02",

@@ -1,6 +1,42 @@
 # Method
 
-## Current method: clean restart, external review only
+## Test 3: build first, connect within the managed app, then evolve
+
+Five configurations once each: Sonnet 5 Medium, Opus 5 High, Opus 5 Medium,
+Sonnet 5 High and GPT 5.5 Medium. Four ordered, frozen prompts in every fresh app:
+virtual-data foundation; Office 365 Users connection through that existing
+managed app; approvals/assets/themes/preferences; final policy/form/mobile changes.
+The connector is not invoked as a general Cowork action. Business data and
+approvals are synthetic virtual/local tables; only the current user's profile is
+live and read-only. Browser-local persistence is accepted.
+
+A controller-created multi-line draft must survive all three planned changes and
+actual preview reopen. Twenty five-point checks cover forms, relationships,
+virtual approval roles/history, stock-safe fulfilment/returns, real profile,
+themes/preferences, policy changes and wide-desktop/390px usability. Acceptance
+requires at least 85/100 plus all critical checks. First full-target assessment is
+after stage 4, not after the intentionally incomplete foundation. Preserve every
+earlier-stage observation and repair rather than calling the final result an
+unaided first pass.
+
+Record actual cumulative `/cost` after each stage, repair and at the end. Initial
+credits cover the foundation; stage readings expose the later cumulative spend.
+Three planned follow-ups are counted separately from up to two defect corrections
+and two requirement clarifications. There are no native self-review prompts.
+The earlier metadata-only setup used 40 credits and created no app. Its generic
+registry limitation neither proved a broken managed-app connection nor a working
+profile. The user corrected the sequence before any measured build was submitted.
+
+Five apps maximum; no hidden replacement or sixth pilot. Stop at a shared unresolved
+platform/authorization blocker, two repairs, thirty observed generation minutes for
+a response or ninety for a task. A single observation per setting is not a variance
+estimate. Do not pool this more complex scope with Tests 1 or 2.
+
+[Frozen protocol](benchmark/test-03/protocol.json) and
+[hash receipt](benchmark/test-03/protocol-freeze.json) were recorded before the
+first measured submission. Raw profile evidence is private, not public report data.
+
+## Completed Test 2 method: clean restart, external review only
 
 Report navigation calls the completed SharePoint cohort **Test 2** (`#test-02`).
 The earlier Dataverse attempt is available at `#test-02-dataverse`; the original
