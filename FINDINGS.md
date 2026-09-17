@@ -8,6 +8,14 @@ Opus 5 / High has started; the other four configurations are not completed resul
 Tests 1 and 2 remain completed, separate cohorts. This is not yet a cross-model
 complex-app comparison.
 
+**Second-run progress:** Opus 5 / High has a working five-screen foundation at
+561 credits and an independently verified in-app profile at 916 cumulative
+credits (+355). Its exact initial fixture was isolated under a different
+app-owned storage key; the first app's final records remained unchanged.
+The GBP810 draft was saved, edited and reopened, then survived the connection
+stage unchanged. No repair, clarification or native review prompt has been sent.
+The third planned stage is running; its result and final score are not yet claimed.
+
 | First-run milestone | Observed cumulative credits | Increase from preceding reading | Independent observation |
 |---|---:|---:|---|
 | Virtual-data foundation | 176 | Not a separate measured delta | Exact seed/Overview, but Catalogue and Requests initially returned Page not found |

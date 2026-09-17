@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-17T23:07:46.552Z",
+  "generatedAt": "2026-09-17T23:31:21.647Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -323,20 +323,25 @@
           "comparisonEligible": true,
           "first": null,
           "final": null,
-          "firstCost": null,
+          "firstCost": {
+            "status": "observed",
+            "value": 561,
+            "unit": "credits",
+            "scope": "Cowork task"
+          },
           "finalCost": null,
           "increment": null,
           "timing": {
-            "firstBuildResponseSeconds": null,
-            "firstBuildResponseLowerBoundSeconds": null,
-            "firstCompletionObservation": "not-captured",
+            "firstBuildResponseSeconds": 881.455,
+            "firstBuildResponseLowerBoundSeconds": 879.256,
+            "firstCompletionObservation": "interval-bounded",
             "finalReviewedResultSeconds": null,
             "timeToAcceptanceSeconds": null,
             "observedApprovalWaitSeconds": 0,
             "recordedInterruptionSeconds": 0,
             "approvalWaitStillOpen": false,
             "interruptionStillOpen": false,
-            "firstCompletionDetectionWindowSeconds": null,
+            "firstCompletionDetectionWindowSeconds": 2.199,
             "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
           },
           "reviews": 0,
@@ -346,8 +351,13 @@
               "title": "Build the relational virtual-data app first",
               "kind": "build",
               "submitted": true,
-              "responseComplete": false,
-              "cost": null,
+              "responseComplete": true,
+              "cost": {
+                "status": "observed",
+                "value": 561,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
               "costBeforePrompt": null,
               "increaseSincePrecedingReading": null
             },
@@ -355,20 +365,38 @@
               "id": "stage-02",
               "title": "Connect the existing managed app to Office 365 Users",
               "kind": "planned-change",
-              "submitted": false,
-              "responseComplete": false,
-              "cost": null,
-              "costBeforePrompt": null,
-              "increaseSincePrecedingReading": null
+              "submitted": true,
+              "responseComplete": true,
+              "cost": {
+                "status": "observed",
+                "value": 916,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
+              "costBeforePrompt": {
+                "status": "observed",
+                "value": 561,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
+              "increaseSincePrecedingReading": {
+                "value": 355,
+                "unit": "credits"
+              }
             },
             {
               "id": "stage-03",
               "title": "Virtual approvals, asset lifecycle, themes and preferences",
               "kind": "planned-change",
-              "submitted": false,
+              "submitted": true,
               "responseComplete": false,
               "cost": null,
-              "costBeforePrompt": null,
+              "costBeforePrompt": {
+                "status": "observed",
+                "value": 916,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
               "increaseSincePrecedingReading": null
             },
             {
@@ -383,17 +411,17 @@
             }
           ],
           "firstFullTargetAssessmentStage": null,
-          "plannedChanges": 0,
+          "plannedChanges": 2,
           "profileProof": {
             "stageId": "stage-02",
-            "verifiedInApp": false,
+            "verifiedInApp": true,
             "reverifiedAfterFinalReopen": false,
-            "errorRetryCoverage": "untested"
+            "errorRetryCoverage": "blocked"
           },
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 10,
+          "screenshotFiles": 99,
           "archived": false,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [
