@@ -16,7 +16,7 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first five fresh runs meet the declared gate; the comparison is not complete:
+The first six fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
@@ -25,6 +25,7 @@ The first five fresh runs meet the declared gate; the comparison is not complete
 | 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 | 0 |
 | 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 | 0 |
 | 05 | GPT 5.5 / Medium | 247 / 345 | 80 / 90 | 1 | 0 |
+| 06 | GPT 5.5 / Medium | 252 / 252 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -103,10 +104,27 @@ with BC09 still untested/blocked. The reviewed-result wall time was
 controller's test-created row was deleted afterward; the exact seed was
 independently restored without unexpected mutations.
 
-Run-06, the GPT Medium repeat, is running; four further builds remain. A single
-observation per configuration does not establish repeatability or a model
-ranking. The ten fresh runs use four views and do not require approval/rejection
-workflows.
+The GPT Medium repeat passed at **252 first / 252 final credits** and **90/100**,
+without extra maker prompts. Its initial row-based checker failures were caused
+by a valid responsive layout: below the desktop breakpoint, the app replaces
+tables with equivalent live cards. The controller verified all card fields,
+filters, requester scoping and reopening, then widened the actual native preview
+to inspect its desktop tables. All four views were usable at 1066px and 390px;
+the original window bounds and divider were restored. No app changes were needed.
+The first completed response was observed between **7m 49.131s and 7m 51.478s**;
+the reviewed result took **18m 11.294s**, including controller calibration.
+The test-created request was safely deleted and the exact seed reverified.
+
+The two GPT Medium first-output readings were **247 and 252 credits**; the
+accepted-result readings were **345 and 252 credits**, with **one and zero**
+corrections respectively. Similar initial cost did not mean identical layout
+quality or identical cost to acceptance. Two observations are not a reliable
+price forecast or success-rate estimate.
+
+Run-07, the Sonnet High repeat, is running; three further builds remain. The
+other configurations still have one observation each, so the model comparison
+is incomplete. The ten fresh runs use four views and do not require
+approval/rejection workflows.
 
 The following findings are **historical audit evidence only**.
 
