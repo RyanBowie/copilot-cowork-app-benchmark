@@ -16,7 +16,7 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first six fresh runs meet the declared gate; the comparison is not complete:
+The first seven fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
@@ -26,6 +26,7 @@ The first six fresh runs meet the declared gate; the comparison is not complete:
 | 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 | 0 |
 | 05 | GPT 5.5 / Medium | 247 / 345 | 80 / 90 | 1 | 0 |
 | 06 | GPT 5.5 / Medium | 252 / 252 | 90 / 90 | 0 | 0 |
+| 07 | Sonnet 5 / High | 313 / 313 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -121,9 +122,32 @@ corrections respectively. Similar initial cost did not mean identical layout
 quality or identical cost to acceptance. Two observations are not a reliable
 price forecast or success-rate estimate.
 
-Run-07, the Sonnet High repeat, is running; three further builds remain. The
-other configurations still have one observation each, so the model comparison
-is incomplete. The ten fresh runs use four views and do not require
+The Sonnet High repeat meets the same gate at **313 first / 313 final credits**
+and **90/100**, without additional maker prompts. The controller independently
+verified its field-adjacent validation messages: all invalid-input cases reject
+writes, although the messages are not linked through the error-description
+attributes the checker expected. This is a validation pass, not a claim of full
+accessibility compliance. Live data, saving, reopening and desktop/mobile
+usability passed. The first response was observed between **11m 24.417s and
+11m 26.485s**; the reviewed result took **17m 47.872s**. Its test-created row was
+safely removed and the exact seed restored.
+
+The Sonnet High pair therefore cost **620 and 313 credits**, both without
+repairs. That variation cannot be explained by extra controller prompts.
+Selected settings and the required outcome were held constant; internal routing,
+implementation choices and other run effects were not isolated.
+
+**Additional limitations outside the four required Dashboard metrics:** the
+repeat's optional category caption says "4 categories in stock" while its table
+includes Monitor with zero units. The four scored metrics are correct; this
+supplementary discrepancy is retained rather than hidden by the acceptance score.
+The builder also disclosed a fixed-limit read instead of paginated continuation;
+the small-fixture test does not establish large-list scalability. BC09 remains
+untested/blocked for every completed run.
+
+Run-08, the Opus Medium repeat, is running; two further builds remain. Only GPT
+Medium and Sonnet High have both observations, so the model comparison is
+incomplete. The ten fresh runs use four views and do not require
 approval/rejection workflows.
 
 The following findings are **historical audit evidence only**.
