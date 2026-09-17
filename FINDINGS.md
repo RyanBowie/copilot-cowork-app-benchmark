@@ -24,6 +24,7 @@ The first four fresh runs meet the declared gate; the comparison is not complete
 | 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 | 0 |
 | 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 | 0 |
 | 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 | 0 |
+| 05 | GPT 5.5 / Medium | 247 / pending | 80 / pending | 1 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -74,7 +75,23 @@ sign-in." A failed assertion expecting that identity outside the closed drawer
 was a controller assumption, not an app defect. BC09 was corrected to untested/
 blocked, not passed. No app repair or additional native review was requested.
 
-Fresh run-05, GPT 5.5 / Medium, is running. Five further builds remain. A single
+GPT Medium's initial app used **247 credits** and reached **80/100**. Its first
+completed response was observed between **8m 06.655s and 8m 09.542s**. Live
+catalogue, dashboard arithmetic, request validation, complete saving, requester
+scoping and actual reopening passed. Its native options omit explicit value
+attributes; the controller initially cleared the category instead of selecting
+its valid text value. Correcting that external selector verified the combined
+filters without an app repair. Raw observations are retained.
+
+Visual review then reproduced a genuine Dashboard layout defect: the document
+is **689px wide at a 390px viewport**, also overflowing the approximately 580px
+side-by-side preview. The chart and metric cards extend beyond the page rather
+than scrolling locally. The other three views are usable at 390px, but this
+page-wide overflow fails BC10. One counted correction requests only that layout
+repair in the same app, with no self-review or test-record creation. The final
+cost and result remain pending; BC09 remains untested/blocked.
+
+Five further builds remain. A single
 observation per configuration does not establish repeatability or a model
 ranking. The ten fresh runs use four views and do not require approval/rejection
 workflows.

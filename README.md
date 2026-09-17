@@ -8,18 +8,23 @@ model and effort selections in Copilot Cowork.
 Previous comparison results are superseded because additional billable Cowork
 self-review prompts were a controller error. No earlier run enters the clean
 comparison, and no estimated review cost is deducted from historical spend.
-Clean run-01, Sonnet 5 / Medium, meets the acceptance gate at **90/100**:
-**224 first / 224 final task credits**, with no corrections, clarifications or
-native review prompts. Actual live reads, request creation and reopen
-persistence passed. The noncritical error/no-fallback check remains blocked
-because it was not fault-tested; this is not a claim of complete error coverage.
-Run-02, Opus 5 / High, also meets the gate at **90/100**, using **968 first /
-968 final credits** with no controller corrections, clarifications or review
-prompts. Run-03, Opus 5 / Medium, meets the same gate at **90/100** and **417 first /
-417 final credits**, also without extra maker prompts. Run-04, Sonnet 5 / High,
-meets the same gate at **90/100** and **620 first / 620 final credits**, without
-extra maker prompts. Run-05, GPT 5.5 / Medium, is running; five further fresh
-builds remain.
+Four clean builds meet the acceptance gate. The fifth delivered a working
+live-data app but needs one narrowly scoped Dashboard layout repair:
+
+| Run | Model / effort | First / final credits | First / final score | Corrections |
+|---|---|---:|---:|---:|
+| 01 | Sonnet 5 / Medium | 224 / 224 | 90 / 90 | 0 |
+| 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 |
+| 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 |
+| 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 |
+| 05 | GPT 5.5 / Medium | 247 / pending | 80 / pending | 1 |
+
+All five passed actual live reads, request creation and reopen persistence.
+The noncritical error/no-fallback check remains blocked because it was not
+fault-tested; this is not a claim of complete error coverage. GPT's Dashboard
+has reproduced page-wide overflow at 390px; its final result is not yet known.
+No native review or clarification prompts have been submitted. Five further
+fresh builds remain.
 These are single observations per configuration, not a completed model ranking.
 
 The v5 method uses one implementation-only build prompt, independent controller
