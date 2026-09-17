@@ -8,7 +8,7 @@ model and effort selections in Copilot Cowork.
 Previous comparison results are superseded because additional billable Cowork
 self-review prompts were a controller error. No earlier run enters the clean
 comparison, and no estimated review cost is deducted from historical spend.
-Seven clean builds meet the acceptance gate. The first GPT Medium run required one
+Eight clean builds meet the acceptance gate. The first GPT Medium run required one
 Dashboard layout repair; its repeat and the others needed no extra maker prompts:
 
 | Run | Model / effort | First / final credits | First / final score | Corrections |
@@ -20,14 +20,15 @@ Dashboard layout repair; its repeat and the others needed no extra maker prompts
 | 05 | GPT 5.5 / Medium | 247 / 345 | 80 / 90 | 1 |
 | 06 | GPT 5.5 / Medium | 252 / 252 | 90 / 90 | 0 |
 | 07 | Sonnet 5 / High | 313 / 313 | 90 / 90 | 0 |
+| 08 | Opus 5 / Medium | 425 / 425 | 90 / 90 | 0 |
 
-All seven passed actual live reads, request creation and reopen persistence.
+All eight passed actual live reads, request creation and reopen persistence.
 The noncritical error/no-fallback check remains blocked because it was not
 fault-tested; this is not a claim of complete error coverage. GPT's reproduced
 390px Dashboard overflow is repaired, and its original saved request remains
 intact. No native review or clarification prompts have been submitted.
-Run-08, the Opus Medium repeat, is running; two further fresh builds remain.
-GPT Medium and Sonnet High now have two observations; the other settings have one.
+Run-09, the Opus High repeat, is running; the Sonnet Medium repeat remains.
+GPT Medium, Sonnet High and Opus Medium now have both observations.
 This small, unfinished cohort does not establish a general model ranking.
 
 The v5 method uses one implementation-only build prompt, independent controller

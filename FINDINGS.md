@@ -16,7 +16,7 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first seven fresh runs meet the declared gate; the comparison is not complete:
+The first eight fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
@@ -27,6 +27,7 @@ The first seven fresh runs meet the declared gate; the comparison is not complet
 | 05 | GPT 5.5 / Medium | 247 / 345 | 80 / 90 | 1 | 0 |
 | 06 | GPT 5.5 / Medium | 252 / 252 | 90 / 90 | 0 | 0 |
 | 07 | Sonnet 5 / High | 313 / 313 | 90 / 90 | 0 | 0 |
+| 08 | Opus 5 / Medium | 425 / 425 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -145,8 +146,22 @@ The builder also disclosed a fixed-limit read instead of paginated continuation;
 the small-fixture test does not establish large-list scalability. BC09 remains
 untested/blocked for every completed run.
 
-Run-08, the Opus Medium repeat, is running; two further builds remain. Only GPT
-Medium and Sonnet High have both observations, so the model comparison is
+The Opus Medium repeat passed at **425 first / 425 final credits** and **90/100**,
+without extra maker prompts. After adapting the external selector to its
+"Requester (synthetic demo persona)" label, all live-data, arithmetic, validation,
+save/reopen and usability checks passed. The first response was observed between
+**10m 21.597s and 10m 24.126s**; the reviewed result took **15m 10.550s**.
+Only its test-created request was deleted afterward, and the exact seed was
+independently verified. The two Opus Medium results cost **417 and 425 credits**,
+both without corrections; this small observed range is not a price forecast.
+
+The builder disclosed that totals cover the currently loaded page and exclude
+pending requests whose devices are outside the loaded catalogue page, with
+warnings. Those cross-page cases were not exercised by this small-fixture test.
+Do not extrapolate its accepted result to whole-list totals at production scale.
+
+Run-09, the Opus High repeat, is running; the Sonnet Medium repeat remains. Three
+of five configurations have both observations, so the model comparison is still
 incomplete. The ten fresh runs use four views and do not require
 approval/rejection workflows.
 
