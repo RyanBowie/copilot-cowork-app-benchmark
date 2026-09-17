@@ -271,28 +271,37 @@ the twenty-build ceiling.
 
 The following findings are **historical audit evidence only**.
 
-## Superseded experiments: no persistence-capable winner
+## Historical outcomes depend on the intended data scope
 
-All five pilot builds failed managed persistence. The first Dataverse-backed
-build also remains unaccepted because its write path fails. Choosing a model
-solely from a low credit reading would ignore the missing required capability.
+The user clarified that **virtual data is fine for Test 1**. The controller had
+incorrectly imposed a managed-store acceptance requirement on that test.
+All five final Test 1 apps are therefore accepted under the clarified scope.
+The Dataverse attempt still fails its actual connected-data requirement; neither
+that result nor the live SharePoint Test 2 requirements are changed.
 
 ## Test 1: five completed pilot builds
 
-| Run | Selected model / effort | First credits | Final credits | First score | Final score | Corrections |
-|---|---|---:|---:|---:|---:|---:|
-| 01 | Sonnet 5 / Medium | 276 | 317 | 95 | 95 | 0 |
-| 02 | Opus 5 / High | 621 | 892 | 10 | 95 | 1 |
-| 03 | Opus 5 / Medium | 342 | 1,083 | 0 | 95 | 2 |
-| 04 | Sonnet 5 / High | 351 | 530 | 85 | 95 | 1 |
-| 05 | Sonnet 5 / Medium | 174 | 397 | 90 | 95 | 1 |
+| Run | Selected model / effort | First credits | Final credits | Original first score | Original final score | Corrections | Corrected final outcome |
+|---|---|---:|---:|---:|---:|---:|---|
+| 01 | Sonnet 5 / Medium | 276 | 317 | 95 | 95 | 0 | Accepted |
+| 02 | Opus 5 / High | 621 | 892 | 10 | 95 | 1 | Accepted |
+| 03 | Opus 5 / Medium | 342 | 1,083 | 0 | 95 | 2 | Accepted |
+| 04 | Sonnet 5 / High | 351 | 530 | 85 | 95 | 1 | Accepted |
+| 05 | Sonnet 5 / Medium | 174 | 397 | 90 | 95 | 1 | Accepted |
 
-Final cumulative readings total **3,219 credits**. Every final score still
-contains the critical AC14 persistence failure.
+Final cumulative readings remain **3,219 credits**. User clarification
+[T1-A02](benchmark/test-01-scope-clarification.json), recorded after measurement,
+marks AC14 as **not required for Test 1**, not as a verified managed-store pass.
+The original point totals and 85-point threshold remain; all other critical
+checks still apply. Original assessments remain separately available in
+`data.json` and the private evidence. This is an acceptance-scope correction,
+not a new build, new test execution or a retroactive claim of managed persistence.
+The two initial incomplete Opus outputs remain unaccepted.
 
 The two historical Sonnet Medium final readings span **317-397 credits**.
-These include the superseded paid-review method and do not establish a
-clean build-price range or a current model recommendation.
+These include the superseded paid-review method and the unnecessary managed-store
+instruction. They do not establish a clean virtual-only build-price range or
+a current model recommendation.
 
 Opus High initially delivered a shell and Opus Medium a blank preview. Preview
 server/cache recovery contributed to corrective work, so those outcomes cannot

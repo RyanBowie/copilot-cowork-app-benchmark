@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-17T16:00:33.778Z",
+  "generatedAt": "2026-09-17T16:12:52.135Z",
   "activeExperiment": "test-02-sharepoint-clean",
   "restartNotice": "Previous comparison results are superseded because additional billable Cowork self-review prompts were a controller error. Ten fresh SharePoint-connected builds now use controller-only review. Historical costs remain excluded audit data; no review-cost deduction is estimated.",
   "app": "Device Procurement and Availability",
@@ -1394,19 +1394,15 @@
           "first": {
             "points": 95,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "final": {
             "points": 95,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "firstCost": {
@@ -1420,6 +1416,26 @@
             "value": 317,
             "unit": "credits",
             "scope": "Cowork task"
+          },
+          "originalAssessment": {
+            "first": {
+              "points": 95,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            },
+            "final": {
+              "points": 95,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            }
           },
           "increment": {
             "value": 41,
@@ -1540,9 +1556,14 @@
             {
               "id": "AC14",
               "capability": "Managed persistence",
-              "critical": true,
-              "first": "fail",
-              "final": "fail"
+              "critical": false,
+              "first": "not-required",
+              "final": "not-required",
+              "original": {
+                "critical": true,
+                "first": "fail",
+                "final": "fail"
+              }
             },
             {
               "id": "AC15",
@@ -1608,8 +1629,7 @@
               "AC10",
               "AC11",
               "AC12",
-              "AC13",
-              "AC14"
+              "AC13"
             ],
             "incomplete": [
               "AC16",
@@ -1620,10 +1640,8 @@
           "final": {
             "points": 95,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "firstCost": {
@@ -1637,6 +1655,38 @@
             "value": 892,
             "unit": "credits",
             "scope": "Cowork task"
+          },
+          "originalAssessment": {
+            "first": {
+              "points": 10,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC04",
+                "AC06",
+                "AC07",
+                "AC08",
+                "AC10",
+                "AC11",
+                "AC12",
+                "AC13",
+                "AC14"
+              ],
+              "incomplete": [
+                "AC16",
+                "AC17",
+                "AC18"
+              ]
+            },
+            "final": {
+              "points": 95,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            }
           },
           "increment": {
             "value": 271,
@@ -1757,9 +1807,14 @@
             {
               "id": "AC14",
               "capability": "Managed persistence",
-              "critical": true,
-              "first": "fail",
-              "final": "fail"
+              "critical": false,
+              "first": "not-required",
+              "final": "not-required",
+              "original": {
+                "critical": true,
+                "first": "fail",
+                "final": "fail"
+              }
             },
             {
               "id": "AC15",
@@ -1826,7 +1881,6 @@
               "AC11",
               "AC12",
               "AC13",
-              "AC14",
               "AC20"
             ],
             "incomplete": [
@@ -1839,10 +1893,8 @@
           "final": {
             "points": 95,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "firstCost": {
@@ -1856,6 +1908,40 @@
             "value": 1083,
             "unit": "credits",
             "scope": "Cowork task"
+          },
+          "originalAssessment": {
+            "first": {
+              "points": 0,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC04",
+                "AC06",
+                "AC07",
+                "AC08",
+                "AC10",
+                "AC11",
+                "AC12",
+                "AC13",
+                "AC14",
+                "AC20"
+              ],
+              "incomplete": [
+                "AC16",
+                "AC17",
+                "AC18",
+                "AC19"
+              ]
+            },
+            "final": {
+              "points": 95,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            }
           },
           "increment": {
             "value": 741,
@@ -1976,9 +2062,14 @@
             {
               "id": "AC14",
               "capability": "Managed persistence",
-              "critical": true,
-              "first": "fail",
-              "final": "fail"
+              "critical": false,
+              "first": "not-required",
+              "final": "not-required",
+              "original": {
+                "critical": true,
+                "first": "fail",
+                "final": "fail"
+              }
             },
             {
               "id": "AC15",
@@ -2035,19 +2126,15 @@
           "first": {
             "points": 85,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "final": {
             "points": 95,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "firstCost": {
@@ -2061,6 +2148,26 @@
             "value": 530,
             "unit": "credits",
             "scope": "Cowork task"
+          },
+          "originalAssessment": {
+            "first": {
+              "points": 85,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            },
+            "final": {
+              "points": 95,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            }
           },
           "increment": {
             "value": 179,
@@ -2181,9 +2288,14 @@
             {
               "id": "AC14",
               "capability": "Managed persistence",
-              "critical": true,
-              "first": "fail",
-              "final": "fail"
+              "critical": false,
+              "first": "not-required",
+              "final": "not-required",
+              "original": {
+                "critical": true,
+                "first": "fail",
+                "final": "fail"
+              }
             },
             {
               "id": "AC15",
@@ -2240,19 +2352,15 @@
           "first": {
             "points": 90,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "final": {
             "points": 95,
             "maximum": 100,
-            "accepted": false,
-            "criticalFailures": [
-              "AC14"
-            ],
+            "accepted": true,
+            "criticalFailures": [],
             "incomplete": []
           },
           "firstCost": {
@@ -2266,6 +2374,26 @@
             "value": 397,
             "unit": "credits",
             "scope": "Cowork task"
+          },
+          "originalAssessment": {
+            "first": {
+              "points": 90,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            },
+            "final": {
+              "points": 95,
+              "maximum": 100,
+              "accepted": false,
+              "criticalFailures": [
+                "AC14"
+              ],
+              "incomplete": []
+            }
           },
           "increment": {
             "value": 223,
@@ -2386,9 +2514,14 @@
             {
               "id": "AC14",
               "capability": "Managed persistence",
-              "critical": true,
-              "first": "fail",
-              "final": "fail"
+              "critical": false,
+              "first": "not-required",
+              "final": "not-required",
+              "original": {
+                "critical": true,
+                "first": "fail",
+                "final": "fail"
+              }
             },
             {
               "id": "AC15",
@@ -2438,6 +2571,24 @@
       "comparisonEligible": false,
       "reviewMode": "superseded-paid-review-method",
       "acceptanceCheckCount": 20,
+      "scopeClarification": {
+        "id": "T1-A02",
+        "experimentId": "test-01",
+        "recordedAt": "2026-09-17T17:06:11.501+01:00",
+        "authority": "Explicit user clarification",
+        "userStatement": "Okay no that would've passed test 1, virtual data is fine for test 1...",
+        "virtualDataAllowed": true,
+        "waivedAcceptanceIds": [
+          "AC14"
+        ],
+        "scoreHandling": "Retain original point totals and the 85-point threshold; remove AC14 from the mandatory acceptance gate. Do not award new evidence points.",
+        "evidenceHandling": "Preserve original prompts, rubric, assessments, costs and timestamps. Publish the corrected acceptance outcome alongside the original assessment.",
+        "comparisonHandling": "The prior paid-self-review exclusion remains unchanged. Historical task costs are not clean virtual-only build prices.",
+        "doesNotApplyTo": [
+          "test-02-sharepoint-clean",
+          "test-02"
+        ]
+      },
       "buildBudget": null,
       "setup": null,
       "protocolSha256": "b4a373aa7348f0a09964a1313dbb779dc033e74ec33fb62f070ba6ac1100e460"

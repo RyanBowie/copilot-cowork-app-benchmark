@@ -105,16 +105,22 @@ Benchmark instrumentation stays outside the business application.
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
 | Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
-| Test 1, superseded | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 0 |
+| Test 1, historical virtual-data scope | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 5 |
 | Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
 | Excel restart, superseded | Working pilot first, then ten consistent builds; conditional maximum twenty | Pilot blocked; 0 measured | 0 |
 
-Test 1's final cumulative readings total **3,219 Cowork task credits**. All five
-missed managed server-side persistence, despite final UI scores of 95/100.
-The original prompt explicitly required a managed persistent store, not browser
-localStorage. All five failed critical check **AC14**: 95 points did not override
-that mandatory requirement. Their separate exclusion for paid self-review is
-not the reason their functional outcome is "Not accepted."
+Test 1's final cumulative readings total **3,219 Cowork task credits**.
+**All five final apps are accepted under the user-clarified virtual-data scope.**
+The controller incorrectly imposed a managed-store requirement on Test 1.
+[Clarification T1-A02](benchmark/test-01-scope-clarification.json) removes AC14
+from its acceptance gate; virtual/local data is allowed.
+
+The original **95/100** point totals, original assessments and actual costs are
+retained for audit. Only the scope-dependent acceptance outcome is corrected;
+no storage points or new evidence are invented. The historical tasks included
+the unnecessary managed-store instruction and paid self-review, so their costs
+remain excluded from the clean Test 2 comparison. Test 2 still requires real
+SharePoint saving and reopening.
 
 The archived Dataverse run-01, Sonnet 5 / Medium, used **340 credits at first output** and
 **1,142 credits at the final reviewed result**, reaching **65/100** after two
@@ -156,7 +162,9 @@ benchmark.
   The controller instructions must **never** be sent to Cowork.
 
 - [Test 1 prompt](benchmark/build-prompt.txt), [protocol](benchmark/protocol.json)
-  and [acceptance rubric](benchmark/acceptance.json).
+  and [original acceptance rubric](benchmark/acceptance.json), preserved as run.
+  Apply [T1-A02](benchmark/test-01-scope-clarification.json) when interpreting
+  Test 1 acceptance; the original prompt over-specified its data requirements.
 - [Archived Dataverse prompt template](benchmark/test-02/build-prompt-template.txt),
   [protocol](benchmark/test-02/protocol.json),
   [amendments](benchmark/test-02/protocol-amendments.json),

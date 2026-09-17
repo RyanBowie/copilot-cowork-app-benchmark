@@ -1,0 +1,13 @@
+{
+  "id": "T1-A02",
+  "experimentId": "test-01",
+  "recordedAt": "2026-09-17T17:06:11.501+01:00",
+  "authority": "Explicit user clarification",
+  "userStatement": "Okay no that would've passed test 1, virtual data is fine for test 1...",
+  "virtualDataAllowed": true,
+  "waivedAcceptanceIds": ["AC14"],
+  "scoreHandling": "Retain original point totals and the 85-point threshold; remove AC14 from the mandatory acceptance gate. Do not award new evidence points.",
+  "evidenceHandling": "Preserve original prompts, rubric, assessments, costs and timestamps. Publish the corrected acceptance outcome alongside the original assessment.",
+  "comparisonHandling": "The prior paid-self-review exclusion remains unchanged. Historical task costs are not clean virtual-only build prices.",
+  "doesNotApplyTo": ["test-02-sharepoint-clean", "test-02"]
+}

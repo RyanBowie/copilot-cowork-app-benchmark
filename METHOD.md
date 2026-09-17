@@ -113,12 +113,26 @@ The five-run pilot used:
 | 5 | Sonnet 5 | Medium |
 
 No existing external backing store was supplied. The prompt still required
-managed persistence. All five ultimately used browser-local persistence and
-failed that critical requirement.
+managed persistence, which the controller incorrectly imposed on Test 1.
+The user subsequently clarified: "virtual data is fine for test 1".
+All five final apps use acceptable virtual/local data under that intended scope.
+
+[T1-A02](benchmark/test-01-scope-clarification.json) records this explicit
+clarification after measurement. AC14 is not required for Test 1 acceptance.
+Original point totals and the 85-point threshold are retained for traceability,
+while AC14 is removed from the mandatory gate; all other critical checks remain.
+No additional storage points are awarded. The public `originalAssessment`
+fields and original check verdicts preserve the former classification, and the
+original prompt, rubric, costs and raw assessments are not overwritten.
+No missing acceptance timestamps are manufactured.
+
+This correction does not remove the paid-review cost exclusion, turn those
+historical tasks into clean virtual-only price measurements, or relax any
+live-data requirement of the SharePoint cohort or Dataverse attempt.
 
 Recorded amendment A01 permitted symptom-only corrections for independently
 observed UI issues after reaching the storage-provisioning boundary, within the
-original two-correction limit. It did not waive the persistence failure.
+original two-correction limit. T1-A02 separately corrects the intended data scope.
 
 The pilot's active-generation ceiling was not instrumented reliably. Its
 historical wall time includes recovery and adapter work; no model-speed ranking
