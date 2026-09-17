@@ -16,9 +16,30 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-Clean run-01, Sonnet 5 / Medium, started on 17 September 2026. No accepted clean
-result or model recommendation is claimed yet. The ten fresh runs use four
-views and do not require approval/rejection workflows.
+The first fresh run meets the declared gate; the comparison is not complete:
+
+| Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
+|---|---|---:|---:|---:|---:|
+| 01 | Sonnet 5 / Medium | 224 / 224 | 90 / 90 | 0 | 0 |
+
+The controller independently verified all six live catalogue rows, dashboard
+arithmetic, search/filters, input validation, one complete Pending request,
+requester scoping and reopening the saved request. Inventory remained unchanged.
+Desktop and 390px keyboard/scrolling usability passed. **BC09 remains blocked**:
+connection-error/no-fallback behavior was not fault-tested and is not awarded
+from source claims. All critical checks passed.
+
+The first completed build response was observed within **9m 57.865s to
+10m 00.060s** after submission. The final externally reviewed result took
+**23m 29.916s**, including controller review and instrumentation, not just model
+execution. Both real task cost cards showed224 credits; no additional native
+review or repair was requested. The controller archived the conversation and
+deleted only its test-created request, then independently verified the exact
+six-device/four-request fixture with no unexpected seed mutations.
+
+Fresh run-02, Opus 5 / High, is running. Eight further builds remain. One result
+does not establish a model ranking. The ten fresh runs use four views and do
+not require approval/rejection workflows.
 
 The following findings are **historical audit evidence only**.
 

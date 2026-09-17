@@ -8,7 +8,12 @@ model and effort selections in Copilot Cowork.
 Previous comparison results are superseded because additional billable Cowork
 self-review prompts were a controller error. No earlier run enters the clean
 comparison, and no estimated review cost is deducted from historical spend.
-Clean run-01, Sonnet 5 / Medium, started on 17 September 2026.
+Clean run-01, Sonnet 5 / Medium, meets the acceptance gate at **90/100**:
+**224 first / 224 final task credits**, with no corrections, clarifications or
+native review prompts. Actual live reads, request creation and reopen
+persistence passed. The noncritical error/no-fallback check remains blocked
+because it was not fault-tested; this is not a claim of complete error coverage.
+Run-02, Opus 5 / High, is running. Eight further fresh builds remain.
 
 The v5 method uses one implementation-only build prompt, independent controller
 review, and at most two narrow repair prompts for reproduced defects. It covers
