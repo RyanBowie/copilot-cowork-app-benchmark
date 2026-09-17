@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-17T21:01:34.299Z",
+  "generatedAt": "2026-09-17T21:12:03.648Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -24,20 +24,25 @@
           "comparisonEligible": true,
           "first": null,
           "final": null,
-          "firstCost": null,
+          "firstCost": {
+            "status": "observed",
+            "value": 176,
+            "unit": "credits",
+            "scope": "Cowork task"
+          },
           "finalCost": null,
           "increment": null,
           "timing": {
-            "firstBuildResponseSeconds": null,
-            "firstBuildResponseLowerBoundSeconds": null,
-            "firstCompletionObservation": "not-captured",
+            "firstBuildResponseSeconds": 533.775,
+            "firstBuildResponseLowerBoundSeconds": 531.625,
+            "firstCompletionObservation": "interval-bounded",
             "finalReviewedResultSeconds": null,
             "timeToAcceptanceSeconds": null,
             "observedApprovalWaitSeconds": 0,
             "recordedInterruptionSeconds": 0,
             "approvalWaitStillOpen": false,
             "interruptionStillOpen": false,
-            "firstCompletionDetectionWindowSeconds": null,
+            "firstCompletionDetectionWindowSeconds": 2.15,
             "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
           },
           "reviews": 0,
@@ -47,8 +52,13 @@
               "title": "Build the relational virtual-data app first",
               "kind": "build",
               "submitted": true,
-              "responseComplete": false,
-              "cost": null
+              "responseComplete": true,
+              "cost": {
+                "status": "observed",
+                "value": 176,
+                "unit": "credits",
+                "scope": "Cowork task"
+              }
             },
             {
               "id": "stage-02",
@@ -76,10 +86,10 @@
             }
           ],
           "plannedChanges": 0,
-          "corrections": 0,
+          "corrections": 1,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 13,
+          "screenshotFiles": 43,
           "archived": false,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [
