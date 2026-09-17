@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-17T13:55:19.740Z",
+  "generatedAt": "2026-09-17T14:02:27.587Z",
   "activeExperiment": "test-02-sharepoint-clean",
   "restartNotice": "Previous comparison results are superseded because additional billable Cowork self-review prompts were a controller error. Ten fresh SharePoint-connected builds now use controller-only review. Historical costs remain excluded audit data; no review-cost deduction is estimated.",
   "app": "Device Procurement and Availability",
@@ -559,7 +559,7 @@
           "effort": "Medium",
           "replicate": 1,
           "block": 1,
-          "status": "in progress",
+          "status": "reviewed",
           "comparisonEligible": true,
           "first": {
             "points": 80,
@@ -570,21 +570,37 @@
               "BC09"
             ]
           },
-          "final": null,
+          "final": {
+            "points": 90,
+            "maximum": 100,
+            "accepted": true,
+            "criticalFailures": [],
+            "incomplete": [
+              "BC09"
+            ]
+          },
           "firstCost": {
             "status": "observed",
             "value": 247,
             "unit": "credits",
             "scope": "Cowork task"
           },
-          "finalCost": null,
-          "increment": null,
+          "finalCost": {
+            "status": "observed",
+            "value": 345,
+            "unit": "credits",
+            "scope": "Cowork task"
+          },
+          "increment": {
+            "value": 98,
+            "unit": "credits"
+          },
           "timing": {
             "firstBuildResponseSeconds": 489.542,
             "firstBuildResponseLowerBoundSeconds": 486.655,
             "firstCompletionObservation": "interval-bounded",
-            "finalReviewedResultSeconds": null,
-            "timeToAcceptanceSeconds": null,
+            "finalReviewedResultSeconds": 1253.959,
+            "timeToAcceptanceSeconds": 1253.959,
             "observedApprovalWaitSeconds": 0,
             "recordedInterruptionSeconds": 0,
             "approvalWaitStillOpen": false,
@@ -596,8 +612,8 @@
           "corrections": 1,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 84,
-          "archived": false,
+          "screenshotFiles": 121,
+          "archived": true,
           "promptSha256": "71281644f6f8465bac8bcde4029fec509e09ea7c18cf2cd6dd6011b6586dad53",
           "checks": [
             {
@@ -605,70 +621,70 @@
               "capability": "Runnable private managed app",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC02",
               "capability": "Live catalogue connection",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC03",
               "capability": "Live dashboard arithmetic",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC04",
               "capability": "Catalogue search and filtering",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC05",
               "capability": "Complete saved request",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC06",
               "capability": "Basic request validation",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC07",
               "capability": "Live request listing",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC08",
               "capability": "Reopen persistence",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "BC09",
               "capability": "Honest data and error states",
               "critical": false,
               "first": "blocked",
-              "final": "untested"
+              "final": "blocked"
             },
             {
               "id": "BC10",
               "capability": "Usable desktop and mobile build",
               "critical": false,
               "first": "fail",
-              "final": "untested"
+              "final": "pass"
             }
           ]
         },
@@ -678,7 +694,7 @@
           "effort": "Medium",
           "replicate": 2,
           "block": 2,
-          "status": "not started",
+          "status": "in progress",
           "comparisonEligible": true,
           "first": null,
           "final": null,
@@ -702,9 +718,9 @@
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 0,
+          "screenshotFiles": 9,
           "archived": false,
-          "promptSha256": null,
+          "promptSha256": "71281644f6f8465bac8bcde4029fec509e09ea7c18cf2cd6dd6011b6586dad53",
           "checks": [
             {
               "id": "BC01",

@@ -8,8 +8,8 @@ model and effort selections in Copilot Cowork.
 Previous comparison results are superseded because additional billable Cowork
 self-review prompts were a controller error. No earlier run enters the clean
 comparison, and no estimated review cost is deducted from historical spend.
-Four clean builds meet the acceptance gate. The fifth delivered a working
-live-data app but needs one narrowly scoped Dashboard layout repair:
+Five clean builds meet the acceptance gate. GPT Medium required one narrowly
+scoped Dashboard layout repair; the others required no extra maker prompts:
 
 | Run | Model / effort | First / final credits | First / final score | Corrections |
 |---|---|---:|---:|---:|
@@ -17,14 +17,14 @@ live-data app but needs one narrowly scoped Dashboard layout repair:
 | 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 |
 | 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 |
 | 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 |
-| 05 | GPT 5.5 / Medium | 247 / pending | 80 / pending | 1 |
+| 05 | GPT 5.5 / Medium | 247 / 345 | 80 / 90 | 1 |
 
 All five passed actual live reads, request creation and reopen persistence.
 The noncritical error/no-fallback check remains blocked because it was not
-fault-tested; this is not a claim of complete error coverage. GPT's Dashboard
-has reproduced page-wide overflow at 390px; its final result is not yet known.
-No native review or clarification prompts have been submitted. Five further
-fresh builds remain.
+fault-tested; this is not a claim of complete error coverage. GPT's reproduced
+390px Dashboard overflow is repaired, and its original saved request remains
+intact. No native review or clarification prompts have been submitted.
+Run-06, the GPT Medium repeat, is running; four further fresh builds remain.
 These are single observations per configuration, not a completed model ranking.
 
 The v5 method uses one implementation-only build prompt, independent controller

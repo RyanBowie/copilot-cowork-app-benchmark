@@ -16,7 +16,7 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first four fresh runs meet the declared gate; the comparison is not complete:
+The first five fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
@@ -24,7 +24,7 @@ The first four fresh runs meet the declared gate; the comparison is not complete
 | 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 | 0 |
 | 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 | 0 |
 | 04 | Sonnet 5 / High | 620 / 620 | 90 / 90 | 0 | 0 |
-| 05 | GPT 5.5 / Medium | 247 / pending | 80 / pending | 1 | 0 |
+| 05 | GPT 5.5 / Medium | 247 / 345 | 80 / 90 | 1 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -87,11 +87,23 @@ Visual review then reproduced a genuine Dashboard layout defect: the document
 is **689px wide at a 390px viewport**, also overflowing the approximately 580px
 side-by-side preview. The chart and metric cards extend beyond the page rather
 than scrolling locally. The other three views are usable at 390px, but this
-page-wide overflow fails BC10. One counted correction requests only that layout
-repair in the same app, with no self-review or test-record creation. The final
-cost and result remain pending; BC09 remains untested/blocked.
+page-wide overflow failed BC10. One counted correction requested only that layout
+repair in the same app, with no self-review or test-record creation.
 
-Five further builds remain. A single
+The repair passed independent review: all four views have no page-wide overflow
+at 390px and 580px; the chart and tables scroll locally and the metric cards
+wrap. Keyboard, invalid-input handling, filters and requester scoping were
+rechecked. The original complete request survived reopening after the repair;
+app identity, binding configuration and server records remained unchanged.
+No second valid request was submitted after this layout-only change.
+Both post-repair and final task cards showed **345 credits**, an observed
+**98-credit increase** from the first output. The final score is **90/100**,
+with BC09 still untested/blocked. The reviewed-result wall time was
+**20m 53.959s**, including controller calibration and the repair. Only the
+controller's test-created row was deleted afterward; the exact seed was
+independently restored without unexpected mutations.
+
+Run-06, the GPT Medium repeat, is running; four further builds remain. A single
 observation per configuration does not establish repeatability or a model
 ranking. The ten fresh runs use four views and do not require approval/rejection
 workflows.
