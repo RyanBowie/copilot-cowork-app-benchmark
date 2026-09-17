@@ -1,10 +1,12 @@
 # Findings
 
-## Test 3: early in-app profile milestone, not a completed comparison
+## Test 3: first complex app accepted, comparison in progress
 
 Five complex virtual-data apps are planned, with the same four prompts per app.
-The first Sonnet 5 / Medium run is in progress; no full Test 3 app has yet been
-accepted. Tests 1 and 2 remain completed, separate cohorts.
+The first Sonnet 5 / Medium app is accepted at **90/100 and 1,326 final credits**.
+Opus 5 / High has started; the other four configurations are not completed results.
+Tests 1 and 2 remain completed, separate cohorts. This is not yet a cross-model
+complex-app comparison.
 
 | First-run milestone | Observed cumulative credits | Increase from preceding reading | Independent observation |
 |---|---:|---:|---|
@@ -12,7 +14,41 @@ accepted. Tests 1 and 2 remain completed, separate cohorts.
 | One targeted navigation repair | 251 | 75 | Five foundation screens reachable; multi-line draft saved, edited and reopened |
 | Separate Office 365 Users connection prompt | 367 | 116 | Actual in-app current-user GET returned 200; returned sign-in identity and displayed profile fields independently matched |
 | Virtual approvals/assets/themes | 770 | 403 | New views, old-threshold approval, saved theme/preferences and draft continuity observed |
-| Final policy/form/mobile change | Not captured | Not captured | Planned authoring underway; no complete target result claimed |
+| Final policy/form/mobile change | 1,326 | 556 | Policy carryover, inclusive new threshold, revisions/cancellation, stock-safe assets/returns and responsive views independently exercised |
+| Final reviewed result | 1,326 | 0 | 90/100; all critical gates passed; no additional repair after the full-target assessment |
+
+The first full-target and final scores are both 90/100, assessed after stage 4.
+They do **not** describe the initial 176-credit foundation. There was one earlier
+navigation correction, three planned changes, zero clarifications and zero
+native review prompts. The final visible conversation and fresh cost card are
+archived. No app was published or shared.
+
+All critical capabilities passed. The unawarded checks are **CX14, blocked**
+(profile fault/Retry and missing optional-field coverage) and **CX17, failed**
+(incomplete required cost-centre form/mismatch capability). Existing records were
+backfilled correctly, all saved department/code pairs are correct, and the
+existing draft displays its code; the New request form lacks the required field.
+There is no editable control with which to exercise explicit mismatch validation.
+These partial successes are not promoted to a full pass.
+
+The full functional review exercised manager/finance gates; exact GBP1440 versus
+GBP1560 routing; rejection reasons; request-changes/edit/resubmit; confirmed
+cancellation; one-asset-per-unit fulfilment; Good versus Damaged returns;
+duplicate-action guards; and atomic rejection of an insufficient-stock fulfilment.
+The existing GBP1440 Pending finance request retained its state after the policy
+change. Final independent metrics are 21 units, GBP4020 pending, three assigned
+assets and four low-stock models. The registered
+[stock crossing](benchmark/test-03/low-stock-crossing-case.json) changed the count
+from three to four when Latitude stock moved from three to two.
+
+All seven screens were viewed in both themes at actual 1066px desktop and 390px
+mobile widths. Local table scrolling exposed rightmost controls/totals, while
+the document stayed contained. Mobile request, approval-comment, return and
+preference controls were exercised. Keyboard focus and reachable inline errors
+were observed; 992 sampled text contrast measurements found no sampled threshold
+failure, not a comprehensive accessibility certification. Final native reopen
+preserved all 11 requests, five assets, history/stock, Dark/Compact/Engineering,
+and triggered another successful, independently matched current-user profile GET.
 
 **Build the app first, then connect Office 365 Users through that existing
 managed app.** The user corrected this sequence before the measured cohort
@@ -33,17 +69,17 @@ profile continued to render in the signed-in app despite a builder-reported
 connection-reference limitation in its separate sandbox. Preference Cancel
 discarded unsaved edits; Dark, Compact and Engineering survived native reopen.
 The sampled heading still used the template's Geist font rather than the
-requested Segoe UI/Aptos; this observation is retained for final prompt-adherence
-review, not promoted to a passed typography requirement.
+requested Segoe UI/Aptos; this remains a prompt-adherence limitation, not a
+passed typography requirement.
 
 A [deterministic carryover case](benchmark/test-03/policy-carryover-case.json)
 was registered before its first execution and before the first final-stage
 prompt. It tests an existing frozen requirement, without changing prompt bytes,
 rubric points or gates, and applies to all five configurations. A new GBP1440
 request (three docks and two tablets) was manager-approved under the old GBP1000
-threshold and correctly entered Pending finance without changing stock. It must
-remain there after the final threshold rises to GBP1440, unlike a newly
-manager-approved request at that exact amount.
+threshold and correctly entered Pending finance without changing stock. It
+remained there after the final threshold rose to GBP1440, while a newly
+manager-approved request at that exact amount went directly to Approved.
 
 The independent controller retained its own calibration failures: a changed
 Profile heading, changed native app-opening controls after host refresh, a

@@ -1,0 +1,15 @@
+{
+  "purpose": "Verify that the frozen low-stock metric changes, rather than merely displaying the initial value.",
+  "registration": "Before first execution; applies identically to all five configurations. No authoring prompt, rubric or gate changes.",
+  "scenario": {
+    "requester": "Jamie Chen",
+    "justification": "Benchmark low stock crossing",
+    "neededBy": "2026-10-25",
+    "deviceId": "DEV002",
+    "quantity": 1,
+    "total": 950,
+    "actions": "Submit, manager-approve, then fulfil as the asset administrator.",
+    "expectedStock": "Latitude stock falls from 3 to 2, adding that model to the low-stock set.",
+    "expectedLowStockCount": "Four, after the other registered first-review fulfilment/return cases."
+  }
+}

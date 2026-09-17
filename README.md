@@ -9,18 +9,19 @@ model and effort selections in Copilot Cowork.
 The first prompt builds the virtual-data app; the second connects Office 365 Users
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
-The first Sonnet 5 / Medium task has a verified in-app current-user profile and
-an intact saved multi-line draft; the final planned change is underway, not a complete
-Test 3 result. Its observed cumulative readings are **176** for the foundation,
-**251** after one navigation repair, and **367** after the separate in-app profile
-connection prompt, followed by **770** after workflows/themes/preferences.
-The connection-stage increase is **116** and the workflow-stage increase is
-**403**, neither an isolated connector
-price. Native preview recovery and controller calibration are retained. The
-isolated profile fault/Retry check remains blocked, not passed. The saved dark
-theme, compact preference and GBP810 draft survive native reopen. A separate
-GBP1440 request is awaiting finance under the old policy, ready to verify that
-the final threshold change does not retroactively reroute it.
+**The first Sonnet 5 / Medium app is accepted at 90/100 and 1,326 final credits.**
+Opus 5 / High has started; the remaining configurations are not completed results.
+The first app's cumulative readings are **176** for the foundation, **251**
+after one navigation repair, **367** after the in-app profile connection,
+**770** after workflows/themes/preferences and **1,326** after the final changes.
+The final independent review's fresh `/cost` also reads **1,326**.
+All critical checks passed, including virtual approval/asset workflows,
+cross-stage data continuity, actual 390px usability, both themes and a real
+current-user read after final reopen. Profile fault/Retry coverage remains
+blocked. Cost-centre data migration works, but the required New request field
+is absent and explicit mismatch handling is not independently established.
+The app uses Geist rather than requested Segoe UI/Aptos. One accepted setting
+does not yet support a cross-model recommendation.
 The separate metadata-only setup used 40 credits, excluded from app-build totals.
 All planned changes, repairs, stage costs and independent findings are recorded
 separately. Tests 1 and 2 remain complete and are not invalidated by Test 3.
@@ -125,7 +126,7 @@ Benchmark instrumentation stays outside the business application.
 
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
-| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 0 / 5; first build started | 0 |
+| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 1 / 5; second build started | 1 |
 | Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
 | Test 1, historical virtual-data scope | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 5 |
 | Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |

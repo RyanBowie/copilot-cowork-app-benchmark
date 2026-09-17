@@ -27,6 +27,19 @@ GBP1000 threshold in stage 3. Stage 4 must preserve that state while a newly
 manager-approved GBP1440 request follows the new direct-approval rule. This
 does not change authoring prompts, score weights or the acceptance threshold.
 
+The [low-stock crossing case](benchmark/test-03/low-stock-crossing-case.json),
+also registered before its first execution and applied to every configuration,
+fulfils one Latitude to move its stock from three to two. The derived low-stock
+count must change, not simply repeat the initial value. This adds concrete
+coverage of the existing metric requirement without altering prompts or scoring.
+
+Visual adjudication uses an actual app width of at least 1000px and 390px,
+with both themes and meaningful form/control interaction. Wide tables may scroll
+locally; the document must not overflow horizontally. The app must fit within
+its native host in both dimensions. First-run captures with a 33px vertical
+host-clipping limitation are retained but superseded by fully contained captures.
+Sampled contrast and keyboard checks are not a complete accessibility certification.
+
 Record actual cumulative `/cost` after each stage, repair and at the end. Initial
 credits cover the foundation; stage readings expose the later cumulative spend.
 Three planned follow-ups are counted separately from up to two defect corrections
