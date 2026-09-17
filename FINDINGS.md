@@ -16,12 +16,13 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first two fresh runs meet the declared gate; the comparison is not complete:
+The first three fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
 | 01 | Sonnet 5 / Medium | 224 / 224 | 90 / 90 | 0 | 0 |
 | 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 | 0 |
+| 03 | Opus 5 / Medium | 417 / 417 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -50,10 +51,19 @@ defects: the search control correctly exposed the native `searchbox` role, and
 the reopen checker navigated the old iframe before its replacement document
 committed. Both were independently rechecked after fixing the controller.
 No paid repair was requested. Raw observations and separate adjudications are
-retained. BC09 remains untested/blocked for both runs. The controller deleted
+retained. BC09 remains untested/blocked for all completed clean runs. The controller deleted
 only its test-created request and independently reverified the exact seed.
 
-Fresh run-03, Opus 5 / Medium, is running. Seven further builds remain. A single
+Opus Medium also passed the live-data and usability gates, using **417 credits**
+at both observations, without controller repairs or review prompts. Its completed
+build response was observed between **8m 46.019s and 8m 48.115s**; the final
+externally reviewed result took **17m 07.525s**. The first direct-iframe reload
+probe ended on Dashboard again. Actual Close preview / Open app controls,
+followed by live catalogue readiness and My requests, verified the same saved
+request against unchanged SharePoint records. The harness now uses that normal
+product reopening path instead of assigning the host-owned iframe URL.
+
+Fresh run-04, Sonnet 5 / High, is running. Six further builds remain. A single
 observation per configuration does not establish repeatability or a model
 ranking. The ten fresh runs use four views and do not require approval/rejection
 workflows.
