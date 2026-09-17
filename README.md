@@ -4,13 +4,13 @@ An evidence-led comparison of the cost, time and delivered capabilities of the
 same **Device Procurement and Availability** business application, using different
 model and effort selections in Copilot Cowork.
 
-**Current status: ten fresh SharePoint-connected builds are being redone.**
+**Complete: ten fresh SharePoint-connected builds, five configurations twice each.**
 Previous comparison results are superseded because additional billable Cowork
 self-review prompts were a controller error. No earlier run enters the clean
 comparison, and no estimated review cost is deducted from historical spend.
-Nine clean builds meet the acceptance gate. The first GPT Medium run required one
+All ten clean builds meet the acceptance gate. The first GPT Medium run required one
 Dashboard layout repair, and the Opus High repeat required one mobile search
-layout repair. The other seven needed no extra maker prompts:
+layout repair. The other eight needed no extra maker prompts:
 
 | Run | Model / effort | First / final credits | First / final score | Corrections |
 |---|---|---:|---:|---:|
@@ -23,17 +23,38 @@ layout repair. The other seven needed no extra maker prompts:
 | 07 | Sonnet 5 / High | 313 / 313 | 90 / 90 | 0 |
 | 08 | Opus 5 / Medium | 425 / 425 | 90 / 90 | 0 |
 | 09 | Opus 5 / High | 478 / 786 | 80 / 90 | 1 |
+| 10 | Sonnet 5 / Medium | 230 / 230 | 90 / 90 | 0 |
 
-All nine passed actual live reads, request creation and reopen persistence.
+All ten passed actual live reads, request creation and reopen persistence.
 The noncritical error/no-fallback check remains blocked because it was not
 fault-tested; this is not a claim of complete error coverage. GPT's reproduced
 390px Dashboard overflow is repaired, and its original saved request remains
 intact. No native review or clarification prompts have been submitted.
 The Opus High repeat's repaired search is usable at 390px. Its initial host-player
 error recovered with one ordinary UI retry, retained in the detailed findings.
-The nine final readings total **4,350 credits**. The Sonnet Medium repeat is running.
-GPT Medium, Sonnet High, Opus Medium and Opus High now have both observations.
-This small, unfinished cohort does not establish a general model ranking.
+The ten final readings total **4,580 credits**. Eight apps met the gate at first
+output. Only the two repaired runs increased between first and final readings,
+by **406 credits** combined, from the **4,174-credit** sum of first readings.
+These are observed task-level deltas, not isolated per-operation charges.
+First readings are not added to the final total.
+
+**For this specific four-view app, Sonnet 5 / Medium is the cost-supported
+starting choice:** both builds met the same gate without extra prompts, at
+**224 and 230 credits**. Higher effort did not add passed required capabilities
+in this cohort. Two observations per setting are not a promised price, reliable
+success-rate estimate or general model ranking.
+
+| Configuration | Final credits, repeats 1 / 2 | Observed mean | Corrective prompts |
+|---|---:|---:|---:|
+| Sonnet 5 / Medium | 224 / 230 | 227 | 0 / 0 |
+| GPT 5.5 / Medium | 345 / 252 | 298.5 | 1 / 0 |
+| Opus 5 / Medium | 417 / 425 | 421 | 0 / 0 |
+| Sonnet 5 / High | 620 / 313 | 466.5 | 0 / 0 |
+| Opus 5 / High | 968 / 786 | 877 | 0 / 1 |
+
+These are cumulative Cowork task credits, not currency or an invoice. The report
+also records first-output and reviewed-result times; controller work is included
+in review wall time, so it is not isolated model latency.
 
 The v5 method uses one implementation-only build prompt, independent controller
 review, and at most two narrow repair prompts for reproduced defects. It covers
@@ -45,41 +66,43 @@ ceiling: ten fresh builds bring the demo total to twelve, with no automatic
 extension registered.
 
 **Excluded historical status:** five pilot builds are complete. Test 2 has one completed, unaccepted
-Dataverse-backed build; the other nine are paused at an unresolved write-binding
-boundary. This is not a completed ten-run comparison.
+Dataverse-backed build; the other nine were not started before that cohort was
+superseded at an unresolved write-binding boundary. This is not a completed
+ten-run Dataverse comparison.
 The subsequent Excel restart has a verified OneDrive workbook, but its setup
 pilot stopped at a managed-app table-schema allowlist error. **Zero measured
-Excel builds have started**; the requested ten, conditionally up to twenty,
-remain gated on a working pilot.
+Excel builds started**; that planned comparison is also superseded.
 
 [Interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/) |
 [Method](METHOD.md) | [Findings](FINDINGS.md) | [Public data](data.json)
 
 ## The business use case
 
-The **current** app lets employees browse live equipment availability, save a
-complete Pending request and reopen their saved requests. The historical
-approval/reset scope below is retained for interpreting old evidence only.
+The current app lets employees browse live equipment availability, save a
+complete Pending request and reopen their saved requests. Its four views are
+Dashboard, Catalogue, New request and My requests, backed by two dedicated
+SharePoint lists.
 
-Employees browse available equipment, submit device requests and track decisions.
-An IT approver approves or rejects requests and maintains available stock.
-The application includes Dashboard, Catalogue, New request, My requests,
-Approvals, and a confirmation-gated demo reset.
+The demo contains six device models, 25 available units and four requests,
+including three Pending requests with a combined value of GBP 3,800. Personas
+and records are synthetic; persona switching is not production authorization.
+The controller restored this exact fixture after every run.
 
-The backing tables are named **Device List** and **Device Requests**. The demo
-contains six device models, 25 available units and four requests, including three
-Pending requests with a combined value of GBP 3,800. Personas and records are
-synthetic; persona switching is not production authorization.
+Earlier, superseded experiments additionally requested Approvals, inventory
+changes and a confirmation-gated reset, using Device List / Device Requests.
+Those historical features are not requirements or claimed capabilities of the
+clean cohort.
 
 Benchmark instrumentation stays outside the business application.
 
 ## Experiments
 
-| Experiment | Design | Completed | Fully accepted |
+| Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
-| Test 1 | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 0 |
-| Test 2 | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
-| Excel restart | Working pilot first, then ten consistent builds; conditional maximum twenty | Pilot blocked; 0 measured | 0 |
+| Clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
+| Test 1, superseded | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 0 |
+| Test 2, superseded | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
+| Excel restart, superseded | Working pilot first, then ten consistent builds; conditional maximum twenty | Pilot blocked; 0 measured | 0 |
 
 Test 1's final cumulative readings total **3,219 Cowork task credits**. All five
 missed managed server-side persistence, despite final UI scores of 95/100.

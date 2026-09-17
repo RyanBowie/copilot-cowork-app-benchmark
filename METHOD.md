@@ -28,8 +28,25 @@ browser interaction.
 
 The controller archives server state, restores only the owned synthetic fixture
 with exact ETags, and independently verifies the seed between sequential runs.
-No admin center, policy changes, publication or sharing is authorized. The
+No admin center, policy changes, app publication or app sharing is authorized. The
 existing live connection is reused, not the previous applications.
+
+The common browser review uses the native side-by-side preview (approximately
+580px app width) and a measured 390px mobile viewport. Later supplementary
+desktop captures widen the actual host to provide approximately 1066px of app
+space. Earlier files named "desktop" show the default desktop browser's narrower
+side-by-side preview, not identical wide-screen coverage. An oversized iframe
+clipped by its host is excluded from visual adjudication. The frozen rubric
+does not specify an exact desktop width; no all-breakpoint claim is made.
+Geometry alone does not establish usability: screenshots and control interaction
+are required, including readable search fields and reachable primary actions.
+
+External selector, validation-wording and preview-lifecycle calibration is
+recorded separately from app defects. A recoverable host-player error is retained
+with its UI retry, not silently replaced by another app. Review wall time includes
+this work; zero recorded interruption intervals is not proof of zero UI friction.
+BC09's connection-error/no-fallback behavior remains blocked where untested,
+so a 90/100 accepted result is not full coverage or production readiness.
 
 The earlier demo pilot and discarded focused run conservatively consume two
 of the hard twenty-demo-build ceiling. Ten fresh runs make twelve total. No

@@ -1,6 +1,6 @@
 # Findings
 
-## Clean restart: previous comparisons superseded
+## Completed clean cohort: previous comparisons superseded
 
 The user requested a complete redo after identifying additional billable
 Cowork self-review prompts that the controller should not have submitted.
@@ -16,7 +16,8 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first nine fresh runs meet the declared gate; the comparison is not complete:
+All ten fresh runs meet the declared gate. Eight did so at first output; two
+needed one narrowly evidenced layout repair each:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
@@ -29,6 +30,7 @@ The first nine fresh runs meet the declared gate; the comparison is not complete
 | 07 | Sonnet 5 / High | 313 / 313 | 90 / 90 | 0 | 0 |
 | 08 | Opus 5 / Medium | 425 / 425 | 90 / 90 | 0 | 0 |
 | 09 | Opus 5 / High | 478 / 786 | 80 / 90 | 1 | 0 |
+| 10 | Sonnet 5 / Medium | 230 / 230 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -198,15 +200,74 @@ The Opus High pair therefore cost **968 and 786 final credits**, with zero and
 one corrective prompts respectively. Higher effort did not eliminate a required
 layout repair in this observation.
 
-The nine final readings total **4,350 credits**, including two counted repairs
-and no native reviews or clarifications. The Sonnet Medium repeat is running.
-Four of five configurations have both final observations, so the model comparison
-is still incomplete. The ten fresh runs
-use four views and do not require approval/rejection workflows.
+The Sonnet Medium repeat passed unchanged at **230 first / 230 final credits**
+and **90/100**, with no extra maker prompts. Its first completed response was
+observed between **8m 44.184s and 8m 46.239s**; the final reviewed result took
+**14m 17.488s**. An independent controller baseline read initially raised
+"Failed to fetch" before any app checks or writes. A read-only retry verified
+the exact seed; the subsequent full browser/backend review passed. This
+controller/backend-read interruption is retained rather than blamed on the app.
+Its complete request was saved, reopened and read back, then safely removed
+after the conversation archive. The exact seed was independently verified.
+The builder disclosed single-page filtered reads; large-list correctness was
+not exercised.
+
+## Paired cost, time and maker guidance
+
+All ten final readings total **4,580 credits**. The first readings sum to
+**4,174 credits**; only the two repaired runs increased between first and final
+readings, by **98 and 308 credits**, respectively. These are task-level deltas,
+not isolated per-operation charges. Do not add first readings to cumulative
+final readings. There were **two corrective prompts, zero clarification prompts
+and zero native self-review prompts** across the clean cohort.
+
+| Selected configuration | Final credits, repeats 1 / 2 | Observed mean | Corrections | First completed response, repeats 1 / 2 | Reviewed result, repeats 1 / 2 |
+|---|---:|---:|---:|---|---|
+| Sonnet 5 / Medium | 224 / 230 | 227 | 0 / 0 | 10m 00s / 8m 46s | 23m 30s / 14m 17s |
+| GPT 5.5 / Medium | 345 / 252 | 298.5 | 1 / 0 | 8m 10s / 7m 51s | 20m 54s / 18m 11s |
+| Opus 5 / Medium | 417 / 425 | 421 | 0 / 0 | 8m 48s / 10m 24s | 17m 08s / 15m 11s |
+| Sonnet 5 / High | 620 / 313 | 466.5 | 0 / 0 | 16m 58s / 11m 26s | 31m 37s / 17m 48s |
+| Opus 5 / High | 968 / 786 | 877 | 0 / 1 | 19m 26s / 11m 28s | 31m 10s / 32m 10s |
+
+Times in this summary are rounded observed endpoints; the per-run data retain
+the sampled completion bounds. They include service waits, controller review,
+calibration and the disclosed retries, not isolated model execution.
+
+**Maker choice for this tested scope:** start with Sonnet 5 / Medium when cost
+is the priority. Its two runs were the cheapest final results, both meeting the
+same gate without additional prompts. GPT Medium's two initial bills were close
+(247 / 252), but one mobile repair raised the first final bill to 345. Higher
+effort is not justified by additional passed required capabilities in these
+observations, and did not prevent the Opus High mobile defect.
+
+**What was actually comparable:** all ten final apps passed the live catalogue,
+arithmetic, filters, basic validation, complete request saving, requester-specific
+listing, reopening and reviewed usability checks. Layout choices differed:
+responsive cards versus tables, drawers versus header navigation, and different
+chart/table treatments. The same 90-point gate does not make the apps identical
+in design, accessibility, error handling or scalability.
+
+**Limits on the recommendation:** two repetitions per setting do not establish
+reliable variance, future prices or success probabilities. Every build reused
+a working warm connection and a small synthetic fixture. Order, caching, service
+load, evolving controller instrumentation and unobserved internal model routing
+were not isolated. BC09 remains blocked in every run, and the supplemental
+caption/pagination limitations above remain open. There is no production
+authorization, concurrency or all-breakpoint claim. These are task-consumption
+measurements, not a Copilot Studio price conversion or a currency quote.
+
+All ten distinct apps used the same bound prompt hash. Each visible conversation
+was archived, with prompts, output captures, cost cards, app/backend evidence and
+**1,006 retained PNG files** across the clean run directories. That count includes
+raw failures and excluded instrumentation captures, not 1,006 independent passes.
+Account-bearing raw evidence stays private; the public report contains curated
+measurements and reproduction material. No extra replacement builds or extension
+were run. The ten fresh builds plus the two earlier demo attempts use twelve of
+the twenty-build ceiling.
 
 The following findings are **historical audit evidence only**.
 
-## No fully accepted winner
+## Superseded experiments: no persistence-capable winner
 
 All five pilot builds failed managed persistence. The first Dataverse-backed
 build also remains unaccepted because its write path fails. Choosing a model
