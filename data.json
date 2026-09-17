@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-17T12:23:05.645Z",
+  "generatedAt": "2026-09-17T12:53:27.613Z",
   "activeExperiment": "test-02-sharepoint-clean",
   "restartNotice": "Previous comparison results are superseded because additional billable Cowork self-review prompts were a controller error. Ten fresh SharePoint-connected builds now use controller-only review. Historical costs remain excluded audit data; no review-cost deduction is estimated.",
   "app": "Device Procurement and Availability",
@@ -154,6 +154,141 @@
           "effort": "High",
           "replicate": 1,
           "block": 1,
+          "status": "reviewed",
+          "comparisonEligible": true,
+          "first": {
+            "points": 90,
+            "maximum": 100,
+            "accepted": true,
+            "criticalFailures": [],
+            "incomplete": [
+              "BC09"
+            ]
+          },
+          "final": {
+            "points": 90,
+            "maximum": 100,
+            "accepted": true,
+            "criticalFailures": [],
+            "incomplete": [
+              "BC09"
+            ]
+          },
+          "firstCost": {
+            "status": "observed",
+            "value": 968,
+            "unit": "credits",
+            "scope": "Cowork task"
+          },
+          "finalCost": {
+            "status": "observed",
+            "value": 968,
+            "unit": "credits",
+            "scope": "Cowork task"
+          },
+          "increment": {
+            "value": 0,
+            "unit": "credits"
+          },
+          "timing": {
+            "firstBuildResponseSeconds": 1165.748,
+            "firstBuildResponseLowerBoundSeconds": 1163.623,
+            "firstCompletionObservation": "interval-bounded",
+            "finalReviewedResultSeconds": 1869.782,
+            "timeToAcceptanceSeconds": 1869.782,
+            "observedApprovalWaitSeconds": 0,
+            "recordedInterruptionSeconds": 0,
+            "approvalWaitStillOpen": false,
+            "interruptionStillOpen": false,
+            "firstCompletionDetectionWindowSeconds": 2.125,
+            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+          },
+          "reviews": 0,
+          "corrections": 0,
+          "clarifications": 0,
+          "approvals": 0,
+          "screenshotFiles": 112,
+          "archived": true,
+          "promptSha256": "71281644f6f8465bac8bcde4029fec509e09ea7c18cf2cd6dd6011b6586dad53",
+          "checks": [
+            {
+              "id": "BC01",
+              "capability": "Runnable private managed app",
+              "critical": true,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC02",
+              "capability": "Live catalogue connection",
+              "critical": true,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC03",
+              "capability": "Live dashboard arithmetic",
+              "critical": false,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC04",
+              "capability": "Catalogue search and filtering",
+              "critical": false,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC05",
+              "capability": "Complete saved request",
+              "critical": true,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC06",
+              "capability": "Basic request validation",
+              "critical": true,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC07",
+              "capability": "Live request listing",
+              "critical": false,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC08",
+              "capability": "Reopen persistence",
+              "critical": true,
+              "first": "pass",
+              "final": "pass"
+            },
+            {
+              "id": "BC09",
+              "capability": "Honest data and error states",
+              "critical": false,
+              "first": "blocked",
+              "final": "blocked"
+            },
+            {
+              "id": "BC10",
+              "capability": "Usable desktop and mobile build",
+              "critical": false,
+              "first": "pass",
+              "final": "pass"
+            }
+          ]
+        },
+        {
+          "id": "run-03",
+          "model": "Opus 5",
+          "effort": "Medium",
+          "replicate": 1,
+          "block": 1,
           "status": "in progress",
           "comparisonEligible": true,
           "first": null,
@@ -178,115 +313,9 @@
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 15,
+          "screenshotFiles": 12,
           "archived": false,
           "promptSha256": "71281644f6f8465bac8bcde4029fec509e09ea7c18cf2cd6dd6011b6586dad53",
-          "checks": [
-            {
-              "id": "BC01",
-              "capability": "Runnable private managed app",
-              "critical": true,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC02",
-              "capability": "Live catalogue connection",
-              "critical": true,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC03",
-              "capability": "Live dashboard arithmetic",
-              "critical": false,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC04",
-              "capability": "Catalogue search and filtering",
-              "critical": false,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC05",
-              "capability": "Complete saved request",
-              "critical": true,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC06",
-              "capability": "Basic request validation",
-              "critical": true,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC07",
-              "capability": "Live request listing",
-              "critical": false,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC08",
-              "capability": "Reopen persistence",
-              "critical": true,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC09",
-              "capability": "Honest data and error states",
-              "critical": false,
-              "first": "untested",
-              "final": "untested"
-            },
-            {
-              "id": "BC10",
-              "capability": "Usable desktop and mobile build",
-              "critical": false,
-              "first": "untested",
-              "final": "untested"
-            }
-          ]
-        },
-        {
-          "id": "run-03",
-          "model": "Opus 5",
-          "effort": "Medium",
-          "replicate": 1,
-          "block": 1,
-          "status": "not started",
-          "comparisonEligible": true,
-          "first": null,
-          "final": null,
-          "firstCost": null,
-          "finalCost": null,
-          "increment": null,
-          "timing": {
-            "firstBuildResponseSeconds": null,
-            "firstBuildResponseLowerBoundSeconds": null,
-            "firstCompletionObservation": "not-captured",
-            "finalReviewedResultSeconds": null,
-            "timeToAcceptanceSeconds": null,
-            "observedApprovalWaitSeconds": 0,
-            "recordedInterruptionSeconds": 0,
-            "approvalWaitStillOpen": false,
-            "interruptionStillOpen": false,
-            "firstCompletionDetectionWindowSeconds": null,
-            "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
-          },
-          "reviews": 0,
-          "corrections": 0,
-          "clarifications": 0,
-          "approvals": 0,
-          "screenshotFiles": 0,
-          "archived": false,
-          "promptSha256": null,
           "checks": [
             {
               "id": "BC01",

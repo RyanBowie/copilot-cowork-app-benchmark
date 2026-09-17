@@ -13,7 +13,10 @@ Clean run-01, Sonnet 5 / Medium, meets the acceptance gate at **90/100**:
 native review prompts. Actual live reads, request creation and reopen
 persistence passed. The noncritical error/no-fallback check remains blocked
 because it was not fault-tested; this is not a claim of complete error coverage.
-Run-02, Opus 5 / High, is running. Eight further fresh builds remain.
+Run-02, Opus 5 / High, also meets the gate at **90/100**, using **968 first /
+968 final credits** with no controller corrections, clarifications or review
+prompts. Run-03, Opus 5 / Medium, is running; seven further fresh builds remain.
+These are single observations per configuration, not a completed model ranking.
 
 The v5 method uses one implementation-only build prompt, independent controller
 review, and at most two narrow repair prompts for reproduced defects. It covers

@@ -16,11 +16,12 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first fresh run meets the declared gate; the comparison is not complete:
+The first two fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
 | 01 | Sonnet 5 / Medium | 224 / 224 | 90 / 90 | 0 | 0 |
+| 02 | Opus 5 / High | 968 / 968 | 90 / 90 | 0 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -32,14 +33,30 @@ from source claims. All critical checks passed.
 The first completed build response was observed within **9m 57.865s to
 10m 00.060s** after submission. The final externally reviewed result took
 **23m 29.916s**, including controller review and instrumentation, not just model
-execution. Both real task cost cards showed224 credits; no additional native
+execution. Both real task cost cards showed 224 credits; no additional native
 review or repair was requested. The controller archived the conversation and
 deleted only its test-created request, then independently verified the exact
 six-device/four-request fixture with no unexpected seed mutations.
 
-Fresh run-02, Opus 5 / High, is running. Eight further builds remain. One result
-does not establish a model ranking. The ten fresh runs use four views and do
-not require approval/rejection workflows.
+Opus High also passed live reads, complete request creation, requester scoping,
+reopening and usability. Its first internal implementation contained the read
+views only; the native parent continued completing the original specification
+without a controller prompt. All that native work is included in its 968 credits.
+The first completed build response was observed between **19m 23.623s and
+19m 25.748s**. The final externally reviewed result took **31m 09.782s**.
+
+Two initial blocked checks were instrumentation issues, not application
+defects: the search control correctly exposed the native `searchbox` role, and
+the reopen checker navigated the old iframe before its replacement document
+committed. Both were independently rechecked after fixing the controller.
+No paid repair was requested. Raw observations and separate adjudications are
+retained. BC09 remains untested/blocked for both runs. The controller deleted
+only its test-created request and independently reverified the exact seed.
+
+Fresh run-03, Opus 5 / Medium, is running. Seven further builds remain. A single
+observation per configuration does not establish repeatability or a model
+ranking. The ten fresh runs use four views and do not require approval/rejection
+workflows.
 
 The following findings are **historical audit evidence only**.
 
