@@ -11,7 +11,8 @@ accepted. Tests 1 and 2 remain completed, separate cohorts.
 | Virtual-data foundation | 176 | Not a separate measured delta | Exact seed/Overview, but Catalogue and Requests initially returned Page not found |
 | One targeted navigation repair | 251 | 75 | Five foundation screens reachable; multi-line draft saved, edited and reopened |
 | Separate Office 365 Users connection prompt | 367 | 116 | Actual in-app current-user GET returned 200; returned sign-in identity and displayed profile fields independently matched |
-| Virtual approvals/assets/themes | Not captured | Not captured | Planned authoring stage underway; no completed result claimed |
+| Virtual approvals/assets/themes | 770 | 403 | New views, old-threshold approval, saved theme/preferences and draft continuity observed |
+| Final policy/form/mobile change | Not captured | Not captured | Planned authoring underway; no complete target result claimed |
 
 **Build the app first, then connect Office 365 Users through that existing
 managed app.** The user corrected this sequence before the measured cohort
@@ -25,6 +26,24 @@ close/reopen refreshed its binding context; no extra repair prompt was needed
 for the connection. The real profile remained separate from the simulated
 business persona. All saved virtual records, including the GBP810 continuity
 draft, remained unchanged through the connection stage.
+
+Stage 3 migrated all three saved Submitted requests, including the disclosed
+controller extra, without changing stock or the continuity draft. The real
+profile continued to render in the signed-in app despite a builder-reported
+connection-reference limitation in its separate sandbox. Preference Cancel
+discarded unsaved edits; Dark, Compact and Engineering survived native reopen.
+The sampled heading still used the template's Geist font rather than the
+requested Segoe UI/Aptos; this observation is retained for final prompt-adherence
+review, not promoted to a passed typography requirement.
+
+A [deterministic carryover case](benchmark/test-03/policy-carryover-case.json)
+was registered before its first execution and before the first final-stage
+prompt. It tests an existing frozen requirement, without changing prompt bytes,
+rubric points or gates, and applies to all five configurations. A new GBP1440
+request (three docks and two tablets) was manager-approved under the old GBP1000
+threshold and correctly entered Pending finance without changing stock. It must
+remain there after the final threshold rises to GBP1440, unlike a newly
+manager-approved request at that exact amount.
 
 The independent controller retained its own calibration failures: a changed
 Profile heading, changed native app-opening controls after host refresh, a
@@ -50,6 +69,10 @@ These are task-consumption readings, not isolated connector prices or pure model
 execution times. Planned changes are separate from the single navigation repair.
 Controller inspection/recovery time remains in elapsed wall time. No native
 self-review prompt has been sent, including the builder's optional review offer.
+During the final planned change, the observer timed out reading the native
+page body. It reattached to the same still-running task without resubmitting
+the prompt or creating another app. The exact observation-gap duration is
+unknown; monitoring resumed without resetting the response deadline.
 
 ## Completed clean cohort: previous comparisons superseded
 

@@ -19,6 +19,14 @@ after stage 4, not after the intentionally incomplete foundation. Preserve every
 earlier-stage observation and repair rather than calling the final result an
 unaided first pass.
 
+The [policy carryover case](benchmark/test-03/policy-carryover-case.json) details
+an additional deterministic check of the already-frozen no-retroactive-routing
+requirement, registered before its first execution and the first stage-4 prompt.
+For every configuration, a GBP1440 request enters Pending finance under the old
+GBP1000 threshold in stage 3. Stage 4 must preserve that state while a newly
+manager-approved GBP1440 request follows the new direct-approval rule. This
+does not change authoring prompts, score weights or the acceptance threshold.
+
 Record actual cumulative `/cost` after each stage, repair and at the end. Initial
 credits cover the foundation; stage readings expose the later cumulative spend.
 Three planned follow-ups are counted separately from up to two defect corrections

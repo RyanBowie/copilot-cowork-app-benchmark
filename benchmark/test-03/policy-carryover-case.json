@@ -1,0 +1,24 @@
+{
+  "purpose": "Exercise the already-frozen stage-04 requirement that requests awaiting finance are not retroactively rerouted by the new threshold.",
+  "registration": "Before the first carryover case is created and before any stage-04 prompt is submitted. No prompt, rubric, score weight or acceptance gate changes.",
+  "appliesTo": "All five configurations, with the same synthetic scenario.",
+  "stage03": {
+    "requester": "Jamie Chen",
+    "department": "Engineering",
+    "justification": "Benchmark policy carryover",
+    "neededBy": "2026-10-25",
+    "lines": [
+      { "deviceId": "DEV004", "quantity": 3, "unitPrice": 180 },
+      { "deviceId": "DEV005", "quantity": 2, "unitPrice": 450 }
+    ],
+    "total": 1440,
+    "action": "Submit through the request form, then approve as Morgan Lee.",
+    "expectedStatus": "Pending finance under the old GBP1000 threshold",
+    "stockChange": 0
+  },
+  "stage04": {
+    "expectedStatus": "The same saved request remains Pending finance, with the same ID, lines and approval history.",
+    "contrast": "A newly manager-approved GBP1440 request follows the new threshold and goes directly to Approved.",
+    "continuityDraft": "Leave the separate GBP810 continuity draft unchanged."
+  }
+}

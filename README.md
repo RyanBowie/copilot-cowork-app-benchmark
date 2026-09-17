@@ -10,12 +10,17 @@ The first prompt builds the virtual-data app; the second connects Office 365 Use
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
 The first Sonnet 5 / Medium task has a verified in-app current-user profile and
-an intact saved multi-line draft; workflow authoring is underway, not a complete
+an intact saved multi-line draft; the final planned change is underway, not a complete
 Test 3 result. Its observed cumulative readings are **176** for the foundation,
 **251** after one navigation repair, and **367** after the separate in-app profile
-connection prompt. That last task increase is **116**, not an isolated connector
+connection prompt, followed by **770** after workflows/themes/preferences.
+The connection-stage increase is **116** and the workflow-stage increase is
+**403**, neither an isolated connector
 price. Native preview recovery and controller calibration are retained. The
-isolated profile fault/Retry check remains blocked, not passed.
+isolated profile fault/Retry check remains blocked, not passed. The saved dark
+theme, compact preference and GBP810 draft survive native reopen. A separate
+GBP1440 request is awaiting finance under the old policy, ready to verify that
+the final threshold change does not retroactively reroute it.
 The separate metadata-only setup used 40 credits, excluded from app-build totals.
 All planned changes, repairs, stage costs and independent findings are recorded
 separately. Tests 1 and 2 remain complete and are not invalidated by Test 3.
