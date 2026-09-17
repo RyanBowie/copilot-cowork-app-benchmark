@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-17T15:40:35.859Z",
+  "generatedAt": "2026-09-17T16:00:33.778Z",
   "activeExperiment": "test-02-sharepoint-clean",
   "restartNotice": "Previous comparison results are superseded because additional billable Cowork self-review prompts were a controller error. Ten fresh SharePoint-connected builds now use controller-only review. Historical costs remain excluded audit data; no review-cost deduction is estimated.",
   "app": "Device Procurement and Availability",
@@ -10,7 +10,8 @@
   "experiments": [
     {
       "id": "test-02-sharepoint-clean",
-      "title": "Clean restart: 10 SharePoint-connected builds",
+      "route": "test-02",
+      "title": "Test 2: 10 SharePoint-connected builds",
       "design": "Five model/effort configurations, each repeated twice in reverse-order blocks; ten fresh tasks and apps; controller-only review.",
       "runs": [
         {
@@ -1378,7 +1379,8 @@
     },
     {
       "id": "test-01",
-      "title": "Test 1: isolated-data pilot",
+      "route": "test-01",
+      "title": "Test 1: isolated-data pilot (historical)",
       "design": "Two named models x two shared effort levels, plus a baseline repeat. Five-run pilot, not a statistically reliable model ranking.",
       "runs": [
         {
@@ -2442,7 +2444,8 @@
     },
     {
       "id": "test-02",
-      "title": "Test 2: Dataverse-backed repeats",
+      "route": "test-02-dataverse",
+      "title": "Archived Dataverse attempt (superseded)",
       "design": "Five selected model/effort combinations, twice each, in two reverse-order blocks. Sequential builds against the same dedicated Dataverse tables, restored to the same seed between runs.",
       "runs": [
         {

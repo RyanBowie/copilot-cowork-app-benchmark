@@ -5,6 +5,11 @@ same **Device Procurement and Availability** business application, using differe
 model and effort selections in Copilot Cowork.
 
 **Complete: ten fresh SharePoint-connected builds, five configurations twice each.**
+These completed results are **Test 2** on the report page:
+[open Test 2](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-02).
+The earlier incomplete Dataverse matrix is now explicitly labelled
+[Archived Dataverse attempt](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-02-dataverse).
+
 Previous comparison results are superseded because additional billable Cowork
 self-review prompts were a controller error. No earlier run enters the clean
 comparison, and no estimated review cost is deducted from historical spend.
@@ -65,7 +70,7 @@ The earlier demo pilot and discarded focused run count toward the twenty-build
 ceiling: ten fresh builds bring the demo total to twelve, with no automatic
 extension registered.
 
-**Excluded historical status:** five pilot builds are complete. Test 2 has one completed, unaccepted
+**Excluded historical status:** five pilot builds are complete. The archived Dataverse experiment has one completed, unaccepted
 Dataverse-backed build; the other nine were not started before that cohort was
 superseded at an unresolved write-binding boundary. This is not a completed
 ten-run Dataverse comparison.
@@ -99,15 +104,19 @@ Benchmark instrumentation stays outside the business application.
 
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
-| Clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
+| Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
 | Test 1, superseded | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 0 |
-| Test 2, superseded | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
+| Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
 | Excel restart, superseded | Working pilot first, then ten consistent builds; conditional maximum twenty | Pilot blocked; 0 measured | 0 |
 
 Test 1's final cumulative readings total **3,219 Cowork task credits**. All five
 missed managed server-side persistence, despite final UI scores of 95/100.
+The original prompt explicitly required a managed persistent store, not browser
+localStorage. All five failed critical check **AC14**: 95 points did not override
+that mandatory requirement. Their separate exclusion for paid self-review is
+not the reason their functional outcome is "Not accepted."
 
-Test 2 run-01, Sonnet 5 / Medium, used **340 credits at first output** and
+The archived Dataverse run-01, Sonnet 5 / Medium, used **340 credits at first output** and
 **1,142 credits at the final reviewed result**, reaching **65/100** after two
 corrective prompts and one authorization clarification. Writes remain blocked.
 Do not add the first reading to the final cumulative reading.
@@ -132,7 +141,7 @@ The following twenty-check description belongs to the superseded experiments.
 - Observed time to first completed build response and final reviewed result.
   Time to acceptance exists only for an accepted app.
 
-Timing instrumentation began during Test 2 run-01. Its first completed response
+Timing instrumentation began during the archived Dataverse run-01. Its first completed response
 was observed by **14m 53s**: an upper bound, not an exact isolated generation time.
 The final reviewed result took **1h 49m 21s** wall-clock, including first-run
 harness calibration and connector investigation. That is not a model-speed
@@ -140,7 +149,7 @@ benchmark.
 
 ## Reproduction material
 
-- Clean restart [implementation-only prompt](benchmark/test-02-sharepoint-clean/build-prompt-template.txt),
+- Current SharePoint Test 2 [implementation-only prompt](benchmark/test-02-sharepoint-clean/build-prompt-template.txt),
   [protocol](benchmark/test-02-sharepoint-clean/protocol.json),
   [controller review instructions](benchmark/test-02-sharepoint-clean/external-review-instructions.txt)
   and [ten-check rubric](benchmark/test-02-sharepoint-demo/focused-acceptance.json).
@@ -148,7 +157,7 @@ benchmark.
 
 - [Test 1 prompt](benchmark/build-prompt.txt), [protocol](benchmark/protocol.json)
   and [acceptance rubric](benchmark/acceptance.json).
-- [Test 2 prompt template](benchmark/test-02/build-prompt-template.txt),
+- [Archived Dataverse prompt template](benchmark/test-02/build-prompt-template.txt),
   [protocol](benchmark/test-02/protocol.json),
   [amendments](benchmark/test-02/protocol-amendments.json),
   [review prompt](benchmark/test-02/review-prompt.txt) and
@@ -160,7 +169,7 @@ benchmark.
   [acceptance rubric](benchmark/test-02-excel/acceptance.json) and
   [setup status](benchmark/test-02-excel/setup-status.json).
 
-The Test 2 connection wording is deliberately simple: connect to Microsoft
+The archived Dataverse connection wording was deliberately simple: connect to Microsoft
 Dataverse at the supplied organization URL using Device List and Device Requests.
 That wording established live reads here; it is **not** evidence of working CRUD
 in every tenant.

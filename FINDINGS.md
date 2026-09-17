@@ -2,6 +2,10 @@
 
 ## Completed clean cohort: previous comparisons superseded
 
+This completed SharePoint cohort is **Test 2** in the report navigation.
+`#test-02` opens its ten results; `#test-02-dataverse` opens the distinct,
+superseded Dataverse attempt. The original internal evidence IDs are preserved.
+
 The user requested a complete redo after identifying additional billable
 Cowork self-review prompts that the controller should not have submitted.
 Ten fresh SharePoint-connected builds now use controller-only acceptance
@@ -295,7 +299,7 @@ server/cache recovery contributed to corrective work, so those outcomes cannot
 be assigned solely to intrinsic model quality. Other observed corrections
 included stale requester state and mobile overflow.
 
-## Test 2: one completed attempt, nine paused
+## Archived Dataverse attempt: one completed, nine never started
 
 | Metric | Run-01: Sonnet 5 / Medium |
 |---|---|
@@ -356,9 +360,10 @@ contracts. No tenant policy, role or permission changes were made.
 A connection status of **Connected**, successful schema binding, or a clean
 type-check is not proof of working application CRUD.
 
-The remaining nine runs are paused until an approved write-capable binding is
-established. Repeating the same unresolved backend failure would consume credits
-without producing the intended connected-app comparison.
+The remaining nine runs were not started before the user redirected the work.
+This Dataverse attempt is superseded by the completed SharePoint comparison,
+not an unfinished portion of the current Test 2. Repeating its unresolved backend
+failure would have consumed credits without the intended connected-app result.
 
 ## Guidance for makers
 

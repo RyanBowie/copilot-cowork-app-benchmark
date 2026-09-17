@@ -2,6 +2,12 @@
 
 ## Current method: clean restart, external review only
 
+Report navigation calls the completed SharePoint cohort **Test 2** (`#test-02`).
+The earlier Dataverse attempt is available at `#test-02-dataverse`; the original
+SharePoint link `#test-02-sharepoint-clean` remains supported. Internal experiment
+IDs and historical measurements are unchanged. In `data.json`, `route` is the
+public navigation key, distinct from the immutable evidence identifier `id`.
+
 At the user's explicit direction, all previous comparison results are
 superseded. Additional billable Cowork self-review prompts were a controller
 error. Historical evidence and gross task costs remain available for audit,
@@ -118,7 +124,7 @@ The pilot's active-generation ceiling was not instrumented reliably. Its
 historical wall time includes recovery and adapter work; no model-speed ranking
 is made from it.
 
-## Test 2
+## Archived Dataverse attempt (originally labelled Test 2)
 
 Five conditions are planned twice each:
 
@@ -210,9 +216,9 @@ boundary. Keep failed attempts and unavailable measurements in the data.
 Pause subsequent measured builds for an unresolved common backend boundary
 rather than repeatedly charging for the same setup failure.
 
-The first Test 2 run reached the correction limit with working reads but failing
-writes. The remaining nine runs are paused, not silently treated as zero-cost
-builds or omitted successes.
+The first Dataverse run reached the correction limit with working reads but
+failing writes. The remaining nine were never started before that cohort was
+superseded, not silently treated as zero-cost builds or omitted successes.
 
 ## Cost semantics
 
@@ -267,7 +273,7 @@ caching, connection reuse, service load, unchanged personal instructions and
 internal routing remain potential influences. Sequential oversell checks do
 not prove simultaneous-user safety or cross-table atomicity.
 
-Test 1 and Test 2 differ in backend availability and evaluation evidence.
+Test 1 and the archived Dataverse attempt differ in backend availability and evaluation evidence.
 Their cost difference is not an isolated estimate of Dataverse's price.
 
 - [Managed-app launch article](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/)
