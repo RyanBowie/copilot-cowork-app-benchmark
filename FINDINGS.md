@@ -16,7 +16,7 @@ history, not a focused-app price. The discarded focused attempt's **311 initial
 credits / 70 first-output points** are also excluded; its later repaired
 Dashboard was not independently rechecked before the redo instruction.
 
-The first eight fresh runs meet the declared gate; the comparison is not complete:
+The first nine fresh runs meet the declared gate; the comparison is not complete:
 
 | Clean run | Model / effort | First / final credits | First / final score | Corrections | Native reviews |
 |---|---|---:|---:|---:|---:|
@@ -28,6 +28,7 @@ The first eight fresh runs meet the declared gate; the comparison is not complet
 | 06 | GPT 5.5 / Medium | 252 / 252 | 90 / 90 | 0 | 0 |
 | 07 | Sonnet 5 / High | 313 / 313 | 90 / 90 | 0 | 0 |
 | 08 | Opus 5 / Medium | 425 / 425 | 90 / 90 | 0 | 0 |
+| 09 | Opus 5 / High | 478 / 786 | 80 / 90 | 1 | 0 |
 
 The controller independently verified all six live catalogue rows, dashboard
 arithmetic, search/filters, input validation, one complete Pending request,
@@ -160,10 +161,48 @@ pending requests whose devices are outside the loaded catalogue page, with
 warnings. Those cross-page cases were not exercised by this small-fixture test.
 Do not extrapolate its accepted result to whole-list totals at production scale.
 
-Run-09, the Opus High repeat, is running; the Sonnet Medium repeat remains. Three
-of five configurations have both observations, so the model comparison is still
-incomplete. The ten fresh runs use four views and do not require
-approval/rejection workflows.
+The Opus High repeat delivered at **478 credits** and **80/100**. Its first
+completed response was observed between **11m 25.371s and 11m 27.571s**.
+Live data, arithmetic, filters and complete request saving passed. The validation
+checker initially rejected the perfectly relevant alert "Explain why this
+equipment is needed"; all invalid-input cases passed independent rechecking.
+
+The first normal reopening hit the host message "Something went wrong with the
+player. Try again." One subsequent Close preview / Open app retry recovered the
+same app and complete saved request, with unchanged backend records. This
+interruption and extra UI retry are retained, not hidden or counted as a paid
+app repair.
+
+Visual review found a genuine BC10 defect: at **390px**, the catalogue search
+input collapses to approximately **35.5px**, with its label wrapping to five
+lines. Filtering still works, but a search term is not usefully readable. One
+counted correction requested only that mobile filter layout repair, without a
+self-review. An earlier card named
+"final" in the private files was captured before this visual finding and is
+explicitly retained as a provisional, pre-repair 478-credit observation.
+
+Independent regression confirmed a readable full-width search (**358px** while
+entering "Surface" at a 390px viewport), stacked mobile filters, usable selectors,
+keyboard/focus and reachable submission controls. All search/filter and invalid
+input cases passed; both personas and another normal reopening showed the
+original complete saved request. App identity, binding and backend data were
+unchanged. No second valid request was submitted after this layout-only repair.
+
+The post-repair and fresh end-of-review cards both showed **786 credits**:
+an observed **308-credit increase** from first output. The final score is
+**90/100**, with BC09 still blocked. The reviewed result took **32m 09.991s**,
+including controller calibration, the player retry, external review and repair;
+this is not isolated model execution time. The conversation was archived, only
+the controller's test row was removed, and the exact seed was verified.
+The Opus High pair therefore cost **968 and 786 final credits**, with zero and
+one corrective prompts respectively. Higher effort did not eliminate a required
+layout repair in this observation.
+
+The nine final readings total **4,350 credits**, including two counted repairs
+and no native reviews or clarifications. The Sonnet Medium repeat is running.
+Four of five configurations have both final observations, so the model comparison
+is still incomplete. The ten fresh runs
+use four views and do not require approval/rejection workflows.
 
 The following findings are **historical audit evidence only**.
 
