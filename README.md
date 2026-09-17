@@ -4,7 +4,22 @@ An evidence-led comparison of the cost, time and delivered capabilities of the
 same **Device Procurement and Availability** business application, using different
 model and effort selections in Copilot Cowork.
 
-**Status:** five pilot builds are complete. Test 2 has one completed, unaccepted
+**Current status: ten fresh SharePoint-connected builds are being redone.**
+Previous comparison results are superseded because additional billable Cowork
+self-review prompts were a controller error. No earlier run enters the clean
+comparison, and no estimated review cost is deducted from historical spend.
+Clean run-01, Sonnet 5 / Medium, started on 17 September 2026.
+
+The v5 method uses one implementation-only build prompt, independent controller
+review, and at most two narrow repair prompts for reproduced defects. It covers
+Dashboard, Catalogue, New request and My requests, including real SharePoint
+writes and reopening. No approval workflow or native self-review is requested.
+Five model/effort settings are repeated twice in reverse-order blocks.
+The earlier demo pilot and discarded focused run count toward the twenty-build
+ceiling: ten fresh builds bring the demo total to twelve, with no automatic
+extension registered.
+
+**Excluded historical status:** five pilot builds are complete. Test 2 has one completed, unaccepted
 Dataverse-backed build; the other nine are paused at an unresolved write-binding
 boundary. This is not a completed ten-run comparison.
 The subsequent Excel restart has a verified OneDrive workbook, but its setup
@@ -16,6 +31,10 @@ remain gated on a working pilot.
 [Method](METHOD.md) | [Findings](FINDINGS.md) | [Public data](data.json)
 
 ## The business use case
+
+The **current** app lets employees browse live equipment availability, save a
+complete Pending request and reopen their saved requests. The historical
+approval/reset scope below is retained for interpreting old evidence only.
 
 Employees browse available equipment, submit device requests and track decisions.
 An IT approver approves or rejects requests and maintains available stock.
@@ -53,6 +72,11 @@ completed Excel model comparison.
 
 ## What is measured
 
+For the clean restart, ten controller-owned checks earn ten points each.
+Acceptance requires 85/100 and every critical check. There is no billable review
+prompt; the controller performs all preview, backend and visual assessment.
+The following twenty-check description belongs to the superseded experiments.
+
 - Actual Cowork `/cost` readings, not estimated token prices or Copilot CLI billing.
 - Twenty acceptance checks, five points each; acceptance requires at least 85/100
   **and every critical check passing**.
@@ -67,6 +91,12 @@ harness calibration and connector investigation. That is not a model-speed
 benchmark.
 
 ## Reproduction material
+
+- Clean restart [implementation-only prompt](benchmark/test-02-sharepoint-clean/build-prompt-template.txt),
+  [protocol](benchmark/test-02-sharepoint-clean/protocol.json),
+  [controller review instructions](benchmark/test-02-sharepoint-clean/external-review-instructions.txt)
+  and [ten-check rubric](benchmark/test-02-sharepoint-demo/focused-acceptance.json).
+  The controller instructions must **never** be sent to Cowork.
 
 - [Test 1 prompt](benchmark/build-prompt.txt), [protocol](benchmark/protocol.json)
   and [acceptance rubric](benchmark/acceptance.json).

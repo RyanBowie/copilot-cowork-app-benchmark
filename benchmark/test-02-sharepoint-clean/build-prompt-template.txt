@@ -1,0 +1,26 @@
+/app Build a NEW PRIVATE managed app named "Device Procurement and Availability". Employees use it to browse live equipment availability, submit a device request and see their saved requests. Build the actual working app, not a design document, HTML attachment or connector console. Do not reuse another app or publish/share it.
+
+DATA SOURCE
+Use the signed-in demo account and its working SharePoint connection to {{SITE_URL}}. Use only the existing lists "Cowork Benchmark T2 Devices" ({{DEVICES_LIST_ID}}) and "Cowork Benchmark T2 Requests" ({{REQUESTS_LIST_ID}}).
+Read the actual connector schemas and live rows. All business data must come from and be saved to these lists. Do not use hardcoded seed data, localStorage, IndexedDB or a mock fallback. If the supported binding fails, report the exact error instead of claiming success.
+Filter to BenchmarkTag = CoworkAppBenchmark-Test02-20260916 and preserve that tag on new requests. Keep the tag and technical SharePoint item/list IDs out of the UI.
+Devices: Id/ID is the SharePoint item ID; Title is the device name; DeviceId is the unique business ID; Category is a Choice; UnitPriceGBP is GBP currency; AvailableQuantity is an integer.
+Requests: Id/ID is the SharePoint item ID; Title and RequestId contain the unique request business ID; Requester, Department, CostCentre and DeviceId are text; Quantity is an integer; NeededBy is DateOnly; Justification is multiline text; Status is a Choice; RejectionReason is optional text.
+Use the raw connector schema for serialization: SharePoint Choice writes use the declared expanded Value object, for example Status = {"Value":"Pending"}, even if generated TypeScript declarations simplify the field to a string. Use actual item IDs for item operations, not business IDs. Never put credentials/tokens in code or logs.
+
+BUILD THESE FOUR VIEWS
+1. Dashboard: compute live device model count, total available units, pending request count and total GBP pending value. Recompute after a successful request.
+2. Catalogue: show a table with Device ID, Name, Category, Unit price GBP and Available quantity. Support search by device name or ID, combined category/available-only filters, and a useful empty state.
+3. New request: fields labelled Device, Quantity, Needed by and Justification; show unit price and calculated GBP total. Capture the selected requester's name/department/cost centre. Reject missing fields, whitespace justification, past dates, non-positive/fractional quantities, quantities above stock and unavailable devices. "Submit request" must save exactly one complete Pending row with a unique business ID and the ownership tag, without changing inventory. Confirm success only after the write succeeds; make partial-write failures explicit.
+4. My requests: show the current requester's live saved requests with business ID, device, quantity, GBP total, needed-by date and status. Refresh after submission and persona changes.
+
+Provide a clearly labelled synthetic persona selector: Jamie Demo (Engineering, CC100) and Taylor Demo (Finance, CC200). It is a demo switch, not secure authorization.
+Use clear labels, keyboard-operable controls, visible focus, loading/error states and a professional desktop/390px mobile layout. Use the exact view and field labels above so the same external review can be repeated.
+
+SCOPE
+No approval/rejection workflow, approver role, inventory editing or reset feature is required. Do not add them. Do not change existing records, list schemas/permissions, connection policies, or unrelated resources. Do not send messages or place orders. The external benchmark controller restores its owned test records between runs.
+Read the existing six-device/four-request seed rather than recreating it. At that seed the dashboard is 6 models,25 units,3 pending and GBP3800. A new Pending request for two DEV004 docks is GBP360 and leaves stock unchanged.
+
+DELIVERY
+Return the working private app/preview entry, implemented capabilities, actual SharePoint binding approach and any limitations. Make reasonable implementation choices without preference questions.
+Perform implementation and normal build/type checks only. Do not run a separate self-review, acceptance-testing pass or create test records. The external controller will independently test the app, including saving a request and reopening it. Do not claim untested behavior has been verified.

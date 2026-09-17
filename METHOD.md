@@ -1,5 +1,50 @@
 # Method
 
+## Current method: clean restart, external review only
+
+At the user's explicit direction, all previous comparison results are
+superseded. Additional billable Cowork self-review prompts were a controller
+error. Historical evidence and gross task costs remain available for audit,
+not current model selection. No estimated review-only cost is subtracted.
+
+Version 5 starts ten fresh tasks and apps against the same working demo
+SharePoint lists. It uses the five configurations in the reverse-order matrix
+below, with an identical implementation-only prompt. Normal implementation and
+build/type checks belong to authoring; separate self-review and acceptance tests
+are not requested from Cowork. The controller performs all app reviews.
+
+The scope is Dashboard, Catalogue, New request and My requests. Approval and
+rejection workflows, inventory editing and app reset are excluded. Ten checks
+worth ten points each cover live data, arithmetic, filters, complete request
+creation, validation, requester scoping, reopen persistence, honest states and
+desktop/mobile usability. Acceptance is 85/100 plus all critical checks.
+
+Read the real `/cost` after first delivery, after each requested repair and at
+session end. Only a reproduced defect can trigger a counted, narrow repair
+prompt; no generic review, audit or testing prompt may be sent. There are at
+most two corrections and two clarification answers quoting the frozen spec.
+The harness rejects native reviews and new authoring under old protocols before
+browser interaction.
+
+The controller archives server state, restores only the owned synthetic fixture
+with exact ETags, and independently verifies the seed between sequential runs.
+No admin center, policy changes, publication or sharing is authorized. The
+existing live connection is reused, not the previous applications.
+
+The earlier demo pilot and discarded focused run conservatively consume two
+of the hard twenty-demo-build ceiling. Ten fresh runs make twelve total. No
+automatic extension or unrecorded replacement is registered. Keep every new
+failure and stop for a common unresolved platform blocker.
+
+Frozen v5 protocol SHA-256:
+`838a5c94f5e306fd30860a7e1b3fa4482a07fc31cecbc73a43269e4723e98acd`
+
+Frozen bound prompt SHA-256 (actual tenant bindings retained privately):
+`71281644f6f8465bac8bcde4029fec509e09ea7c18cf2cd6dd6011b6586dad53`
+
+The rest of this document preserves **superseded historical methods**, not
+instructions for new runs. Their paid review prompts must not be reused.
+
 ## Question and scope
 
 How much observed Cowork task consumption and maker guidance does it take to

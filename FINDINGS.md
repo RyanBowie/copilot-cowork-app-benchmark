@@ -1,5 +1,27 @@
 # Findings
 
+## Clean restart: previous comparisons superseded
+
+The user requested a complete redo after identifying additional billable
+Cowork self-review prompts that the controller should not have submitted.
+Ten fresh SharePoint-connected builds now use controller-only acceptance
+review. No previous result enters that clean comparison, including the
+discarded focused run's initial cost. Old spend and evidence remain unchanged;
+there is no reliable review-cost deduction.
+
+A demo SharePoint pilot demonstrated actual live reads, request creation and
+reopen persistence under the later narrowed scope. Its **1,976 final task
+credits** include broader troubleshooting and paid review, so it is setup
+history, not a focused-app price. The discarded focused attempt's **311 initial
+credits / 70 first-output points** are also excluded; its later repaired
+Dashboard was not independently rechecked before the redo instruction.
+
+Clean run-01, Sonnet 5 / Medium, started on 17 September 2026. No accepted clean
+result or model recommendation is claimed yet. The ten fresh runs use four
+views and do not require approval/rejection workflows.
+
+The following findings are **historical audit evidence only**.
+
 ## No fully accepted winner
 
 All five pilot builds failed managed persistence. The first Dataverse-backed
@@ -19,10 +41,9 @@ solely from a low credit reading would ignore the missing required capability.
 Final cumulative readings total **3,219 credits**. Every final score still
 contains the critical AC14 persistence failure.
 
-The two Sonnet Medium final readings span **317-397 credits**. This is a small
-observed range, not a price prediction or confidence interval. Sonnet Medium was
-the least expensive observed UI-prototype condition in this pilot; that
-conditional observation excludes the unmet server-persistence requirement.
+The two historical Sonnet Medium final readings span **317-397 credits**.
+These include the superseded paid-review method and do not establish a
+clean build-price range or a current model recommendation.
 
 Opus High initially delivered a shell and Opus Medium a blank preview. Preview
 server/cache recovery contributed to corrective work, so those outcomes cannot
