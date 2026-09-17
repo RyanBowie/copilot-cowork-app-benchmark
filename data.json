@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-17T21:12:03.648Z",
+  "generatedAt": "2026-09-17T21:46:38.673Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -58,23 +58,47 @@
                 "value": 176,
                 "unit": "credits",
                 "scope": "Cowork task"
-              }
+              },
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-02",
               "title": "Connect the existing managed app to Office 365 Users",
               "kind": "planned-change",
-              "submitted": false,
-              "responseComplete": false,
-              "cost": null
+              "submitted": true,
+              "responseComplete": true,
+              "cost": {
+                "status": "observed",
+                "value": 367,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
+              "costBeforePrompt": {
+                "status": "observed",
+                "value": 251,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
+              "increaseSincePrecedingReading": {
+                "value": 116,
+                "unit": "credits"
+              }
             },
             {
               "id": "stage-03",
               "title": "Virtual approvals, asset lifecycle, themes and preferences",
               "kind": "planned-change",
-              "submitted": false,
+              "submitted": true,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": {
+                "status": "observed",
+                "value": 367,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-04",
@@ -82,14 +106,21 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             }
           ],
-          "plannedChanges": 0,
+          "plannedChanges": 2,
+          "profileProof": {
+            "stageId": "stage-02",
+            "verifiedInApp": true,
+            "errorRetryCoverage": "blocked"
+          },
           "corrections": 1,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 43,
+          "screenshotFiles": 110,
           "archived": false,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [
@@ -269,7 +300,9 @@
               "kind": "build",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-02",
@@ -277,7 +310,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-03",
@@ -285,7 +320,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-04",
@@ -293,10 +330,17 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             }
           ],
           "plannedChanges": 0,
+          "profileProof": {
+            "stageId": "stage-02",
+            "verifiedInApp": false,
+            "errorRetryCoverage": "untested"
+          },
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
@@ -480,7 +524,9 @@
               "kind": "build",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-02",
@@ -488,7 +534,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-03",
@@ -496,7 +544,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-04",
@@ -504,10 +554,17 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             }
           ],
           "plannedChanges": 0,
+          "profileProof": {
+            "stageId": "stage-02",
+            "verifiedInApp": false,
+            "errorRetryCoverage": "untested"
+          },
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
@@ -691,7 +748,9 @@
               "kind": "build",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-02",
@@ -699,7 +758,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-03",
@@ -707,7 +768,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-04",
@@ -715,10 +778,17 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             }
           ],
           "plannedChanges": 0,
+          "profileProof": {
+            "stageId": "stage-02",
+            "verifiedInApp": false,
+            "errorRetryCoverage": "untested"
+          },
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
@@ -902,7 +972,9 @@
               "kind": "build",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-02",
@@ -910,7 +982,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-03",
@@ -918,7 +992,9 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             },
             {
               "id": "stage-04",
@@ -926,10 +1002,17 @@
               "kind": "planned-change",
               "submitted": false,
               "responseComplete": false,
-              "cost": null
+              "cost": null,
+              "costBeforePrompt": null,
+              "increaseSincePrecedingReading": null
             }
           ],
           "plannedChanges": 0,
+          "profileProof": {
+            "stageId": "stage-02",
+            "verifiedInApp": false,
+            "errorRetryCoverage": "untested"
+          },
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
@@ -1105,7 +1188,7 @@
           "kind": "planned-change"
         }
       ],
-      "stageNote": "Build first; connect Office 365 Users through the existing app next. Planned changes are not repairs. First credits are the initial virtual build; the first full-capability assessment follows stage 4. Each stage card is cumulative, not an isolated connector price.",
+      "stageNote": "Build first; connect Office 365 Users through the existing app next. Planned changes are not repairs. First credits are the initial virtual build; the first full-capability assessment follows stage 4. Each stage card is cumulative. Increases use the last observed task reading before that prompt, including a preceding repair reading where present; they are not isolated connector or token prices.",
       "setupCredits": 40,
       "buildBudget": null,
       "setup": null,

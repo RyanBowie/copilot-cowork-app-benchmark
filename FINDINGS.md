@@ -1,5 +1,56 @@
 # Findings
 
+## Test 3: early in-app profile milestone, not a completed comparison
+
+Five complex virtual-data apps are planned, with the same four prompts per app.
+The first Sonnet 5 / Medium run is in progress; no full Test 3 app has yet been
+accepted. Tests 1 and 2 remain completed, separate cohorts.
+
+| First-run milestone | Observed cumulative credits | Increase from preceding reading | Independent observation |
+|---|---:|---:|---|
+| Virtual-data foundation | 176 | Not a separate measured delta | Exact seed/Overview, but Catalogue and Requests initially returned Page not found |
+| One targeted navigation repair | 251 | 75 | Five foundation screens reachable; multi-line draft saved, edited and reopened |
+| Separate Office 365 Users connection prompt | 367 | 116 | Actual in-app current-user GET returned 200; returned sign-in identity and displayed profile fields independently matched |
+| Virtual approvals/assets/themes | Not captured | Not captured | Planned authoring stage underway; no completed result claimed |
+
+**Build the app first, then connect Office 365 Users through that existing
+managed app.** The user corrected this sequence before the measured cohort
+started. The existing authorized connection worked without recreation or
+re-consent. General Cowork connector metadata had not established an app read,
+and an old token-expiry timestamp did not prove a broken connection. That earlier
+40-credit metadata-only setup created no app and is excluded from measured totals.
+
+The app's pre-connection preview initially showed a profile error. Native
+close/reopen refreshed its binding context; no extra repair prompt was needed
+for the connection. The real profile remained separate from the simulated
+business persona. All saved virtual records, including the GBP810 continuity
+draft, remained unchanged through the connection stage.
+
+The independent controller retained its own calibration failures: a changed
+Profile heading, changed native app-opening controls after host refresh, a
+PowerShell currency-regex encoding issue, and the difference between a user's
+SMTP mail alias and sign-in UPN. None is classified as an extra model defect.
+The app selects the six requested profile fields, not a directory object ID;
+the returned UPN established identity, while visible fields matched the response.
+Corporate profile values and raw screenshots remain private.
+
+One quantity test initially assumed that entering zero left zero in the form.
+The control visibly normalized it to one; the checker then submitted a valid
+one-unit synthetic request. That controller-created extra is preserved and
+disclosed, not deleted or misreported as an invalid write. The original fixture
+was independently verified before this mutation. Later derived-metric checks
+must include the retained extra.
+
+Complete profile error/Retry coverage remains **blocked**: an isolated probe
+aborted four requests to the exact read-only current-user operation, but did not
+observe an alert within its 30-second window. The temporary interception was
+removed and the normal app restored. This is not awarded a fault-handling pass.
+
+These are task-consumption readings, not isolated connector prices or pure model
+execution times. Planned changes are separate from the single navigation repair.
+Controller inspection/recovery time remains in elapsed wall time. No native
+self-review prompt has been sent, including the builder's optional review offer.
+
 ## Completed clean cohort: previous comparisons superseded
 
 This completed SharePoint cohort is **Test 2** in the report navigation.
