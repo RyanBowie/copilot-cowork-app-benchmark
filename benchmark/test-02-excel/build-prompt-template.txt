@@ -1,0 +1,51 @@
+/app Build a NEW PRIVATE managed app named "Device Procurement and Availability" for employees to find available equipment, request devices and track approvals, and for IT to manage requests and stock. Build the working business application, not a design document, standalone HTML attachment, connector test console or benchmark dashboard. Do not reuse another app. Do not publish/share, change permissions or schemas, send messages, place real orders, or access unrelated organizational data. Make reasonable decisions without preference questions.
+
+AUTHORIZED BACKEND
+Connect to the existing Device Procurement.xlsx workbook in my OneDrive using the supported Excel Online (Business) connector: {{WORKBOOK_URL}}
+Use only its two existing structured Excel tables: DeviceList on the Device List sheet, and DeviceRequests on the Device Requests sheet. The workbook is in the folder Device Procurement - Test 2 Excel - 20260917, owned by the signed-in work account.
+Read their schemas and live data; use this workbook for all persistence, not mock data, localStorage, IndexedDB or component-only state. Do not create another workbook, use Dataverse, read unrelated files, or seed/reset on startup.
+The internal DemoDataset column identifies this app's demo rows: CoworkAppBenchmark-Test02-Excel-20260917. Preserve it on new requests. Read both small tables completely and filter rows locally to this value; Excel connector OData filtering/sorting/select is unsupported for tables with hidden columns. Keep this field, connector/file identifiers and all test/benchmark instrumentation out of the business UI. Use normal headings such as Catalogue, New request, My requests and Approvals.
+
+EXCEL FIELD MAPPING
+DeviceList: DeviceID is the unique text business key; DeviceName and Category are text; UnitPriceGBP is a numeric two-decimal GBP amount; AvailableQuantity is a whole number; DemoDataset is text.
+DeviceRequests: RequestID is the unique text business key; Requester, Department, CostCentre and DeviceID are text; Quantity is a whole number; NeededBy is ISO date TEXT in YYYY-MM-DD format, not an Excel date serial; Justification, Status, RejectionReason and DemoDataset are text. RejectionReason is optional.
+Category labels: Laptop, Accessory, Tablet, Monitor. Status labels: Pending, Approved, Rejected.
+Use the case-sensitive existing DeviceID and RequestID key columns for row operations. Relate requests to devices through DeviceID. Do not add generated key columns, duplicate keys, or modify table/column names. Do not put credentials or tokens in source or logs.
+Serialize writes and prevent duplicate submission while a save is pending. Excel row changes can take up to 30 seconds to become visible: confirm the saved record and refresh affected views with bounded rereads, without blindly repeating a create. Surface delays, errors and partial failures honestly. This sequential demo is not a claim of database transactions or simultaneous-user safety.
+
+PURPOSE AND USERS
+Employees find available devices, submit requests and track progress. Morgan approves or rejects requests and sees stock changes. Provide a clearly labelled demo persona switch:
+Jamie Demo - requester, Engineering, CC100.
+Taylor Demo - requester, Finance, CC200.
+Morgan Demo - approver.
+Use only these synthetic identities. This simulated persona switch is NOT secure role-based authorization.
+
+REQUIRED VIEWS AND BEHAVIOR
+1. Dashboard: compute device model count, total available units, pending request count and total GBP pending value from live workbook records. Update after writes.
+2. Catalogue: show device ID, name, category, unit price in GBP and available quantity. Search by name or ID; combine category/availability filters; show a useful no-results state.
+3. New request: select a device, enter positive whole-number quantity, date today or later, and nonblank justification. Capture the current requester/department/cost centre. Show unit price and calculated total. Reject missing fields, whitespace-only justification, zero/negative/fractional quantity, over-stock quantities and unavailable devices. Write exactly one Pending workbook request, without decrementing stock. Show field-level errors and a success confirmation only after the write succeeds.
+4. My requests: show the current requester's live requests, including ID, device, quantity, total GBP amount, needed-by date and status. Changing personas must update the view.
+5. Approvals: for Morgan, show pending requests with full detail. Approve changes Pending to Approved and subtracts quantity from live device stock exactly once. Recheck the latest stock and request status before approval. Reject requires a reason, persists Rejected/reason and leaves stock unchanged. Non-Pending requests cannot be acted on again. Two pending requests must not oversell a device when approved sequentially. Surface insufficient-stock and connector errors without claiming success. Do not hide partial failures.
+6. Real persistence: new requests, decisions, reasons and stock must be stored in those Excel tables and survive app reload/reopen. The external reviewer will independently read the saved workbook. No browser-only or hardcoded fallback. If binding/authentication/platform support blocks this, state the exact limitation.
+7. "Reset demo data": require confirmation, then restore only this app's synthetic records to the exact seed below, including blank rejection reasons where specified. Cancel changes nothing. Never delete a workbook/table, change its schema/permissions, or touch untagged records. Restore six devices/four requests without duplication. Do not subtract stock again for historical seed requests.
+8. Readable professional styling, visible labels, keyboard-operable controls, clear focus, loading/error states and usable desktop and 390px mobile layouts. No external images, packages or services unless supplied by the managed-app platform. No unrelated features.
+
+EXACT SEED REFERENCE - VERIFY AGAINST THE TABLES, DO NOT SUBSTITUTE THESE CONSTANTS FOR LIVE DATA
+Devices (DeviceID | DeviceName | Category | UnitPriceGBP | AvailableQuantity):
+DEV001 | Surface Laptop 13 | Laptop | 1200 | 8
+DEV002 | Latitude 14 | Laptop | 950 | 3
+DEV003 | MacBook Air 13 | Laptop | 1100 | 0
+DEV004 | USB-C Dock | Accessory | 180 | 12
+DEV005 | iPad 128GB | Tablet | 450 | 2
+DEV006 | 27-inch Monitor | Monitor | 280 | 0
+
+Requests (RequestID | Requester | Department | CostCentre | DeviceID | Quantity | NeededBy | Justification | Status | RejectionReason):
+REQ001 | Jamie Demo | Engineering | CC100 | DEV001 | 2 | 2026-10-15 | New starter equipment | Pending |
+REQ002 | Taylor Demo | Finance | CC200 | DEV002 | 1 | 2026-10-20 | Replace ageing laptop | Pending |
+REQ003 | Jamie Demo | Engineering | CC100 | DEV005 | 1 | 2026-10-22 | Mobile application testing | Pending |
+REQ004 | Taylor Demo | Finance | CC200 | DEV004 | 1 | 2026-10-15 | Additional desk setup | Rejected | Duplicate request
+
+Every seed row carries DemoDataset = CoworkAppBenchmark-Test02-Excel-20260917. Initial dashboard: 6 device models, 25 units, 3 pending requests, GBP 3800 pending value.
+
+DELIVERY
+Finish with the private embedded app/preview entry, implemented capabilities, actual Excel workbook/table binding approach, and any limitations or unfinished requirements. Clearly distinguish live tests from source inspection. Do not claim untested behavior works.

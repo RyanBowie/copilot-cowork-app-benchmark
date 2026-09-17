@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-16T22:40:09.342Z",
+  "generatedAt": "2026-09-17T00:35:27.469Z",
   "app": "Device Procurement and Availability",
   "unitNote": "Observed Cowork task credits, not currency or a tenant invoice. Final cumulative readings are not added to initial readings.",
   "timingNote": "Elapsed wall-clock seconds from build submission to observed first response and final reviewed result. Approval waits and recorded interruptions remain included. These are not pure model execution times; missing completion timestamps are unavailable, not zero. Timing instrumentation began during Test 2 run-01.",
@@ -2911,5 +2911,127 @@
       },
       "protocolSha256": "2d19326bc7bf728eedf7b8dbb41d767eced752679ff461027d8ce47688525048"
     }
-  ]
+  ],
+  "excelRestart": {
+    "status": "pilot-blocked-before-live-connection",
+    "message": "The OneDrive workbook and its two structured tables are verified, but the pilot did not establish a managed-app connection. The supported table-binding path returned HTTP403: operation is not on the managed-apps allowlist, at its table-schema metadata step. No measured Excel builds were started.",
+    "workbookCreated": true,
+    "savedSeedVerified": true,
+    "initialMeasuredBuildsPlanned": 10,
+    "maximumMeasuredBuildsAuthorized": 20,
+    "measuredBuildsStarted": 0,
+    "measuredPromptFrozen": false,
+    "deniedEndpointShape": "GET /v2/$metadata.json/datasets/{dataset}/tables/{table}",
+    "actionModeEvidence": "An earlier claimed action-mode attempt actually used table mode and was retracted. A standalone action-mode command was not executed because support under the connector-specific documented flow was not established. No successful or failed action-mode execution is claimed.",
+    "connectorPreflightCredits": 117,
+    "pilot": {
+      "measurementClass": "unmeasured setup pilot",
+      "model": "Sonnet 5",
+      "effort": "Medium",
+      "first": {
+        "points": 0,
+        "maximum": 100,
+        "accepted": false,
+        "criticalFailures": [
+          "AC04",
+          "AC06",
+          "AC07",
+          "AC08",
+          "AC10",
+          "AC11",
+          "AC12",
+          "AC13",
+          "AC14",
+          "AC20"
+        ],
+        "incomplete": [
+          "AC01",
+          "AC02",
+          "AC03",
+          "AC04",
+          "AC05",
+          "AC06",
+          "AC07",
+          "AC08",
+          "AC09",
+          "AC10",
+          "AC11",
+          "AC12",
+          "AC13",
+          "AC14",
+          "AC15",
+          "AC16",
+          "AC17",
+          "AC18",
+          "AC19"
+        ]
+      },
+      "final": {
+        "points": 0,
+        "maximum": 100,
+        "accepted": false,
+        "criticalFailures": [
+          "AC04",
+          "AC06",
+          "AC07",
+          "AC08",
+          "AC10",
+          "AC11",
+          "AC12",
+          "AC13",
+          "AC14",
+          "AC20"
+        ],
+        "incomplete": [
+          "AC01",
+          "AC02",
+          "AC03",
+          "AC04",
+          "AC05",
+          "AC06",
+          "AC07",
+          "AC08",
+          "AC09",
+          "AC10",
+          "AC11",
+          "AC12",
+          "AC13",
+          "AC14",
+          "AC15",
+          "AC16",
+          "AC17",
+          "AC18",
+          "AC19"
+        ]
+      },
+      "firstCost": {
+        "status": "observed",
+        "value": 151,
+        "unit": "credits",
+        "scope": "Cowork task"
+      },
+      "finalCost": {
+        "status": "observed",
+        "value": 419,
+        "unit": "credits",
+        "scope": "Cowork task"
+      },
+      "timing": {
+        "firstBuildResponseSeconds": 427.011,
+        "firstBuildResponseLowerBoundSeconds": 424.364,
+        "firstCompletionObservation": "interval-bounded",
+        "finalReviewedResultSeconds": 2662.945,
+        "timeToAcceptanceSeconds": null,
+        "observedApprovalWaitSeconds": 0,
+        "recordedInterruptionSeconds": 0,
+        "approvalWaitStillOpen": false,
+        "interruptionStillOpen": false,
+        "firstCompletionDetectionWindowSeconds": 2.647,
+        "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+      },
+      "refinements": 2,
+      "clarifications": 2,
+      "archived": true
+    }
+  }
 }

@@ -7,6 +7,10 @@ model and effort selections in Copilot Cowork.
 **Status:** five pilot builds are complete. Test 2 has one completed, unaccepted
 Dataverse-backed build; the other nine are paused at an unresolved write-binding
 boundary. This is not a completed ten-run comparison.
+The subsequent Excel restart has a verified OneDrive workbook, but its setup
+pilot stopped at a managed-app table-schema allowlist error. **Zero measured
+Excel builds have started**; the requested ten, conditionally up to twenty,
+remain gated on a working pilot.
 
 [Interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/) |
 [Method](METHOD.md) | [Findings](FINDINGS.md) | [Public data](data.json)
@@ -31,6 +35,7 @@ Benchmark instrumentation stays outside the business application.
 |---|---|---:|---:|
 | Test 1 | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 0 |
 | Test 2 | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
+| Excel restart | Working pilot first, then ten consistent builds; conditional maximum twenty | Pilot blocked; 0 measured | 0 |
 
 Test 1's final cumulative readings total **3,219 Cowork task credits**. All five
 missed managed server-side persistence, despite final UI scores of 95/100.
@@ -39,6 +44,12 @@ Test 2 run-01, Sonnet 5 / Medium, used **340 credits at first output** and
 **1,142 credits at the final reviewed result**, reaching **65/100** after two
 corrective prompts and one authorization clarification. Writes remain blocked.
 Do not add the first reading to the final cumulative reading.
+
+The separate Excel setup pilot used **151 first-output / 419 final credits** and
+did not establish a live app connection. Its first response was observed by
+**7m 07s**, and its reviewed-result wall time was **44m 23s**, including
+investigation and checker development. These are setup measurements, not a
+completed Excel model comparison.
 
 ## What is measured
 
@@ -66,6 +77,10 @@ benchmark.
   [acceptance rubric](benchmark/test-02/acceptance.json).
 - [Synthetic seed](benchmark/test-02/seed.json) and
   [Dataverse schema/choice mapping](lib/dataverse-schema.mjs).
+- Excel restart [draft prompt](benchmark/test-02-excel/build-prompt-template.txt),
+  [workbook schema](benchmark/test-02-excel/backend-schema.json),
+  [acceptance rubric](benchmark/test-02-excel/acceptance.json) and
+  [setup status](benchmark/test-02-excel/setup-status.json).
 
 The Test 2 connection wording is deliberately simple: connect to Microsoft
 Dataverse at the supplied organization URL using Device List and Device Requests.

@@ -103,6 +103,35 @@ The latter followed a diagnostic timeout and a retry reporting that another
 approval was pending. That particular 403 was not evidence of tenant-admin OAuth
 consent being required.
 
+## Excel restart: pilot before replication
+
+After the Dataverse write failure, the user requested the same business data in
+an Excel workbook in OneDrive and an actual connected-app pilot before defining
+the measured cohort. The workbook contains structured DeviceList and
+DeviceRequests tables with the canonical seed, numeric prices/quantities and
+ISO date text. Its saved contents were independently verified without changing
+file protections or permissions.
+
+The pilot is unmeasured setup: its binding refinements, clarification messages,
+cost and troubleshooting time are retained separately. Implementation-specific
+connection guidance may be developed here; it must not be introduced
+selectively into later measured runs.
+
+Only after a working pilot should one starting prompt and one review rubric be
+frozen for ten fresh builds: the same five model/effort combinations repeated
+twice, with identical seed/reset controls. The user authorized an optional
+extension to **no more than twenty measured builds**, conditional on easy,
+reliable replication. The expansion rule and balanced additional repetitions
+must be registered before starting the cohort, not chosen retrospectively to
+improve the results.
+
+The pilot failed before live connection, so this freeze/replication gate was not
+met. No measured Excel cohort or successful action-mode execution is claimed.
+The published Excel prompt remains a draft. Its twenty acceptance IDs, weights
+and critical gates match the Dataverse rubric; only backend wording differs.
+Excel-specific write-propagation windows must be declared consistently for the
+whole future cohort.
+
 ## Review, guidance and stop rules
 
 Capture first-output cost before the standardized read-only review. Independently
@@ -140,6 +169,10 @@ conversion would require a documented rate, date, purchasing model and currency.
 
 Retired setup consumption is separate: 143 credits for the wrong-tenant
 SharePoint preflight and 238 for the superseded Dataverse diagnostic.
+Subsequent unmeasured setup adds 229 credits for the Dataverse write
+investigation, 117 for the read-only Excel connector preflight, and 419 for the
+failed Excel app pilot. These increments do not revise the earlier measured
+Dataverse endpoint or enter model-comparison totals.
 
 ## Time semantics
 
@@ -177,6 +210,7 @@ Their cost difference is not an isolated estimate of Dataverse's price.
 
 - [Managed-app launch article](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/)
 - [Microsoft Dataverse connector reference](https://learn.microsoft.com/en-us/connectors/commondataserviceforapps/)
+- [Excel Online (Business) connector reference and consistency limitations](https://learn.microsoft.com/en-us/connectors/excelonlinebusiness/)
 - [Dataverse date/time behavior](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/behavior-format-date-time-attribute)
 
 The product UI and retained raw cost cards establish the measured consumption.

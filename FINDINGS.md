@@ -103,3 +103,54 @@ the generated application, and preserve both in the record.
 
 There is not enough accepted connected-app evidence here to recommend a
 model/effort configuration for the complete requirement.
+
+## Excel restart: pilot blocked, zero measured builds
+
+The requested OneDrive workbook was created with structured **DeviceList** and
+**DeviceRequests** tables and the same six-device/four-request seed. The saved
+workbook was independently re-read and verified unchanged. This did not establish
+an application connection.
+
+| Unmeasured setup metric | Result |
+|---|---|
+| Pilot model / effort | Sonnet 5 / Medium |
+| First / final pilot task credits | 151 / 419 |
+| Pilot binding refinements / clarifications | 2 / 2 |
+| First completed response observed by | 7m 07s; sampled interval 7m 04s-7m 07s |
+| Final reviewed pilot result | 44m 23s, including investigation and checker development |
+| App acceptance | 0/100; not accepted |
+| Earlier read-only Excel connector preflight | 117 credits, separate from the pilot |
+| Measured Excel builds started | **0** |
+
+The effective row-action catalog reported Allow for `GetItems`, `GetItem`,
+`AddRowV2`, `PatchItem` and `DeleteItem`. Actual managed-app table binding,
+however, returned:
+
+```text
+GET /v2/$metadata.json/datasets/{dataset}/tables/{table}
+HTTP 403: operation is not on the managed-apps allowlist
+```
+
+The app remained an empty private scaffold with no connection references.
+No app create/approve/reject/reset workflow was available to test. The
+individual workflow checks remain blocked, not passed from workbook setup or
+source claims.
+
+One diagnostic initially described an action-mode attempt inaccurately: its
+command still used `--as table`. That claim was retracted and retained in the
+private audit trail. Later metadata exposed a direct row-operation family, but
+standalone action-mode dispatch was not established as supported under the
+connector-specific documented flow and was **not executed**. Do not turn that
+evidence gap into a tested action-mode failure or a claim that every possible
+integration is impossible.
+
+This is a managed-apps schema-operation allowlist response, not evidence that the
+Excel row actions were DLP-blocked. The governing platform configuration/owner
+was not identified. No admin-center or policy changes were made during the Excel
+work.
+
+The user required a working pilot first, then ten consistent builds, with an
+optional expansion to **no more than twenty measured builds** if reliably
+repeatable. Because the pilot gate failed, no measured prompt was frozen and no
+repetition cohort was started. Pilot/preflight costs are setup and are excluded
+from both model-comparison totals above.
