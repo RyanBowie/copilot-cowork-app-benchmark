@@ -60,8 +60,14 @@ The fifth configuration has required **one clarification** during its foundation
 Cowork reported that Overview was implemented and asked which already-requested
 area to build next. The recorded answer was **"Build them all"**, adding no new
 requirements. The native question replaced the chat composer, so a pre-answer
-`/cost` could not be sent; no initial credit value is inferred. Generation has
-continued in the same task, and the full foundation remains unverified.
+`/cost` could not be sent; no initial credit value is inferred. The completed
+foundation now has an actual reading of **381 cumulative credits**, including
+that clarification. Its exact fixture, validation, filters and edited GBP810
+draft were independently checked through native reopen, with all earlier apps
+unchanged. Existing-app profile integration completed at **501 cumulative credits
+(+120)**. Its real current-user read and displayed fields were independently
+verified without altering the saved draft/history. Workflows/themes are now
+building; there is no full-target fifth result yet.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.

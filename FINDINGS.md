@@ -22,6 +22,18 @@ accepted as a complete foundation. The same task is continuing.
 An initial controller attempt only selected the option; the separate Submit
 action was subsequently used. That calibration and its corrected event
 classification are retained; it is not a second clarification or model repair.
+The complete foundation subsequently finished at **381 cumulative credits**,
+including that clarification; the separate cost of the partial output versus
+continuation cannot be calculated. The actual app now has the five required
+views, exact fixture and initial metrics, working name/ID/combined filters and
+invalid-write guards. Its GBP810 draft was created, edited and natively reopened;
+Taylor's list excludes it and all four earlier apps' data remains unchanged.
+No defect correction was needed. The profile stage completed at **501 cumulative
+credits (+120)**. The actual app-triggered current-user GET succeeded, account
+and displayed fields matched, and synthetic persona changes did not replace
+the directory profile. All saved tables, draft lines and history remained
+unchanged, with no directory writes. Workflows/themes are now building; this is
+not yet a complete-target assessment.
 
 **Fourth-run results:** Sonnet 5 / High completed the first prompt at
 **292 credits**, with no defect correction. The five initial screens render,
