@@ -9,6 +9,14 @@ Opus 5 / Medium has started; the other three configurations are not completed
 results. The two final readings total **4,399 credits**. Tests 1 and 2 remain
 completed, separate cohorts. This is still a partial complex-app comparison.
 
+**Third-run progress:** Opus 5 / Medium's foundation completed at **505 credits**.
+Its native preview remained blank, with no visible text, navigation, headings
+or controls, after more than a minute and two native close/reopen attempts.
+The document was complete and had no build-error overlay; the builder's working
+app claims did not establish a usable delivery. One symptom-only correction is
+underway. Seed/forms remain unverified, and no final score is assigned yet.
+Both earlier apps' stored synthetic records were independently checked unchanged.
+
 **Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative
 credits (+355). Its exact initial fixture was isolated under a different
