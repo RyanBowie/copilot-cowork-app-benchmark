@@ -25,8 +25,16 @@ unchanged. The existing-app profile stage completed at **550 cumulative credits
 account and displayed fields matched, and changing synthetic persona did not
 replace the real profile. No directory write was observed. The saved draft,
 post-edit line IDs and full activity remained intact. No repair or clarification
-was needed; workflow/theme generation is now underway. No complete-target score
-or final fourth-run cost is claimed.
+was needed. Workflows/themes completed at **1,507 cumulative credits (+957)**.
+The two Submitted seeds migrated to Pending manager with two explicit system
+migration entries, preserving original history and the controlled draft's
+fields/lines. Preference Cancel discarded edits; saved Dark/Compact/Engineering
+survived native reopen, alongside another successful real profile read.
+The registered GBP1440 carryover request was manager-approved to Pending finance
+under the old GBP1000 rule, with stock unchanged. The builder disclosed that the
+default-department preference is stored/displayed but not consumed elsewhere;
+downstream prefill has not been verified. The final planned policy/forms/mobile
+prompt is now running. No complete-target score or final fourth-run cost is claimed.
 
 **Third-run results:** Opus 5 / Medium's foundation completed at **505 credits**.
 Its native preview remained blank, with no visible text, navigation, headings
