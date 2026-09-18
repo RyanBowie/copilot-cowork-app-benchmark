@@ -6,11 +6,12 @@ Five complex virtual-data apps are planned, with the same four prompts per app.
 The first Sonnet 5 / Medium app is accepted at **90/100 and 1,326 final credits**.
 Opus 5 / High is accepted at **95/100 and 3,073 final credits**, after one repair.
 Opus 5 / Medium is accepted at **95/100 and 2,358 final credits**, after two repairs.
-Sonnet 5 / High has started; it and GPT 5.5 / Medium are not completed results.
-The three final readings total **6,757 credits**. Tests 1 and 2 remain
+Sonnet 5 / High is accepted at **90/100 and 2,289 final credits**, without repairs.
+GPT 5.5 / Medium has started and is not a completed result.
+The four final readings total **9,046 credits**. Tests 1 and 2 remain
 completed, separate cohorts. This is still a partial complex-app comparison.
 
-**Fourth-run foundation:** Sonnet 5 / High completed the first prompt at
+**Fourth-run results:** Sonnet 5 / High completed the first prompt at
 **292 credits**, with no defect correction. The five initial screens render,
 the exact fixture and 6/25/2/GBP3120 metrics are intact, catalogue search/combined
 filters work, and invalid form cases did not create extra requests.
@@ -33,8 +34,41 @@ survived native reopen, alongside another successful real profile read.
 The registered GBP1440 carryover request was manager-approved to Pending finance
 under the old GBP1000 rule, with stock unchanged. The builder disclosed that the
 default-department preference is stored/displayed but not consumed elsewhere;
-downstream prefill has not been verified. The final planned policy/forms/mobile
-prompt is now running. No complete-target score or final fourth-run cost is claimed.
+downstream prefill was not verified at that stage.
+
+The final planned changes completed at **2,289 cumulative credits (+782)**.
+Every prior field, line, activity/approval entry, asset and appearance choice
+was preserved, including the old-policy request awaiting finance. Independent
+UI scenarios verified the new exact/above-threshold routes, required decision
+comments, same-ID revision/resubmission, cancellation confirmation, administrator
+fulfilment, per-unit requester-linked assets, Good/Damaged returns and whole-request
+stock rejection after depletion. Latitude stock 3-to-2 moved the low-stock count
+from three to four. Final metrics match the rows: **21 units, two pending requests
+worth GBP3840, three assigned assets and four low-stock models**.
+
+All seven views and key forms were captured in both themes at actual **1066px
+desktop and 390px mobile**. All **86 screenshots** were reviewed in **ten contact
+sheets**. Bounded table scrolling reaches the actions; there is no observed
+page-wide overflow or unscrollable clipping. **868** main-content/error text
+samples have no sampled contrast failure; eight additional stabilized badge/action
+measurements exceed 4.5:1. The mobile header is tall and the chart axis labels are
+crowded, but controls remain usable and an adjacent readable stock list supplies
+the same chart information. This is not a comprehensive accessibility certification.
+
+**First full-target and final acceptance are both 90/100.** All critical gates pass.
+CX14 remains blocked. CX16 is only partly established: Save/Cancel and persistence
+work, and representative row height changes from **48.67px Compact to 52.67px
+Comfortable**. Operations can be saved as the default, but departmented Jamie
+continues to use Engineering, while the no-department Morgan new-form scenario
+used earlier is unavailable in this app. The preference's downstream effect is
+therefore not awarded as a pass; it is unverified, not presumed working.
+
+Final native reopen reverified the live profile, all ten requests/five assets,
+saved preferences and the three earlier apps' unchanged data. The fresh final
+`/cost` remained **2,289**. There were **zero repairs, zero clarifications and zero
+native reviews**, and the conversation is archived. This 90-point result has a
+different coverage gap from Sonnet Medium's 90-point result, which lacked complete
+cost-centre handling; the equal totals do not imply identical capabilities.
 
 **Third-run results:** Opus 5 / Medium's foundation completed at **505 credits**.
 Its native preview remained blank, with no visible text, navigation, headings

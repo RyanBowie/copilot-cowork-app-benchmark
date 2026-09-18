@@ -9,16 +9,17 @@ model and effort selections in Copilot Cowork.
 The first prompt builds the virtual-data app; the second connects Office 365 Users
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
-**Three of five complex apps are complete and accepted.** Sonnet 5 / High is
-now building; GPT 5.5 / Medium has not started.
+**Four of five complex apps are complete and accepted.** The fifth and final
+configuration, GPT 5.5 / Medium, is now building.
 
 | Configuration | Final credits | First full-target / final score | Corrections |
 |---|---:|---:|---:|
 | Sonnet 5 / Medium | 1,326 | 90 / 90 | 1 |
 | Opus 5 / High | 3,073 | 90 / 95 | 1 |
 | Opus 5 / Medium | 2,358 | 85 / 95 | 2 |
+| Sonnet 5 / High | 2,289 | 90 / 90 | 0 |
 
-The three completed final readings total **6,757 credits**; unfinished work is
+The four completed final readings total **9,046 credits**; unfinished work is
 not included. This remains a partial comparison, not a five-setting ranking.
 
 The third app's foundation used **505 credits**, but its actual native preview
@@ -48,8 +49,12 @@ current-user GET and the displayed fields were independently verified, with
 the draft/lines/history unchanged and no directory writes. Workflows/themes
 completed at **1,507 cumulative credits (+957)**. Migration, preference Cancel,
 saved Dark/Compact settings and an old-policy GBP1440 request awaiting finance
-were independently checked. The final planned policy/forms/mobile changes are
-now building. This is not yet a full-target or accepted result.
+were independently checked. The final planned changes reached **2,289 credits
+(+782)**. The complete review and fresh final `/cost` leave it **accepted at
+90/100 and 2,289 credits**, without any repair. All critical checks passed.
+Profile fault/Retry coverage and the full default-department preference behavior
+remain unverified (CX14/CX16); Save/Cancel, persistence and actual density changes
+work. All 86 layout screenshots were reviewed and the final conversation archived.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.
@@ -178,7 +183,7 @@ Benchmark instrumentation stays outside the business application.
 
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
-| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 3 / 5; fourth build started | 3 |
+| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 4 / 5; fifth build started | 4 |
 | Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
 | Test 1, historical virtual-data scope | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 5 |
 | Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
