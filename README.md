@@ -55,6 +55,13 @@ were independently checked. The final planned changes reached **2,289 credits
 Profile fault/Retry coverage and the full default-department preference behavior
 remain unverified (CX14/CX16); Save/Cancel, persistence and actual density changes
 work. All 86 layout screenshots were reviewed and the final conversation archived.
+
+The fifth configuration has required **one clarification** during its foundation:
+Cowork reported that Overview was implemented and asked which already-requested
+area to build next. The recorded answer was **"Build them all"**, adding no new
+requirements. The native question replaced the chat composer, so a pre-answer
+`/cost` could not be sent; no initial credit value is inferred. Generation has
+continued in the same task, and the full foundation remains unverified.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.

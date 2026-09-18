@@ -11,6 +11,18 @@ GPT 5.5 / Medium has started and is not a completed result.
 The four final readings total **9,046 credits**. Tests 1 and 2 remain
 completed, separate cohorts. This is still a partial complex-app comparison.
 
+**Fifth-run progress:** GPT 5.5 / Medium paused during its first-stage build with
+a native question: "The overview is implemented. Which requested area should I
+add next?" The options included the remaining required screens and **"Build them
+all"**. The latter was submitted as **one clarification**, repeating the existing
+frozen scope rather than requesting another feature or a paid review.
+The native question hid the composer, so no pre-clarification `/cost` was sent
+and no credit amount is inferred. The partial app has not yet been independently
+accepted as a complete foundation. The same task is continuing.
+An initial controller attempt only selected the option; the separate Submit
+action was subsequently used. That calibration and its corrected event
+classification are retained; it is not a second clarification or model repair.
+
 **Fourth-run results:** Sonnet 5 / High completed the first prompt at
 **292 credits**, with no defect correction. The five initial screens render,
 the exact fixture and 6/25/2/GBP3120 metrics are intact, catalogue search/combined
