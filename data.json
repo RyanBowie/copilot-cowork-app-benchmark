@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-18T01:02:39.153Z",
+  "generatedAt": "2026-09-18T01:15:37.691Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -690,29 +690,42 @@
               "title": "Virtual approvals, asset lifecycle, themes and preferences",
               "kind": "planned-change",
               "submitted": true,
-              "responseComplete": false,
-              "cost": null,
+              "responseComplete": true,
+              "cost": {
+                "status": "observed",
+                "value": 1720,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
               "costBeforePrompt": {
                 "status": "observed",
                 "value": 1124,
                 "unit": "credits",
                 "scope": "Cowork task"
               },
-              "increaseSincePrecedingReading": null
+              "increaseSincePrecedingReading": {
+                "value": 596,
+                "unit": "credits"
+              }
             },
             {
               "id": "stage-04",
               "title": "Approval policy change, revisions, cost centres and responsive refinement",
               "kind": "planned-change",
-              "submitted": false,
+              "submitted": true,
               "responseComplete": false,
               "cost": null,
-              "costBeforePrompt": null,
+              "costBeforePrompt": {
+                "status": "observed",
+                "value": 1720,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
               "increaseSincePrecedingReading": null
             }
           ],
           "firstFullTargetAssessmentStage": null,
-          "plannedChanges": 2,
+          "plannedChanges": 3,
           "profileProof": {
             "stageId": "stage-02",
             "verifiedInApp": true,
@@ -722,7 +735,7 @@
           "corrections": 1,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 120,
+          "screenshotFiles": 160,
           "archived": false,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [

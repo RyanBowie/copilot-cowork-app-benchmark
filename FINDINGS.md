@@ -33,9 +33,17 @@ prompt completed at **1,124 cumulative credits (+398)**. Actual native reopen
 triggered a successful current-user GET; returned identity and displayed fields
 matched independently, and synthetic persona changes did not replace that
 profile. The draft, lines and complete history were unchanged. No directory
-write or extra connection repair was observed. Workflow/theme construction is
-underway; no final score is assigned yet. Both earlier apps' synthetic records
-remain unchanged.
+write or extra connection repair was observed.
+
+The workflow/theme stage completed at **1,720 cumulative credits (+596)**.
+Both Submitted seeds migrated to Pending manager, while the original fields,
+lines, draft and complete activity history were preserved. Preference Cancel
+discarded unsaved department/density changes; saved Dark/Compact/Engineering
+survived actual native reopen with another live profile read and no build-error
+overlay. The registered GBP1440 request reached Pending finance under the old
+GBP1000 rule without changing stock; the Overview correctly showed GBP4560
+pending. The fourth planned change is building. No final score is assigned yet;
+the earlier edit-guard finding still requires final recheck.
 
 **Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative
