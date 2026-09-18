@@ -5,11 +5,12 @@
 Five complex virtual-data apps are planned, with the same four prompts per app.
 The first Sonnet 5 / Medium app is accepted at **90/100 and 1,326 final credits**.
 Opus 5 / High is accepted at **95/100 and 3,073 final credits**, after one repair.
-Opus 5 / Medium has started; the other three configurations are not completed
-results. The two final readings total **4,399 credits**. Tests 1 and 2 remain
+Opus 5 / Medium is accepted at **95/100 and 2,358 final credits**, after two repairs.
+Sonnet 5 / High has started; it and GPT 5.5 / Medium are not completed results.
+The three final readings total **6,757 credits**. Tests 1 and 2 remain
 completed, separate cohorts. This is still a partial complex-app comparison.
 
-**Third-run progress:** Opus 5 / Medium's foundation completed at **505 credits**.
+**Third-run results:** Opus 5 / Medium's foundation completed at **505 credits**.
 Its native preview remained blank, with no visible text, navigation, headings
 or controls, after more than a minute and two native close/reopen attempts.
 The document was complete and had no build-error overlay; the builder's working
@@ -69,7 +70,24 @@ assets and four low-stock models. Density changes from 52.67px Comfortable rows
 to 44.67px Compact rows. A fresh first-target `/cost` still reads **2,011**.
 All twenty verdicts were recorded before the second and final allowed repair,
 which targets only clipping and error-text readability. **CX14** remains blocked.
-Final acceptance and final cost are not yet claimed.
+The second correction added **347 credits**, reaching **2,358**. The repaired
+Overview panels are now about **343px** wide inside the same 375px content area;
+activity wraps and the chart/table have usable bounded scrolling. ArrowRight
+moved the focused chart 80px with visible keyboard focus. The dark validation
+text and summary now measure **9.34:1**, while Light remains **8.23:1**.
+All seven screens and key forms were recaptured at 1066px desktop and 390px in
+both themes: **94 screenshots**, reviewed through **eleven contact sheets**.
+There is no observed document overflow or clipped region, and **1,244** sampled
+text checks, now including invalid forms, have no sampled contrast failure.
+
+Final native reopen reverified the actual current-user profile, saved appearance,
+all ten requests/five assets and both prior apps' unchanged records. Owner,
+cost-centre, approval and atomic-stock guards were rechecked without adding
+records. The final fresh `/cost` remained **2,358**. **Final acceptance is 95/100**,
+with CX14 alone blocked. The first 85-point failure remains preserved; two
+corrections, three planned changes, zero clarifications and zero native reviews
+are recorded. The visible conversation is archived. These are observations
+of this app, not a production-readiness or complete accessibility certification.
 
 **Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative

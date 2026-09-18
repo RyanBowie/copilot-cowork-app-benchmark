@@ -9,34 +9,35 @@ model and effort selections in Copilot Cowork.
 The first prompt builds the virtual-data app; the second connects Office 365 Users
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
-**Two of five complex apps are complete and accepted.** Opus 5 / Medium is now
-under its final allowed repair; Sonnet 5 / High and GPT 5.5 / Medium have not started.
+**Three of five complex apps are complete and accepted.** Sonnet 5 / High is
+now building; GPT 5.5 / Medium has not started.
 
 | Configuration | Final credits | First full-target / final score | Corrections |
 |---|---:|---:|---:|
 | Sonnet 5 / Medium | 1,326 | 90 / 90 | 1 |
 | Opus 5 / High | 3,073 | 90 / 95 | 1 |
+| Opus 5 / Medium | 2,358 | 85 / 95 | 2 |
 
-The two completed final readings total **4,399 credits**; unfinished work is
+The three completed final readings total **6,757 credits**; unfinished work is
 not included. This remains a partial comparison, not a five-setting ranking.
 
 The third app's foundation used **505 credits**, but its actual native preview
 remained blank after waiting and repeated reopen. One correction brought it to
 **726 cumulative credits (+221)** and restored actual entry. Its exact seed,
 forms and GBP810 draft persistence are now independently verified. An open-draft
-persona-switch save gap was also observed and retained for final role recheck;
-no final score or accepted third result is claimed. The first two apps' records
-remain unchanged.
+persona-switch save gap was also observed; the final planned changes resolved it
+while preserving its recorded history. The first two apps' records remain unchanged.
 The third app's actual in-app current-user profile is now independently verified
 at **1,124 cumulative credits (+398)**, with the draft and full history preserved.
 Its workflow/theme stage reached **1,720 (+596)**. Seed migration, preference
 Save/Cancel, clean native reopen and the GBP1440 old-policy Pending finance
 case are verified. The final planned change reached **2,011 (+291)**.
-Its first full-target review is **85/100, not accepted**: mobile Overview content
-is clipped, and dark validation text fails contrast. The earlier persona-edit
-gap was resolved by the planned changes. All other checks pass except blocked
-profile fault coverage. The second and final allowed correction is underway;
-no final third-app cost or acceptance is claimed yet.
+Its first full-target review was **85/100, not accepted**: mobile Overview content
+was clipped, and dark validation text failed contrast. The second correction
+added **347 credits**, resolving both defects with data and critical guards intact.
+Final `/cost` is **2,358**, and the third app is **accepted at 95/100**.
+Profile fault/Retry coverage remains blocked. Both first and final outcomes,
+all screenshots and the final visible conversation are retained.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.
@@ -165,7 +166,7 @@ Benchmark instrumentation stays outside the business application.
 
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
-| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 2 / 5; third build started | 2 |
+| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 3 / 5; fourth build started | 3 |
 | Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
 | Test 1, historical virtual-data scope | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 5 |
 | Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |
