@@ -7,6 +7,11 @@ Cowork `/cost` readings.
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)
 
+The main page opens with an **overview of all three tests**: short app/test
+descriptions, average credits per app, compact charts of configuration averages
+and links to each detailed result. The charts use a shared credit scale and show
+how many builds contribute to each configuration; the test scopes remain separate.
+
 | Test | App scope | Accepted apps | Average final credits / app | Final scores |
 |---|---|---:|---:|---|
 | [Test 1](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-01) | Virtual-data device procurement | 5 / 5 | 643.8 | 95/100 |
