@@ -103,10 +103,31 @@ do not add earlier readings to it. Final costs include any guidance and, for
 Test 1, native review. Shared setup and app runtime are not included in these
 build-task totals. Do not infer a currency conversion or a complete tenant bill.
 
-Reported elapsed time is build submission to final external review. It includes
-authoring, guidance, review and evidence capture; it is not pure model execution
-time. Missing timing remains unavailable, not zero. Test 1 has no comparable
-final elapsed measurement.
+The headline **average final credits per app** is the arithmetic mean of all
+final task readings in the selected test: 3,219 / 5 = 643.8 for Test 1,
+4,580 / 10 = 458 for Test 2, and 9,990 / 5 = 1,998 for Test 3. Each build receives
+equal weight, including repeated settings. This describes the observed
+model/reasoning mix, not a single model's price. Per-configuration averages use
+only that configuration's builds; individual readings remain visible.
+
+Reported **build time per app** sums the recorded authoring turns: initial build,
+planned updates, clarifications and corrections. Match each prompt submission
+to its completion observation by prompt identifier. Use the first observed idle
+timestamp, before the monitor's additional idle-confirmation wait. Where a last
+busy sample exists, it supplies the lower bound; the displayed time uses the
+first-idle upper endpoint, rounded to seconds.
+
+This excludes external review, screenshot-taking gaps, time between prompts,
+`/cost` commands and native self-review. Both an initial clarification question
+and the response to its answer are included, but time waiting for the answer
+between turns is not. Waits within an authoring turn remain included, so this is
+an approximate observed authoring duration, not pure model compute time.
+
+All authoring prompts must have completion observations to report a build total.
+Missing or partial coverage remains unavailable, never zero or a substitute
+test-session elapsed time. Test 1 lacks build-completion timing. Tests 2 and 3
+have complete authoring coverage; the bounds and counts are in
+`data.json` under each run's `timing.build`.
 
 ## Interpretation and evidence
 

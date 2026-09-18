@@ -22,7 +22,8 @@ allowed; managed-store persistence is not required. Recorded scores remain
 Each task includes one native self-review prompt in addition to external checks.
 These are build-and-review costs, not the external-only method used in Tests 2
 and 3. The Sonnet Medium baseline was repeated; the other settings have one
-observation each. Comparable final elapsed timing is unavailable for this test.
+observation each. Build-completion timing was not captured for this test, so
+build durations are not estimated.
 
 ## Test 2: SharePoint-connected apps
 
@@ -31,19 +32,19 @@ blocks. Every app reads the same synthetic SharePoint fixture, creates a
 complete request, and demonstrates persistence through independent server
 read-back and reopening. All score 90/100.
 
-| Run | Selected configuration | Final credits | Final score | Clarifications | Corrections |
-|---|---|---:|---:|---:|---:|
-| 01 | Sonnet 5 / Medium | 224 | 90/100 | 0 | 0 |
-| 02 | Opus 5 / High | 968 | 90/100 | 0 | 0 |
-| 03 | Opus 5 / Medium | 417 | 90/100 | 0 | 0 |
-| 04 | Sonnet 5 / High | 620 | 90/100 | 0 | 0 |
-| 05 | GPT 5.5 / Medium | 345 | 90/100 | 0 | 1 |
-| 06 | GPT 5.5 / Medium | 252 | 90/100 | 0 | 0 |
-| 07 | Sonnet 5 / High | 313 | 90/100 | 0 | 0 |
-| 08 | Opus 5 / Medium | 425 | 90/100 | 0 | 0 |
-| 09 | Opus 5 / High | 786 | 90/100 | 0 | 1 |
-| 10 | Sonnet 5 / Medium | 230 | 90/100 | 0 | 0 |
-| **Total** | **10 accepted apps** | **4,580** | | **0** | **2** |
+| Run | Selected configuration | Final credits | Final score | Clarifications | Corrections | Build time, approx. |
+|---|---|---:|---:|---:|---:|---:|
+| 01 | Sonnet 5 / Medium | 224 | 90/100 | 0 | 0 | 10m 00s |
+| 02 | Opus 5 / High | 968 | 90/100 | 0 | 0 | 19m 26s |
+| 03 | Opus 5 / Medium | 417 | 90/100 | 0 | 0 | 8m 48s |
+| 04 | Sonnet 5 / High | 620 | 90/100 | 0 | 0 | 16m 58s |
+| 05 | GPT 5.5 / Medium | 345 | 90/100 | 0 | 1 | 10m 32s |
+| 06 | GPT 5.5 / Medium | 252 | 90/100 | 0 | 0 | 7m 51s |
+| 07 | Sonnet 5 / High | 313 | 90/100 | 0 | 0 | 11m 26s |
+| 08 | Opus 5 / Medium | 425 | 90/100 | 0 | 0 | 10m 24s |
+| 09 | Opus 5 / High | 786 | 90/100 | 0 | 1 | 15m 28s |
+| 10 | Sonnet 5 / Medium | 230 | 90/100 | 0 | 0 | 8m 46s |
+| **Total** | **10 accepted apps** | **4,580** | | **0** | **2** | |
 
 Eight apps required no corrective guidance; two required one corrective prompt
 each. Review was external-only. Connection-error/no-fallback coverage (BC09)
@@ -62,8 +63,9 @@ remains unverified, accounting for the unawarded ten points.
 **Sonnet 5 / Medium is the cost-supported starting choice for this specific
 SharePoint scope:** both observations reached 90/100 with no corrections.
 Two observations are not a reliable variance estimate or a promised future price.
-Per-run end-to-end times are available in the interactive report and
-`data.json`; they include review and evidence capture, not just generation.
+Per-app build times add the recorded authoring responses, including corrections,
+and exclude external review and gaps between prompts. They are approximate
+observations, not isolated model compute time.
 
 ## Test 3: complex-app results
 
@@ -72,13 +74,13 @@ build the virtual-data foundation, connect Office 365 Users inside the existing
 app, extend workflows/themes/preferences, then change policy/forms/mobile
 requirements. Business records and approvals remain synthetic and virtual/local.
 
-| Run | Selected configuration | Final credits | Final score | Clarifications | Corrections | End-to-end time |
+| Run | Selected configuration | Final credits | Final score | Clarifications | Corrections | Build time, approx. |
 |---|---|---:|---:|---:|---:|---:|
-| 01 | Sonnet 5 / Medium | 1,326 | 90/100 | 0 | 1 | 2:06:47 |
-| 02 | Opus 5 / High | 3,073 | 95/100 | 0 | 1 | 1:20:52 |
-| 03 | Opus 5 / Medium | 2,358 | 95/100 | 0 | 2 | 1:25:05 |
-| 04 | Sonnet 5 / High | 2,289 | 90/100 | 0 | 0 | 1:24:59 |
-| 05 | GPT 5.5 / Medium | 944 | 90/100 | 1 | 0 | 0:58:07 |
+| 01 | Sonnet 5 / Medium | 1,326 | 90/100 | 0 | 1 | 39m 31s |
+| 02 | Opus 5 / High | 3,073 | 95/100 | 0 | 1 | 46m 03s |
+| 03 | Opus 5 / Medium | 2,358 | 95/100 | 0 | 2 | 35m 12s |
+| 04 | Sonnet 5 / High | 2,289 | 90/100 | 0 | 0 | 51m 30s |
+| 05 | GPT 5.5 / Medium | 944 | 90/100 | 1 | 0 | 21m 43s |
 | **Total** | **5 accepted apps** | **9,990** | | **1** | **4** | |
 
 All five have three planned follow-up prompts and zero native self-review
@@ -127,10 +129,12 @@ observations. Higher reasoning did not consistently increase the final score.
 There is only one observation per setting, so this does not establish
 repeatability or a universal best model.
 
-The complete Test 3 cohort took **7h 18m 41s**, from the first build submission
-to the fifth final review. This includes authoring, guidance, external review
-and evidence capture, but not initial setup or report publication. It is not
-pure model execution time.
+Build time includes every planned authoring stage and additional clarification
+or correction response. It excludes external review, screenshot-taking gaps,
+time between prompts, `/cost` commands and native self-review. For example,
+GPT Medium's **21m 43s** includes both its initial response and clarification,
+plus all three planned follow-ups, rather than treating its first reply as
+the complete app. Within-turn waits and observation uncertainty remain included.
 
 ## Interpretation
 

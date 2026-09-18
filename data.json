@@ -1,12 +1,12 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-09-18T15:34:43.542Z",
+  "generatedAt": "2026-09-18T16:46:05.980Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-03",
   "scopeNote": "Three completed tests: five virtual-data apps, ten SharePoint-connected apps and five complex multi-prompt apps. Compare model settings within each test; the three scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
   "unitNote": "Observed Cowork task credits, not currency or a tenant invoice. Final cumulative readings are not added to initial readings.",
-  "timingNote": "Elapsed wall-clock time from build submission to the final reviewed result, including authoring, guidance, review and evidence capture. This is not pure model execution time. Missing measurements remain unavailable, not zero.",
+  "timingNote": "Observed build time per app sums the authoring turns: build, planned updates, clarifications and corrections. It excludes external review and screenshot-taking gaps between prompts, /cost commands and native self-review. Within-turn waits and observation uncertainty remain included; this is not pure model compute time. Missing authoring coverage is not estimated from elapsed test time.",
   "evidenceNote": "Exact prompts, visible transcripts, app screenshots, approval records, backend snapshots and raw cost evidence are retained privately. Public data is an explicit allowlisted projection, not a raw transcript export.",
   "experiments": [
     {
@@ -49,6 +49,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 2371.299,
+              "lowerBoundSeconds": 2358.672,
+              "observation": "interval-bounded",
+              "authoringPrompts": 5,
+              "observedPrompts": 5
+            },
             "firstBuildResponseSeconds": 533.775,
             "firstBuildResponseLowerBoundSeconds": 531.625,
             "firstCompletionObservation": "interval-bounded",
@@ -319,6 +326,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 2763.457,
+              "lowerBoundSeconds": 2752.088,
+              "observation": "interval-bounded",
+              "authoringPrompts": 5,
+              "observedPrompts": 5
+            },
             "firstBuildResponseSeconds": 881.455,
             "firstBuildResponseLowerBoundSeconds": 879.256,
             "firstCompletionObservation": "interval-bounded",
@@ -589,6 +603,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 2111.675,
+              "lowerBoundSeconds": 2097.083,
+              "observation": "interval-bounded",
+              "authoringPrompts": 6,
+              "observedPrompts": 6
+            },
             "firstBuildResponseSeconds": 644.642,
             "firstBuildResponseLowerBoundSeconds": 642.371,
             "firstCompletionObservation": "interval-bounded",
@@ -860,6 +881,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 3089.817,
+              "lowerBoundSeconds": 3081.297,
+              "observation": "interval-bounded",
+              "authoringPrompts": 4,
+              "observedPrompts": 4
+            },
             "firstBuildResponseSeconds": 666.448,
             "firstBuildResponseLowerBoundSeconds": 664.215,
             "firstCompletionObservation": "interval-bounded",
@@ -1131,6 +1159,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 1303.39,
+              "lowerBoundSeconds": 1291.207,
+              "observation": "interval-bounded",
+              "authoringPrompts": 5,
+              "observedPrompts": 5
+            },
             "firstBuildResponseSeconds": 161.688,
             "firstBuildResponseLowerBoundSeconds": 159.638,
             "firstCompletionObservation": "interval-bounded",
@@ -1436,6 +1471,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 600.06,
+              "lowerBoundSeconds": 597.865,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 600.06,
             "firstBuildResponseLowerBoundSeconds": 597.865,
             "firstCompletionObservation": "interval-bounded",
@@ -1552,6 +1594,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 1165.748,
+              "lowerBoundSeconds": 1163.623,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 1165.748,
             "firstBuildResponseLowerBoundSeconds": 1163.623,
             "firstCompletionObservation": "interval-bounded",
@@ -1668,6 +1717,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 528.115,
+              "lowerBoundSeconds": 526.019,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 528.115,
             "firstBuildResponseLowerBoundSeconds": 526.019,
             "firstCompletionObservation": "interval-bounded",
@@ -1784,6 +1840,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 1018.305,
+              "lowerBoundSeconds": 1016.281,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 1018.305,
             "firstBuildResponseLowerBoundSeconds": 1016.281,
             "firstCompletionObservation": "interval-bounded",
@@ -1900,6 +1963,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 631.581,
+              "lowerBoundSeconds": 626.594,
+              "observation": "interval-bounded",
+              "authoringPrompts": 2,
+              "observedPrompts": 2
+            },
             "firstBuildResponseSeconds": 489.542,
             "firstBuildResponseLowerBoundSeconds": 486.655,
             "firstCompletionObservation": "interval-bounded",
@@ -2016,6 +2086,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 471.478,
+              "lowerBoundSeconds": 469.131,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 471.478,
             "firstBuildResponseLowerBoundSeconds": 469.131,
             "firstCompletionObservation": "interval-bounded",
@@ -2132,6 +2209,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 686.485,
+              "lowerBoundSeconds": 684.417,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 686.485,
             "firstBuildResponseLowerBoundSeconds": 684.417,
             "firstCompletionObservation": "interval-bounded",
@@ -2248,6 +2332,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 624.126,
+              "lowerBoundSeconds": 621.597,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 624.126,
             "firstBuildResponseLowerBoundSeconds": 621.597,
             "firstCompletionObservation": "interval-bounded",
@@ -2364,6 +2455,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 928.287,
+              "lowerBoundSeconds": 923.679,
+              "observation": "interval-bounded",
+              "authoringPrompts": 2,
+              "observedPrompts": 2
+            },
             "firstBuildResponseSeconds": 687.571,
             "firstBuildResponseLowerBoundSeconds": 685.371,
             "firstCompletionObservation": "interval-bounded",
@@ -2480,6 +2578,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": 526.239,
+              "lowerBoundSeconds": 524.184,
+              "observation": "interval-bounded",
+              "authoringPrompts": 1,
+              "observedPrompts": 1
+            },
             "firstBuildResponseSeconds": 526.239,
             "firstBuildResponseLowerBoundSeconds": 524.184,
             "firstCompletionObservation": "interval-bounded",
@@ -2606,6 +2711,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": null,
+              "lowerBoundSeconds": null,
+              "observation": "not-captured",
+              "authoringPrompts": 1,
+              "observedPrompts": 0
+            },
             "firstBuildResponseSeconds": null,
             "firstBuildResponseLowerBoundSeconds": null,
             "firstCompletionObservation": "not-captured",
@@ -2780,6 +2892,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": null,
+              "lowerBoundSeconds": null,
+              "observation": "not-captured",
+              "authoringPrompts": 2,
+              "observedPrompts": 0
+            },
             "firstBuildResponseSeconds": null,
             "firstBuildResponseLowerBoundSeconds": null,
             "firstCompletionObservation": "not-captured",
@@ -2954,6 +3073,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": null,
+              "lowerBoundSeconds": null,
+              "observation": "not-captured",
+              "authoringPrompts": 3,
+              "observedPrompts": 0
+            },
             "firstBuildResponseSeconds": null,
             "firstBuildResponseLowerBoundSeconds": null,
             "firstCompletionObservation": "not-captured",
@@ -3128,6 +3254,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": null,
+              "lowerBoundSeconds": null,
+              "observation": "not-captured",
+              "authoringPrompts": 2,
+              "observedPrompts": 0
+            },
             "firstBuildResponseSeconds": null,
             "firstBuildResponseLowerBoundSeconds": null,
             "firstCompletionObservation": "not-captured",
@@ -3302,6 +3435,13 @@
             "unit": "credits"
           },
           "timing": {
+            "build": {
+              "seconds": null,
+              "lowerBoundSeconds": null,
+              "observation": "not-captured",
+              "authoringPrompts": 2,
+              "observedPrompts": 0
+            },
             "firstBuildResponseSeconds": null,
             "firstBuildResponseLowerBoundSeconds": null,
             "firstCompletionObservation": "not-captured",
