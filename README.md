@@ -43,7 +43,10 @@ The fourth app (Sonnet 5 / High) has completed its foundation at **292 credits**
 with no correction so far. Its exact fixture, filters, invalid-input handling,
 GBP810 edited draft, requester isolation and native-reopen persistence were
 independently checked; earlier apps remain unchanged. Its existing-app profile
-connection is now being built. This is not yet a full-target or accepted result.
+connection completed at **550 cumulative credits (+258)**. An actual app-triggered
+current-user GET and the displayed fields were independently verified, with
+the draft/lines/history unchanged and no directory writes. The workflow/theme
+stage is now building. This is not yet a full-target or accepted result.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.

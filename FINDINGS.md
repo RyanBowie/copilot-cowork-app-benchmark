@@ -20,8 +20,13 @@ synthetic state after the first save; this is not a persistence failure.
 An explicit draft edit replaces its child line IDs while keeping the request,
 device relationships and line count unchanged; the saved post-edit lines are
 the baseline for the three planned changes. All three earlier apps' data is
-unchanged. The frozen existing-app profile connection prompt has been submitted;
-no complete-target score or final fourth-run cost is claimed.
+unchanged. The existing-app profile stage completed at **550 cumulative credits
+(+258)**. Native reopen exercised the real current-user connector GET; the returned
+account and displayed fields matched, and changing synthetic persona did not
+replace the real profile. No directory write was observed. The saved draft,
+post-edit line IDs and full activity remained intact. No repair or clarification
+was needed; workflow/theme generation is now underway. No complete-target score
+or final fourth-run cost is claimed.
 
 **Third-run results:** Opus 5 / Medium's foundation completed at **505 credits**.
 Its native preview remained blank, with no visible text, navigation, headings
