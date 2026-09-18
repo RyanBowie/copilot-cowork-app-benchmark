@@ -13,7 +13,8 @@ complex-app comparison.
 credits (+355). Its exact initial fixture was isolated under a different
 app-owned storage key; the first app's final records remained unchanged.
 The GBP810 draft was saved, edited and reopened, then survived the connection
-stage unchanged. No repair, clarification or native review prompt has been sent.
+stage unchanged. No repair was needed in those first two stages; no clarification
+or native review prompt has been sent.
 The third stage completed at **1,679 cumulative credits (+763)**. The two Submitted
 seeds migrated to Pending manager without losing their fields, lines or activity.
 Dark/Compact/Engineering, the original draft and the real profile survived
@@ -27,8 +28,41 @@ it was dismissed again. This recurring native-preview friction is retained and
 requires final recheck, not a claim that the warning is permanently resolved.
 The controller also avoided repeating an already completed approval when a
 capture-metadata filename collided with a result filename. No duplicate request
-or approval was created. The fourth planned change is running; a full second-app
-score is not yet claimed.
+or approval was created.
+
+The fourth planned change completed at **2,505 cumulative credits (+826)**.
+The first full-target assessment is **90/100, not accepted**, because **CX01**
+fails on the recurring pointer-blocking preview overlay; **CX14** remains blocked
+without independent profile fault/Retry coverage. All other checks passed,
+including explicit new/draft cost-centre mismatch rejection, the inclusive
+approval threshold and unchanged old-policy carryover, revisions/cancellation,
+per-unit assets, Good/Damaged returns, atomic stock protection, saved preferences
+and wide-desktop/390px forms in both themes. One symptom-only entry repair has
+been submitted; no final acceptance or final cost is claimed yet.
+
+The second app folds secondary table details into primary cells at small widths,
+while retaining a bounded scrollable Overview diagram. Its font stack begins
+Aptos/Segoe UI. The 1,040 sampled text contrast checks found no sampled failure,
+not a complete accessibility certification. Native reopen preserves 10 requests,
+five assets and the first app's separate data, and triggers a real matched
+current-user profile read. Final business metrics are 21 units, GBP3840 pending,
+three assigned assets and four low-stock models. The pending-value difference
+from run 01 is the first controller's disclosed extra GBP180 request, not a
+calculation defect.
+
+**Return-role interpretation:** the frozen authoring prompt restricts fulfilment
+to the asset administrator but does not specify who may return an asset. Sonnet
+disables requester Return controls; Opus exposes them. No requester return
+transaction was performed. This is recorded as a capability difference, not
+scored as failure against an unstated administrator-only return requirement.
+The same interpretation applies to all configurations without changing the
+frozen prompts, rubric weights or first-app score.
+
+Additional controller calibration is retained: a line-array reorder did not
+change stable IDs or fields; the asset requester relationship is named
+`assignedToId`; an empty list contains two equivalent Clear filters controls;
+and a layout helper initially read its argument in the wrong callback position.
+These were not counted as model defects or repair prompts.
 
 | First-run milestone | Observed cumulative credits | Increase from preceding reading | Independent observation |
 |---|---:|---:|---|

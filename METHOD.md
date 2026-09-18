@@ -40,6 +40,14 @@ its native host in both dimensions. First-run captures with a 33px vertical
 host-clipping limitation are retained but superseded by fully contained captures.
 Sampled contrast and keyboard checks are not a complete accessibility certification.
 
+Return-role wording is interpreted against the authoring contract for every
+configuration: only fulfilment is explicitly restricted to the asset administrator.
+The external review's "unauthorized returns" wording cannot impose an unstated
+administrator-only return rule. Record exposed requester return controls as a
+capability difference; score the specified condition/comment, stock and
+duplicate-return requirements. Physical array order and field naming are also
+not requirements when stable record identities and relationships are preserved.
+
 Record actual cumulative `/cost` after each stage, repair and at the end. Initial
 credits cover the foundation; stage readings expose the later cumulative spend.
 Three planned follow-ups are counted separately from up to two defect corrections
