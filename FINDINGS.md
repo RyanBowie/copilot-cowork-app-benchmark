@@ -10,6 +10,19 @@ Sonnet 5 / High has started; it and GPT 5.5 / Medium are not completed results.
 The three final readings total **6,757 credits**. Tests 1 and 2 remain
 completed, separate cohorts. This is still a partial complex-app comparison.
 
+**Fourth-run foundation:** Sonnet 5 / High completed the first prompt at
+**292 credits**, with no defect correction. The five initial screens render,
+the exact fixture and 6/25/2/GBP3120 metrics are intact, catalogue search/combined
+filters work, and invalid form cases did not create extra requests.
+The controlled GBP810 draft was created, edited, isolated from Taylor and
+reopened natively with its fields/history intact. The app lazily persists its
+synthetic state after the first save; this is not a persistence failure.
+An explicit draft edit replaces its child line IDs while keeping the request,
+device relationships and line count unchanged; the saved post-edit lines are
+the baseline for the three planned changes. All three earlier apps' data is
+unchanged. The frozen existing-app profile connection prompt has been submitted;
+no complete-target score or final fourth-run cost is claimed.
+
 **Third-run results:** Opus 5 / Medium's foundation completed at **505 credits**.
 Its native preview remained blank, with no visible text, navigation, headings
 or controls, after more than a minute and two native close/reopen attempts.

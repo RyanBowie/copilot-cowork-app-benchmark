@@ -38,6 +38,12 @@ added **347 credits**, resolving both defects with data and critical guards inta
 Final `/cost` is **2,358**, and the third app is **accepted at 95/100**.
 Profile fault/Retry coverage remains blocked. Both first and final outcomes,
 all screenshots and the final visible conversation are retained.
+
+The fourth app (Sonnet 5 / High) has completed its foundation at **292 credits**,
+with no correction so far. Its exact fixture, filters, invalid-input handling,
+GBP810 edited draft, requester isolation and native-reopen persistence were
+independently checked; earlier apps remain unchanged. Its existing-app profile
+connection is now being built. This is not yet a full-target or accepted result.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.
