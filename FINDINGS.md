@@ -42,8 +42,34 @@ discarded unsaved department/density changes; saved Dark/Compact/Engineering
 survived actual native reopen with another live profile read and no build-error
 overlay. The registered GBP1440 request reached Pending finance under the old
 GBP1000 rule without changing stock; the Overview correctly showed GBP4560
-pending. The fourth planned change is building. No final score is assigned yet;
-the earlier edit-guard finding still requires final recheck.
+pending.
+
+The fourth planned change reached **2,011 cumulative credits (+291)**. Its
+cost-centre migration preserves all prior fields and history, and actual native
+reopen is clean. The final planned owner rules resolve the earlier open-draft
+gap: Taylor now sees the existing Jamie draft as read-only; the original Taylor
+activity is preserved rather than erased. Cost-centre validation, thresholds,
+revisions/cancellation, atomic assets/returns, preferences, filters and live
+profile all passed their independent complete-target scenarios.
+
+**First full-target assessment: 85/100, not accepted.** Critical **CX19** fails:
+at actual 390px mobile width, the Overview stock/activity panels are about
+553px wide and extend to 569px in a 375px content viewport. An ancestor clips
+their chart/table content and sentences without usable horizontal scrolling.
+The document reports no horizontal overflow, showing why that metric alone is
+not an acceptance test. **CX20** also fails: dark validation text and its summary
+heading measure **2.15:1** at 14px, below 4.5:1; the same light-theme text is 8.23:1.
+The 1,130 baseline contrast samples did not include these error states.
+
+All 86 first-layout screenshots were reviewed via ten contact sheets. Other
+forms are usable; their measured inputs are not squeezed, and bounded request,
+approval-history and asset-table scrolling exposes rightmost controls. The final
+data has ten requests, five assets, 21 units, GBP3840 pending, three assigned
+assets and four low-stock models. Density changes from 52.67px Comfortable rows
+to 44.67px Compact rows. A fresh first-target `/cost` still reads **2,011**.
+All twenty verdicts were recorded before the second and final allowed repair,
+which targets only clipping and error-text readability. **CX14** remains blocked.
+Final acceptance and final cost are not yet claimed.
 
 **Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative

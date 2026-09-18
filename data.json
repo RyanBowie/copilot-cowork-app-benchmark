@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-18T01:15:37.691Z",
+  "generatedAt": "2026-09-18T01:44:57.799Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -622,7 +622,17 @@
           "block": null,
           "status": "in progress",
           "comparisonEligible": true,
-          "first": null,
+          "first": {
+            "points": 85,
+            "maximum": 100,
+            "accepted": false,
+            "criticalFailures": [
+              "CX19"
+            ],
+            "incomplete": [
+              "CX14"
+            ]
+          },
           "final": null,
           "firstCost": {
             "status": "observed",
@@ -713,18 +723,26 @@
               "title": "Approval policy change, revisions, cost centres and responsive refinement",
               "kind": "planned-change",
               "submitted": true,
-              "responseComplete": false,
-              "cost": null,
+              "responseComplete": true,
+              "cost": {
+                "status": "observed",
+                "value": 2011,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
               "costBeforePrompt": {
                 "status": "observed",
                 "value": 1720,
                 "unit": "credits",
                 "scope": "Cowork task"
               },
-              "increaseSincePrecedingReading": null
+              "increaseSincePrecedingReading": {
+                "value": 291,
+                "unit": "credits"
+              }
             }
           ],
-          "firstFullTargetAssessmentStage": null,
+          "firstFullTargetAssessmentStage": "stage-04",
           "plannedChanges": 3,
           "profileProof": {
             "stageId": "stage-02",
@@ -732,10 +750,10 @@
             "reverifiedAfterFinalReopen": false,
             "errorRetryCoverage": "blocked"
           },
-          "corrections": 1,
+          "corrections": 2,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 160,
+          "screenshotFiles": 329,
           "archived": false,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [
@@ -743,140 +761,140 @@
               "id": "CX01",
               "capability": "Same private app opens with all seven navigable screens",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX02",
               "capability": "Exact six-device/four-request relational seed and derived initial metrics",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX03",
               "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX04",
               "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX05",
               "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX06",
               "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX07",
               "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX08",
               "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX09",
               "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX10",
               "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX11",
               "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX12",
               "capability": "Good/damaged asset returns and duplicate-return protection",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX13",
               "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX14",
               "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
               "critical": false,
-              "first": "untested",
+              "first": "blocked",
               "final": "untested"
             },
             {
               "id": "CX15",
               "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
               "critical": true,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX16",
               "capability": "Local preference Save/Cancel, density and default department work without directory writes",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX17",
               "capability": "Cost-centre migration, persistence and department mismatch validation",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX18",
               "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
               "critical": false,
-              "first": "untested",
+              "first": "pass",
               "final": "untested"
             },
             {
               "id": "CX19",
               "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
               "critical": true,
-              "first": "untested",
+              "first": "fail",
               "final": "untested"
             },
             {
               "id": "CX20",
               "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
               "critical": false,
-              "first": "untested",
+              "first": "fail",
               "final": "untested"
             }
           ]
