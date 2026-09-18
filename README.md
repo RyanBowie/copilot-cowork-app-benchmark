@@ -9,8 +9,16 @@ model and effort selections in Copilot Cowork.
 The first prompt builds the virtual-data app; the second connects Office 365 Users
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
-**The first Sonnet 5 / Medium app is accepted at 90/100 and 1,326 final credits.**
-Opus 5 / High has started; the remaining configurations are not completed results.
+**Two of five complex apps are complete and accepted.** Opus 5 / Medium is now
+building; Sonnet 5 / High and GPT 5.5 / Medium have not started.
+
+| Configuration | Final credits | First full-target / final score | Corrections |
+|---|---:|---:|---:|
+| Sonnet 5 / Medium | 1,326 | 90 / 90 | 1 |
+| Opus 5 / High | 3,073 | 90 / 95 | 1 |
+
+The two completed final readings total **4,399 credits**; unfinished work is
+not included. This remains a partial comparison, not a five-setting ranking.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.
@@ -20,18 +28,21 @@ cross-stage data continuity, actual 390px usability, both themes and a real
 current-user read after final reopen. Profile fault/Retry coverage remains
 blocked. Cost-centre data migration works, but the required New request field
 is absent and explicit mismatch handling is not independently established.
-The app uses Geist rather than requested Segoe UI/Aptos. One accepted setting
-does not yet support a cross-model recommendation.
+The app uses Geist rather than requested Segoe UI/Aptos.
 
 Opus 5 / High's foundation used **561 credits**. Its actual in-app current-user
 profile read is now independently verified at **916 cumulative credits**
 (**+355**), with the controlled draft unchanged and no repair prompts.
 The approvals/assets/themes stage reached **1,679 cumulative credits** (**+763**),
 and the fourth planned change reached **2,505** (**+826**). The first full-target
-assessment is **90/100 but not accepted**: all business, profile and layout checks
+assessment was **90/100 but not accepted**: all business, profile and layout checks
 passed except unverified profile fault coverage, but a recurring build-error
-overlay fails the critical private-entry check. One narrow repair is underway;
-there is no final second-app score or final cost yet.
+overlay failed the critical private-entry check. One narrow repair added **568**
+credits and cleared the stale dev-server diagnostic. Actual repeated native
+reopens now work without dismissal, with records, preferences and real profile
+intact. Final `/cost` is **3,073**, and the final score is **95/100**.
+Opus passed the explicit cost-centre check that Sonnet missed; both retain blocked
+profile fault/Retry coverage. Neither result is a production-readiness claim.
 The separate metadata-only setup used 40 credits, excluded from app-build totals.
 All planned changes, repairs, stage costs and independent findings are recorded
 separately. Tests 1 and 2 remain complete and are not invalidated by Test 3.
@@ -136,7 +147,7 @@ Benchmark instrumentation stays outside the business application.
 
 | Experiment | Design | Completed | Met its gate |
 |---|---|---:|---:|
-| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 1 / 5; second build started | 1 |
+| Test 3: complex virtual apps | Five configurations once each; four identical staged prompts; external review | 2 / 5; third build started | 2 |
 | Test 2: clean SharePoint cohort | Five configurations, twice each; external review only | 10 / 10 | 10 |
 | Test 1, historical virtual-data scope | Four model/effort combinations plus a Sonnet Medium repeat | 5 / 5 | 5 |
 | Archived Dataverse attempt | Five combinations, twice each, in reverse-order blocks; Dataverse backend supplied | 1 / 10 | 0 |

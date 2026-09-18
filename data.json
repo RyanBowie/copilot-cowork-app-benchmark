@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-18T00:18:34.126Z",
+  "generatedAt": "2026-09-18T00:30:17.918Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -319,7 +319,7 @@
           "effort": "High",
           "replicate": 1,
           "block": null,
-          "status": "in progress",
+          "status": "reviewed",
           "comparisonEligible": true,
           "first": {
             "points": 90,
@@ -332,21 +332,37 @@
               "CX14"
             ]
           },
-          "final": null,
+          "final": {
+            "points": 95,
+            "maximum": 100,
+            "accepted": true,
+            "criticalFailures": [],
+            "incomplete": [
+              "CX14"
+            ]
+          },
           "firstCost": {
             "status": "observed",
             "value": 561,
             "unit": "credits",
             "scope": "Cowork task"
           },
-          "finalCost": null,
-          "increment": null,
+          "finalCost": {
+            "status": "observed",
+            "value": 3073,
+            "unit": "credits",
+            "scope": "Cowork task"
+          },
+          "increment": {
+            "value": 2512,
+            "unit": "credits"
+          },
           "timing": {
             "firstBuildResponseSeconds": 881.455,
             "firstBuildResponseLowerBoundSeconds": 879.256,
             "firstCompletionObservation": "interval-bounded",
-            "finalReviewedResultSeconds": null,
-            "timeToAcceptanceSeconds": null,
+            "finalReviewedResultSeconds": 4851.881,
+            "timeToAcceptanceSeconds": 4851.881,
             "observedApprovalWaitSeconds": 0,
             "recordedInterruptionSeconds": 0,
             "approvalWaitStillOpen": false,
@@ -446,14 +462,14 @@
           "profileProof": {
             "stageId": "stage-02",
             "verifiedInApp": true,
-            "reverifiedAfterFinalReopen": false,
+            "reverifiedAfterFinalReopen": true,
             "errorRetryCoverage": "blocked"
           },
           "corrections": 1,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 321,
-          "archived": false,
+          "screenshotFiles": 340,
+          "archived": true,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [
             {
@@ -461,140 +477,140 @@
               "capability": "Same private app opens with all seven navigable screens",
               "critical": true,
               "first": "fail",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX02",
               "capability": "Exact six-device/four-request relational seed and derived initial metrics",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX03",
               "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX04",
               "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX05",
               "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX06",
               "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX07",
               "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX08",
               "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX09",
               "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX10",
               "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX11",
               "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX12",
               "capability": "Good/damaged asset returns and duplicate-return protection",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX13",
               "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX14",
               "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
               "critical": false,
               "first": "blocked",
-              "final": "untested"
+              "final": "blocked"
             },
             {
               "id": "CX15",
               "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX16",
               "capability": "Local preference Save/Cancel, density and default department work without directory writes",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX17",
               "capability": "Cost-centre migration, persistence and department mismatch validation",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX18",
               "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX19",
               "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
               "critical": true,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             },
             {
               "id": "CX20",
               "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
               "critical": false,
               "first": "pass",
-              "final": "untested"
+              "final": "pass"
             }
           ]
         },
@@ -604,7 +620,7 @@
           "effort": "Medium",
           "replicate": 1,
           "block": null,
-          "status": "not started",
+          "status": "in progress",
           "comparisonEligible": true,
           "first": null,
           "final": null,
@@ -630,7 +646,7 @@
               "id": "stage-01",
               "title": "Build the relational virtual-data app first",
               "kind": "build",
-              "submitted": false,
+              "submitted": true,
               "responseComplete": false,
               "cost": null,
               "costBeforePrompt": null,
@@ -678,9 +694,9 @@
           "corrections": 0,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 0,
+          "screenshotFiles": 14,
           "archived": false,
-          "promptSha256": null,
+          "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [
             {
               "id": "CX01",

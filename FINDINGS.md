@@ -1,14 +1,15 @@
 # Findings
 
-## Test 3: first complex app accepted, comparison in progress
+## Test 3: complex-app results
 
 Five complex virtual-data apps are planned, with the same four prompts per app.
 The first Sonnet 5 / Medium app is accepted at **90/100 and 1,326 final credits**.
-Opus 5 / High has started; the other four configurations are not completed results.
-Tests 1 and 2 remain completed, separate cohorts. This is not yet a cross-model
-complex-app comparison.
+Opus 5 / High is accepted at **95/100 and 3,073 final credits**, after one repair.
+Opus 5 / Medium has started; the other three configurations are not completed
+results. The two final readings total **4,399 credits**. Tests 1 and 2 remain
+completed, separate cohorts. This is still a partial complex-app comparison.
 
-**Second-run progress:** Opus 5 / High has a working five-screen foundation at
+**Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative
 credits (+355). Its exact initial fixture was isolated under a different
 app-owned storage key; the first app's final records remained unchanged.
@@ -24,21 +25,36 @@ threshold and is preserved for the fourth-stage carryover check.
 A historical missing-assets-import warning, explicitly labelled as occurring
 before the page loaded, reappeared after native preview reopen. Both new routes
 rendered, but the warning intercepted a later New request pointer click until
-it was dismissed again. This recurring native-preview friction is retained and
-requires final recheck, not a claim that the warning is permanently resolved.
+it was dismissed again. This recurring native-preview friction caused the first
+full-target acceptance failure and was repaired as described below.
 The controller also avoided repeating an already completed approval when a
 capture-metadata filename collided with a result filename. No duplicate request
 or approval was created.
 
 The fourth planned change completed at **2,505 cumulative credits (+826)**.
-The first full-target assessment is **90/100, not accepted**, because **CX01**
-fails on the recurring pointer-blocking preview overlay; **CX14** remains blocked
+The first full-target assessment was **90/100, not accepted**, because **CX01**
+failed on the recurring pointer-blocking preview overlay; **CX14** remains blocked
 without independent profile fault/Retry coverage. All other checks passed,
 including explicit new/draft cost-centre mismatch rejection, the inclusive
 approval threshold and unchanged old-policy carryover, revisions/cancellation,
 per-unit assets, Good/Damaged returns, atomic stock protection, saved preferences
-and wide-desktop/390px forms in both themes. One symptom-only entry repair has
-been submitted; no final acceptance or final cost is claimed yet.
+and wide-desktop/390px forms in both themes.
+
+One symptom-only entry repair raised the observed task reading by **568 credits**
+to **3,073**. The builder reported a dev-server restart, with no source edits:
+the native runtime had retained an earlier import failure and replayed it to new
+preview connections after the module already existed. The controller verified a
+clean actual reopen with a matched live profile, then two further native reopens,
+all seven screens and the previously blocked New request pointer action. No
+build-error element or Dismiss step remained; all records/preferences were intact.
+The final fresh `/cost` stayed **3,073**, and final acceptance is **95/100**.
+The first 90-point failed assessment is preserved. The visible conversation and
+final cost evidence are archived. No native self-review or clarification prompt
+was submitted.
+
+This is a repaired preview-runtime issue, not evidence that the business source
+was broken. Future code changes could trigger the same template error-retention
+behaviour again; the result verifies the final reviewed app, not every future edit.
 
 The second app folds secondary table details into primary cells at small widths,
 while retaining a bounded scrollable Overview diagram. Its font stack begins
