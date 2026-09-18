@@ -62,27 +62,137 @@ html[data-theme="dark"] {
   --cp-sheen: rgba(255, 255, 255, 0.04);
   --cp-highlight: rgba(253, 142, 161, 0.12);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cp-bg);color:var(--cp-text);font:16px/1.65 "Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif}
-a{color:var(--cp-link)}a:hover{color:var(--cp-accent-hover)}button,select{font:inherit}button{cursor:pointer;border:1px solid var(--cp-border);border-radius:.625rem;padding:10px 16px;background:var(--cp-surface);color:var(--cp-text)}
-button[aria-pressed="true"]{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}:focus-visible{outline:3px solid var(--cp-accent);outline-offset:3px}
-header,main,footer{max-width:1180px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cp-accent)}
-nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}h1{font-size:clamp(32px,5vw,58px);line-height:1.12;max-width:900px;letter-spacing:-.03em;margin:20px 0}h2{font-size:28px;line-height:1.25;margin:0 0 12px}h3{font-size:19px;margin:0 0 12px}p{max-width:940px;margin:12px 0}.lead{font-size:20px;color:var(--cp-text-muted);max-width:920px}
-.muted,small{color:var(--cp-text-muted)}.switch{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.card{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:16px;padding:24px;margin:24px 0}.notice{border-left:4px solid var(--cp-accent);background:var(--cp-accent-soft);padding:20px;border-radius:.625rem;margin:24px 0}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.metric{padding:20px;background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:16px}.metric strong{font-size:30px;display:block;line-height:1.2;margin-bottom:8px}.metric span{color:var(--cp-text-muted);font-size:13px}
-.table-wrap{overflow:auto;max-width:100%}table{border-collapse:collapse;width:100%;font-size:14px;text-align:left}th,td{padding:12px;border-bottom:1px solid var(--cp-border);vertical-align:top}th{color:var(--cp-text-muted);background:var(--cp-surface-soft);font-size:12px;letter-spacing:.04em}td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-.pill{display:inline-block;border:1px solid var(--cp-border);border-radius:6px;padding:2px 8px;font-size:12px;white-space:nowrap}.pass{color:var(--cp-success)}.fail{color:var(--cp-danger)}.bars{display:grid;gap:16px;margin-top:20px}.bar-row{display:grid;grid-template-columns:210px minmax(0,1fr) 90px;align-items:center;gap:16px;font-size:14px}.track{background:var(--cp-surface-soft);border-radius:6px;overflow:hidden;height:20px}.fill{height:100%;background:var(--cp-accent);min-width:2px}
-summary{cursor:pointer;font-weight:600;padding:12px 0}details+details{border-top:1px solid var(--cp-border)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid .card{margin:0}.code{font-family:Consolas,"Courier New",Courier,monospace;overflow-wrap:anywhere}.findings li{margin:12px 0}.experiment{min-height:300px}section{scroll-margin-top:20px}.note{font-size:14px}footer{font-size:13px;color:var(--cp-text-muted);border-top:1px solid var(--cp-border);margin-top:32px}
-@media(max-width:700px){header,main,footer{padding:20px}.metrics{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.bar-row{grid-template-columns:1fr 70px;gap:8px}.bar-row .track{grid-column:1/-1;grid-row:auto}.card{padding:16px}.lead{font-size:18px}nav{gap:12px}.metric strong{font-size:25px}}
+:root {
+  --cp-bg: #f2f2f8;
+  --cp-bg-elevated: #f8f7fc;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f2f2f8;
+  --cp-border: #e3dfed;
+  --cp-border-strong: #9285aa;
+  --cp-text: #102631;
+  --cp-text-muted: #52637a;
+  --cp-text-soft: #667287;
+  --cp-accent: #7653ae;
+  --cp-accent-hover: #58378b;
+  --cp-accent-soft: #eee8f7;
+  --cp-accent-fg: #ffffff;
+  --cp-link: #066bc7;
+  --cp-success: #207346;
+  --cp-danger: #b4233e;
+  --cp-warning: #8c6208;
+  --cp-chart-blue: #0877dd;
+  --cp-chart-indigo: #5364ba;
+  --cp-chart-purple: #7653ae;
+  --cp-chart-violet: #9651bb;
+  --cp-chart-magenta: #b535c3;
+  --cp-chart-track: #e8e3f0;
+  --cp-transparent: transparent;
+}
+html[data-theme="dark"] {
+  --cp-bg: #151420;
+  --cp-bg-elevated: #201e2d;
+  --cp-surface: #1b1928;
+  --cp-surface-soft: #242133;
+  --cp-border: #39334c;
+  --cp-border-strong: #9285aa;
+  --cp-text: #f0edf8;
+  --cp-text-muted: #bbb4cb;
+  --cp-text-soft: #aba2bd;
+  --cp-accent: #c3a0ef;
+  --cp-accent-hover: #debeff;
+  --cp-accent-soft: #302440;
+  --cp-accent-fg: #21182e;
+  --cp-link: #80baff;
+  --cp-chart-blue: #69aeff;
+  --cp-chart-indigo: #98a5ff;
+  --cp-chart-purple: #bc98ed;
+  --cp-chart-violet: #d097ee;
+  --cp-chart-magenta: #ed8fea;
+  --cp-chart-track: #393149;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cp-bg);color:var(--cp-text);font:16px/1.65 "Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif}
+a{color:var(--cp-link);text-underline-offset:4px}a:hover{color:var(--cp-accent-hover)}
+button,select{font:inherit}
+button{cursor:pointer;border:1px solid var(--cp-border);border-radius:.625rem;padding:10px 16px;background:var(--cp-surface);color:var(--cp-text)}
+button:hover{background:var(--cp-accent-soft);border-color:var(--cp-border-strong)}
+button[aria-pressed="true"]{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+:focus-visible{outline:3px solid var(--cp-accent);outline-offset:4px}
+header{background:var(--cp-surface);border-bottom:1px solid var(--cp-border)}
+.hero-inner,main,footer{max-width:1320px;margin:auto;padding:32px 48px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cp-accent)}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+h1{font-size:clamp(36px,5vw,64px);font-weight:450;line-height:1.12;max-width:1080px;letter-spacing:-.035em;margin:28px 0 20px;color:var(--cp-chart-blue)}
+@supports (background-clip:text){h1{background:linear-gradient(105deg,var(--cp-chart-blue),var(--cp-chart-purple) 56%,var(--cp-chart-magenta));background-clip:text;color:var(--cp-transparent)}}
+h2{font-size:30px;font-weight:600;line-height:1.25;margin:0 0 16px}
+h3{font-size:21px;font-weight:600;margin:0 0 16px}
+p{max-width:980px;margin:12px 0}
+.lead{font-size:22px;color:var(--cp-text-muted);max-width:1000px}
+.muted,small{color:var(--cp-text-muted)}
+.switch{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 16px}
+.card{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:16px;padding:32px;margin:28px 0}
+.notice{background:var(--cp-accent-soft);color:var(--cp-accent);padding:20px 24px;border-radius:16px;margin:24px 0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:28px 0}
+.metric{padding:24px;background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:16px}
+.metric strong{font-size:36px;font-weight:600;color:var(--cp-accent);display:block;line-height:1.2;margin-bottom:8px}
+.metric span{color:var(--cp-text-muted);font-size:13px}
+.table-wrap{overflow:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:14px;text-align:left}
+th,td{padding:16px 12px;border-bottom:1px solid var(--cp-border);vertical-align:top}
+th{color:var(--cp-accent);background:var(--cp-surface-soft);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;border:1px solid var(--cp-border);border-radius:6px;padding:2px 8px;font-size:12px;white-space:nowrap}
+.pass{color:var(--cp-success)}.fail{color:var(--cp-danger)}
+.comparison{background:var(--cp-surface-soft);border:0;padding:32px}
+.comparison h3{font-size:32px;font-weight:450;letter-spacing:-.02em}
+.comparison-intro{font-size:18px;color:var(--cp-text-muted)}
+.bar-head,.bar-row{display:grid;grid-template-columns:minmax(190px,1.15fr) minmax(0,2fr) 92px 112px;align-items:center;gap:24px}
+.bar-head{margin:32px 0;color:var(--cp-accent);font-size:12px;letter-spacing:.07em;font-weight:700;text-transform:uppercase}
+.bar-head .credit-heading{grid-column:2/4}.bar-head .score-heading{text-align:right}
+.bars{list-style:none;padding:0;margin:0;display:grid;gap:28px}
+.bar-row{--cp-series:var(--cp-accent);font-variant-numeric:tabular-nums}
+.bar-row[data-tone="blue"]{--cp-series:var(--cp-chart-blue)}
+.bar-row[data-tone="indigo"]{--cp-series:var(--cp-chart-indigo)}
+.bar-row[data-tone="purple"]{--cp-series:var(--cp-chart-purple)}
+.bar-row[data-tone="violet"]{--cp-series:var(--cp-chart-violet)}
+.bar-row[data-tone="magenta"]{--cp-series:var(--cp-chart-magenta)}
+.bar-model{font-size:20px;font-weight:650;line-height:1.3;display:block}
+.bar-label small{font-size:12px;display:block;margin-top:4px}
+.track{background:var(--cp-chart-track);overflow:hidden;height:36px}
+.fill{height:100%;background:var(--cp-series)}
+.bar-value{color:var(--cp-series);font-size:28px;text-align:right;white-space:nowrap}
+.bar-score{color:var(--cp-accent);font-size:26px;font-weight:650;text-align:right;white-space:nowrap}
+.comparison-note{max-width:none;background:var(--cp-accent-soft);color:var(--cp-accent);border-radius:24px;padding:16px 24px;margin:36px 0 0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+summary{cursor:pointer;font-weight:600;padding:16px 0}details+details{border-top:1px solid var(--cp-border)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid .card{margin:0}
+.code{font-family:Consolas,"Courier New",Courier,monospace;overflow-wrap:anywhere}
+.findings li{margin:12px 0}.experiment{min-height:300px}section{scroll-margin-top:24px}.note{font-size:14px}
+footer{font-size:13px;color:var(--cp-text-muted);border-top:1px solid var(--cp-border);margin-top:32px}
+@media(max-width:900px){.hero-inner,main,footer{padding:28px}.bar-head,.bar-row{grid-template-columns:minmax(160px,1fr) minmax(0,1.3fr) 80px 96px;gap:16px}.bar-model{font-size:18px}.bar-value,.bar-score{font-size:24px}}
+@media(max-width:700px){
+  .hero-inner,main,footer{padding:24px 20px}.metrics{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}
+  .bar-head{display:none}.bars{gap:28px;margin-top:28px}
+  .bar-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"label score" "track track" "value value";gap:12px}
+  .bar-label{grid-area:label}.bar-row .track{grid-area:track;height:28px}.bar-value{grid-area:value;text-align:left}
+  .bar-score{grid-area:score}.bar-score .sr-only{position:static;display:block;width:auto;height:auto;margin:0;clip-path:none;font-size:12px;font-weight:400;color:var(--cp-text-muted)}
+  .card{padding:20px}.comparison h3{font-size:28px}.comparison-note{padding:16px 20px;border-radius:16px}
+  .lead{font-size:19px}nav{gap:12px}.metric{padding:20px 16px}.metric strong{font-size:28px}.notice{padding:16px 20px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(forced-colors:active){h1{background:none;color:var(--cp-text)}.track{border:1px solid var(--cp-text)}.fill{border-bottom:36px solid var(--cp-text)}}
 @media print{button,.switch{display:none}header,main{padding:0}.card,.metric{break-inside:avoid}details{display:block}a{color:var(--cp-text)}body{background:var(--cp-surface)}}
 </style></head><body>
-<header><div class="top"><span class="brand">Cowork /app · empirical benchmark</span><nav aria-label="Report sections"><a href="#results">Results</a><a href="#timing">Time</a><a href="#pairs">Repeats</a><a href="#capabilities">Capabilities</a><a href="#method">Method</a><a href="#limits">Limits</a><a href="https://github.com/RyanBowie/copilot-cowork-app-benchmark">Repository</a></nav></div>
+<header><div class="hero-inner"><div class="top"><span class="brand">Cowork /app · empirical benchmark</span><nav aria-label="Report sections"><a href="#results">Results</a><a href="#timing">Time</a><a href="#pairs">Repeats</a><a href="#capabilities">Capabilities</a><a href="#method">Method</a><a href="#limits">Limits</a><a href="https://github.com/RyanBowie/copilot-cowork-app-benchmark">Repository</a></nav></div>
 <h1>What does the same managed app cost to build?</h1>
 <p class="lead">Consistent specifications within each test. Different models and effort settings. Real app builds, independent acceptance checks and actual Cowork <span class="code">/cost</span> readings—not estimated token prices.</p>
 <div class="notice"><strong>Separate scopes · independent acceptance.</strong> Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.</div>
 <p class="muted">Test 3 builds the virtual-data app first, then connects Office 365 Users through that existing managed app. Later prompts add virtual approvals, assets, light/dark themes and policy/form changes. Test 2 remains the completed ten-build SharePoint comparison.</p>
 <div class="switch" role="group" aria-label="Choose experiment"><button data-test="test-03" data-route="test-03" aria-pressed="true">Test 3 · complex virtual apps</button><button data-test="test-02-sharepoint-clean" data-route="test-02" aria-pressed="false">Test 2 · SharePoint results</button><button data-test="test-01" data-route="test-01" aria-pressed="false">Test 1 · historical pilot</button><button data-test="test-02" data-route="test-02-dataverse" aria-pressed="false">Archived Dataverse attempt</button></div>
 <p class="note"><a href="#test-02">Test 2 is the completed ten-build SharePoint comparison.</a> The earlier Dataverse attempt is archived separately; its unfinished matrix is not the current result.</p>
-</header><main><div id="experiment" class="experiment"></div>
+</div></header><main><div id="experiment" class="experiment"></div>
 <section id="timing" class="card"><div class="eyebrow">Elapsed time</div><h2>How long did getting to the result take?</h2>
 <p class="note">Elapsed wall-clock seconds from build submission to observed first response and final reviewed result. Approval waits and recorded interruptions remain included. These are not pure model execution times; missing completion timestamps are unavailable, not zero. Timing instrumentation began during Test 2 run-01.</p>
 <div class="table-wrap"><table><thead><tr><th>Run / configuration</th><th>First build response (may be partial)</th><th>Final reviewed result</th><th>Accepted result</th><th>Observed approval wait</th><th>Recorded interruptions</th></tr></thead><tbody id="timing-rows"></tbody></table></div>
@@ -145,6 +255,7 @@ const points=value=>value?value.points+'/100':'Not reviewed';
 const duration=value=>{if(value==null)return 'Not captured';const s=Math.round(value);return Math.floor(s/3600)+':'+String(Math.floor(s%3600/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');};
 const verdict=value=>value==='pass'?'pass':value==='fail'?'fail':'muted';
 const checkLabel=value=>value==='not-required'?'Not required':value;
+const chartTones={'GPT 5.5 / Medium':'blue','Sonnet 5 / Medium':'indigo','Sonnet 5 / High':'purple','Opus 5 / Medium':'violet','Opus 5 / High':'magenta'};
 const outcome=run=>{
  const label=run.final?(run.final.accepted?'Accepted':'Not accepted'):run.status;
  const badge='<span class="pill '+(run.final?.accepted?'pass':run.final?'fail':'muted')+'">'+escape(label)+'</span>';
@@ -179,18 +290,20 @@ function render(id){
  if(staged&&lowest&&accepted.length>1&&!complete)guidance='<strong>Lowest observed accepted complex-app run so far:</strong> '+escape(lowest.model+' / '+lowest.effort)+' at '+credit(lowest.finalCost)+' final credits. Only '+reviewed.length+' of '+e.runs.length+' configurations are complete; compare their capability gaps and repair history, not price alone. This is not a completed five-setting ranking. <a href="FINDINGS.md#test-3-complex-app-results">Complex-app findings and limitations</a>.';
  if(staged&&complete&&lowest)guidance='<strong>Lowest observed accepted complex-app run:</strong> '+escape(lowest.model+' / '+lowest.effort)+' at '+credit(lowest.finalCost)+' final credits and '+points(lowest.final)+'. Guidance (clarification / correction): '+lowest.clarifications+' / '+lowest.corrections+'. Compare the capability gaps: equal scores do not mean identical features, and higher effort did not consistently buy higher coverage. One observation per setting is not a promised price or universal recommendation. <a href="FINDINGS.md#complex-app-cost-capability-and-maker-guidance">Completed complex-app cost, capability and maker guidance</a>.';
  const max=Math.max(1,...measured.map(r=>r.finalCost.value));
- const bars=measured.map(r=>'<div class="bar-row"><span>'+escape(r.id+' · '+r.model+' / '+r.effort)+'</span><div class="track"><div class="fill" style="width:'+(100*r.finalCost.value/max).toFixed(2)+'%"></div></div><strong>'+credit(r.finalCost)+'</strong></div>').join('');
+ const chartRuns=[...measured].sort((a,b)=>a.finalCost.value-b.finalCost.value||a.id.localeCompare(b.id));
+ const bars=chartRuns.map(r=>'<li class="bar-row" data-run="'+escape(r.id)+'" data-credits="'+r.finalCost.value+'" data-tone="'+(chartTones[r.model+' / '+r.effort]??'default')+'"><span class="bar-label"><span class="bar-model">'+escape(r.model+' · '+r.effort)+'</span><small>'+escape(r.id)+'</small></span><div class="track" aria-hidden="true"><div class="fill" style="width:'+(100*r.finalCost.value/max).toFixed(2)+'%"></div></div><strong class="bar-value"><span class="sr-only">Final task credits: </span>'+credit(r.finalCost)+'</strong><span class="bar-score"><span class="sr-only">Final score </span>'+points(r.final)+'</span></li>').join('');
  const rows=e.runs.map(r=>'<tr><td>'+escape(r.id)+'</td><td>'+escape(r.model)+'</td><td>'+escape(r.effort)+'</td><td>'+r.replicate+'</td><td class="num">'+credit(r.firstCost)+'</td><td class="num">'+credit(r.finalCost)+'</td><td class="num">'+points(r.first)+' → '+points(r.final)+'</td><td>'+r.clarifications+' / '+r.corrections+'</td><td>'+outcome(r)+'</td></tr>').join('');
  const pairs=e.comparisonEligible?[...groups].map(([name,runs])=>{const costs=runs.filter(r=>r.comparisonEligible&&r.finalCost?.status==='observed');const values=costs.map(r=>r.finalCost.value);return '<tr><td>'+escape(name)+'</td><td>'+costs.length+' / '+runs.length+'</td><td>'+runs.map(r=>escape(r.id)+': '+(r.comparisonEligible?credit(r.finalCost):'Excluded')).join('<br>')+'</td><td>'+(values.length>1?Math.min(...values).toLocaleString('en-GB')+'–'+Math.max(...values).toLocaleString('en-GB'):'Awaiting repeat')+'</td><td>'+runs.map(r=>r.corrections).join(' / ')+'</td></tr>';}).join(''):'<tr><td colspan="5">Superseded runs are excluded from repeatability and model-selection comparisons.</td></tr>';
  const checks=e.runs.map(r=>'<details><summary>'+escape(r.id+' · '+r.model+' / '+r.effort)+' — '+points(r.final)+'</summary><p class="note">'+r.reviews+' native self-review prompts (zero required for clean runs); '+r.corrections+' corrective prompts; '+r.approvals+' approval/notice acknowledgements. '+r.screenshotFiles+' retained PNG files'+(r.archived?'; conversation archived.':'; archive not complete.')+'</p><div class="table-wrap"><table><thead><tr><th>Check</th><th>Capability</th><th>First</th><th>Final</th></tr></thead><tbody>'+r.checks.map(c=>'<tr><td>'+c.id+(c.critical?' *':'')+'</td><td>'+escape(c.capability)+'</td><td class="'+verdict(c.first)+'">'+checkLabel(c.first)+'</td><td class="'+verdict(c.final)+'">'+checkLabel(c.final)+'</td></tr>').join('')+'</tbody></table></div><p class="note">* Critical gate. Untested or blocked is not a pass. Not required means excluded by the documented scope clarification, not a verified capability.</p>'+(r.promptSha256?'<p class="note code">Build prompt SHA-256: '+r.promptSha256+'</p>':'')+'</details>').join('');
  const displayTotal=e.comparisonEligible?(measured.length?total.toLocaleString('en-GB'):'—'):(recorded.length?recorded.reduce((sum,r)=>sum+r.finalCost.value,0).toLocaleString('en-GB'):'—');
  const costLabel=e.comparisonEligible?(complete?'total final task credits':'credits across '+measured.length+' clean final readings'):'historical gross credits · excluded';
+ const comparison=bars?'<section class="card comparison" aria-labelledby="cost-chart-title"><h3 id="cost-chart-title">Cost and score are different.</h3><p class="comparison-intro">'+e.runs.length+' builds · '+(staged?'four ordered prompts per build, plus recorded clarifications and repairs.':'the same frozen scope within this cohort.')+'</p><div class="bar-head" aria-hidden="true"><span>Selected model / effort</span><span class="credit-heading">Observed Cowork task credits</span><span class="score-heading">Final score</span></div><ol class="bars" aria-label="Comparable final task credits and scores, lowest cost first">'+bars+'</ol><p class="comparison-note"><strong>'+(complete?'Total':'Recorded total')+' '+total.toLocaleString('en-GB')+' credits.</strong> '+(staged?'Some profile fault/Retry, preference and cost-centre coverage remains incomplete.':'Connection-error coverage remains unverified.')+' Do not pool cohorts.</p></section>':'';
  const scoreHeading=e.scopeClarification?'Original score: first → final':staged?'Full-target score: first → final':'Score: first → final';
  const stagePanel=staged?'<section id="stages" class="card"><h2>Four planned stages, separately recorded.</h2><p>'+escape(e.stageNote)+'</p><div class="table-wrap"><table><thead><tr><th>Run</th>'+e.stages.map(s=>'<th>'+escape(s.id+' · '+s.title)+'</th>').join('')+'<th>Planned changes / 3</th></tr></thead><tbody>'+e.runs.map(r=>'<tr><td>'+escape(r.id+' · '+r.model+' / '+r.effort)+'</td>'+r.stages.map(s=>'<td>'+credit(s.cost)+'<br><small>'+(s.responseComplete?'Response observed; not acceptance':s.submitted?'Submitted':'Not started')+'</small>'+(s.increaseSincePrecedingReading?'<br><small>+'+Number(s.increaseSincePrecedingReading.value).toLocaleString('en-GB')+' since pre-prompt reading '+credit(s.costBeforePrompt)+'</small>':'')+'</td>').join('')+'<td>'+r.plannedChanges+' / 3</td></tr>').join('')+'</tbody></table></div><h3>Profile verification is not full-app acceptance.</h3>'+e.runs.map(r=>'<p class="note">'+escape(r.id)+': '+(r.profileProof?.verifiedInApp?'Actual app response identity and displayed fields independently verified.':'Real profile not independently verified yet.')+' Error/Retry coverage: '+escape(r.profileProof?.errorRetryCoverage??'untested')+'.</p>').join('')+'</section>':'';
- document.getElementById('experiment').innerHTML='<section id="results"><div class="eyebrow">'+escape(e.title)+'</div><h2>Measure the cost of getting to the result.</h2><p>'+escape(e.design)+'</p><div class="notice">'+notice+'</div><div class="metrics"><div class="metric"><strong>'+reviewed.length+' / '+e.runs.length+'</strong><span>apps externally reviewed</span></div><div class="metric"><strong>'+accepted.length+'</strong><span>apps meeting the acceptance gate</span></div><div class="metric"><strong>'+displayTotal+'</strong><span>'+costLabel+'</span></div><div class="metric"><strong>'+e.runs.reduce((s,r)=>s+r.corrections,0)+'</strong><span>additional corrective prompts</span></div></div><div class="card"><h3>First output is not the final bill.</h3><p class="note">Cumulative task credits are not added together. Clean runs receive no native self-review prompt; historical totals included paid review and are excluded. Guidance is clarification / correction counts.</p><div class="table-wrap"><table><thead><tr><th>Run</th><th>Selected model</th><th>Effort</th><th>Repeat</th><th>First credits</th><th>Final credits</th><th>'+scoreHeading+'</th><th>Guidance</th><th>Outcome</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+(bars?'<div class="bars" aria-label="Comparable final task credits by run">'+bars+'</div>':'<p>No comparable final credit readings are available for this experiment.</p>')+'</div><div class="notice">'+guidance+'</div></section><section id="pairs" class="card"><h2>Repeat the same configuration.</h2><p>Only eligible clean results establish observed repeatability. A small observed range is not a confidence interval or predicted price.</p><div class="table-wrap"><table><thead><tr><th>Configuration</th><th>Measured / planned</th><th>Final task credits</th><th>Observed range</th><th>Corrections</th></tr></thead><tbody>'+pairs+'</tbody></table></div></section><section id="capabilities" class="card"><h2>What actually passed?</h2><p>'+e.acceptanceCheckCount+' capabilities are checked separately. Expand a run to see first and final outcomes; no missing measurement is promoted to a pass.</p>'+checks+'</section>';
+ document.getElementById('experiment').innerHTML='<section id="results"><div class="eyebrow">'+escape(e.title)+'</div><h2>Measure the cost of getting to the result.</h2><p>'+escape(e.design)+'</p><div class="notice">'+notice+'</div><div class="metrics"><div class="metric"><strong>'+reviewed.length+' / '+e.runs.length+'</strong><span>apps externally reviewed</span></div><div class="metric"><strong>'+accepted.length+'</strong><span>apps meeting the acceptance gate</span></div><div class="metric"><strong>'+displayTotal+'</strong><span>'+costLabel+'</span></div><div class="metric"><strong>'+e.runs.reduce((s,r)=>s+r.corrections,0)+'</strong><span>additional corrective prompts</span></div></div>'+comparison+'<div class="card"><h3>First output is not the final bill.</h3><p class="note results-table-note">Cumulative task credits are not added together. Clean runs receive no native self-review prompt; historical totals included paid review and are excluded. Guidance is clarification / correction counts.</p><div class="table-wrap"><table><thead><tr><th>Run</th><th>Selected model</th><th>Effort</th><th>Repeat</th><th>First credits</th><th>Final credits</th><th>'+scoreHeading+'</th><th>Guidance</th><th>Outcome</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+(!bars?'<p>No comparable final credit readings are available for this experiment.</p>':'')+'</div><div class="notice">'+guidance+'</div></section><section id="pairs" class="card"><h2>Repeat the same configuration.</h2><p>Only eligible clean results establish observed repeatability. A small observed range is not a confidence interval or predicted price.</p><div class="table-wrap"><table><thead><tr><th>Configuration</th><th>Measured / planned</th><th>Final task credits</th><th>Observed range</th><th>Corrections</th></tr></thead><tbody>'+pairs+'</tbody></table></div></section><section id="capabilities" class="card"><h2>What actually passed?</h2><p>'+e.acceptanceCheckCount+' capabilities are checked separately. Expand a run to see first and final outcomes; no missing measurement is promoted to a pass.</p>'+checks+'</section>';
  if(staged){
   document.querySelector('#results table th:nth-child(5)').textContent='Foundation credits';
-  document.querySelector('#results .card .note').textContent='Foundation credits cover only stage 1; GPT Medium includes its one Build them all clarification because no pre-answer cost was observed. Both full-target scores assess the complete stage-4 requirements, not that initial foundation. Earlier repairs and all three planned changes remain separately recorded. Cumulative readings are not added; guidance is clarification / correction counts.';
+  document.querySelector('#results .results-table-note').textContent='Foundation credits cover only stage 1; GPT Medium includes its one Build them all clarification because no pre-answer cost was observed. Both full-target scores assess the complete stage-4 requirements, not that initial foundation. Earlier repairs and all three planned changes remain separately recorded. Cumulative readings are not added; guidance is clarification / correction counts.';
   document.getElementById('results').insertAdjacentHTML('afterend',stagePanel);
   document.querySelector('#pairs h2').textContent='One observation per configuration.';
   document.querySelector('#pairs p').textContent='Test 3 has no paired repeats. A single result cannot establish repeatability or a reliable price range.';

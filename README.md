@@ -4,6 +4,10 @@ An evidence-led comparison of the cost, time and delivered capabilities of the
 same **Device Procurement and Availability** business application, using different
 model and effort selections in Copilot Cowork.
 
+The report pairs a white/lavender, blue-to-purple visual design with cost-sorted
+comparison bars and separate final scores. Colours stay consistent per
+model/effort across repeats; presentation changes do not change measured results.
+
 **Test 3 is complete: five accepted complex Device Lifecycle Hub apps, four prompts each.**
 [Open Test 3](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-03).
 The first prompt builds the virtual-data app; the second connects Office 365 Users
