@@ -10,7 +10,7 @@ The first prompt builds the virtual-data app; the second connects Office 365 Use
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
 **Two of five complex apps are complete and accepted.** Opus 5 / Medium is now
-at the profile-connection stage; Sonnet 5 / High and GPT 5.5 / Medium have not started.
+building workflows/themes; Sonnet 5 / High and GPT 5.5 / Medium have not started.
 
 | Configuration | Final credits | First full-target / final score | Corrections |
 |---|---:|---:|---:|
@@ -27,6 +27,8 @@ forms and GBP810 draft persistence are now independently verified. An open-draft
 persona-switch save gap was also observed and retained for final role recheck;
 no final score or accepted third result is claimed. The first two apps' records
 remain unchanged.
+The third app's actual in-app current-user profile is now independently verified
+at **1,124 cumulative credits (+398)**, with the draft and full history preserved.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.

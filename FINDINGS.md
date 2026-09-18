@@ -29,8 +29,13 @@ fields and lines did not change. This observed edit-guard gap and its history
 are retained, not erased or scored as a full isolation pass. Recheck the final
 own-request rules after the planned workflow/revision changes. No second repair
 has been spent on this intermediate finding. The unchanged profile-connection
-prompt is underway; no final score is assigned yet. Both earlier apps' synthetic
-records remain unchanged.
+prompt completed at **1,124 cumulative credits (+398)**. Actual native reopen
+triggered a successful current-user GET; returned identity and displayed fields
+matched independently, and synthetic persona changes did not replace that
+profile. The draft, lines and complete history were unchanged. No directory
+write or extra connection repair was observed. Workflow/theme construction is
+underway; no final score is assigned yet. Both earlier apps' synthetic records
+remain unchanged.
 
 **Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative
