@@ -17,8 +17,8 @@ add next?" The options included the remaining required screens and **"Build them
 all"**. The latter was submitted as **one clarification**, repeating the existing
 frozen scope rather than requesting another feature or a paid review.
 The native question hid the composer, so no pre-clarification `/cost` was sent
-and no credit amount is inferred. The partial app has not yet been independently
-accepted as a complete foundation. The same task is continuing.
+and no credit amount is inferred. The partial output was not accepted as a
+complete foundation; the same task continued.
 An initial controller attempt only selected the option; the separate Submit
 action was subsequently used. That calibration and its corrected event
 classification are retained; it is not a second clarification or model repair.
@@ -32,8 +32,14 @@ No defect correction was needed. The profile stage completed at **501 cumulative
 credits (+120)**. The actual app-triggered current-user GET succeeded, account
 and displayed fields matched, and synthetic persona changes did not replace
 the directory profile. All saved tables, draft lines and history remained
-unchanged, with no directory writes. Workflows/themes are now building; this is
-not yet a complete-target assessment.
+unchanged, with no directory writes. Workflows/themes completed at **736 cumulative
+credits (+235)**. The two Submitted seeds migrated to Pending manager; original
+activity, request IDs, lines and the controlled draft survived. Preference Cancel
+discarded edits, while saved Dark/Compact/Engineering survived native reopen
+alongside another actual current-user read. The registered GBP1440 carryover
+request reached Pending finance under the old GBP1000 threshold without changing
+stock. There have been no repairs or further clarifications. The fourth planned
+change is now building; this is not yet a complete-target assessment.
 
 **Fourth-run results:** Sonnet 5 / High completed the first prompt at
 **292 credits**, with no defect correction. The five initial screens render,

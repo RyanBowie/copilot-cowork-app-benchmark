@@ -66,8 +66,11 @@ that clarification. Its exact fixture, validation, filters and edited GBP810
 draft were independently checked through native reopen, with all earlier apps
 unchanged. Existing-app profile integration completed at **501 cumulative credits
 (+120)**. Its real current-user read and displayed fields were independently
-verified without altering the saved draft/history. Workflows/themes are now
-building; there is no full-target fifth result yet.
+verified without altering the saved draft/history. Workflows/themes completed at
+**736 cumulative credits (+235)**. Seed migration, preference Cancel, saved
+Dark/Compact settings and the old-policy GBP1440 Pending finance case were
+independently verified. The fourth planned change is now building; there is no
+full-target fifth result yet.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.
