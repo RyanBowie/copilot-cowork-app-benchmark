@@ -13,9 +13,24 @@ completed, separate cohorts. This is still a partial complex-app comparison.
 Its native preview remained blank, with no visible text, navigation, headings
 or controls, after more than a minute and two native close/reopen attempts.
 The document was complete and had no build-error overlay; the builder's working
-app claims did not establish a usable delivery. One symptom-only correction is
-underway. Seed/forms remain unverified, and no final score is assigned yet.
-Both earlier apps' stored synthetic records were independently checked unchanged.
+app claims did not establish a usable delivery. One symptom-only correction
+brought the task to **726 cumulative credits (+221)**. The builder reported
+restarting the preview server to clear a cached empty Overview placeholder,
+plus defensive browser-storage access. Actual native entry now works; the
+controller verified the exact seed/metrics, filters, invalid-form protection,
+multi-line totals and an edited GBP810 draft after another real reopen.
+The disclosed in-memory fallback when storage is blocked was not independently
+tested and is not substituted for the successful local-persistence evidence.
+
+The request list correctly hides Jamie's draft from Taylor. However, switching
+to Taylor while that draft is already open leaves Save available; a same-input
+save updated the timestamp and appended a Taylor activity entry. Ownership,
+fields and lines did not change. This observed edit-guard gap and its history
+are retained, not erased or scored as a full isolation pass. Recheck the final
+own-request rules after the planned workflow/revision changes. No second repair
+has been spent on this intermediate finding. The unchanged profile-connection
+prompt is underway; no final score is assigned yet. Both earlier apps' synthetic
+records remain unchanged.
 
 **Second-run results:** Opus 5 / High has a working five-screen foundation at
 561 credits and an independently verified in-app profile at 916 cumulative

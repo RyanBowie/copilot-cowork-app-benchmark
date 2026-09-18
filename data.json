@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-18T00:45:20.611Z",
+  "generatedAt": "2026-09-18T00:58:05.577Z",
   "activeExperiment": "test-03",
   "restartNotice": "Tests 1 and 2 are complete. Test 3 adds five complex virtual-data apps with four planned prompts each: build first, connect Office 365 Users within the existing app, then extend and change it. Acceptance remains independent; planned changes and defect repairs are counted separately. Different scopes are not pooled.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub",
@@ -666,10 +666,15 @@
               "id": "stage-02",
               "title": "Connect the existing managed app to Office 365 Users",
               "kind": "planned-change",
-              "submitted": false,
+              "submitted": true,
               "responseComplete": false,
               "cost": null,
-              "costBeforePrompt": null,
+              "costBeforePrompt": {
+                "status": "observed",
+                "value": 726,
+                "unit": "credits",
+                "scope": "Cowork task"
+              },
               "increaseSincePrecedingReading": null
             },
             {
@@ -694,7 +699,7 @@
             }
           ],
           "firstFullTargetAssessmentStage": null,
-          "plannedChanges": 0,
+          "plannedChanges": 1,
           "profileProof": {
             "stageId": "stage-02",
             "verifiedInApp": false,
@@ -704,7 +709,7 @@
           "corrections": 1,
           "clarifications": 0,
           "approvals": 0,
-          "screenshotFiles": 53,
+          "screenshotFiles": 101,
           "archived": false,
           "promptSha256": "3f6463aff82d0b6a5bcfd20f0aae18e9cbe385b90c5f25f2b62c418055232ced",
           "checks": [

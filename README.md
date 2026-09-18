@@ -9,8 +9,8 @@ model and effort selections in Copilot Cowork.
 The first prompt builds the virtual-data app; the second connects Office 365 Users
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
-**Two of five complex apps are complete and accepted.** Opus 5 / Medium is under
-foundation repair; Sonnet 5 / High and GPT 5.5 / Medium have not started.
+**Two of five complex apps are complete and accepted.** Opus 5 / Medium is now
+at the profile-connection stage; Sonnet 5 / High and GPT 5.5 / Medium have not started.
 
 | Configuration | Final credits | First full-target / final score | Corrections |
 |---|---:|---:|---:|
@@ -21,9 +21,12 @@ The two completed final readings total **4,399 credits**; unfinished work is
 not included. This remains a partial comparison, not a five-setting ranking.
 
 The third app's foundation used **505 credits**, but its actual native preview
-remained blank after waiting and repeated reopen. One narrow correction is
-underway. Its seed/forms are not independently verified, and no final score or
-accepted third result is claimed. The first two apps' records remain unchanged.
+remained blank after waiting and repeated reopen. One correction brought it to
+**726 cumulative credits (+221)** and restored actual entry. Its exact seed,
+forms and GBP810 draft persistence are now independently verified. An open-draft
+persona-switch save gap was also observed and retained for final role recheck;
+no final score or accepted third result is claimed. The first two apps' records
+remain unchanged.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.
