@@ -2,16 +2,73 @@
 
 ## Test 3: complex-app results
 
-Five complex virtual-data apps are planned, with the same four prompts per app.
+Five complex virtual-data apps are complete, with the same four frozen prompts per app.
 The first Sonnet 5 / Medium app is accepted at **90/100 and 1,326 final credits**.
 Opus 5 / High is accepted at **95/100 and 3,073 final credits**, after one repair.
 Opus 5 / Medium is accepted at **95/100 and 2,358 final credits**, after two repairs.
 Sonnet 5 / High is accepted at **90/100 and 2,289 final credits**, without repairs.
-GPT 5.5 / Medium has started and is not a completed result.
-The four final readings total **9,046 credits**. Tests 1 and 2 remain
-completed, separate cohorts. This is still a partial complex-app comparison.
+GPT 5.5 / Medium is accepted at **90/100 and 944 final credits**, without repairs
+and with one clarification during its foundation.
+The five final readings total **9,990 credits**, excluding the separate 40-credit
+setup. Tests 1 and 2 remain completed, unchanged, separate cohorts.
 
-**Fifth-run progress:** GPT 5.5 / Medium paused during its first-stage build with
+### Complex-app cost, capability and maker guidance
+
+| Selected configuration | Foundation | Profile | Workflows/themes | Final planned change | Final credits | First full target | Final score | Repairs / clarifications |
+|---|---:|---:|---:|---:|---:|---|---:|---:|
+| Sonnet 5 / Medium | 176 | 367 | 770 | 1,326 | 1,326 | Accepted, 90 | 90 | 1 / 0 |
+| Opus 5 / High | 561 | 916 | 1,679 | 2,505 | 3,073 | Not accepted, 90 | 95 | 1 / 0 |
+| Opus 5 / Medium | 505 | 1,124 | 1,720 | 2,011 | 2,358 | Not accepted, 85 | 95 | 2 / 0 |
+| Sonnet 5 / High | 292 | 550 | 1,507 | 2,289 | 2,289 | Accepted, 90 | 90 | 0 / 0 |
+| GPT 5.5 / Medium | 381 | 501 | 736 | 944 | 944 | Accepted, 90 | 90 | 0 / 1 |
+
+Stage columns are **cumulative task readings, not additive costs**. Sonnet Medium
+had a 75-credit navigation repair between foundation and profile; Opus Medium
+had a 221-credit blank-entry repair there. The later Opus High and Medium repairs
+added 568 and 347 credits respectively. GPT's 381-credit foundation includes its
+clarification; no pre-answer reading exists, so clarification cost cannot be
+separated. All apps received three planned follow-ups, none of which is counted
+as a repair. There were **zero native self-review prompts**.
+
+**Cost-first starting candidate for this exact complex scope:** GPT 5.5 / Medium
+was lowest at **944 credits**, 382 credits (28.8%) below the next-lowest accepted
+run, Sonnet Medium. It needed one answer to a feature-prioritization question,
+but no defect correction. It passed cost-centre handling that Sonnet Medium
+missed. This is one observed app, not a promised price or proof that every
+internal builder used GPT.
+
+**Fewest additional maker turns:** Sonnet 5 / High finished at **2,289 credits**
+without a clarification or repair beyond the four planned prompts. Its 90-point
+coverage gap matches GPT's at rubric level, but that does not make their layouts
+or implementation identical. The additional cost did not buy higher measured
+coverage in these two observations.
+
+**Highest measured coverage:** both Opus settings finished at **95/100**.
+Medium was **715 credits cheaper** than High, but required two corrections rather
+than one. High's recurring preview overlay and Medium's initial blank entry were
+delivery/runtime problems; they are not evidence that all business logic was
+wrong or that one underlying model is intrinsically better.
+
+All five passed the critical gates: relational forms/data continuity, virtual
+role-based workflow, atomic inventory/assets, actual current-user connector reads,
+themes/reopen and usable desktop/mobile forms. **No app proved CX14** profile
+failure/Retry/missing-field behavior. Sonnet Medium also failed full **CX17**
+cost-centre handling; Sonnet High and GPT Medium have blocked **CX16**
+default-department-consumption coverage, despite working preference Save/Cancel,
+persistence and measurable density. Equal 90-point scores therefore do not imply
+the same delivered capability.
+
+There is only **one run per setting**, sequentially against a warm authorized
+profile connection. Order, caching, service state and hidden worker routing may
+affect outcomes. Review/calibration time is included in total wall time and must
+not be called model speed. GPT's first timed response was a partial Overview plus
+a question, not the complete foundation. The smaller SharePoint Test 2 instead
+favoured Sonnet Medium's two observed runs; do not pool unlike scopes or infer
+the isolated cost of adding a connector.
+
+### Fifth-run evidence
+
+GPT 5.5 / Medium paused during its first-stage build with
 a native question: "The overview is implemented. Which requested area should I
 add next?" The options included the remaining required screens and **"Build them
 all"**. The latter was submitted as **one clarification**, repeating the existing
@@ -38,8 +95,49 @@ activity, request IDs, lines and the controlled draft survived. Preference Cance
 discarded edits, while saved Dark/Compact/Engineering survived native reopen
 alongside another actual current-user read. The registered GBP1440 carryover
 request reached Pending finance under the old GBP1000 threshold without changing
-stock. There have been no repairs or further clarifications. The fourth planned
-change is now building; this is not yet a complete-target assessment.
+stock. There were no repairs or further clarifications.
+
+The fourth planned change completed at **944 cumulative credits (+208)**.
+All prior fields, line IDs and activity/history survived, including the old-policy
+Pending finance record. Required cost-centre selection and mismatch guards work.
+New GBP1440 goes directly to Approved; GBP1560 requires finance. Required decision
+comments, same-ID revision/resubmission and confirm/dismiss cancellation work.
+Submission retains a read-only editor; navigating to My requests exposes the
+saved record. Resubmission reorders the global line array without changing its
+IDs or relational values; this is not data loss.
+
+Administrator fulfilment creates one requester-linked asset per physical unit
+and deducts stock once. Good and Damaged returns have the specified different
+stock effects. After tablet depletion, the entire two-line allocation is rejected,
+including otherwise available docks, without any business-data mutation.
+The Latitude crossing and resulting UI match **21 units, two pending requests
+worth GBP3840, three assigned assets and four low-stock models**. Combined
+request filters and their explicit empty/clear state respect the selected owner.
+
+All **108** layout screenshots were viewed in **13 contact sheets**, covering
+1066px desktop and 390px mobile in both themes. No page-wide overflow or
+unscrollable clipping was observed; bounded tables and request/approval/asset/
+preference controls are reachable. **1,062** main-content/error samples and
+eight stabilized badge/action samples have no sampled contrast failure. Mobile
+chart labels are very small, while Catalogue cards expose readable exact stock;
+long card lists require scrolling. Body/controls use Aptos/Segoe UI, but
+Georgia/Cambria display headings deviate from the requested typography.
+
+**First full-target and final acceptance are both 90/100**, all critical gates
+passed. CX14 remains blocked. CX16 is also blocked overall: Save/Cancel and
+persistence work, and a representative card measures **115.83px Compact versus
+117.33px Comfortable**. Both department preferences save, but the same
+no-department Morgan new-form case used in earlier review is unavailable.
+Downstream consumption is therefore unverified, not a presumed pass or an
+invented observed failure.
+
+Final native reopen reverified the actual live profile, all ten requests/five
+assets, saved preferences and all four previous apps' unchanged data. Fresh final
+`/cost` remained **944**. The conversation is archived. The five observed
+generation intervals total a conservative **22.24 minutes**, within both limits;
+this excludes the selection-only/controller-idle clarification interval and is
+not isolated model compute. There were **zero repairs, one clarification and
+zero native reviews**.
 
 **Fourth-run results:** Sonnet 5 / High completed the first prompt at
 **292 credits**, with no defect correction. The five initial screens render,

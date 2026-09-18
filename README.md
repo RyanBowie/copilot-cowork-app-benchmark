@@ -4,23 +4,32 @@ An evidence-led comparison of the cost, time and delivered capabilities of the
 same **Device Procurement and Availability** business application, using different
 model and effort selections in Copilot Cowork.
 
-**Test 3 is underway: five complex Device Lifecycle Hub apps, four prompts each.**
+**Test 3 is complete: five accepted complex Device Lifecycle Hub apps, four prompts each.**
 [Open Test 3](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-03).
 The first prompt builds the virtual-data app; the second connects Office 365 Users
 through that existing managed app, not a general Cowork connector. Later prompts
 add virtual approvals/assets, themes/preferences and policy/form/mobile changes.
-**Four of five complex apps are complete and accepted.** The fifth and final
-configuration, GPT 5.5 / Medium, is now building.
+**All five complex apps are complete, independently accepted and archived.**
+Final task readings total **9,990 credits**, excluding the separate 40-credit setup.
 
-| Configuration | Final credits | First full-target / final score | Corrections |
-|---|---:|---:|---:|
-| Sonnet 5 / Medium | 1,326 | 90 / 90 | 1 |
-| Opus 5 / High | 3,073 | 90 / 95 | 1 |
-| Opus 5 / Medium | 2,358 | 85 / 95 | 2 |
-| Sonnet 5 / High | 2,289 | 90 / 90 | 0 |
+| Configuration | Final credits | First full-target / final score | Corrections | Clarifications |
+|---|---:|---:|---:|---:|
+| Sonnet 5 / Medium | 1,326 | 90 / 90 | 1 | 0 |
+| Opus 5 / High | 3,073 | 90 / 95 | 1 | 0 |
+| Opus 5 / Medium | 2,358 | 85 / 95 | 2 | 0 |
+| Sonnet 5 / High | 2,289 | 90 / 90 | 0 | 0 |
+| GPT 5.5 / Medium | 944 | 90 / 90 | 0 | 1 |
 
-The four completed final readings total **9,046 credits**; unfinished work is
-not included. This remains a partial comparison, not a five-setting ranking.
+**Lowest observed accepted cost:** GPT 5.5 / Medium, **944 credits**, with one
+"Build them all" clarification and no repair. **No additional maker turns:**
+Sonnet 5 / High, **2,289 credits**, beyond the four planned prompts.
+**Highest verified coverage:** both Opus settings at **95/100**; Medium cost
+**2,358** with two repairs versus High **3,073** with one.
+The three 90-point apps do not have identical gaps: Sonnet Medium lacks complete
+cost-centre handling, while Sonnet High and GPT Medium have unverified
+default-department consumption. Profile fault/Retry coverage remains blocked
+for all five. One observation per setting is not a reliable price prediction
+or universal model ranking. [Detailed maker guidance](FINDINGS.md#complex-app-cost-capability-and-maker-guidance).
 
 The third app's foundation used **505 credits**, but its actual native preview
 remained blank after waiting and repeated reopen. One correction brought it to
@@ -69,8 +78,16 @@ unchanged. Existing-app profile integration completed at **501 cumulative credit
 verified without altering the saved draft/history. Workflows/themes completed at
 **736 cumulative credits (+235)**. Seed migration, preference Cancel, saved
 Dark/Compact settings and the old-policy GBP1440 Pending finance case were
-independently verified. The fourth planned change is now building; there is no
-full-target fifth result yet.
+independently verified. The fourth planned change reached **944 cumulative credits
+(+208)**. The complete independent review and fresh final `/cost` leave the fifth
+app **accepted at 90/100 and 944 credits**, with all critical checks passed.
+Its actual approval/revision/cancellation, per-unit assets, Good/Damaged returns,
+atomic stock rejection and final metrics work. All **108 layout screenshots**
+were viewed in **13 contact sheets**; final native reopen preserved its data,
+preferences, live profile and all four earlier apps. CX14/CX16 remain blocked,
+not presumed working. Body/controls use Aptos/Segoe UI but display headings use
+serif typography, and mobile chart labels are very small; readable exact stocks
+are available in Catalogue. The conversation is archived.
 The first app's cumulative readings are **176** for the foundation, **251**
 after one navigation repair, **367** after the in-app profile connection,
 **770** after workflows/themes/preferences and **1,326** after the final changes.

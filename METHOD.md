@@ -48,6 +48,12 @@ capability difference; score the specified condition/comment, stock and
 duplicate-return requirements. Physical array order and field naming are also
 not requirements when stable record identities and relationships are preserved.
 
+Preference storage alone does not establish default-department consumption.
+Departmented personas retain their own department. The no-department Morgan
+new-form fallback was inspected where the app exposed it; an unavailable case
+leaves that part of CX16 blocked rather than inventing a functional pass or failure.
+Save/Cancel, persistence and measured density effects are reported separately.
+
 Record actual cumulative `/cost` after each stage, repair and at the end. Initial
 credits cover the foundation; stage readings expose the later cumulative spend.
 Three planned follow-ups are counted separately from up to two defect corrections
@@ -55,6 +61,15 @@ and two requirement clarifications. There are no native self-review prompts.
 The earlier metadata-only setup used 40 credits and created no app. Its generic
 registry limitation neither proved a broken managed-app connection nor a working
 profile. The user corrected the sequence before any measured build was submitted.
+
+A native feature-prioritization answer counts as a clarification, even when it
+only repeats requested scope. GPT's first response paused after Overview;
+"Build them all" was one submitted answer, not a new feature. Its 381-credit
+completed foundation includes that answer; no pre-answer cost was observed.
+Selecting an option without pressing Submit was controller calibration, not
+a second turn. First-response timing can therefore describe a partial output,
+not the finished foundation. Waiting for the answer and selection-only idle time
+are excluded from observed generation intervals but remain in total wall time.
 
 Five apps maximum; no hidden replacement or sixth pilot. Stop at a shared unresolved
 platform/authorization blocker, two repairs, thirty observed generation minutes for
