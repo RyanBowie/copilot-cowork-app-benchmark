@@ -1,7 +1,8 @@
 # Copilot Cowork managed-app benchmark
 
-**29 completed app measurements:** the original 20 apps across three tests,
-plus nine additional external-review observations for Tests 1 and 2. Compare
+**32 completed app measurements:** the original 20 apps across three tests,
+plus nine additional external-review observations for Tests 1 and 2 and three
+additional complex-app observations for Test 3. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
 
@@ -27,8 +28,9 @@ how many builds contribute to each configuration; the test scopes remain separat
 |---|---:|---:|---|
 | Test 1: virtual data | 4 | 382.5 | 100/100 |
 | Test 2: SharePoint | 5 | 722.4 | 90/100 |
+| Test 3: complex virtual apps | 3 | 1,855.7 | 85-95/100 |
 
-Both additional samples use **zero native self-review prompts**. For the
+All additional samples use **zero native self-review prompts**. For the
 **same four model/effort settings**, the means are **382.5 virtual versus
 692.5 SharePoint credits**. The five-app SharePoint mean also includes Opus
 Medium; the four-app virtual sample does not. Individual readings, guidance,
@@ -40,6 +42,15 @@ permission also differs between prompt versions. The new virtual method
 explicitly scores verified local persistence; historical 95-point scores are
 unchanged. See the [additional findings](FINDINGS.md#additional-external-review-measurements)
 before comparing averages.
+
+The additional corporate **Test 3** results are **GPT 5.5 Medium: 573**,
+**Sonnet 5 High: 2,134**, and **Opus 5 High: 2,860** credits. Comparing exactly
+those same three settings gives an original mean of **2,102** versus an
+additional mean of **1,855.7**; the descriptive mean across their six observations
+is **1,978.8**. The original five-setting mean remains **1,998**. Keep these
+denominators distinct rather than interpreting a changed model mix as a price
+change. [Cost pairs and capability differences](FINDINGS.md#additional-test-3-complex-apps)
+are shown separately in the report.
 
 ## What was built and tested
 
@@ -64,7 +75,7 @@ policy, stock-safe workflows, profile identity and desktop/mobile usability.
 
 Compare configurations **within a test**. Each test holds its own specification
 and review criteria constant, but the three scopes are different. Original
-Test 1 includes native self-review; Tests 2 and 3 and both additional samples
+Test 1 includes native self-review; Tests 2 and 3 and all additional samples
 use external-only review. Original and additional averages remain separate.
 
 The headline average is the sum of final task credits divided by completed apps
@@ -88,8 +99,10 @@ For the original SharePoint cohort, **Sonnet 5 / Medium** recorded 224 and 230
 credits; its additional observation used 301. All three reached 90/100 without
 corrective prompts, but the publication-permission difference remains labelled.
 For the complex app,
-**GPT 5.5 / Medium** recorded 944 credits and 90/100, with one clarification and
-no corrective prompts. Both Opus configurations reached 95/100 in Test 3.
+**GPT 5.5 / Medium** recorded 944 credits and 90/100 originally, and 573 credits
+and 85/100 in the additional observation. The lower-cost result has different
+coverage gaps, not an identical quality score. Opus High reached 95/100 in
+both its original and additional observations.
 These are observations for the tested scopes, not universal model rankings.
 
 Acceptance requires at least 85/100 and every required critical check. The

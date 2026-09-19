@@ -1,0 +1,33 @@
+Build a private managed app called "Device Lifecycle Hub". This is a complex virtual-data procurement demonstration, not a real procurement system. Implement this first stage now; later prompts will extend this same app. Private publication to the signed-in owner is allowed. Do not share it, send messages, place real orders, create flows, provision business data sources, or change tenant settings.
+
+DATA AND IDENTITY
+Use related virtual/local business tables (Devices, DemoPeople, Requests, RequestLines and Activity), persisted within this private app so browser reload and closing/reopening its preview preserve edits. Browser-local storage is acceptable; cross-user/server persistence is not required. Keep data isolated to this app, initialize the exact fixture once, and never silently reseed over saved records during later changes. Business relationships use stable IDs. All business people and records below are synthetic.
+
+Build the app first without connecting any live data source. Include a Profile screen showing "Office 365 Users not connected yet", with no fabricated directory values. A separate follow-up prompt will connect Office 365 Users through this existing managed app. The synthetic business persona selector is not a real user profile or authentication mechanism.
+
+EXACT FIXTURE
+Currency GBP; amounts below are pounds, not pence.
+Devices (ID | name | category | unit price | available stock):
+DEV001 | Surface Laptop 13 | Laptop | 1200 | 8
+DEV002 | Latitude 14 | Laptop | 950 | 3
+DEV003 | MacBook Air 13 | Laptop | 1100 | 0
+DEV004 | USB-C Dock | Accessory | 180 | 12
+DEV005 | iPad 128GB | Tablet | 450 | 2
+DEV006 | 27-inch Monitor | Monitor | 280 | 0
+DemoPeople: Jamie Chen (requester, Engineering); Taylor Reed (requester, Operations); Morgan Lee (manager); Casey Patel (finance); Alex Rivera (asset administrator). A clearly labelled Demo persona selector permits these simulated roles; this is not real authorization.
+Requests (ID | requester | status | needed-by | justification | lines):
+REQ001 | Jamie Chen | Submitted | 2026-10-15 | Engineering laptop refresh | DEV001 x2
+REQ002 | Taylor Reed | Submitted | 2026-10-20 | Docking stations for operations | DEV004 x4
+REQ003 | Jamie Chen | Draft | 2026-10-25 | Field demonstration tablet | DEV005 x1
+REQ004 | Taylor Reed | Rejected | 2026-10-15 | Additional desktop display | DEV002 x1
+Seed an Activity entry for each request's initial state. Stock is the starting availability above and is not reduced merely by drafting/submitting requests.
+
+SCREENS AND FIRST-STAGE BEHAVIOR
+Provide Overview, Catalogue, My requests, a request editor/detail view, and Profile as distinct navigable screens. Use a polished, accessible, responsive business layout with labelled controls, visible focus, readable spacing and a light theme. Use Segoe UI/Aptos typography, warm neutral surfaces and a rose accent, not gradients.
+Overview shows six device models, 25 available units, two Submitted requests and GBP 3,120 submitted value initially; metrics derive from current tables.
+Catalogue searches names/IDs, filters by category and stock availability, shows exact prices/stock, and clearly disables requests for zero-stock devices.
+My requests filters to the selected requester persona, supports status filtering and opens request details, lines, totals and activity. For non-requester personas, an explicitly labelled all-requests view is acceptable.
+The request form supports adding/removing multiple device lines; required needed-by date and justification; positive whole-number quantities; no duplicate device lines, zero-stock selections or quantities exceeding available stock. Recalculate each line and the GBP total immediately. Prevent invalid Save draft/Submit without losing input. Use real dates and require needed-by on or after 2026-09-17.
+Save draft and Submit create distinct stable request IDs and related line records exactly once, capture the requester/department and add timestamped Activity. Drafts can be reopened and edited. Submitted requests are read-only at this stage. Role/persona switching changes the visible business records, not the real connector profile. Preserve drafts and submitted data on navigation/reopen.
+
+Keep the same app through later changes. Implement the requested functionality; do not run a separate self-review, acceptance-testing pass, create extra test records or offer to perform a paid audit. Independent acceptance testing is performed outside Cowork. Briefly report what was implemented and any actual limitation.

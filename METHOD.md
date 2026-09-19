@@ -2,9 +2,10 @@
 
 This report preserves three original complete cohorts: five virtual-data apps,
 ten SharePoint-connected apps and five complex multi-prompt apps. A separate
-cost cross-check adds four reviewed virtual observations and five SharePoint
-observations. Every measurement shown has an observed final cost and an
-accepted final assessment; the methods and sample sizes remain distinct.
+cost cross-check adds four reviewed virtual observations, five SharePoint
+observations and three complex-app observations. Every measurement shown has an
+observed final cost and an accepted final assessment; the methods and sample
+sizes remain distinct.
 
 ## Controls shared within each test
 
@@ -134,6 +135,37 @@ It excludes the SharePoint-only Opus Medium value from the matched mean, not
 from its published results. Different business scope and publication permissions
 still prevent treating the difference as an isolated connector price.
 
+## Additional corporate Test 3 observations
+
+Three completed four-stage observations add GPT Medium, Sonnet High and Opus
+High to the original complex-app results, in that relative order. Use the
+same corporate account and tenant, exact synthetic fixture, policy-carryover
+and low-stock scenarios, twenty checks and critical gates. The foundation
+[prompt](benchmark/test-03-repeat/stage-01-build.txt) changes only permission
+for private owner-only publication; the three subsequent prompts are identical
+to the originals. Do not silently rewrite the original protocol or pool its
+five-setting mean with a differently composed sample.
+
+Each result has one fresh task/app, three planned follow-ups, at most two
+evidenced corrective prompts and zero native self-review prompts. Review is
+external-only. Preserve the first complete-target assessment before any
+subsequent correction, and retain final observed cost, profile reread,
+saved-state reopening, screenshots and conversation archive before deleting
+only the exact authorized published app.
+
+Preference coverage distinguishes Save/Cancel and persistence from actual
+consumption. A density change requires a measured row-height or spacing
+difference of at least 0.5 CSS pixels; floating-point noise is not a pass.
+Default department must demonstrably affect a new-request department or a
+department filter, rather than just retain a selected value. Report the
+specific surface actually exercised.
+
+The additional mean is **5,567 / 3 = 1,855.7** credits (rounded). The matched
+original mean is **6,306 / 3 = 2,102** for those same settings. Their descriptive
+six-observation mean is **11,873 / 6 = 1,978.8**. Each paired setting has two
+observations, with labelled publication permissions; these are neither
+reliability estimates nor isolated model-pricing effects.
+
 ## Cost and timing
 
 Record the actual native `/cost` card after authoring checkpoints and at the
@@ -179,7 +211,8 @@ Compare configurations within the same test. Different scope, backend and
 review method prevent treating cross-test differences as the isolated cost of
 a model or connector. Original Test 2 has two observations per setting and one
 additional observation per setting under amended publication permission;
-the published original Test 3 cohort has one.
+the original Test 3 cohort has one per setting, with a second published
+observation for GPT Medium, Sonnet High and Opus High.
 These sample sizes do not establish reliable variance, success rates or future
 prices. Order, caching, service load and internal builder routing may influence
 the observations.

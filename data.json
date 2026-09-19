@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-09-19T01:40:48.399Z",
+  "generatedAt": "2026-09-19T13:31:33.965Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-03",
   "scopeNote": "Three completed tests: five virtual-data apps, ten SharePoint-connected apps and five complex multi-prompt apps. Compare model settings within each test; the three scopes are not pooled.",
@@ -4897,5 +4897,850 @@
       "test-01": 382.5,
       "test-02": 692.5
     }
+  },
+  "complexValidation": {
+    "test": "test-03",
+    "title": "Additional complex-app measurements",
+    "reviewMode": "external-only",
+    "promptPath": "benchmark/test-03-repeat/stage-01-build.txt",
+    "runs": [
+      {
+        "id": "run-06",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "replicate": 2,
+        "firstCost": {
+          "status": "observed",
+          "value": 183,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "finalCost": {
+          "status": "observed",
+          "value": 573,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "final": {
+          "points": 85,
+          "maximum": 100,
+          "accepted": true,
+          "criticalFailures": [],
+          "incomplete": [
+            "CX14",
+            "CX16"
+          ]
+        },
+        "corrections": 1,
+        "clarifications": 0,
+        "reviews": 0,
+        "plannedChanges": 3,
+        "timing": {
+          "build": {
+            "seconds": 1268.978,
+            "lowerBoundSeconds": 1253.919,
+            "observation": "interval-bounded",
+            "authoringPrompts": 5,
+            "observedPrompts": 5
+          },
+          "firstBuildResponseSeconds": 339.929,
+          "firstBuildResponseLowerBoundSeconds": 337.225,
+          "firstCompletionObservation": "interval-bounded",
+          "finalReviewedResultSeconds": 5143.882,
+          "timeToAcceptanceSeconds": 5143.882,
+          "observedApprovalWaitSeconds": 0,
+          "recordedInterruptionSeconds": 0,
+          "approvalWaitStillOpen": false,
+          "interruptionStillOpen": false,
+          "firstCompletionDetectionWindowSeconds": 2.704,
+          "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+        },
+        "stages": [
+          {
+            "id": "stage-01",
+            "title": "Build the relational virtual-data app first",
+            "cost": {
+              "status": "observed",
+              "value": 183,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": null,
+            "increaseSincePrecedingReading": null
+          },
+          {
+            "id": "stage-02",
+            "title": "Connect the existing managed app to Office 365 Users",
+            "cost": {
+              "status": "observed",
+              "value": 276,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 183,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 93,
+              "unit": "credits"
+            }
+          },
+          {
+            "id": "stage-03",
+            "title": "Virtual approvals, asset lifecycle, themes and preferences",
+            "cost": {
+              "status": "observed",
+              "value": 397,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 276,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 121,
+              "unit": "credits"
+            }
+          },
+          {
+            "id": "stage-04",
+            "title": "Approval policy change, revisions, cost centres and responsive refinement",
+            "cost": {
+              "status": "observed",
+              "value": 573,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 442,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 131,
+              "unit": "credits"
+            }
+          }
+        ],
+        "promptSha256": "00e76f1c01c59953a44e6199dedb1bad741dbb4ec4f5051c18e150d32f9a175c",
+        "promptVersion": "complex-private-v2",
+        "archived": true,
+        "screenshotFiles": 378,
+        "profileProof": {
+          "verifiedInApp": true,
+          "reverifiedAfterFinalReopen": true,
+          "directoryWritesObserved": 0
+        },
+        "preferences": {
+          "saveCancelAndPersistence": "verified",
+          "requestRowDensity": "not-demonstrated",
+          "rowHeightDifferenceCssPixels": 0,
+          "gapDifferenceCssPixels": 0,
+          "defaultDepartmentConsumption": "not-demonstrated"
+        },
+        "checks": [
+          {
+            "id": "CX01",
+            "capability": "Same private app opens with all seven navigable screens",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX02",
+            "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX03",
+            "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX04",
+            "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX05",
+            "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX06",
+            "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX07",
+            "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX08",
+            "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX09",
+            "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX10",
+            "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX11",
+            "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX12",
+            "capability": "Good/damaged asset returns and duplicate-return protection",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX13",
+            "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX14",
+            "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+            "critical": false,
+            "final": "blocked"
+          },
+          {
+            "id": "CX15",
+            "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX16",
+            "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+            "critical": false,
+            "final": "blocked"
+          },
+          {
+            "id": "CX17",
+            "capability": "Cost-centre migration, persistence and department mismatch validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX18",
+            "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX19",
+            "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX20",
+            "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+            "critical": false,
+            "final": "fail"
+          }
+        ]
+      },
+      {
+        "id": "run-07",
+        "model": "Sonnet 5",
+        "effort": "High",
+        "replicate": 2,
+        "firstCost": {
+          "status": "observed",
+          "value": 433,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "finalCost": {
+          "status": "observed",
+          "value": 2134,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "final": {
+          "points": 85,
+          "maximum": 100,
+          "accepted": true,
+          "criticalFailures": [],
+          "incomplete": [
+            "CX14",
+            "CX16"
+          ]
+        },
+        "corrections": 1,
+        "clarifications": 0,
+        "reviews": 0,
+        "plannedChanges": 3,
+        "timing": {
+          "build": {
+            "seconds": 2950.698,
+            "lowerBoundSeconds": 2923.852,
+            "observation": "interval-bounded",
+            "authoringPrompts": 5,
+            "observedPrompts": 5
+          },
+          "firstBuildResponseSeconds": 1037.248,
+          "firstBuildResponseLowerBoundSeconds": 1033.201,
+          "firstCompletionObservation": "interval-bounded",
+          "finalReviewedResultSeconds": 5135.595,
+          "timeToAcceptanceSeconds": 5135.595,
+          "observedApprovalWaitSeconds": 0,
+          "recordedInterruptionSeconds": 0,
+          "approvalWaitStillOpen": false,
+          "interruptionStillOpen": false,
+          "firstCompletionDetectionWindowSeconds": 4.047,
+          "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+        },
+        "stages": [
+          {
+            "id": "stage-01",
+            "title": "Build the relational virtual-data app first",
+            "cost": {
+              "status": "observed",
+              "value": 433,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": null,
+            "increaseSincePrecedingReading": null
+          },
+          {
+            "id": "stage-02",
+            "title": "Connect the existing managed app to Office 365 Users",
+            "cost": {
+              "status": "observed",
+              "value": 654,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 497,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 157,
+              "unit": "credits"
+            }
+          },
+          {
+            "id": "stage-03",
+            "title": "Virtual approvals, asset lifecycle, themes and preferences",
+            "cost": {
+              "status": "observed",
+              "value": 1232,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 654,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 578,
+              "unit": "credits"
+            }
+          },
+          {
+            "id": "stage-04",
+            "title": "Approval policy change, revisions, cost centres and responsive refinement",
+            "cost": {
+              "status": "observed",
+              "value": 2134,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 1232,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 902,
+              "unit": "credits"
+            }
+          }
+        ],
+        "promptSha256": "00e76f1c01c59953a44e6199dedb1bad741dbb4ec4f5051c18e150d32f9a175c",
+        "promptVersion": "complex-private-v2",
+        "archived": true,
+        "screenshotFiles": 401,
+        "profileProof": {
+          "verifiedInApp": true,
+          "reverifiedAfterFinalReopen": true,
+          "directoryWritesObserved": 0
+        },
+        "preferences": {
+          "saveCancelAndPersistence": "verified",
+          "requestRowDensity": "verified",
+          "rowHeightDifferenceCssPixels": 4,
+          "gapDifferenceCssPixels": 0,
+          "defaultDepartmentConsumption": "not-demonstrated"
+        },
+        "checks": [
+          {
+            "id": "CX01",
+            "capability": "Same private app opens with all seven navigable screens",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX02",
+            "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX03",
+            "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX04",
+            "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX05",
+            "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX06",
+            "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX07",
+            "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX08",
+            "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX09",
+            "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX10",
+            "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX11",
+            "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX12",
+            "capability": "Good/damaged asset returns and duplicate-return protection",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX13",
+            "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX14",
+            "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+            "critical": false,
+            "final": "blocked"
+          },
+          {
+            "id": "CX15",
+            "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX16",
+            "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+            "critical": false,
+            "final": "blocked"
+          },
+          {
+            "id": "CX17",
+            "capability": "Cost-centre migration, persistence and department mismatch validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX18",
+            "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX19",
+            "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX20",
+            "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+            "critical": false,
+            "final": "fail"
+          }
+        ]
+      },
+      {
+        "id": "run-09",
+        "model": "Opus 5",
+        "effort": "High",
+        "replicate": 2,
+        "firstCost": {
+          "status": "observed",
+          "value": 521,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "finalCost": {
+          "status": "observed",
+          "value": 2860,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "final": {
+          "points": 95,
+          "maximum": 100,
+          "accepted": true,
+          "criticalFailures": [],
+          "incomplete": [
+            "CX14"
+          ]
+        },
+        "corrections": 2,
+        "clarifications": 0,
+        "reviews": 0,
+        "plannedChanges": 3,
+        "timing": {
+          "build": {
+            "seconds": 2565.492,
+            "lowerBoundSeconds": 2541.55,
+            "observation": "interval-bounded",
+            "authoringPrompts": 6,
+            "observedPrompts": 6
+          },
+          "firstBuildResponseSeconds": 824.791,
+          "firstBuildResponseLowerBoundSeconds": 821.099,
+          "firstCompletionObservation": "interval-bounded",
+          "finalReviewedResultSeconds": 26070.834,
+          "timeToAcceptanceSeconds": 26070.834,
+          "observedApprovalWaitSeconds": 0,
+          "recordedInterruptionSeconds": 0,
+          "approvalWaitStillOpen": false,
+          "interruptionStillOpen": false,
+          "firstCompletionDetectionWindowSeconds": 3.692,
+          "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+        },
+        "stages": [
+          {
+            "id": "stage-01",
+            "title": "Build the relational virtual-data app first",
+            "cost": {
+              "status": "observed",
+              "value": 521,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": null,
+            "increaseSincePrecedingReading": null
+          },
+          {
+            "id": "stage-02",
+            "title": "Connect the existing managed app to Office 365 Users",
+            "cost": {
+              "status": "observed",
+              "value": 1219,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 832,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 387,
+              "unit": "credits"
+            }
+          },
+          {
+            "id": "stage-03",
+            "title": "Virtual approvals, asset lifecycle, themes and preferences",
+            "cost": {
+              "status": "observed",
+              "value": 1860,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 1219,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 641,
+              "unit": "credits"
+            }
+          },
+          {
+            "id": "stage-04",
+            "title": "Approval policy change, revisions, cost centres and responsive refinement",
+            "cost": {
+              "status": "observed",
+              "value": 2431,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "costBeforePrompt": {
+              "status": "observed",
+              "value": 1860,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "increaseSincePrecedingReading": {
+              "value": 571,
+              "unit": "credits"
+            }
+          }
+        ],
+        "promptSha256": "00e76f1c01c59953a44e6199dedb1bad741dbb4ec4f5051c18e150d32f9a175c",
+        "promptVersion": "complex-private-v2",
+        "archived": true,
+        "screenshotFiles": 465,
+        "profileProof": {
+          "verifiedInApp": true,
+          "reverifiedAfterFinalReopen": true,
+          "directoryWritesObserved": 0
+        },
+        "preferences": {
+          "saveCancelAndPersistence": "verified",
+          "requestRowDensity": "verified",
+          "rowHeightDifferenceCssPixels": 8,
+          "gapDifferenceCssPixels": 0,
+          "defaultDepartmentConsumption": "verified",
+          "defaultDepartmentSurfaces": [
+            "Approvals department filter",
+            "All-requests department filter"
+          ]
+        },
+        "checks": [
+          {
+            "id": "CX01",
+            "capability": "Same private app opens with all seven navigable screens",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX02",
+            "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX03",
+            "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX04",
+            "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX05",
+            "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX06",
+            "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX07",
+            "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX08",
+            "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX09",
+            "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX10",
+            "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX11",
+            "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX12",
+            "capability": "Good/damaged asset returns and duplicate-return protection",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX13",
+            "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX14",
+            "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+            "critical": false,
+            "final": "blocked"
+          },
+          {
+            "id": "CX15",
+            "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX16",
+            "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX17",
+            "capability": "Cost-centre migration, persistence and department mismatch validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX18",
+            "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "CX19",
+            "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "CX20",
+            "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+            "critical": false,
+            "final": "pass"
+          }
+        ]
+      }
+    ],
+    "pairs": [
+      {
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "observations": 2,
+        "originalCredits": 944,
+        "additionalCredits": 573,
+        "meanFinalCredits": 758.5,
+        "originalCorrections": 0,
+        "additionalCorrections": 1
+      },
+      {
+        "model": "Sonnet 5",
+        "effort": "High",
+        "observations": 2,
+        "originalCredits": 2289,
+        "additionalCredits": 2134,
+        "meanFinalCredits": 2211.5,
+        "originalCorrections": 0,
+        "additionalCorrections": 1
+      },
+      {
+        "model": "Opus 5",
+        "effort": "High",
+        "observations": 2,
+        "originalCredits": 3073,
+        "additionalCredits": 2860,
+        "meanFinalCredits": 2966.5,
+        "originalCorrections": 1,
+        "additionalCorrections": 2
+      }
+    ],
+    "matchedConfigurationCount": 3,
+    "originalMeanFinalCredits": 1998,
+    "meanFinalCredits": 1855.6666666666667,
+    "matchedOriginalMeanFinalCredits": 2102,
+    "matchedAdditionalMeanFinalCredits": 1855.6666666666667,
+    "matchedCombinedMeanFinalCredits": 1978.8333333333333,
+    "note": "Completed externally reviewed applications only. Original results remain unchanged. Compare original and additional observations within the same model/effort settings shown.",
+    "comparisonNote": "The paired means use exactly the same settings on both sides. The original overall average covers all five settings; do not attribute a different model mix to a model-price change.",
+    "promptNote": "All four business stages and the acceptance rubric are unchanged. The additional foundation prompt permits private owner-only publication. This scope difference and two observations per paired setting prevent causal pricing or reliability claims.",
+    "stageNote": "Stage readings are cumulative and must not be added together. An increase uses the last reading before that prompt, including any earlier repair; it is not an isolated connector or token price."
   }
 }

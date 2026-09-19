@@ -1,6 +1,6 @@
 # Completed benchmark findings
 
-The 20 original apps in Tests 1-3 and nine additional reviewed observations meet
+The 20 original apps in Tests 1-3 and twelve additional reviewed observations meet
 their final scoring and critical-check gates. Costs below are observed
 cumulative Cowork task credits. Keep original and additional samples distinct;
 app scope, model mix, review method and publication permission affect comparison.
@@ -127,8 +127,8 @@ Equal 90-point scores therefore do not imply identical delivered capabilities.
 90/100, with one clarification and no corrective prompts. Both Opus settings
 reached 95/100; Opus Medium used fewer final credits than Opus High in these
 observations. Higher reasoning did not consistently increase the final score.
-There is only one observation per setting, so this does not establish
-repeatability or a universal best model.
+The original cohort has one observation per setting; the additional pairs
+below extend three settings. Neither establishes a universal best model.
 
 Build time includes every planned authoring stage and additional clarification
 or correction response. It excludes external review, screenshot-taking gaps,
@@ -142,7 +142,7 @@ the complete app. Within-turn waits and observation uncertainty remain included.
 The additional samples retain the original results above and use **no native
 self-review prompts**. Every value below is a completed app's final cumulative
 task reading, including its recorded corrections. There are zero clarification
-prompts in these nine observations.
+prompts in these twelve additional observations.
 
 ### Additional Test 1: virtual procurement
 
@@ -200,7 +200,70 @@ guarantee fewer corrections, lower cost or a higher final score. Use the
 per-setting readings and actual capability coverage, not a cross-test headline
 average, and do not treat these small samples as a guaranteed future price.
 
-## Interpretation
+### Additional Test 3: complex apps
+
+Three additional corporate-tenant apps completed all four planned stages and
+the independent final acceptance checks. Original results remain unchanged.
+The business prompts and rubric are consistent; the amended foundation prompt
+permits private owner-only publication. No native self-review prompt was sent.
+
+| Configuration | Final credits | Score | Corrections | Build time, approx. |
+|---|---:|---:|---:|---:|
+| GPT 5.5 / Medium | 573 | 85/100 | 1 | 21m 09s |
+| Sonnet 5 / High | 2,134 | 85/100 | 1 | 49m 11s |
+| Opus 5 / High | 2,860 | 95/100 | 2 | 42m 45s |
+| **Total / mean** | **5,567 / 1,855.7** | **3 reviewed apps** | **4** | |
+
+There were no clarification prompts. Times use submission-to-first-observed-idle
+intervals, not the later idle-confirmation timestamp or external review time.
+
+| Configuration | Foundation | Profile | Workflows | Policy/forms | Final task total |
+|---|---:|---:|---:|---:|---:|
+| GPT 5.5 / Medium | 183 | 276 | 397 | 573 | 573 |
+| Sonnet 5 / High | 433 | 654 | 1,232 | 2,134 | 2,134 |
+| Opus 5 / High | 521 | 1,219 | 1,860 | 2,431 | 2,860 |
+
+These readings are **cumulative, not additive**. Final totals include the
+corrections used to reach acceptance, including any after the final planned
+stage. Stage differences do not isolate connector charges.
+
+| Configuration | Original credits | Additional credits | Mean of two | Original / additional score |
+|---|---:|---:|---:|---:|
+| GPT 5.5 / Medium | 944 | 573 | 758.5 | 90 / 85 |
+| Sonnet 5 / High | 2,289 | 2,134 | 2,211.5 | 90 / 85 |
+| Opus 5 / High | 3,073 | 2,860 | 2,966.5 | 95 / 95 |
+| **Same-setting means** | **2,102** | **1,855.7** | **1,978.8** | |
+
+The original overall Test 3 mean remains **1,998 across five settings**. The
+matched comparison above uses exactly three settings on both sides; its paired
+mean covers six observations. Do not treat the different sample composition or
+publication permission as a measured model-price change.
+
+All three demonstrate the critical multi-screen, multi-line, approval,
+stock-safe fulfilment, continuity, theme, real-profile and responsive
+requirements. Their noncritical coverage differs:
+
+| Configuration | Coverage outside the awarded points |
+|---|---|
+| GPT 5.5 / Medium | Profile fault/Retry unverified; meaningful density/default-department consumption not demonstrated; sampled light-theme error text below 4.5:1 |
+| Sonnet 5 / High | Profile fault/Retry and default-department consumption unverified; sampled light-theme error text below 4.5:1 |
+| Opus 5 / High | Profile fault/Retry unverified |
+
+Save/Cancel and preference persistence work in all three. Sonnet High has a
+measured 4px request-row density change; Opus High has an 8px change and consumes
+the default department in Approvals and all-requests filters. Do not infer that
+either filter sets a new request's department. The profile is genuinely read-only
+and was reverified after each final native reopen.
+
+**Maker guidance:** GPT Medium remains the lowest observed completed cost in
+these matched complex-app results, but its additional 85/100 result has more
+coverage gaps than its original 90/100 result. Opus High reached 95/100 twice at
+higher cost, using one and two corrective prompts respectively. Choose against
+the actual required capabilities and review budget, not just the smallest
+credit number. Two observations per shown setting do not establish reliable
+variance, success rates or future prices.
+
+## Interpretation and limits
 
 Acceptance means at least 85/100 and every required critical check, not complete
 coverage or production readiness. The synthetic fixtures do not establish
