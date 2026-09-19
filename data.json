@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-09-18T16:46:05.980Z",
+  "generatedAt": "2026-09-19T01:40:48.399Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-03",
   "scopeNote": "Three completed tests: five virtual-data apps, ten SharePoint-connected apps and five complex multi-prompt apps. Compare model settings within each test; the three scopes are not pooled.",
@@ -3597,5 +3597,1305 @@
       },
       "protocolSha256": "b4a373aa7348f0a09964a1313dbb779dc033e74ec33fb62f070ba6ac1100e460"
     }
-  ]
+  ],
+  "validation": {
+    "title": "Additional external-review measurements",
+    "note": "Original cohorts are preserved, not pooled with these observations. The four common settings provide a like-for-like model mix, but virtual approvals and SharePoint request tracking are still different app scopes.",
+    "promptNote": "The virtual sample spans two prompt versions: the same business specification, with private owner-only publication explicitly permitted in version 2. All five additional SharePoint builds use one identical amended prompt. Publication permission and review method differ from the original cohorts; the differences do not isolate connector pricing.",
+    "cohorts": [
+      {
+        "test": "test-01",
+        "reviewMode": "external-only",
+        "runs": [
+          {
+            "id": "run-01",
+            "model": "Sonnet 5",
+            "effort": "Medium",
+            "firstCost": {
+              "status": "observed",
+              "value": 215,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 215,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 100,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": []
+            },
+            "reviews": 0,
+            "corrections": 0,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 591.786,
+                "lowerBoundSeconds": 583.64,
+                "observation": "interval-bounded",
+                "authoringPrompts": 1,
+                "observedPrompts": 1
+              },
+              "firstBuildResponseSeconds": 591.786,
+              "firstBuildResponseLowerBoundSeconds": 583.64,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1269.205,
+              "timeToAcceptanceSeconds": 1269.205,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 8.146,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "371fc49875e5c19170df827535fd11dc075b8c6080660f5b4d4cac898c21e506",
+            "promptVersion": "virtual-v1",
+            "screenshotFiles": 94,
+            "archived": true,
+            "checks": [
+              {
+                "id": "AC01",
+                "capability": "Exact catalogue",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC02",
+                "capability": "Search and empty state",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC03",
+                "capability": "Combined filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC04",
+                "capability": "Unavailable stock",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC05",
+                "capability": "Dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC06",
+                "capability": "Valid request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC07",
+                "capability": "Required fields",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC08",
+                "capability": "Quantity validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC09",
+                "capability": "Date validation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC10",
+                "capability": "Approval",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC11",
+                "capability": "Rejection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC12",
+                "capability": "Oversell prevention",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC13",
+                "capability": "Single state transition",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC14",
+                "capability": "Virtual/local reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC15",
+                "capability": "Requester scoping",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC16",
+                "capability": "Safe repeatable reset",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC17",
+                "capability": "Keyboard and labels",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC18",
+                "capability": "Responsive layout",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC19",
+                "capability": "Honest demo boundary",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC20",
+                "capability": "Actual private managed app",
+                "critical": true,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-02",
+            "model": "Opus 5",
+            "effort": "High",
+            "firstCost": {
+              "status": "observed",
+              "value": 611,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 826,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 100,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": []
+            },
+            "reviews": 0,
+            "corrections": 1,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 901.309,
+                "lowerBoundSeconds": 896.781,
+                "observation": "interval-bounded",
+                "authoringPrompts": 2,
+                "observedPrompts": 2
+              },
+              "firstBuildResponseSeconds": 731.296,
+              "firstBuildResponseLowerBoundSeconds": 728.986,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1684.242,
+              "timeToAcceptanceSeconds": null,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.31,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "371fc49875e5c19170df827535fd11dc075b8c6080660f5b4d4cac898c21e506",
+            "promptVersion": "virtual-v1",
+            "screenshotFiles": 137,
+            "archived": true,
+            "checks": [
+              {
+                "id": "AC01",
+                "capability": "Exact catalogue",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC02",
+                "capability": "Search and empty state",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC03",
+                "capability": "Combined filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC04",
+                "capability": "Unavailable stock",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC05",
+                "capability": "Dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC06",
+                "capability": "Valid request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC07",
+                "capability": "Required fields",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC08",
+                "capability": "Quantity validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC09",
+                "capability": "Date validation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC10",
+                "capability": "Approval",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC11",
+                "capability": "Rejection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC12",
+                "capability": "Oversell prevention",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC13",
+                "capability": "Single state transition",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC14",
+                "capability": "Virtual/local reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC15",
+                "capability": "Requester scoping",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC16",
+                "capability": "Safe repeatable reset",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC17",
+                "capability": "Keyboard and labels",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC18",
+                "capability": "Responsive layout",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC19",
+                "capability": "Honest demo boundary",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC20",
+                "capability": "Actual private managed app",
+                "critical": true,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-04",
+            "model": "Sonnet 5",
+            "effort": "High",
+            "firstCost": {
+              "status": "observed",
+              "value": 220,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 220,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 100,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": []
+            },
+            "reviews": 0,
+            "corrections": 0,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 673.43,
+                "lowerBoundSeconds": 671.255,
+                "observation": "interval-bounded",
+                "authoringPrompts": 1,
+                "observedPrompts": 1
+              },
+              "firstBuildResponseSeconds": 673.43,
+              "firstBuildResponseLowerBoundSeconds": 671.255,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 841.612,
+              "timeToAcceptanceSeconds": 841.612,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.175,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "15e2426b3b9e06c35706e48a928e70a454859b3fcf6e4d2dec8d6255b01a9e4a",
+            "promptVersion": "virtual-v2",
+            "screenshotFiles": 110,
+            "archived": true,
+            "checks": [
+              {
+                "id": "AC01",
+                "capability": "Exact catalogue",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC02",
+                "capability": "Search and empty state",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC03",
+                "capability": "Combined filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC04",
+                "capability": "Unavailable stock",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC05",
+                "capability": "Dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC06",
+                "capability": "Valid request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC07",
+                "capability": "Required fields",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC08",
+                "capability": "Quantity validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC09",
+                "capability": "Date validation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC10",
+                "capability": "Approval",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC11",
+                "capability": "Rejection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC12",
+                "capability": "Oversell prevention",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC13",
+                "capability": "Single state transition",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC14",
+                "capability": "Virtual/local reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC15",
+                "capability": "Requester scoping",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC16",
+                "capability": "Safe repeatable reset",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC17",
+                "capability": "Keyboard and labels",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC18",
+                "capability": "Responsive layout",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC19",
+                "capability": "Honest demo boundary",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC20",
+                "capability": "Actual private managed app",
+                "critical": true,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-05",
+            "model": "GPT 5.5",
+            "effort": "Medium",
+            "firstCost": {
+              "status": "observed",
+              "value": 199,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 269,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 100,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": []
+            },
+            "reviews": 0,
+            "corrections": 1,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 545.105,
+                "lowerBoundSeconds": 539.408,
+                "observation": "interval-bounded",
+                "authoringPrompts": 2,
+                "observedPrompts": 2
+              },
+              "firstBuildResponseSeconds": 366.222,
+              "firstBuildResponseLowerBoundSeconds": 362.637,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1154.629,
+              "timeToAcceptanceSeconds": 1154.629,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 3.585,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "15e2426b3b9e06c35706e48a928e70a454859b3fcf6e4d2dec8d6255b01a9e4a",
+            "promptVersion": "virtual-v2",
+            "screenshotFiles": 120,
+            "archived": true,
+            "checks": [
+              {
+                "id": "AC01",
+                "capability": "Exact catalogue",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC02",
+                "capability": "Search and empty state",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC03",
+                "capability": "Combined filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC04",
+                "capability": "Unavailable stock",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC05",
+                "capability": "Dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC06",
+                "capability": "Valid request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC07",
+                "capability": "Required fields",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC08",
+                "capability": "Quantity validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC09",
+                "capability": "Date validation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC10",
+                "capability": "Approval",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC11",
+                "capability": "Rejection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC12",
+                "capability": "Oversell prevention",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC13",
+                "capability": "Single state transition",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC14",
+                "capability": "Virtual/local reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC15",
+                "capability": "Requester scoping",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC16",
+                "capability": "Safe repeatable reset",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC17",
+                "capability": "Keyboard and labels",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC18",
+                "capability": "Responsive layout",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC19",
+                "capability": "Honest demo boundary",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC20",
+                "capability": "Actual private managed app",
+                "critical": true,
+                "final": "pass"
+              }
+            ]
+          }
+        ],
+        "meanFinalCredits": 382.5,
+        "note": "Four reviewed virtual-data observations, one per shown setting. Browser-local persistence is explicitly allowed and independently verified; no native self-review."
+      },
+      {
+        "test": "test-02",
+        "reviewMode": "external-only",
+        "runs": [
+          {
+            "id": "run-01",
+            "model": "Sonnet 5",
+            "effort": "Medium",
+            "firstCost": {
+              "status": "observed",
+              "value": 301,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 301,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 90,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": [
+                "BC09"
+              ]
+            },
+            "reviews": 0,
+            "corrections": 0,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 715.385,
+                "lowerBoundSeconds": 712.917,
+                "observation": "interval-bounded",
+                "authoringPrompts": 1,
+                "observedPrompts": 1
+              },
+              "firstBuildResponseSeconds": 715.385,
+              "firstBuildResponseLowerBoundSeconds": 712.917,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1084.126,
+              "timeToAcceptanceSeconds": 1084.126,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.468,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "77f27f229570d44ae0c3114b5ca3efc644cd03718bf2b03a07711468592f31a8",
+            "promptVersion": "sharepoint-v2",
+            "screenshotFiles": 92,
+            "archived": true,
+            "checks": [
+              {
+                "id": "BC01",
+                "capability": "Runnable private managed app",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC02",
+                "capability": "Live catalogue connection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC03",
+                "capability": "Live dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC04",
+                "capability": "Catalogue search and filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC05",
+                "capability": "Complete saved request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC06",
+                "capability": "Basic request validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC07",
+                "capability": "Live request listing",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC08",
+                "capability": "Reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC09",
+                "capability": "Honest data and error states",
+                "critical": false,
+                "final": "blocked"
+              },
+              {
+                "id": "BC10",
+                "capability": "Usable desktop and mobile build",
+                "critical": false,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-02",
+            "model": "Opus 5",
+            "effort": "High",
+            "firstCost": {
+              "status": "observed",
+              "value": 868,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 1130,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 90,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": [
+                "BC09"
+              ]
+            },
+            "reviews": 0,
+            "corrections": 1,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 912.876,
+                "lowerBoundSeconds": 908.157,
+                "observation": "interval-bounded",
+                "authoringPrompts": 2,
+                "observedPrompts": 2
+              },
+              "firstBuildResponseSeconds": 759.285,
+              "firstBuildResponseLowerBoundSeconds": 757.064,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1179.952,
+              "timeToAcceptanceSeconds": 1179.952,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.221,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "77f27f229570d44ae0c3114b5ca3efc644cd03718bf2b03a07711468592f31a8",
+            "promptVersion": "sharepoint-v2",
+            "screenshotFiles": 124,
+            "archived": true,
+            "checks": [
+              {
+                "id": "BC01",
+                "capability": "Runnable private managed app",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC02",
+                "capability": "Live catalogue connection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC03",
+                "capability": "Live dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC04",
+                "capability": "Catalogue search and filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC05",
+                "capability": "Complete saved request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC06",
+                "capability": "Basic request validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC07",
+                "capability": "Live request listing",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC08",
+                "capability": "Reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC09",
+                "capability": "Honest data and error states",
+                "critical": false,
+                "final": "blocked"
+              },
+              {
+                "id": "BC10",
+                "capability": "Usable desktop and mobile build",
+                "critical": false,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-03",
+            "model": "Opus 5",
+            "effort": "Medium",
+            "firstCost": {
+              "status": "observed",
+              "value": 544,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 842,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 90,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": [
+                "BC09"
+              ]
+            },
+            "reviews": 0,
+            "corrections": 1,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 875.964,
+                "lowerBoundSeconds": 871.543,
+                "observation": "interval-bounded",
+                "authoringPrompts": 2,
+                "observedPrompts": 2
+              },
+              "firstBuildResponseSeconds": 598.961,
+              "firstBuildResponseLowerBoundSeconds": 596.819,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1208.886,
+              "timeToAcceptanceSeconds": 1208.886,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.142,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "77f27f229570d44ae0c3114b5ca3efc644cd03718bf2b03a07711468592f31a8",
+            "promptVersion": "sharepoint-v2",
+            "screenshotFiles": 123,
+            "archived": true,
+            "checks": [
+              {
+                "id": "BC01",
+                "capability": "Runnable private managed app",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC02",
+                "capability": "Live catalogue connection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC03",
+                "capability": "Live dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC04",
+                "capability": "Catalogue search and filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC05",
+                "capability": "Complete saved request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC06",
+                "capability": "Basic request validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC07",
+                "capability": "Live request listing",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC08",
+                "capability": "Reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC09",
+                "capability": "Honest data and error states",
+                "critical": false,
+                "final": "blocked"
+              },
+              {
+                "id": "BC10",
+                "capability": "Usable desktop and mobile build",
+                "critical": false,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-04",
+            "model": "Sonnet 5",
+            "effort": "High",
+            "firstCost": {
+              "status": "observed",
+              "value": 586,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 1025,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 90,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": [
+                "BC09"
+              ]
+            },
+            "reviews": 0,
+            "corrections": 2,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 1656.779,
+                "lowerBoundSeconds": 1645.937,
+                "observation": "interval-bounded",
+                "authoringPrompts": 3,
+                "observedPrompts": 3
+              },
+              "firstBuildResponseSeconds": 941.877,
+              "firstBuildResponseLowerBoundSeconds": 939.669,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 2678.46,
+              "timeToAcceptanceSeconds": 2678.46,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.208,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "77f27f229570d44ae0c3114b5ca3efc644cd03718bf2b03a07711468592f31a8",
+            "promptVersion": "sharepoint-v2",
+            "screenshotFiles": 176,
+            "archived": true,
+            "checks": [
+              {
+                "id": "BC01",
+                "capability": "Runnable private managed app",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC02",
+                "capability": "Live catalogue connection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC03",
+                "capability": "Live dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC04",
+                "capability": "Catalogue search and filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC05",
+                "capability": "Complete saved request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC06",
+                "capability": "Basic request validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC07",
+                "capability": "Live request listing",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC08",
+                "capability": "Reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC09",
+                "capability": "Honest data and error states",
+                "critical": false,
+                "final": "blocked"
+              },
+              {
+                "id": "BC10",
+                "capability": "Usable desktop and mobile build",
+                "critical": false,
+                "final": "pass"
+              }
+            ]
+          },
+          {
+            "id": "run-05",
+            "model": "GPT 5.5",
+            "effort": "Medium",
+            "firstCost": {
+              "status": "observed",
+              "value": 314,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "finalCost": {
+              "status": "observed",
+              "value": 314,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "final": {
+              "points": 90,
+              "maximum": 100,
+              "accepted": true,
+              "criticalFailures": [],
+              "incomplete": [
+                "BC09"
+              ]
+            },
+            "reviews": 0,
+            "corrections": 0,
+            "clarifications": 0,
+            "timing": {
+              "build": {
+                "seconds": 468.877,
+                "lowerBoundSeconds": 466.578,
+                "observation": "interval-bounded",
+                "authoringPrompts": 1,
+                "observedPrompts": 1
+              },
+              "firstBuildResponseSeconds": 468.877,
+              "firstBuildResponseLowerBoundSeconds": 466.578,
+              "firstCompletionObservation": "interval-bounded",
+              "finalReviewedResultSeconds": 1335.266,
+              "timeToAcceptanceSeconds": 1335.266,
+              "observedApprovalWaitSeconds": 0,
+              "recordedInterruptionSeconds": 0,
+              "approvalWaitStillOpen": false,
+              "interruptionStillOpen": false,
+              "firstCompletionDetectionWindowSeconds": 2.299,
+              "basis": "Observed wall-clock time, including waits; not isolated model execution. A completion first seen after it happened is an upper bound. Missing endpoints stay null."
+            },
+            "promptSha256": "77f27f229570d44ae0c3114b5ca3efc644cd03718bf2b03a07711468592f31a8",
+            "promptVersion": "sharepoint-v2",
+            "screenshotFiles": 109,
+            "archived": true,
+            "checks": [
+              {
+                "id": "BC01",
+                "capability": "Runnable private managed app",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC02",
+                "capability": "Live catalogue connection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC03",
+                "capability": "Live dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC04",
+                "capability": "Catalogue search and filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC05",
+                "capability": "Complete saved request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC06",
+                "capability": "Basic request validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC07",
+                "capability": "Live request listing",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC08",
+                "capability": "Reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC09",
+                "capability": "Honest data and error states",
+                "critical": false,
+                "final": "blocked"
+              },
+              {
+                "id": "BC10",
+                "capability": "Usable desktop and mobile build",
+                "critical": false,
+                "final": "pass"
+              }
+            ]
+          }
+        ],
+        "meanFinalCredits": 722.4,
+        "note": "Five additional SharePoint observations, one per setting, using the same four-view business scope, owned fixture and external-only review."
+      }
+    ],
+    "matchedConfigurations": [
+      "Sonnet 5 / Medium",
+      "Opus 5 / High",
+      "Sonnet 5 / High",
+      "GPT 5.5 / Medium"
+    ],
+    "matchedMeans": {
+      "test-01": 382.5,
+      "test-02": 692.5
+    }
+  }
 }

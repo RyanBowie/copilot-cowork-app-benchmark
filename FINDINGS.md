@@ -1,8 +1,9 @@
 # Completed benchmark findings
 
-All 20 apps in Tests 1-3 meet their final scoring and critical-check gates.
-Costs below are observed cumulative Cowork task credits. Compare within each
-test; app scope and review method differ between tests.
+The 20 original apps in Tests 1-3 and nine additional reviewed observations meet
+their final scoring and critical-check gates. Costs below are observed
+cumulative Cowork task credits. Keep original and additional samples distinct;
+app scope, model mix, review method and publication permission affect comparison.
 
 ## Test 1: virtual-data apps
 
@@ -135,6 +136,69 @@ time between prompts, `/cost` commands and native self-review. For example,
 GPT Medium's **21m 43s** includes both its initial response and clarification,
 plus all three planned follow-ups, rather than treating its first reply as
 the complete app. Within-turn waits and observation uncertainty remain included.
+
+## Additional external-review measurements
+
+The additional samples retain the original results above and use **no native
+self-review prompts**. Every value below is a completed app's final cumulative
+task reading, including its recorded corrections. There are zero clarification
+prompts in these nine observations.
+
+### Additional Test 1: virtual procurement
+
+| Configuration | Final credits | Score | Corrections | Build time, approx. | Prompt |
+|---|---:|---:|---:|---:|---|
+| Sonnet 5 / Medium | 215 | 100/100 | 0 | 9m 52s | virtual-v1 |
+| Opus 5 / High | 826 | 100/100 | 1 | 15m 01s | virtual-v1 |
+| Sonnet 5 / High | 220 | 100/100 | 0 | 11m 13s | virtual-v2 |
+| GPT 5.5 / Medium | 269 | 100/100 | 1 | 9m 05s | virtual-v2 |
+| **Total / mean** | **1,530 / 382.5** | **4 reviewed apps** | **2** | | |
+
+The four shown settings each have one additional observation. The new method
+explicitly verifies and scores local persistence, alongside approvals,
+rejections, stock safety and reset. Original 95/100 scores and paid-review costs
+remain unchanged. The two prompt versions differ only in private owner-only
+publication permission; keep that difference visible.
+
+### Additional Test 2: SharePoint procurement
+
+| Configuration | Final credits | Score | Corrections | Build time, approx. |
+|---|---:|---:|---:|---:|
+| Sonnet 5 / Medium | 301 | 90/100 | 0 | 11m 55s |
+| Opus 5 / High | 1,130 | 90/100 | 1 | 15m 13s |
+| Opus 5 / Medium | 842 | 90/100 | 1 | 14m 36s |
+| Sonnet 5 / High | 1,025 | 90/100 | 2 | 27m 37s |
+| GPT 5.5 / Medium | 314 | 90/100 | 0 | 7m 49s |
+| **Total / mean** | **3,612 / 722.4** | **5 reviewed apps** | **4** | |
+
+All five use the identical `sharepoint-v2` prompt. Each demonstrates live
+catalogue data, complete request creation, independent backend read-back and
+reopen persistence, with unchanged stock and no invalid-input writes. All retain
+the same unverified BC09 connection-error/no-fallback coverage.
+
+### Comparing the same four settings
+
+| Configuration | Additional virtual credits | Additional SharePoint credits |
+|---|---:|---:|
+| Sonnet 5 / Medium | 215 | 301 |
+| Opus 5 / High | 826 | 1,130 |
+| Sonnet 5 / High | 220 | 1,025 |
+| GPT 5.5 / Medium | 269 | 314 |
+| **Equal-weight mean** | **382.5** | **692.5** |
+
+This removes the difference in model mix between the four-app and five-app
+additional samples. It does **not** make virtual approval/stock workflows and
+SharePoint request tracking equivalent, or isolate a connector premium.
+Publication permission and the original Test 1's paid self-review also prevent
+silently pooling the historical and new means.
+
+**Maker guidance:** Sonnet Medium is a cost-supported starting point for these
+small procurement scopes; the additional virtual result used 215 credits and
+the connected result 301, both without corrective guidance. GPT Medium was
+close on connected cost at 314 with no correction. Higher effort did not
+guarantee fewer corrections, lower cost or a higher final score. Use the
+per-setting readings and actual capability coverage, not a cross-test headline
+average, and do not treat these small samples as a guaranteed future price.
 
 ## Interpretation
 
