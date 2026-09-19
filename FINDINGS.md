@@ -5,6 +5,16 @@ their final scoring and critical-check gates. Costs below are observed
 cumulative Cowork task credits. Keep original and additional samples distinct;
 app scope, model mix, review method and publication permission affect comparison.
 
+**Read the costs against the workload:** Test 1 is a moderate virtual procurement
+demo with approvals and stock changes; Test 2 is a narrower four-view app with
+real SharePoint reads/writes; Test 3 is a seven-screen, multi-line workflow
+prototype evolved through four planned stages. Test 3 adds linked virtual
+tables, manager/finance routing, revisions, fulfilment/returns, themes and
+preferences, but only its read-only profile is live. Its greater workflow
+complexity is not a claim of greater production readiness or live business
+integration. See the [scope comparison](README.md#what-was-built-and-tested)
+and [complexity method](METHOD.md#comparing-app-complexity).
+
 ## Test 1: virtual-data apps
 
 Five accepted Device Procurement and Availability apps. Virtual/local data is

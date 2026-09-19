@@ -7,6 +7,37 @@ observations and three complex-app observations. Every measurement shown has an
 observed final cost and an accepted final assessment; the methods and sample
 sizes remain distinct.
 
+## Comparing app complexity
+
+Complexity is described qualitatively across three separate dimensions:
+screen/form behavior, business workflow and live integration. It is not a
+measured complexity index, and build cost is not used as a proxy for complexity.
+
+Test 1 has five core views, single-device requests, a single approval step,
+stock revalidation and confirmed reset over virtual/local synthetic data.
+Test 2 has four views and a narrower submit-and-track workflow, but must
+actually read and write two SharePoint lists, independently read back the
+saved record and retain it after reopening.
+
+Test 3 has seven screens and seven related virtual business tables: Devices,
+DemoPeople, Requests, RequestLines, Activity, ApprovalHistory and Assets.
+Multi-line forms, manager/finance transitions, approval-policy changes,
+revisions, cancellation, atomic fulfilment, per-unit assets and conditional
+returns interact with saved records and history. Light/dark themes and local
+preferences add UI state. Four planned stages evolve the same app without
+resetting its data; this is more than a one-prompt screen-generation exercise.
+
+The live integration in Test 3 is only a read-only current-user profile.
+Business data, approval actors and inventory remain simulated. Thus Test 3
+is a more complex workflow prototype, not a stronger demonstration of live
+business-backend integration than Test 2, nor an enterprise-production
+readiness claim. Real authorization, concurrency and scale are not established.
+
+The comparison describes target scope. Actual per-run verdicts retain
+unverified or incomplete capabilities; acceptance does not make every target
+feature a pass. Apply these distinctions to original and additional cohorts
+without altering their recorded costs, scores or review-method differences.
+
 ## Controls shared within each test
 
 Start a fresh Cowork task and managed app for each run. Select and record the

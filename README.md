@@ -54,10 +54,22 @@ are shown separately in the report.
 
 ## What was built and tested
 
+| Test | Functional complexity | Business-data integration | Planned authoring |
+|---|---|---|---|
+| Test 1 | Moderate procurement demo; five core views, single-device requests, one approval step, stock changes and reset | Virtual/local synthetic data | One initial build specification |
+| Test 2 | Focused connected request app; four views, single-device requests, no approvals or stock editing | Two real SharePoint lists, with live reads/writes and independent read-back | One initial build specification |
+| Test 3 | Complex workflow prototype; seven screens, multi-line requests, staged approvals and asset lifecycle | Seven related virtual business tables; real read-only Office 365 Users profile | Four planned stages on the same app |
+
+These are qualitative scope descriptions, not numerical complexity scores.
+Corrective guidance is counted separately; original Test 1 also includes a
+native self-review. Per-run capability verdicts show actual coverage, rather
+than assuming every requested feature passed.
+
 **Test 1:** A device catalogue and procurement app with request forms, approver
 decisions, a dashboard and virtual stock. Checks cover search/filtering,
 validation, approval/rejection, stock and GBP calculations, saved changes after
-reopening and desktop/mobile layouts. Each task includes one native self-review.
+reopening and desktop/mobile layouts. The original cohort includes one native
+self-review per task; additional observations use external-only review.
 
 **Test 2:** A four-view procurement app reading devices and saving requests to
 two SharePoint lists. Checks cover live reads, forms, calculated totals, exactly
@@ -68,8 +80,17 @@ editing are outside scope. Review is external-only.
 **Test 3:** A seven-screen Device Lifecycle Hub with multi-line requests, virtual
 manager/finance approvals, asset fulfilment/returns, themes, preferences and a
 live read-only Office 365 Users profile. Four planned prompts build, connect,
-extend and change the same app. External checks cover data continuity, approval
-policy, stock-safe workflows, profile identity and desktop/mobile usability.
+extend and change the same app while preserving saved records and relationships.
+External checks cover changing approval thresholds without rewriting existing
+decisions, revisions/resubmission/cancellation, stock-safe fulfilment, per-unit
+assets, Good/Damaged returns, profile identity and desktop/mobile usability.
+
+**Test 3 is more complex in screens, business rules and change management;
+Test 2 exercises real business-backend integration.** The lifecycle app remains
+a prototype, with simulated approvals and personas. It does not establish
+production authorization, concurrent inventory safety or live procurement
+transactions. Its real profile read is not equivalent to Test 2's SharePoint
+request writes, so cross-test costs do not isolate a connector premium.
 
 ## Reading the results
 

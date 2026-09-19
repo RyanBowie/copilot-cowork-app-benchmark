@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Copilot Cowork managed-app benchmarks: virtual apps, ten SharePoint builds and a five-app complex staged comparison with real Office 365 Users profiles.">
+<meta name="description" content="Compare Copilot Cowork app-build costs and complexity across virtual procurement, live SharePoint request tracking and staged lifecycle workflows with real read-only profiles.">
 <title>What does the same managed app cost to build?</title>
 <script>
   (() => {
@@ -139,6 +139,8 @@ p{max-width:980px;margin:12px 0}
 .metric strong{font-size:36px;font-weight:600;color:var(--cp-accent);display:block;line-height:1.2;margin-bottom:8px}
 .metric span{color:var(--cp-text-muted);font-size:13px}
 .table-wrap{overflow:auto;max-width:100%}
+.complexity-table{min-width:760px}
+.complexity-table th:first-child{min-width:140px}
 table{border-collapse:collapse;width:100%;font-size:14px;text-align:left}
 th,td{padding:16px 12px;border-bottom:1px solid var(--cp-border);vertical-align:top}
 th{color:var(--cp-accent);background:var(--cp-surface-soft);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
@@ -229,10 +231,10 @@ footer{font-size:13px;color:var(--cp-text-muted);border-top:1px solid var(--cp-b
 <div class="table-wrap"><table><thead><tr><th>Run / configuration</th><th>Observed build time</th></tr></thead><tbody id="timing-rows"></tbody></table></div>
 <p class="note">Times are approximate submission-to-completion observations, not total test-session duration. All authoring turns must have recorded completion times; missing coverage is shown as not recorded.</p></section>
 <section id="method" class="card"><div class="eyebrow">Test 3 · four-stage authoring</div><h2>Build first. Connect inside the app. Then evolve it.</h2>
-<p>Five fresh corporate-tenant apps, one per model/effort configuration. Every app receives the same four frozen prompts: virtual-data foundation; Office 365 Users connection within that existing managed app; virtual approvals, asset lifecycle, themes and preferences; then a changed approval threshold, revisions, cost centres and mobile refinement.</p>
+<p>The original cohort contains five fresh corporate-tenant apps, one per model/effort configuration. Every app receives the same four frozen prompts: virtual-data foundation; Office 365 Users connection within that existing managed app; virtual approvals, asset lifecycle, themes and preferences; then a changed approval threshold, revisions, cost centres and mobile refinement.</p>
 <p>Business records and approvals are virtual/local. Only the signed-in user's profile is live and read-only. An existing draft must survive every change. The final assessment covers all four stages: twenty checks worth five points, with at least 85/100 and every critical check required. Three planned follow-ups are counted separately from corrective or clarification prompts.</p>
 <p>Actual cumulative task credits are recorded after each stage, after guidance and at the end. Use the final reading as the total; do not add cumulative readings together. The profile is independently verified in the built app, including after reopening.</p>
-<p class="note">One observation per configuration does not establish repeatability. Private profile screenshots and connection identifiers are not published.</p>
+<p class="note">The additional completed observations give two measurements for each paired setting, with amended private-publication permission. The original five remain separate. These small samples do not establish reliable future pricing. Private profile screenshots and connection identifiers are not published.</p>
 <p><a href="benchmark/test-03/protocol.json">Frozen Test 3 protocol</a> · <a href="benchmark/test-03/stage-01-build.txt">1. Build</a> · <a href="benchmark/test-03/stage-02-connect-profile.txt">2. Connect within app</a> · <a href="benchmark/test-03/stage-03-change.txt">3. Extend</a> · <a href="benchmark/test-03/stage-04-change.txt">4. Change</a> · <a href="benchmark/test-03/acceptance.json">Rubric</a> · <a href="benchmark/test-03/policy-carryover-case.json">Policy carryover case</a> · <a href="benchmark/test-03/low-stock-crossing-case.json">Low-stock crossing case</a></p></section>
 <section id="method-test-02" class="card"><div class="eyebrow">Completed Test 2 · method</div><h2>Hold the task still. Measure the delivered app.</h2>
 <p>Every run starts a fresh task and app. The implementation-only prompt, live seed, external review instructions, desktop/mobile views and ten-check rubric are held constant. Acceptance testing is external; only required corrective guidance is sent back to Cowork.</p>
@@ -252,7 +254,7 @@ footer{font-size:13px;color:var(--cp-text-muted);border-top:1px solid var(--cp-b
 <p>Test 1 allows virtual/local business data. Managed-store persistence (AC14) is outside its required scope. All five apps are accepted at their recorded 95/100 scores; no additional storage points are awarded.</p>
 <p>Each task includes a native self-review prompt as well as external checks. These are build-and-review costs, whereas Tests 2 and 3 use external-only review. Keep the cohorts separate.</p></section>
 <section id="limits" class="card"><div class="eyebrow">What this does not establish</div><h2>Task consumption is not a universal model ranking.</h2>
-<ul class="findings"><li>Test 3 has one observation per configuration; Test 2 has two. Neither establishes a reliable variance estimate or a promised price. Order, caching, service load and internal builder routing remain possible influences.</li>
+<ul class="findings"><li>The original Test 3 cohort has one observation per configuration; original Test 2 has two. Additional completed observations are labelled separately, with matched-setting means where available. These small samples do not establish a reliable variance estimate or a promised price. Order, caching, service load and internal builder routing remain possible influences.</li>
 <li>Meeting the 85-point and critical-check gate is not full coverage or production readiness. Profile fault/Retry coverage remains unverified in Test 3 (CX14), with additional per-run preference/cost-centre gaps. Connection-error/no-fallback coverage remains unverified in Test 2 (BC09). Large-list pagination, real user authorization, concurrency and scale are not established by the small synthetic fixture.</li>
 <li>The selected Cowork model is not proof that every internal app-building worker used that model.</li>
 <li>A shared connection and a synthetic persona switch are not production authorization. Sequential stock checks do not establish concurrent safety.</li>
@@ -287,6 +289,13 @@ const appScopes={
   summary:'A device catalogue, request forms, approver decisions and virtual stock. Tested search, validation, stock calculations and saved changes after reopening.',
   method:'5 builds · 4 settings, with a baseline repeat. Includes native self-review.',
   name:'Device Procurement and Availability · virtual data',
+  complexity:'Moderate procurement demo',
+  views:'Five core views: Dashboard, Catalogue, New request, My requests and Approvals.',
+  requests:'One device per request, with quantity, date, justification and calculated GBP total.',
+  workflow:'One approval step, rejection reasons, stock revalidation/deduction and confirmed demo reset.',
+  data:'Virtual/local synthetic business data; no live business-data connector.',
+  authoring:'One initial build specification, plus any guidance. Original Test 1 also includes a native self-review.',
+  boundary:'More workflow behavior than Test 2, but no real business-backend writes. Synthetic personas do not establish production authorization.',
   app:'Employees browse a device catalogue, submit procurement requests and track decisions. An approver approves or rejects requests and updates virtual stock. Includes a dashboard, synthetic personas and demo reset.',
   tested:'Catalogue search/filtering, request validation, approval/rejection rules, stock and GBP calculations, saved changes after reopening, and desktop/mobile layouts. Each build includes one native self-review as well as external checks.'
  },
@@ -295,6 +304,13 @@ const appScopes={
   summary:'Four views for browsing live devices and saving requests to two SharePoint lists. Tested live reads, form validation, server read-back and reopening.',
   method:'10 builds · 5 settings, twice each. External-only review; no approval workflow.',
   name:'Device Procurement and Availability · SharePoint',
+  complexity:'Focused connected request app',
+  views:'Four views: Dashboard, Catalogue, New request and My requests.',
+  requests:'One device per request, saved as a complete Pending record.',
+  workflow:'Submit and track requests. No approval workflow, stock editing or asset lifecycle.',
+  data:'Two real SharePoint lists: live reads/writes, independent server read-back and reopen persistence.',
+  authoring:'One initial build specification, plus any guidance; external-only review.',
+  boundary:'Narrower business workflow than Tests 1 and 3, but real business-data integration. This is not simply the same app with a connector added.',
   app:'A four-view app with Dashboard, Catalogue, New request and My requests, connected to two existing SharePoint lists. Employees see live device availability and save procurement requests; approval workflows and stock editing are outside this test.',
   tested:'Live list reads, search/filtering, form validation, calculated totals, exactly one saved Pending request, independent server read-back and reopening. Ten builds use the same six-device/four-request fixture and external-only review.'
  },
@@ -303,10 +319,25 @@ const appScopes={
   summary:'Seven screens with multi-line requests, virtual approvals, assets/returns, themes and an Office 365 Users profile. Tested four authoring stages, data continuity and workflow rules.',
   method:'5 builds · 5 settings, once each. Four planned prompts per app; external-only review.',
   name:'Device Lifecycle Hub · complex multi-prompt app',
+  complexity:'Complex workflow prototype',
+  views:'Seven screens: Overview, Catalogue, My requests, request editor/detail, Approvals, Assets and Profile.',
+  requests:'Multiple linked request lines, stable IDs, validation, revisions, resubmission and cancellation.',
+  workflow:'Manager/finance approvals, threshold changes, stock-safe fulfilment, per-unit assets, Good/Damaged returns, light/dark themes and local preferences.',
+  data:'Seven related virtual business tables; only the signed-in Office 365 Users profile is live and read-only.',
+  authoring:'Four planned stages on the same app, preserving saved records and relationships, plus any guidance.',
+  boundary:'More complex than Tests 1 and 2 in screens, business rules and change management, not in live business-backend integration. It remains a prototype: simulated approvals/personas, no proven production authorization or concurrent inventory safety.',
   app:'A seven-screen app with multi-line request forms, virtual manager/finance approvals, asset fulfilment and returns, light/dark themes, local preferences and a real read-only Office 365 Users profile. Business data remains virtual/local.',
   tested:'Four planned prompts build the app, connect its profile, extend workflows and change policy/forms. External checks cover data continuity, approval thresholds, stock-safe fulfilment/returns, profile identity, themes/preferences and desktop/mobile layouts.'
  }
 };
+function renderComplexityComparison(experiments){
+ const dimensions=[['complexity','Functional scope'],['views','Screens'],['requests','Request forms'],
+  ['workflow','Workflow and interaction'],['data','Data and integration'],['authoring','Planned authoring']];
+ const headers=experiments.map(e=>'<th scope="col">Test '+Number(e.route.slice(-2))+'</th>').join('');
+ const rows=dimensions.map(([key,label])=>'<tr><th scope="row">'+label+'</th>'+
+  experiments.map(e=>'<td>'+escape(appScopes[e.id][key])+'</td>').join('')+'</tr>').join('');
+ return '<section id="complexity-comparison" class="card" aria-labelledby="complexity-title"><div class="eyebrow">Understand the workload</div><h2 id="complexity-title">How complex is each app?</h2><p><strong>Test 3 is more complex in its screens, business rules and evolving workflows. Test 2 exercises real business-data reads and writes.</strong> These are different dimensions of complexity, not equivalent workloads.</p><p class="note">This compares the requested scopes, not a numerical complexity score or a claim that every app passed every check. Per-run capability results retain the actual coverage. On narrow screens, scroll the comparison table horizontally.</p><div class="table-wrap" tabindex="0" role="region" aria-label="App complexity comparison"><table class="complexity-table"><thead><tr><th scope="col">Dimension</th>'+headers+'</tr></thead><tbody>'+rows+'</tbody></table></div><p class="note">Test 3 is a complex workflow prototype, not an enterprise-ready application: business approvals and identities are simulated, and concurrent inventory safety and production authorization were not established. Its live profile read does not replace Test 2’s real SharePoint request writes. Cross-test cost differences do not isolate a connector price.</p></section>';
+}
 function showView(route){
  const detail=route!=='overview';
  document.getElementById('detail-sections').hidden=!detail;
@@ -370,14 +401,12 @@ function renderOverview(){
   const bars=groups.map(group=>'<li class="bar-row" data-configuration="'+escape(group.name)+'" data-mean="'+group.mean+'" data-tone="'+chartTones[group.name]+'"><span class="mini-label">'+escape(group.name)+'<small>'+group.runs.length+' '+(group.runs.length===1?'build':'builds')+'</small></span><strong class="mini-value"><span class="sr-only">Average credits: </span>'+group.mean.toLocaleString('en-GB')+'</strong><div class="track" aria-hidden="true"><div class="fill" style="width:'+(100*group.mean/max).toFixed(2)+'%"></div></div></li>').join('');
   return '<article class="card overview-card" data-overview-test="'+e.id+'" aria-labelledby="overview-'+e.route+'"><div class="eyebrow">'+testLabel+'</div><h3 id="overview-'+e.route+'">'+escape(scope.shortTitle)+'</h3><p class="overview-description">'+escape(scope.summary)+'</p><p class="overview-facts">'+escape(scope.method)+'<br>'+e.runs.filter(run=>run.final.accepted).length+'/'+e.runs.length+' accepted · final scores '+score+'/100</p><p class="overview-average"><strong>'+meanCredits(e.runs).toLocaleString('en-GB')+'</strong><span>average final credits per app</span></p><div class="mini-chart"><h4>'+testLabel+' · average credits by configuration</h4><ol class="mini-bars" aria-label="'+testLabel+' average task credits by model and reasoning, lowest first">'+bars+'</ol><div class="mini-scale" aria-hidden="true"><span>0</span><span>'+max.toLocaleString('en-GB')+' credits · shared scale</span></div></div><p class="overview-build-time">'+timing+'</p><a class="overview-link" href="#'+e.route+'">View '+testLabel+' results</a></article>';
  }).join('');
- document.getElementById('experiment').innerHTML='<section id="overview" aria-labelledby="overview-title"><div class="eyebrow">20 completed apps · 3 tests</div><h2 id="overview-title">Choose the app scope. Compare the cost.</h2><p>Each card shows what was built, its average cost per app and a compact comparison of the selected model/reasoning settings.</p><div class="overview-grid">'+cards+'</div><p class="note muted">Card averages include every completed build in that test. Chart bars are per-configuration means, with repeat counts shown; a single-build mean is one observation, not a repeatability estimate. All charts share a credit scale, but the scopes and review methods differ: compare settings within each test, not as equivalent apps. Final costs include required guidance.</p><p class="note muted">Build times sum observed authoring turns, excluding external review and gaps between prompts. Acceptance is not full coverage or production readiness; detailed results retain each app’s capability limits.</p><p><a href="METHOD.md">Benchmark method</a> · <a href="FINDINGS.md">Full findings</a> · <a href="data.json">Download measurements</a></p></section>';
+ document.getElementById('experiment').innerHTML='<section id="overview" aria-labelledby="overview-title"><div class="eyebrow">32 completed measurements · 3 test scopes</div><h2 id="overview-title">Choose the app scope. Compare the cost.</h2><p>Each card shows what was built, its original-cohort average cost per app and a compact comparison of the selected model/reasoning settings. <a href="#complexity-comparison">Compare app complexity across all three tests.</a></p><div class="overview-grid">'+cards+'</div><p class="note muted">Card averages include every completed build in the original cohort for that test; additional measurements remain separate below. Chart bars are per-configuration means, with repeat counts shown; a single-build mean is one observation, not a repeatability estimate. All charts share a credit scale, but the scopes and review methods differ: compare settings within each test, not as equivalent apps. Final costs include required guidance.</p><p class="note muted">Build times sum observed authoring turns, excluding external review and gaps between prompts. Acceptance is not full coverage or production readiness; detailed results retain each app’s capability limits.</p><p><a href="METHOD.md">Benchmark method</a> · <a href="FINDINGS.md">Full findings</a> · <a href="data.json">Download measurements</a></p></section>'+renderComplexityComparison(experiments);
  if(DATA.validation){
-  document.querySelector('#overview>.eyebrow').textContent='20 completed apps · original 3-test benchmark';
   document.querySelector('#overview>p').insertAdjacentHTML('beforeend',' <a href="#validation">See the 9 additional external-review measurements below.</a>');
  }
  document.getElementById('experiment').insertAdjacentHTML('beforeend',renderValidation());
  if(DATA.complexValidation){
-  document.querySelector('#overview>.eyebrow').textContent='20 completed apps · original 3-test benchmark';
   document.querySelector('#overview>p').insertAdjacentHTML('beforeend',' <a href="#complex-validation">See '+DATA.complexValidation.runs.length+' additional complex-app measurements.</a>');
  }
  document.getElementById('experiment').insertAdjacentHTML('beforeend',renderComplexValidation());
@@ -391,7 +420,7 @@ function render(id){
  const accepted=reviewed.filter(r=>r.final.accepted);
  const average=meanCredits(recorded).toLocaleString('en-GB');
  const scope=appScopes[e.id];
- const scopePanel='<section class="card app-scope" aria-labelledby="app-scope-title"><div class="eyebrow">What was built and tested</div><h3 id="app-scope-title">'+escape(scope.name)+'</h3><p><strong>App:</strong> '+escape(scope.app)+'</p><p><strong>Tested:</strong> '+escape(scope.tested)+'</p><p class="note muted">'+escape(e.design)+'</p></section>';
+ const scopePanel='<section class="card app-scope" aria-labelledby="app-scope-title"><div class="eyebrow">What was built and tested</div><h3 id="app-scope-title">'+escape(scope.name)+'</h3><p class="scope-complexity"><strong>Complexity:</strong> '+escape(scope.complexity)+'. '+escape(scope.views)+'</p><p><strong>App:</strong> '+escape(scope.app)+'</p><p class="scope-data"><strong>Data and integration:</strong> '+escape(scope.data)+'</p><p class="scope-authoring"><strong>Planned authoring:</strong> '+escape(scope.authoring)+'</p><p><strong>Tested:</strong> '+escape(scope.tested)+'</p><p class="scope-boundary note">'+escape(scope.boundary)+' Target scope is not a substitute for the per-run capability verdicts.</p><p class="note muted">'+escape(e.design)+'</p><p class="note"><a href="#overview">Compare all three test scopes</a></p></section>';
  const lowest=measured.filter(r=>r.final?.accepted).sort((a,b)=>a.finalCost.value-b.finalCost.value)[0];
  const groups=configurationGroups(e.runs);
  const lowestPair=e.comparisonEligible?[...groups].filter(([,runs])=>runs.length===2&&runs.every(r=>r.comparisonEligible&&r.final?.accepted&&r.finalCost?.status==='observed')).map(([name,runs])=>({name,runs,mean:meanCredits(runs)})).sort((a,b)=>a.mean-b.mean)[0]:null;
