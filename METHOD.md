@@ -38,6 +38,29 @@ unverified or incomplete capabilities; acceptance does not make every target
 feature a pass. Apply these distinctions to original and additional cohorts
 without altering their recorded costs, scores or review-method differences.
 
+## Comparing cost with delivered capability
+
+Use independently verified checks, not spending or a completion message, to
+identify capability differences. Compare models and Medium/High reasoning
+within the same cohort. Keep original/additional observations and methods
+separate; show every reading when presenting a configuration mean.
+
+Equal scores do not necessarily mean equal features: two apps can miss different
+checks, or differ within a partially verified check. Identify the actual
+feature gain, trade-off or unresolved coverage rather than ranking by score
+alone. Do not interpret Test 1's changed persistence scoring as improvement.
+
+Additional builds are fresh apps, not successive versions of an app. Their
+cost/coverage differences are descriptive, with changed publication permission,
+not causal price effects or evidence that a model improved over time.
+An accepted app's final corrective work can demonstrate a concrete usability
+improvement, but its cumulative cost difference is not a general repair price.
+
+These conclusions concern the completed apps shown. They do not estimate a
+model's success rate or prove equal aesthetics, code quality, maintainability,
+security, scalability or production reliability. No credits-per-quality-point
+ratio is used: rubric points are not a universal value scale.
+
 ## Controls shared within each test
 
 Start a fresh Cowork task and managed app for each run. Select and record the

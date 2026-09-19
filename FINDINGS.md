@@ -15,6 +15,69 @@ complexity is not a claim of greater production readiness or live business
 integration. See the [scope comparison](README.md#what-was-built-and-tested)
 and [complexity method](METHOD.md#comparing-app-complexity).
 
+## Did higher cost buy better apps?
+
+**Not consistently.** The simpler scopes showed no broader verified feature
+coverage with higher spending. Complex apps showed some specific gains, but
+not a universally better core application or a consistent benefit from High
+reasoning. These are findings about the completed apps shown, not success-rate
+estimates or a universal model ranking.
+
+| Scope | Cost comparison within the same cohort | What the additional spend demonstrated |
+|---|---|---|
+| Original Test 1 | Sonnet Medium mean 357 vs Opus Medium 1,083 credits; both 95/100 | Same awarded coverage; no broader measured capability |
+| Additional Test 1 | Sonnet Medium 215 vs Opus High 826 credits; both 100/100 | Same verified procurement checks |
+| Original Test 2 | Sonnet Medium mean 227 vs Opus High mean 877 credits; both 90/100 | Same live read/write, validation, server read-back and reopen checks |
+| Additional Test 2 | Sonnet Medium 301 vs Opus High 1,130 credits; both 90/100 | No extra scored capability; connection-error coverage still unverified |
+| Additional Test 3 | GPT Medium 573/85 vs Opus High 2,860/95 | 2,287 extra credits for fuller preferences and sampled accessibility coverage, not a different core approval/asset workflow |
+
+Test 1's original 95 and additional 100 scores use different
+persistence-scoring/review methods: **that is not a model improvement**.
+Equal checklist coverage also does not establish identical visual polish,
+code quality or reliability beyond the measured scope.
+
+### Complex-app differences by model and reasoning
+
+| Selected configuration | Original credits / score | Additional credits / score | Verified strengths and limits |
+|---|---:|---:|---|
+| GPT 5.5 / Medium | 944 / 90 | 573 / 85 | Core workflows and cost-centre handling verified. Original meaningful density worked; additional meaningful density was not demonstrated. Default-department consumption remained incomplete; additional sampled light error contrast was below target. Save/Cancel and preference persistence worked. |
+| Sonnet 5 / Medium | 1,326 / 90 | No published observation | Full preference check verified, but cost-centre handling was not met. |
+| Sonnet 5 / High | 2,289 / 90 | 2,134 / 85 | Cost-centre handling verified. Additional meaningful density changed rows by 4px, but default-department consumption remained unverified and sampled light error contrast was below target. |
+| Opus 5 / Medium | 2,358 / 95 | No published observation | Full preference, cost-centre and sampled accessibility checks verified. |
+| Opus 5 / High | 3,073 / 95 | 2,860 / 95 | The same full checks verified. Additional density changed rows by 8px; the saved department was actually used by Approvals and all-requests filters. |
+
+All complex apps retained unverified profile fault/Retry coverage. The
+additional GPT and Sonnet High apps scored the same 85, but Sonnet had a real
+density effect: **equal scores did not mean identical functionality**.
+All accepted apps already passed the critical workflow gates.
+
+**Did High reasoning help?** In original Test 3, Opus High cost **715 more**
+than Opus Medium for the same 95-point check set, although it needed one
+correction rather than two. Sonnet High cost **963 more** than Medium at the
+same 90-point score, exchanging strengths: High verified cost-centre handling;
+Medium verified the full preference check. In Tests 1 and 2, High added no
+verified checks within either cohort. It was not always more expensive:
+original Test 1 Opus High cost 191 fewer credits than Opus Medium.
+
+**Did additional builds improve?** They were fresh apps, not later versions
+of one app. GPT fell from 944 to 573 credits but from 90 to 85 points; Sonnet
+High fell from 2,289 to 2,134 credits but from 90 to 85 points. Opus High fell
+from 3,073 to 2,860 credits with the same 95-point coverage. Lower observed
+spending did not itself mean a better app, and changed publication permission
+prevents treating these differences as an isolated model-price effect.
+
+**Did further work improve an individual app?** Yes: the additional accepted
+Opus High app used **429 credits after its last planned stage** for a final
+mobile-layout refinement, finishing at 95/100 while retaining business state.
+This is a concrete usability improvement from corrective work, not a general
+repair tariff or proof that the model premium caused that improvement.
+
+**Maker takeaway:** start with the lower-cost settings for the simpler tested
+scopes. For complex apps, pay attention to the particular capability you need:
+the Opus results showed broader preference/accessibility coverage, but High
+was not consistently better than Medium. Independently exercise the real
+workflow and settings rather than assuming higher spend guarantees quality.
+
 ## Test 1: virtual-data apps
 
 Five accepted Device Procurement and Availability apps. Virtual/local data is

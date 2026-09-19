@@ -14,6 +14,14 @@ descriptions, average credits per app, compact charts of configuration averages
 and links to each detailed result. The charts use a shared credit scale and show
 how many builds contribute to each configuration; the test scopes remain separate.
 
+**Did higher cost buy better apps? Not consistently.** Tests 1 and 2 showed
+the same verified capability coverage within their respective cohorts.
+Test 3 sometimes gained fuller preferences and sampled accessibility, but High
+reasoning did not consistently improve on Medium. Each test page now compares
+every published model/effort setting's costs, corrections and actual feature
+coverage, with separate original and additional observations.
+[Read the capability-versus-cost interpretation](FINDINGS.md#did-higher-cost-buy-better-apps).
+
 ### Original cohorts
 
 | Test | App scope | Accepted apps | Average final credits / app | Final scores |
