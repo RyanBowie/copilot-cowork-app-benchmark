@@ -1,0 +1,17 @@
+Extend the existing Device Allocation and Policy Hub. Keep the same app, isolated storage, all saved request/line IDs, quoted prices and audit history. Do not recreate or reset the data.
+
+Implement these synthetic workflows with visible status, revision, policy version, actor/time history and actionable errors:
+
+Draft -> Pending manager on Submit, capturing policy V1 and the submitted total. Manager approval goes directly to Approved at or below 100000 pence; above 100000 goes to Pending finance, then Approved after finance approval. Only the appropriate simulated role may act. A requester cannot approve their own request, and the same person cannot make both manager and finance decisions on one revision, even if they have both roles. A manager/finance decision needs the current revision and status. Reject requires a non-empty reason and leaves an immutable decision event. Terminal or wrong-role actions must not mutate the request.
+
+Final approval reserves the full request value against its department's budget. Available budget = limit - spent - active reserved. The approval status, reservation and audit decision must succeed together, or none changes. If there is insufficient available budget, show a specific error and leave it awaiting the decision, with no partial reservation. Derive budget views from real request/reservation/ledger state, not separate counters that can drift.
+
+As Sam/storekeeper, support partial fulfilment with a whole quantity per request line. A single confirmed operation may include several lines. Recheck stock and remaining approved quantities for every selected line before changing anything. If any line cannot be fulfilled, the entire operation makes no business-state changes. Otherwise reduce stock, record the fulfilled quantities and immutable inventory movements, move exactly the corresponding quoted cost from reserved to spent, and retain the remainder's reservation. Completed lines cannot be fulfilled again; completing all lines makes the request Fulfilled.
+
+The requester can cancel a pending request, or close an approved request's unfulfilled remainder. Release only the still-active reservation; never undo spent cost, completed movements or fulfilled quantities. A partly fulfilled request closed this way is Partially fulfilled - closed, not falsely Cancelled or Fulfilled. Show its original, fulfilled and closed quantities.
+
+Allow an approved but wholly unfulfilled request to be revised by its requester: release its old reservation, append a revision event, return it to Draft and increment revision. Preserve request identity and unchanged line IDs, quoted prices and old decision history; old approvals cannot authorize the new revision. Resubmission captures the policy then in effect and needs new approvals.
+
+The Catalogue must let Sam update a current unit price, validated as positive integer pence and audited, without altering any already saved request-line quote. Budgets and policy must visibly show the policy and both departments' limits, reserved, spent and available amounts. Audit needs request filtering and chronological actor/action/revision entries. Keep Requests filters and Overview metrics tied to actual persisted state.
+
+Preserve all saved foundation records and make the happy path usable end to end now. This is still a virtual/local simulation, not real procurement or production access control.

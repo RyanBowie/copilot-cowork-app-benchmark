@@ -6,6 +6,9 @@ cost cross-check adds four reviewed virtual observations, five SharePoint
 observations and three complex-app observations. Every measurement shown has an
 observed final cost and an accepted final assessment; the methods and sample
 sizes remain distinct.
+Test 4 adds one accepted capability-stress observation under a separate
+four-stage specification and separate core/advanced rubrics. It is not pooled
+with the preceding cohorts.
 
 ## Comparing app complexity
 
@@ -32,6 +35,12 @@ Business data, approval actors and inventory remain simulated. Thus Test 3
 is a more complex workflow prototype, not a stronger demonstration of live
 business-backend integration than Test 2, nor an enterprise-production
 readiness claim. Real authorization, concurrency and scale are not established.
+
+Test 4 adds versioned policy snapshots, integer-pence discounts/VAT, budget
+reservations, penny-conserving partial fulfilment, stale-view conflicts and
+atomic price imports across eight areas. It deliberately omits Test 3's live
+profile connector and asset returns. It is a different stress workload, not
+an all-features superset or a comparable scoring scale.
 
 The comparison describes target scope. Actual per-run verdicts retain
 unverified or incomplete capabilities; acceptance does not make every target
@@ -220,6 +229,73 @@ six-observation mean is **11,873 / 6 = 1,978.8**. Each paired setting has two
 observations, with labelled publication permissions; these are neither
 reliability estimates nor isolated model-pricing effects.
 
+## Test 4: capability stress
+
+The Device Allocation and Policy Hub uses four frozen prompts on one app:
+
+1. [Foundation](benchmark/test-04/stage-01-build.txt): eight areas, related
+   virtual tables, app-isolated persistence and stable multi-line editing.
+2. [Workflows](benchmark/test-04/stage-02-workflows.txt): versioned approvals,
+   separation of duties, budget reservation, fulfilment and revisions.
+3. [Policy and pricing](benchmark/test-04/stage-03-policy-change.txt): V2 routing,
+   exact-pence discount/VAT arithmetic, proportional costs and both themes,
+   while preserving existing V1 requests and history.
+4. [Resilience](benchmark/test-04/stage-04-resilience.txt): competing stale views,
+   at-most-once actions, all-or-nothing price imports and accessible interaction.
+
+Use only synthetic actors and virtual/local business data, with no live
+business or profile connector. Four device models start with 31 units and
+two draft requests worth 60,000 pence. Operations and Engineering have separate
+300,000/150,000-pence budgets. V1 requires finance strictly above 100,000;
+V2 strictly above 75,000. Existing submissions retain their captured policy.
+
+The controller reviews the native owner preview, not a model self-review.
+Before any reset, exercise the original V1 pending and approved carryovers
+created before the policy change. Subsequent independent cases use the
+confirmed in-app reset only; never inject missing history or patch app source.
+Competing-view cases use the same browser context and native task, leaving
+the second view intentionally stale before its attempted action.
+
+The [core rubric](benchmark/test-04/acceptance.json) has ten ten-point checks.
+Acceptance requires at least 85 and every critical check: effectively at least
+90 with this rubric. The separate
+[advanced rubric](benchmark/test-04/advanced-acceptance.json) also has ten
+ten-point checks, but is not an acceptance gate. Every frozen subcase must be
+verified for a pass; failed, blocked and untested checks each earn zero.
+Do not combine these into a universal quality or credits-per-point score.
+
+Freeze first-complete-target cost and both scorecards before later guidance.
+At most two corrective prompts and two clarifications are allowed per app.
+Early corrections count toward first-target cost; later incremental cost is
+final minus first-target credits. Preserve earlier unaffected evidence and
+identify targeted post-correction rechecks, rather than implying that all
+historical scenarios were recreated.
+
+The final interaction sample covers actual 1440px and 390px widths in both
+themes, including visible controls, field errors, contrast, focus and bounded
+table scrolling. The exact advanced keyboard scenario asks for request search
+and a rejection-reason dialog, while the authoring prompts permit other
+interfaces. If that exact scenario cannot be exercised, retain a coverage gap
+instead of automatically treating a different interface as a requested-feature
+defect or awarding partial points.
+
+Only one accepted observation is shown, for GPT Medium. This supports a
+within-app comparison of the measured corrective work, not cross-model,
+Medium/High, repeatability or success-rate conclusions. The selected Cowork
+setting also does not establish every internal builder worker's model.
+Controlled local stale-state simulations and sampled accessibility are not
+production concurrency, authorization or conformance certification.
+
+Final task cost, final app/cost images, structured checks and the conversation
+archive are retained before owner-authorized deletion of the exact generated
+resource. Later edits were reviewed in the same native owner preview and are
+not claimed republished.
+
+Materials: [protocol summary](benchmark/test-04/protocol.json),
+[exact scenarios](benchmark/test-04/scenarios.json), and the frozen prompts
+and rubrics linked above. This protocol summary is a sanitized projection;
+the prompt, rubric and scenario files retain their frozen bytes.
+
 ## Cost and timing
 
 Record the actual native `/cost` card after authoring checkpoints and at the
@@ -238,6 +314,8 @@ final task readings in the selected original cohort: 3,219 / 5 = 643.8 for Test 
 equal weight, including repeated settings. This describes the observed
 model/reasoning mix, not a single model's price. Per-configuration averages use
 only that configuration's builds; individual readings remain visible.
+The separate Test 4 mean is **1,573 / 1 = 1,573**, with no implication that its
+single setting is comparable to the five-setting Test 3 mean.
 
 Reported **build time per app** sums the recorded authoring turns: initial build,
 planned updates, clarifications and corrections. Match each prompt submission

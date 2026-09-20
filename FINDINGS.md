@@ -1,7 +1,8 @@
 # Completed benchmark findings
 
-The 20 original apps in Tests 1-3 and twelve additional reviewed observations meet
-their final scoring and critical-check gates. Costs below are observed
+The 20 original apps in Tests 1-3, twelve additional reviewed observations and
+one separately scored Test 4 observation meet their final scoring and
+critical-check gates. Costs below are observed
 cumulative Cowork task credits. Keep original and additional samples distinct;
 app scope, model mix, review method and publication permission affect comparison.
 
@@ -14,6 +15,9 @@ preferences, but only its read-only profile is live. Its greater workflow
 complexity is not a claim of greater production readiness or live business
 integration. See the [scope comparison](README.md#what-was-built-and-tested)
 and [complexity method](METHOD.md#comparing-app-complexity).
+Test 4 is a separate eight-area stress workload for interacting policy, money,
+budget and stale-state rules. It has no live connector or asset-return flow;
+its core/advanced scores are not directly comparable with Test 3.
 
 ## Did higher cost buy better apps?
 
@@ -30,6 +34,10 @@ estimates or a universal model ranking.
 | Original Test 2 | Sonnet Medium mean 227 vs Opus High mean 877 credits; both 90/100 | Same live read/write, validation, server read-back and reopen checks |
 | Additional Test 2 | Sonnet Medium 301 vs Opus High 1,130 credits; both 90/100 | No extra scored capability; connection-error coverage still unverified |
 | Additional Test 3 | GPT Medium 573/85 vs Opus High 2,860/95 | 2,287 extra credits for fuller preferences and sampled accessibility coverage, not a different core approval/asset workflow |
+| Test 4, within one GPT Medium app | 1,095 first target vs 1,573 final credits | One correction added 478 credits; advanced coverage rose from 80 to 90, with safer repeated submission and sampled focus/naming improvements |
+
+Test 4 has one published observation. Its within-app improvement is not a
+comparison between models or reasoning levels.
 
 Test 1's original 95 and additional 100 scores use different
 persistence-scoring/review methods: **that is not a model improvement**.
@@ -335,6 +343,67 @@ higher cost, using one and two corrective prompts respectively. Choose against
 the actual required capabilities and review budget, not just the smallest
 credit number. Two observations per shown setting do not establish reliable
 variance, success rates or future prices.
+
+## Test 4: capability stress
+
+One accepted GPT 5.5 / Medium Device Allocation and Policy Hub received the
+four frozen stages, followed by one narrowly evidenced correction. There were
+no early corrections, clarification prompts or native self-reviews.
+
+| Configuration | First-target credits | First core / advanced | Final credits | Final core / advanced | Later corrections | Build time, approx. |
+|---|---:|---:|---:|---:|---:|---|
+| GPT 5.5 / Medium | 1,095 | 100 / 80 | 1,573 | 100 / 90 | 1 | 34m 52s |
+
+The displayed average is **1,573 credits across one app**. It is not evidence
+that GPT is the cheapest possible setting for this workload, or that more
+expensive settings cannot improve it. No cross-model ranking is supported.
+
+| Foundation | Workflows | Policy / pricing / themes | Resilience / first target | Final task total |
+|---:|---:|---:|---:|---:|
+| 210 | 431 | 677 | 1,095 | 1,573 |
+
+These readings are cumulative. **Do not add them.**
+
+### What the extra 478 credits improved
+
+One corrective prompt made rapid repeated submission safe, restored Escape
+focus return and supplied the missing Requester field name. Core coverage
+remained 100/100 while advanced coverage rose from 80 to 90. This is a
+verified improvement within the same app, not a standard repair price or
+proof that a higher-cost model would provide the same gain.
+
+| Advanced challenge | First target | Final verification |
+|---|---|---|
+| TA01: exact-pence discounts/VAT, half-up rounding and quoted-price preservation | Verified | Verified |
+| TA02: original V1 carryovers, revisions and exact V2 finance boundary | Verified | Verified |
+| TA03: no self-approval or same-person manager/finance decisions | Verified | Verified |
+| TA04: budget contention, reservation release and retry | Verified | Verified |
+| TA05: partial fulfilment, close remainder and penny conservation | Verified | Verified |
+| TA06: atomic multi-line fulfilment when one line has insufficient stock | Verified | Verified |
+| TA07: rapid repeated actions and stale decision/fulfilment attempts | Not met | Verified |
+| TA08: two intentionally stale finance views competing for one budget | Verified | Verified |
+| TA09: invalid/cancelled/stale imports and audited atomic valid import | Verified | Verified |
+| TA10: complete exact keyboard/search/rejection-dialog scenario | Not met | Not checked |
+
+Every advanced pass requires all frozen subcases. The final TA10 entry is
+unverified because the exact request-search/rejection-dialog scenario could
+not be exercised: the app has no request-search control and uses an inline
+rejection form. These interface choices were not explicitly prohibited by
+the build prompts. No TA10 points were awarded despite the independently
+verified focus/naming repairs and other sampled accessibility observations.
+Do not present that coverage gap as an unresolved demonstrated defect.
+
+The final layout/interaction evidence includes 40 main/error scenes and eight
+import/reset confirmation scenes across desktop/mobile and both themes, with
+1,072 text samples. Earlier unaffected business-scenario evidence was retained,
+with targeted correction rechecks; this is not a claim that every historical
+case was recreated after the repair.
+
+**Maker takeaway:** this observation demonstrates substantial interacting
+business-rule coverage at 1,573 credits, including its guidance. It does not
+establish a model winner. Independently test the particular rules and
+interaction patterns your app needs; a complete core score does not guarantee
+full advanced coverage or production readiness.
 
 ## Interpretation and limits
 

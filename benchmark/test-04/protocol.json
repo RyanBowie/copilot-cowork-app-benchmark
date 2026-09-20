@@ -1,0 +1,62 @@
+{
+  "id": "test-04",
+  "version": "1.0.0",
+  "title": "Test 4: capability stress test",
+  "design": "Five pre-registered settings, one fresh Device Allocation and Policy Hub each, identical four-stage requirements. Separate core acceptance from ten equally weighted advanced challenges. Compare first-complete-target and final coverage with actual cumulative costs and counted corrections.",
+  "backendLabel": "Isolated synthetic virtual/local business tables; no live connector",
+  "reviewMode": "external-only",
+  "sourceProtocolSha256": "62a2a2d5af0fc328b6c3f9c75ed782ccb6b9ba4d9a2cf357f6142e22d4addf2e",
+  "note": "Public protocol summary, not a byte-identical copy of the private controller configuration. The stage prompts and rubrics below retain their frozen bytes.",
+  "acceptanceThreshold": 85,
+  "allCriticalChecksRequired": true,
+  "advancedScoreIsAcceptanceGate": false,
+  "promptLimits": {
+    "review": 0,
+    "planned-change": 3,
+    "clarification": 2,
+    "correction": 2,
+    "cost": 12
+  },
+  "stopRule": "Two corrective prompts across the entire app; thirty observed active-generation minutes per authoring response or ninety per task. Stop the slot if a critical core blocker remains after the allowance. Pause the batch for a shared unresolved authorization/platform blocker. No replacement, automatic extension or additional model selection.",
+  "stages": [
+    {
+      "id": "stage-01",
+      "title": "Isolated relational foundation and stable request editing",
+      "prompt": "stage-01-build.txt",
+      "sha256": "6a005252ae2956ee4ab21f9ca538c74879fe42b183b464920d7448b65b4789b6"
+    },
+    {
+      "id": "stage-02",
+      "title": "Versioned approvals, budget reservation and partial fulfilment",
+      "prompt": "stage-02-workflows.txt",
+      "sha256": "e2a53bf232e039a020d57c22a3af7d458a473b086faf1b35e9d753f7b129e5dd"
+    },
+    {
+      "id": "stage-03",
+      "title": "Change policy and money rules while preserving existing business state",
+      "prompt": "stage-03-policy-change.txt",
+      "sha256": "04e42001931bba2a90de000c43770150931bbbd554a6426bd448d93a68c1adb4"
+    },
+    {
+      "id": "stage-04",
+      "title": "Competing updates, atomic imports and accessible interaction",
+      "prompt": "stage-04-resilience.txt",
+      "sha256": "043c4c6840b3d5bb9ee6016e9a478ac9870f93fb1b13d2e38ae910576e7a6ded"
+    }
+  ],
+  "scoring": {
+    "core": "Ten checks at ten points each; existing at-least-85 plus all-critical gate (therefore at least 90 with this rubric).",
+    "advanced": "Ten checks at ten points each, pass only when all frozen subcase assertions are verified. Failed, blocked or untested checks earn zero and remain visible for accepted apps. No combined or cost-per-quality-point score.",
+    "firstCompleteTarget": "Freeze the complete-target assessment and cumulative cost after stage 4 before further correction. Include and disclose any earlier repairs. Append a final assessment rather than overwriting the first.",
+    "carryover": "If an advanced precondition cannot be established, retain that limitation, score it unverified and continue independent cases; do not silently exclude the app or inject missing history."
+  },
+  "hypotheses": [
+    "Stronger reasoning may preserve interacting price/policy snapshots and approval history across requirement changes.",
+    "Stronger reasoning may implement resource conservation, rollback, stale-state guards and exactly-once operations more completely.",
+    "A higher-cost setting may reach the same coverage with less corrective guidance, or may offer no observed advantage.",
+    "Any advantage must be feature-specific and evidenced; equal or better lower-cost results are retained."
+  ],
+  "coreRubricSha256": "e1a10ec9c242d0e5616a986ebb154064acacb9f116675734338cf4b4752015d8",
+  "advancedRubricSha256": "a022cab80cb2d974fc362b490928c99363610001d20300ff5040841e4f4d58f4",
+  "scenarioSha256": "68cfb217194df25363713e13ea1b9dce4f4aafb7c28d315f4a61acf487c6fc73"
+}

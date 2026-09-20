@@ -1,15 +1,16 @@
 # Copilot Cowork managed-app benchmark
 
-**32 completed app measurements:** the original 20 apps across three tests,
+**33 completed app measurements across four test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
-additional complex-app observations for Test 3. Compare
+additional complex-app observations for Test 3, plus one separately scored
+capability-stress observation for Test 4. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
 
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)
 
-The main page opens with an **overview of all three tests**: short app/test
+The main page opens with an **overview of all four tests**: short app/test
 descriptions, average credits per app, compact charts of configuration averages
 and links to each detailed result. The charts use a shared credit scale and show
 how many builds contribute to each configuration; the test scopes remain separate.
@@ -20,6 +21,8 @@ Test 3 sometimes gained fuller preferences and sampled accessibility, but High
 reasoning did not consistently improve on Medium. Each test page now compares
 every published model/effort setting's costs, corrections and actual feature
 coverage, with separate original and additional observations.
+Test 4 adds a concrete within-app improvement from corrective guidance, but
+its single published observation cannot establish a cross-model advantage.
 [Read the capability-versus-cost interpretation](FINDINGS.md#did-higher-cost-buy-better-apps).
 
 ### Original cohorts
@@ -60,6 +63,26 @@ denominators distinct rather than interpreting a changed model mix as a price
 change. [Cost pairs and capability differences](FINDINGS.md#additional-test-3-complex-apps)
 are shown separately in the report.
 
+### Test 4: capability stress
+
+An eight-area Device Allocation and Policy Hub exercises interacting money,
+policy, budget, inventory and stale-state rules through four planned prompts.
+Business data and actors are synthetic; there is no live connector.
+
+| Configuration | First-target credits | First core / advanced | Final credits | Final core / advanced | Corrections |
+|---|---:|---:|---:|---:|---:|
+| GPT 5.5 / Medium | 1,095 | 100 / 80 | 1,573 | 100 / 90 | 1 |
+
+The average is **1,573 credits across one shown app**, not a multi-model mean.
+One later correction added **478 observed credits** and improved repeated-submit
+safety, Escape focus return and Requester field naming. Nine of ten complete
+advanced scenarios were verified. The exact request-search/rejection-dialog
+scenario remains a coverage gap, not an automatic claim of a remaining defect.
+There were no early corrections, clarifications or native self-review prompts.
+
+[Detailed stress findings](FINDINGS.md#test-4-capability-stress) |
+[Interactive first/final comparison](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-04)
+
 ## What was built and tested
 
 | Test | Functional complexity | Business-data integration | Planned authoring |
@@ -67,6 +90,7 @@ are shown separately in the report.
 | Test 1 | Moderate procurement demo; five core views, single-device requests, one approval step, stock changes and reset | Virtual/local synthetic data | One initial build specification |
 | Test 2 | Focused connected request app; four views, single-device requests, no approvals or stock editing | Two real SharePoint lists, with live reads/writes and independent read-back | One initial build specification |
 | Test 3 | Complex workflow prototype; seven screens, multi-line requests, staged approvals and asset lifecycle | Seven related virtual business tables; real read-only Office 365 Users profile | Four planned stages on the same app |
+| Test 4 | Eight areas; versioned policy, exact-pence pricing, budget reservations, partial fulfilment, stale views and atomic imports | Related synthetic virtual/local tables; no live connector | Four planned stages on the same app |
 
 These are qualitative scope descriptions, not numerical complexity scores.
 Corrective guidance is counted separately; original Test 1 also includes a
@@ -100,11 +124,16 @@ production authorization, concurrent inventory safety or live procurement
 transactions. Its real profile read is not equivalent to Test 2's SharePoint
 request writes, so cross-test costs do not isolate a connector premium.
 
+**Test 4 targets harder interacting business rules and deliberate conflicting
+updates.** It is not a superset of Test 3: it has no live profile or asset-return
+workflow. Core acceptance and advanced coverage are separate ten-check
+scorecards; their scores are not interchangeable with Test 3's rubric.
+
 ## Reading the results
 
 Compare configurations **within a test**. Each test holds its own specification
-and review criteria constant, but the three scopes are different. Original
-Test 1 includes native self-review; Tests 2 and 3 and all additional samples
+and review criteria constant, but the four scopes are different. Original
+Test 1 includes native self-review; Tests 2-4 and all additional samples
 use external-only review. Original and additional averages remain separate.
 
 The headline average is the sum of final task credits divided by completed apps
@@ -138,6 +167,8 @@ Acceptance requires at least 85/100 and every required critical check. The
 [final capability coverage](FINDINGS.md#complex-app-cost-capability-and-maker-guidance)
 explains what the scores include; acceptance does not imply full coverage or
 production readiness.
+Test 4 uses ten-point core checks, so its effective accepted minimum is 90
+with all critical checks. Its separate advanced score is not an acceptance gate.
 
 ## Evidence and privacy
 

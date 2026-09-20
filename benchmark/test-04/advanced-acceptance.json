@@ -1,0 +1,12 @@
+[
+  {"id":"TA01","capability":"Historical price snapshots and exact integer discount/VAT rounding, including a half-penny tie","points":10,"critical":false},
+  {"id":"TA02","capability":"Pending and approved V1 decisions survive V2; revised/new/boundary requests follow the correct version","points":10,"critical":false},
+  {"id":"TA03","capability":"Self-approval and same-person manager/finance decisions are blocked across synthetic dual roles","points":10,"critical":false},
+  {"id":"TA04","capability":"Budget reservation is atomic at the insufficient-funds boundary and releases correctly on revision/cancellation","points":10,"critical":false},
+  {"id":"TA05","capability":"Partial fulfilment and closing the remainder conserve stock, quantities, reserved/spent value and every penny","points":10,"critical":false},
+  {"id":"TA06","capability":"Multi-line fulfilment with one insufficient-stock line makes no partial business-state changes","points":10,"critical":false},
+  {"id":"TA07","capability":"Double confirmation and replay from a stale tab do not duplicate or overwrite a request operation","points":10,"critical":false},
+  {"id":"TA08","capability":"Two stale request views competing for one remaining department budget cannot both reserve it","points":10,"critical":false},
+  {"id":"TA09","capability":"Price-import preview, cancellation, all-row validation, atomic apply and stale-preview rejection work","points":10,"critical":false},
+  {"id":"TA10","capability":"Keyboard dialogs/focus/errors and sampled control/error contrast meet the specified desktop/mobile targets in both themes","points":10,"critical":false}
+]

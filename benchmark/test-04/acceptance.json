@@ -1,0 +1,12 @@
+[
+  {"id":"TB01","capability":"Same private managed app opens with all eight navigable areas","points":10,"critical":true},
+  {"id":"TB02","capability":"App-isolated persistence and exact four-device/two-request seed with correct derived metrics","points":10,"critical":true},
+  {"id":"TB03","capability":"Multi-line draft creation, save, quantity/removal/edit and stable unchanged IDs with accurate simple totals","points":10,"critical":true},
+  {"id":"TB04","capability":"Required fields, dates, whole quantities, duplicate lines and useful field errors","points":10,"critical":false},
+  {"id":"TB05","capability":"Requester draft isolation and an ordinary submission enters the correct manager queue","points":10,"critical":true},
+  {"id":"TB06","capability":"Ordinary manager/finance approval and storekeeper fulfilment complete with matching visible stock","points":10,"critical":true},
+  {"id":"TB07","capability":"Required rejection reason, correct role actions and visible decision/audit history","points":10,"critical":false},
+  {"id":"TB08","capability":"Controller-created draft, unchanged line IDs and simple values survive all stages and native reopen","points":10,"critical":true},
+  {"id":"TB09","capability":"Light/dark modes apply consistently and persist without altering business records","points":10,"critical":false},
+  {"id":"TB10","capability":"All eight areas and core forms usable at wide desktop and actual 390px without page-wide overflow","points":10,"critical":true}
+]

@@ -1,0 +1,17 @@
+Change the existing Device Allocation and Policy Hub without replacing the app or resetting its saved data. Preserve all record and unchanged line IDs, quoted prices, decisions, reservations, inventory movements and audit history.
+
+Introduce current policy V2: finance is now required only when the submitted total is strictly greater than 75000 pence. Exactly 75000 does not require finance. Keep V1 as historical policy. Requests already submitted under V1 must continue under their captured V1 rules, even if still awaiting a manager. Do not silently reroute them or invent/rewrite historical decisions. A new submission or a revised request's resubmission uses V2; a draft with no earlier submission has no grandfathered policy.
+
+Add per-line discount and VAT to the request editor: discount from 0 to 100 percent in 0.01 percent steps, and VAT options 0, 5 or 20 percent. Store rates as whole basis points. Compute each line using integer pence with round-half-up at each explicitly stated step:
+gross = quantity times the snapshotted unit price;
+discount pence = round-half-up(gross times discount basis points / 10000);
+net = gross minus discount pence;
+VAT pence = round-half-up(net times VAT basis points / 10000);
+line total = net plus VAT.
+Request total is the sum of its line totals. Display gross, discount, VAT and final totals so the calculation can be inspected. Validate all inputs; do not silently coerce invalid rates or quantities.
+
+Existing saved lines migrate with zero discount and zero VAT, preserving their existing totals and quoted prices. Changing a catalogue price must still not reprice saved lines. For partial fulfilment, allocate an integer line total proportionally across units: the cost of fulfilled quantity q is round-half-up(line total times q / original quantity); charge a new operation only the difference between cumulative fulfilled cost before and after it. This must conserve every penny across partial operations. Closing the remainder releases the exact residual reservation.
+
+Show the captured policy and revision alongside a request's routing and decision history, and distinguish current catalogue prices from quoted prices. Existing Approved requests retain their status and reservation; they acquire new policy/approvals only after an explicit revision/resubmission.
+
+Add explicit light/dark mode, persisted only as this app's local preference. Update all eight areas and all dialogs/forms consistently. Keep all business history and both departments' budget identities unchanged. A confirmed demo reset should now create the documented initial two-draft fixture with zero discount/VAT and current V2 policy; it must never touch other apps.

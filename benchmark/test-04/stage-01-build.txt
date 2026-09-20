@@ -1,0 +1,35 @@
+Build one working managed app called Device Allocation and Policy Hub using the app-creation skill. Deliver an interactive app, not just a plan, code excerpt or static mockup. This is a synthetic business simulation. All business records and actors must use virtual/local tables, with no real approvals, transactions, employee reads or business-data connectors. Private publication to the signed-in owner is allowed. Do not share the app or change tenant settings.
+
+This is the first of four changes to the same app. Build the foundation now. Preserve its identity and saved data when I request later changes.
+
+Storage must be unique to this generated app, including its own artifact identifier or another app-specific constant. A shared preview origin can host other apps: never reuse a generic product-name key, enumerate/import other apps' data, clear the origin, or overwrite another app's store. Initialize this app's seed once, not on every mount. Keep stable IDs for records and unchanged request lines, including after a justification-only edit and reopening.
+
+Provide eight navigable areas: Overview, Catalogue, Requests, Request editor/detail, Approvals, Inventory, Budgets and policy, and Audit. The approval/inventory actions can initially explain that their workflows come in the next change. Use a polished readable desktop layout and labelled forms. Show an explicit "Synthetic demo" actor selector; these are not real authorization identities.
+
+Create related virtual tables for Devices, DemoPeople, Requests, RequestLines, Policies, Budgets, Reservations, InventoryLedger and AuditEvents. Use integer GBP pence for money and whole quantities. Seed exactly:
+
+Devices (ID, name, category, unit price pence, available units):
+D-LAP, Standard laptop, Computers, 80000, 2
+D-TAB, Field tablet, Computers, 50000, 3
+D-DOC, USB-C dock, Accessories, 10000, 6
+D-CAB, Precision cable, Accessories, 1001, 20
+
+DemoPeople (ID, name, default department, roles):
+JAMIE, Jamie Reed, Operations, requester
+CASEY, Casey Lane, Engineering, requester
+MORGAN, Morgan Vale, Operations, requester and manager
+ALEX, Alex Rowan, Operations, requester and finance
+TAYLOR, Taylor Finch, Engineering, requester and manager and finance
+SAM, Sam Brook, Operations, requester and storekeeper
+Manager and finance actors cover both departments. Default to Jamie. Requesters see and edit only their own drafts. Manager/finance/storekeeper work views can show the records needed for their simulated roles.
+
+Seed two Draft requests, both needed on 2030-12-31:
+R-001 by JAMIE, Operations, justification "Seed dock request", revision 1; line L-001 is one D-DOC at a snapshotted unit price of 10000.
+R-002 by CASEY, Engineering, justification "Seed tablet request", revision 1; line L-002 is one D-TAB at a snapshotted unit price of 50000.
+No reservations, inventory movements or approval decisions exist initially. Audit can include explicit seed events.
+Seed policy V1 with finance required only when a submitted request total is strictly greater than 100000 pence. No request has a policy version until submission.
+Budgets: Operations limit 300000 pence; Engineering limit 150000 pence. Spent and reserved start at zero.
+
+Overview must derive four device models, 31 available units, two drafts and GBP 600.00 draft value from the data. Catalogue needs combined search/category/available-stock filters and clear empty results.
+
+Create/edit/save multi-line drafts with requester, department, needed-by date, justification and accurate GBP totals. Snapshot a device's current unit price when a line is added; later catalogue price changes must not rewrite that quote. Support adding/removing lines and changing quantity. Reject missing fields, past dates, non-whole/non-positive quantities and duplicate devices within a request. Show errors without losing valid entries. Persist saves and append an audit event for actual changes. Do not regenerate unchanged IDs or reset saved state. Include a confirmed "Reset demo data" action scoped only to this app, restoring the current version's documented fixture.

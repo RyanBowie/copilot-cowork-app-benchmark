@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "neededBy": "2030-12-31",
+  "defaultRequester": "JAMIE",
+  "defaultManager": "MORGAN",
+  "defaultFinance": "ALEX",
+  "storekeeper": "SAM",
+  "continuityDraft": {
+    "atStage": "stage-01",
+    "justification": "T4 continuity draft",
+    "department": "Operations",
+    "lines": [{"deviceId":"D-DOC","quantity":2},{"deviceId":"D-CAB","quantity":3}],
+    "totalPence": 23003,
+    "edit": "Change justification to T4 continuity draft preserved without replacing either line ID.",
+    "finalAssertions": ["Same request/line IDs","Same quantities/quoted prices","Total remains 23003 after zero-rate migration","History retained","Native reopen retains the state"]
+  },
+  "carryover": {
+    "atStage": "stage-02",
+    "cases": [
+      {"justification":"T4 V1 pending carryover","deviceId":"D-LAP","quantity":1,"totalPence":80000,"statusBeforeChange":"Pending manager","policyBeforeChange":"V1"},
+      {"justification":"T4 V1 approved carryover","deviceId":"D-LAP","quantity":1,"totalPence":80000,"statusBeforeChange":"Approved","policyBeforeChange":"V1","approvedBy":"MORGAN","reservedPence":80000}
+    ],
+    "note": "Create through native UI before stage 3; preserve exact IDs/history. Missing advanced preconditions remain unverified rather than injected."
+  },
+  "advancedCaseOrder": ["TA02","TA01","TA03","TA04","TA05","TA06","TA07","TA08","TA09","TA10"],
+  "resetRule": "After carryover evidence, reset only through the app's confirmed action between independent check IDs and the explicitly independent subcases. Verify current V2, seed draft total60000, stock31, budgets300000/150000, spent/reserved0 and unrelated owned stores unchanged. Preserve each before/after receipt.",
+  "cases": {
+    "TA01": {
+      "steps": [
+        "Create a saved draft with three D-CAB at1001, discount750bps, VAT2000bps. Expect gross3003, discount225, net2778, VAT556, total3334.",
+        "As SAM change current D-CAB price to1101. Reopen old draft: IDs, quote1001 and total3334 unchanged. A new otherwise identical draft quotes1101 and totals3666 (gross3303, discount248, net3055, VAT611).",
+        "After a confirmed reset, one D-CAB at1001 with discount5000bps and VAT2000bps must produce discount501, net500, VAT100, total600: half-up, not half-even."
+      ]
+    },
+    "TA02": {
+      "steps": [
+        "Before resetting anything, verify both saved V1 carryovers, original IDs/prices and existing approved history/reservation survive stages3/4.",
+        "Approve the old pending80000 request as MORGAN: it becomes Approved under V1 without finance, despite V2 current threshold75000.",
+        "Revise the previously approved80000 carryover as JAMIE: same request/unchanged line IDs, incremented revision, old approval history retained and its80000 reservation released. Resubmit under V2; manager approval now requires finance.",
+        "Create a new80000 request under V2 and verify Pending finance after manager approval.",
+        "After recording all carryover proof and a confirmed reset, a new D-LAP80000 with625bps discount and zero VAT totals75000; manager approval directly approves it. A new80000 case requires finance."
+      ],
+      "boundaryPence": 75000,
+      "boundaryDiscountBps": 625
+    },
+    "TA03": {
+      "steps": [
+        "MORGAN requests one D-DOC; MORGAN cannot self-approve. TAYLOR may approve it as a different manager.",
+        "JAMIE requests one D-LAP80000 under V2. TAYLOR approves as manager; TAYLOR cannot also approve as finance even with both roles. ALEX can complete finance approval.",
+        "Unauthorized/duplicate attempts leave revision, status, decisions and reserved values unchanged."
+      ]
+    },
+    "TA04": {
+      "steps": [
+        "CASEY submits two separate Engineering D-LAP80000 requests. Complete manager approval for both, then finance-approve the first: reserved80000, spent0, available70000.",
+        "Finance approval of the second must be blocked for insufficient budget; it remains Pending finance, without a partial reservation or success decision.",
+        "Explicitly revise the wholly unfulfilled first request as CASEY: release80000 while preserving old history/IDs. The second can then approve once, leaving reserved80000.",
+        "Cancel/close the still-unfulfilled approved second request: reserved0, spent0, available150000, with retained decisions/history."
+      ]
+    },
+    "TA05": {
+      "steps": [
+        "JAMIE obtains approval for two D-LAP in Operations at total160000. Reserved160000, spent0, available140000.",
+        "SAM fulfils one unit: laptop stock1, fulfilled1, reserved80000, spent80000, available140000.",
+        "JAMIE closes the remaining unit: stock1, fulfilled1, closed1, reserved0, spent80000, available220000, status Partially fulfilled - closed. Repeating close does nothing.",
+        "After reset, approve three D-CAB with750bps discount and2000bps VAT, total3334. Fulfil one unit per operation: incremental spent1111,1112,1111. Final spent3334/reserved0; stock17. No penny lost or created."
+      ]
+    },
+    "TA06": {
+      "steps": [
+        "Approve an Operations request for one D-LAP and one D-DOC, total90000.",
+        "Approve another Operations request for two D-LAP, total160000; fulfil both laptops, leaving laptop stock0 and dock stock6.",
+        "Try a single multi-line fulfilment of the first request, selecting both lines. It must reject the operation: dock stock6, both first-request fulfilled quantities0, first reservation90000, department spent160000. No partial inventory movement or success event."
+      ]
+    },
+    "TA07": {
+      "steps": [
+        "Submit a two-dock Operations request using rapid repeated confirmation; exactly one request submission and manager queue entry.",
+        "Open its pending decision in two same-context app views. In view A manager-approve it. In the intentionally stale view B attempt rejection: it must not replace the approval, decisions or reservation.",
+        "Open its two-unit fulfilment in both views. Rapidly confirm in A, then attempt the stale confirmation in B. Final dock stock4, fulfilled2, reserved0, spent20000; exactly one successful operation, without duplicate movements or success history."
+      ]
+    },
+    "TA08": {
+      "steps": [
+        "CASEY submits two Engineering laptop80000 requests and completes manager approval. Open their finance decisions in separate same-context views while both see available150000.",
+        "Approve request A. Without refreshing the already-open B form, attempt B approval. Exactly one may become Approved/reserve80000; the other stays Pending finance, reserved total80000, spent0, available70000.",
+        "Capture the intentionally stale ordering and any refresh/stale/insufficient-funds notification. A test that refreshed B first does not satisfy this case."
+      ]
+    },
+    "TA09": {
+      "valid": [{"deviceId":"D-DOC","unitPricePence":12000},{"deviceId":"D-CAB","unitPricePence":1101}],
+      "invalid": [
+        [{"deviceId":"D-DOC","unitPricePence":12000},{"deviceId":"UNKNOWN","unitPricePence":1101}],
+        [{"deviceId":"D-DOC","unitPricePence":12000},{"deviceId":"D-DOC","unitPricePence":13000}],
+        [{"deviceId":"D-DOC","unitPricePence":12000},{"deviceId":"D-CAB","unitPricePence":-1}],
+        [{"deviceId":"D-DOC","unitPricePence":12000},{"deviceId":"D-CAB","unitPricePence":1001.5}],
+        [{"deviceId":"D-DOC","unitPricePence":12000,"extra":"not allowed"}],
+        "not valid JSON"
+      ],
+      "steps": [
+        "Each invalid input shows a useful row/parse error and leaves all catalogue/request/ledger/audit business state unchanged; the leading valid row does not apply.",
+        "Dry-run the valid payload and cancel: no mutations.",
+        "Dry-run it in view A, edit D-DOC to11500 via the Catalogue in view B, then attempt A apply without refreshing: reject stale preview, preserving B's change.",
+        "Rerun valid dry run and apply: both prices update together, one audited import, seed request quote10000/total10000 retained. Reopen verifies persistence."
+      ]
+    },
+    "TA10": {
+      "viewports": [1440,390],
+      "themes": ["light","dark"],
+      "normalTextContrastMinimum": 4.5,
+      "largeTextContrastMinimum": 3,
+      "minimumTargetCssPixels": 24,
+      "steps": [
+        "Exercise a request validation error, rejection-reason dialog and import dry-run/apply confirmation with keyboard only. Reach labelled controls and errors, visibly track focus, cancel with Escape and confirm focus returns to the opener.",
+        "At both actual viewport widths/themes, sample visible buttons, labels, validation errors and disabled/read-only explanations; retain raw foreground/background/contrast and geometry.",
+        "Verify catalogue/request search remains usable (at least120px field width), no overlapping labels, and any table overflow is confined to an explicitly labelled keyboard-scrollable region.",
+        "Retain screenshots for independent visual judgment; do not infer accessible error contrast from ordinary paragraph samples."
+      ]
+    }
+  }
+}
