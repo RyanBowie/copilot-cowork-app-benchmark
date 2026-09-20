@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "generatedAt": "2026-09-20T16:09:09.615Z",
+  "generatedAt": "2026-09-20T17:54:08.232Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-04",
   "scopeNote": "Four distinct test scopes: virtual procurement, live SharePoint requests, complex lifecycle apps and advanced policy/state stress testing. Original and additional cohorts remain separate; compare settings within each scope, not pooled scores or averages.",
@@ -6023,15 +6023,20 @@
         "runId": "run-06",
         "model": "Sonnet 5",
         "effort": "Medium",
-        "status": "testing",
-        "finalSpend": null,
+        "status": "not-accepted",
+        "finalSpend": {
+          "status": "observed",
+          "value": 1992,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
         "cohort": "Follow-up"
       },
       {
         "runId": "run-07",
         "model": "Opus 5",
         "effort": "High",
-        "status": "pending",
+        "status": "testing",
         "finalSpend": null,
         "cohort": "Follow-up"
       },

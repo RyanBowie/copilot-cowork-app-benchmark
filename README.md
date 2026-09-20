@@ -22,7 +22,7 @@ reasoning did not consistently improve on Medium. Each test page now compares
 every published model/effort setting's costs, corrections and actual feature
 coverage, with separate original and additional observations.
 Test 4 adds a concrete within-app improvement from corrective guidance, but
-its single published observation cannot establish a cross-model advantage.
+its single accepted observation cannot establish a cross-model advantage.
 [Read the capability-versus-cost interpretation](FINDINGS.md#did-higher-cost-buy-better-apps).
 
 **Maker decision: start lower-cost, verify, then escalate for a demonstrated
@@ -91,6 +91,11 @@ an extra Cowork prompt. Until a final reading and review are available, their
 rows show testing/queued status rather than an invented cost or zero score.
 The original GPT result remains unchanged. Follow-up provenance is explicit;
 only accepted completed apps contribute to the accepted-app average.
+
+The Sonnet Medium follow-up has a final **1,992-credit spend-only reading**,
+not a cost to an accepted app or a completed-target capability score. Opus
+High is being tested; Opus Medium and Sonnet High remain queued. The accepted
+Test 4 average remains **1,573 credits**, from the single accepted GPT result.
 
 An eight-area Device Allocation and Policy Hub exercises interacting money,
 policy, budget, inventory and stale-state rules through four planned prompts.
