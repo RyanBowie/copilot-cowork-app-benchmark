@@ -19,6 +19,48 @@ Test 4 is a separate eight-area stress workload for interacting policy, money,
 budget and stale-state rules. It has no live connector or asset-return flow;
 its core/advanced scores are not directly comparable with Test 3.
 
+## Choosing a model without paying for unneeded capability
+
+**Start with a lower-cost setting supported by the relevant scope, independently
+verify the capabilities you need, then escalate for a demonstrated unmet need
+or a worthwhile reduction in corrective effort.** A complex app does not
+automatically require High reasoning, and a higher bill is not a quality guarantee.
+
+Two concrete comparisons retain the same original cohort and verified check
+set, rather than treating equal scores alone as equal coverage:
+
+| Same-cohort comparison | Lower-cost observation | Higher-cost observation | Observed credit difference | Coverage and guidance |
+|---|---|---|---|---|
+| Original Test 2: SharePoint | Sonnet Medium: 227 mean credits/app | Opus High: 877 mean credits/app | **650 fewer mean credits/app; 74.1% lower** | Both 90/100, same verified checks; two builds each. Corrections: Sonnet 0 / 0; Opus 0 / 1. |
+| Original Test 3: complex apps | Opus Medium: 2,358 credits | Opus High: 3,073 credits | **715 fewer credits; 23.3% lower** | Both 95/100, same verified checks; one build each. Medium needed two corrections; High needed one. |
+
+Percentages are `(higher - lower) / higher`, using final task credits including
+guidance. They are **observed credit differences, not guaranteed future savings,
+cash-price reductions or proof of equivalent overall quality**. The small
+samples do not support a promised budget saving, and external review effort is
+not priced into the credit differences.
+
+For the simpler procurement/SharePoint scopes, Sonnet Medium is a
+cost-supported starting choice. For similar complex apps, GPT Medium is a
+credible baseline: Test 4 verified all core checks and nine of ten advanced
+scenarios for 1,573 credits, including one correction. The tested goal did not
+require selecting High reasoning in that observation.
+
+**Only fully verified accepted result does not mean only capable model.**
+Every registered Test 4 setting had the same complete-app target, acceptance
+criteria and planned time/correction limits. No setting received easier
+requirements because it was expensive, and credit price itself was not a
+stopping rule. A missing accepted result is not a zero capability score;
+platform interruptions and review or observation limits do not establish model
+incapability. There is no matched accepted Test 4 peer for a quantified
+GPT-versus-other-model saving, so this is not a clean five-way capability ranking.
+
+**Spend more when a required feature justifies it.** Test 3 Opus results
+demonstrated fuller preferences and sampled accessibility than lower-cost GPT
+results. Those are real benefits, not an equivalent-quality saving opportunity.
+Choose against the actual workflow, feature gaps and guidance effort, rather
+than treating either the cheapest setting or the highest score as universally best.
+
 ## Did higher cost buy better apps?
 
 **Not consistently.** The simpler scopes showed no broader verified feature

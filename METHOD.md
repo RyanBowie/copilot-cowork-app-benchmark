@@ -70,6 +70,34 @@ model's success rate or prove equal aesthetics, code quality, maintainability,
 security, scalability or production reliability. No credits-per-quality-point
 ratio is used: rubric points are not a universal value scale.
 
+### Interpreting observed credit differences
+
+The model-selection examples compare settings within the same original cohort.
+Every observation contributing to either setting must have the same verified
+check-ID set; equal point totals alone are insufficient. Do not combine original
+and additional cohorts or compare different Test 3/Test 4 rubrics as equivalent
+quality.
+
+For a lower-cost setting and a higher-cost comparison, the reported difference
+is `higher mean final credits - lower mean final credits`; the percentage is
+`difference / higher mean final credits * 100`, rounded to one decimal place.
+For one observation per setting, these are individual readings, not repeated
+means. Show sample sizes and correction counts alongside the difference.
+
+Final task credits include corrective guidance, but do not price external
+review labor. An observed credit difference is not a monetary saving, a
+guaranteed future price reduction or an isolated model tariff. The measured
+check set also cannot establish equivalent aesthetics or overall app quality.
+
+All registered Test 4 settings shared the complete-app target, acceptance
+criteria and planned time/correction limits. There was no credit-price stopping
+rule or exemption for a higher-cost setting; shared planned controls do not
+claim that every registered run received every stage. A missing accepted result
+is not a zero score or proof of incapability. Platform and observation limits
+must not be relabeled as model-quality findings. Test 4's one accepted result
+therefore supports a demonstrated capability example, not a five-way ranking,
+success-rate estimate or quantified cross-model saving.
+
 ## Controls shared within each test
 
 Start a fresh Cowork task and managed app for each run. Select and record the

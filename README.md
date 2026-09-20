@@ -25,6 +25,24 @@ Test 4 adds a concrete within-app improvement from corrective guidance, but
 its single published observation cannot establish a cross-model advantage.
 [Read the capability-versus-cost interpretation](FINDINGS.md#did-higher-cost-buy-better-apps).
 
+**Maker decision: start lower-cost, verify, then escalate for a demonstrated
+benefit.** Original Test 2 Sonnet Medium used **650 fewer mean credits/app
+(74.1% lower)** than Opus High with the same verified 90-point check set,
+across two builds per setting. Original Test 3 Opus Medium used **715 fewer
+credits (23.3% lower)** than High with the same 95-point check set, but needed
+two corrections rather than one; that comparison has one build per setting.
+These are observed credit differences, **not guaranteed future or cash savings**.
+
+GPT Medium reached Test 4's core target and nine advanced checks at **1,573
+credits**, including one correction. This makes it a credible starting point
+for similar complex apps, not proof it is the only capable model. All registered
+settings faced the same target, acceptance criteria and planned limits;
+higher cost neither excused requirements nor itself triggered a stop.
+Test 4's single accepted result cannot establish a five-way model ranking or
+a cross-model saving. Opus's fuller preferences and sampled accessibility in
+Test 3 remain reasons to consider higher spending when those features matter.
+[Model-selection guidance and comparison limits](FINDINGS.md#choosing-a-model-without-paying-for-unneeded-capability).
+
 ### Original cohorts
 
 | Test | App scope | Accepted apps | Average final credits / app | Final scores |
