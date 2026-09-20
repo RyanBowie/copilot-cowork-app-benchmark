@@ -92,10 +92,11 @@ rows show testing/queued status rather than an invented cost or zero score.
 The original GPT result remains unchanged. Follow-up provenance is explicit;
 only accepted completed apps contribute to the accepted-app average.
 
-The Sonnet Medium follow-up has a final **1,992-credit spend-only reading**,
-not a cost to an accepted app or a completed-target capability score. Opus
-High is being tested; Opus Medium and Sonnet High remain queued. The accepted
-Test 4 average remains **1,573 credits**, from the single accepted GPT result.
+The Sonnet Medium and Opus High follow-ups have final **spend-only readings
+of 1,992 and 8,144 credits**, respectively, not costs to accepted apps or
+completed-target capability scores. Opus Medium is being tested; Sonnet High
+remains queued. The accepted Test 4 average remains **1,573 credits**, from
+the single accepted GPT result.
 
 An eight-area Device Allocation and Policy Hub exercises interacting money,
 policy, budget, inventory and stale-state rules through four planned prompts.

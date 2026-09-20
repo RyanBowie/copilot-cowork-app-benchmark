@@ -28,11 +28,12 @@ follow-ups. Testing/queued rows are not final measurements and are excluded
 from averages. Existing measured comparisons below remain unchanged while
 the additional apps undergo independent functional review.
 
-The Sonnet Medium follow-up now has **1,992 observed final task credits**,
-shown as spend-only with no accepted full-target result or capability score.
-It is excluded from the accepted-app average and cannot establish a saving
-against an accepted app. Opus High is being tested; Opus Medium and Sonnet
-High remain queued. All 33 previously accepted measurements are unchanged.
+The Sonnet Medium and Opus High follow-ups have **1,992 and 8,144 observed
+final task credits**, respectively, shown as spend-only with no accepted
+full-target result or capability score. Both are excluded from the
+accepted-app average and cannot establish a saving against an accepted app.
+Opus Medium is being tested; Sonnet High remains queued. All 33 previously
+accepted measurements are unchanged.
 
 **Start with a lower-cost setting supported by the relevant scope, independently
 verify the capabilities you need, then escalate for a demonstrated unmet need
