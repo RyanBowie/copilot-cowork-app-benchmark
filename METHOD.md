@@ -3,10 +3,10 @@
 This report preserves three original complete cohorts: five virtual-data apps,
 ten SharePoint-connected apps and five complex multi-prompt apps. A separate
 cost cross-check adds four reviewed virtual observations, five SharePoint
-observations and three complex-app observations. Every measurement shown has an
+observations and three complex-app observations. Every accepted-app measurement has an
 observed final cost and an accepted final assessment; the methods and sample
 sizes remain distinct.
-Test 4 adds one accepted capability-stress observation under a separate
+Test 4 adds two accepted capability-stress observations under a separate
 four-stage specification and separate core/advanced rubrics. It is not pooled
 with the preceding cohorts.
 
@@ -94,9 +94,10 @@ criteria and planned time/correction limits. There was no credit-price stopping
 rule or exemption for a higher-cost setting; shared planned controls do not
 claim that every registered run received every stage. A missing accepted result
 is not a zero score or proof of incapability. Platform and observation limits
-must not be relabeled as model-quality findings. Test 4's one accepted result
-therefore supports a demonstrated capability example, not a five-way ranking,
-success-rate estimate or quantified cross-model saving.
+must not be relabeled as model-quality findings. Test 4's original GPT and
+follow-up Opus Medium results support a specific observed cost comparison for
+the same verified core target. They are not matched repeats, a five-way ranking,
+equal advanced coverage or a success-rate estimate.
 
 ## Controls shared within each test
 
@@ -297,6 +298,11 @@ created before the policy change. Subsequent independent cases use the
 confirmed in-app reset only; never inject missing history or patch app source.
 Competing-view cases use the same browser context and native task, leaving
 the second view intentionally stale before its attempted action.
+If the app automatically refreshes that form first, record the actual behavior
+and the missing stale prerequisite. Do not disable its listeners, inject records
+or award a full pass by substituting a refreshed form. A held confirmation can
+still exercise a separate stale-operation subcase without satisfying every
+other subcase.
 
 The [core rubric](benchmark/test-04/acceptance.json) has ten ten-point checks.
 Acceptance requires at least 85 and every critical check: effectively at least
@@ -321,10 +327,13 @@ interfaces. If that exact scenario cannot be exercised, retain a coverage gap
 instead of automatically treating a different interface as a requested-feature
 defect or awarding partial points.
 
-Only one accepted observation is shown, for GPT Medium. This supports a
-within-app comparison of the measured corrective work, not cross-model,
-Medium/High, repeatability or success-rate conclusions. The selected Cowork
-setting also does not establish every internal builder worker's model.
+Two accepted observations are shown: original GPT Medium at 1,573 and follow-up
+Opus Medium at 2,938 credits. Both have core 100; their advanced scores are 90 and 70.
+The observed 1,365-credit difference is 46.5% of 2,938. It includes guidance and
+compares the same frozen core target, but does not imply equal advanced
+coverage or matched repeatability. Opus's exact stale-form gaps must remain
+distinct from its measured light-error contrast defect. The selected Cowork
+setting does not establish every internal builder worker's model.
 Controlled local stale-state simulations and sampled accessibility are not
 production concurrency, authorization or conformance certification.
 
@@ -356,8 +365,10 @@ final task readings in the selected original cohort: 3,219 / 5 = 643.8 for Test 
 equal weight, including repeated settings. This describes the observed
 model/reasoning mix, not a single model's price. Per-configuration averages use
 only that configuration's builds; individual readings remain visible.
-The separate Test 4 mean is **1,573 / 1 = 1,573**, with no implication that its
-single setting is comparable to the five-setting Test 3 mean.
+The separate Test 4 mean is **(1,573 + 2,938) / 2 = 2,255.5**. Its denominator
+is two accepted observations, not the five registered settings. Spend-only and
+unfinished outcomes are excluded; this mean is not comparable to Test 3's
+different five-setting workload.
 
 Reported **build time per app** sums the recorded authoring turns: initial build,
 planned updates, clarifications and corrections. Match each prompt submission

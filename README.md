@@ -1,9 +1,9 @@
 # Copilot Cowork managed-app benchmark
 
-**33 completed app measurements across four test scopes:** the original 20 apps,
+**34 completed app measurements across four test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
-additional complex-app observations for Test 3, plus one separately scored
-capability-stress observation for Test 4. Compare
+additional complex-app observations for Test 3, plus two separately scored
+capability-stress observations for Test 4. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
 
@@ -21,8 +21,9 @@ Test 3 sometimes gained fuller preferences and sampled accessibility, but High
 reasoning did not consistently improve on Medium. Each test page now compares
 every published model/effort setting's costs, corrections and actual feature
 coverage, with separate original and additional observations.
-Test 4 adds a concrete within-app improvement from corrective guidance, but
-its single accepted observation cannot establish a cross-model advantage.
+Test 4 now includes accepted GPT Medium and Opus Medium apps: both verified
+the complete core target, at 1,573 and 2,938 credits respectively. Advanced
+coverage and its limitations remain separate from that core comparison.
 [Read the capability-versus-cost interpretation](FINDINGS.md#did-higher-cost-buy-better-apps).
 
 **Maker decision: start lower-cost, verify, then escalate for a demonstrated
@@ -38,8 +39,10 @@ credits**, including one correction. This makes it a credible starting point
 for similar complex apps, not proof it is the only capable model. All registered
 settings faced the same target, acceptance criteria and planned limits;
 higher cost neither excused requirements nor itself triggered a stop.
-Test 4's single accepted result cannot establish a five-way model ranking or
-a cross-model saving. Opus's fuller preferences and sampled accessibility in
+Against the accepted Opus Medium follow-up, GPT used **1,365 fewer credits
+(46.5% lower)** for the same verified 100-point core target. This is one original
+and one follow-up observation, not matched repeats, equivalent overall quality
+or guaranteed savings. Opus's fuller preferences and sampled accessibility in
 Test 3 remain reasons to consider higher spending when those features matter.
 [Model-selection guidance and comparison limits](FINDINGS.md#choosing-a-model-without-paying-for-unneeded-capability).
 
@@ -94,24 +97,37 @@ only accepted completed apps contribute to the accepted-app average.
 
 The Sonnet Medium and Opus High follow-ups have final **spend-only readings
 of 1,992 and 8,144 credits**, respectively, not costs to accepted apps or
-completed-target capability scores. Opus Medium is being tested; Sonnet High
-remains queued. The accepted Test 4 average remains **1,573 credits**, from
-the single accepted GPT result.
+completed-target capability scores. Opus Medium is now accepted at **2,938
+credits**, core **100/100**, with **70/100 verified advanced points**. Sonnet
+High is being tested. The accepted Test 4 average is **2,255.5 credits**;
+the two spend-only readings remain excluded.
 
 An eight-area Device Allocation and Policy Hub exercises interacting money,
 policy, budget, inventory and stale-state rules through four planned prompts.
 Business data and actors are synthetic; there is no live connector.
 
-| Configuration | First-target credits | First core / advanced | Final credits | Final core / advanced | Corrections |
-|---|---:|---:|---:|---:|---:|
-| GPT 5.5 / Medium | 1,095 | 100 / 80 | 1,573 | 100 / 90 | 1 |
+| Configuration / cohort | First-target credits | First core / advanced | Early corrections | Final credits | Final core / advanced | Later corrections |
+|---|---:|---:|---:|---:|---:|---:|
+| GPT 5.5 / Medium · original | 1,095 | 100 / 80 | 0 | 1,573 | 100 / 90 | 1 |
+| Opus 5 / Medium · follow-up | 2,426 | 70 / 0 | 1 | 2,938 | 100 / 70 | 1 |
 
-The average is **1,573 credits across one accepted app**, not a multi-model mean.
-One later correction added **478 observed credits** and improved repeated-submit
+The average is **(1,573 + 2,938) / 2 = 2,255.5 credits across two accepted apps**,
+not an average across all five registered settings.
+
+For GPT, one later correction added **478 observed credits** and improved repeated-submit
 safety, Escape focus return and Requester field naming. Nine of ten complete
 advanced scenarios were verified. The exact request-search/rejection-dialog
 scenario remains a coverage gap, not an automatic claim of a remaining defect.
 There were no early corrections, clarifications or native self-review prompts.
+
+Opus's first-target cost includes a **196-credit early correction**. Its final
+**512-credit correction** restored saved-data actions, dialog focus and keyboard
+table scrolling; seven complete advanced challenges then verified. The first
+zero advanced points included blocked prerequisites, not evidence of zero
+capability. Automatic cross-tab refresh prevented the exact stale-form
+prerequisites in TA07/TA08, so those remain coverage gaps rather than race
+failures. TA10 retains a measured light-theme rejection error contrast gap
+(4.431:1 versus 4.5:1), as well as an unexercised exact-dialog interface.
 
 [Detailed stress findings](FINDINGS.md#test-4-capability-stress) |
 [Interactive first/final comparison](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-04)

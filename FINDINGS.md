@@ -1,7 +1,7 @@
 # Completed benchmark findings
 
 The 20 original apps in Tests 1-3, twelve additional reviewed observations and
-one separately scored Test 4 observation meet their final scoring and
+two separately scored Test 4 observations meet their final scoring and
 critical-check gates. Costs below are observed
 cumulative Cowork task credits. Keep original and additional samples distinct;
 app scope, model mix, review method and publication permission affect comparison.
@@ -32,8 +32,9 @@ The Sonnet Medium and Opus High follow-ups have **1,992 and 8,144 observed
 final task credits**, respectively, shown as spend-only with no accepted
 full-target result or capability score. Both are excluded from the
 accepted-app average and cannot establish a saving against an accepted app.
-Opus Medium is being tested; Sonnet High remains queued. All 33 previously
-accepted measurements are unchanged.
+Opus Medium is now accepted at **2,938 credits**, with core **100/100** and
+**70 verified advanced points**. Sonnet High is being tested. All 33 previously
+accepted measurements remain unchanged; this adds the 34th.
 
 **Start with a lower-cost setting supported by the relevant scope, independently
 verify the capabilities you need, then escalate for a demonstrated unmet need
@@ -60,14 +61,18 @@ credible baseline: Test 4 verified all core checks and nine of ten advanced
 scenarios for 1,573 credits, including one correction. The tested goal did not
 require selecting High reasoning in that observation.
 
-**Only fully verified accepted result does not mean only capable model.**
+**The lowest-cost accepted result does not mean the only capable model.**
 Every registered Test 4 setting had the same complete-app target, acceptance
 criteria and planned time/correction limits. No setting received easier
 requirements because it was expensive, and credit price itself was not a
 stopping rule. A missing accepted result is not a zero capability score;
 platform interruptions and review or observation limits do not establish model
-incapability. There is no matched accepted Test 4 peer for a quantified
-GPT-versus-other-model saving, so this is not a clean five-way capability ranking.
+incapability. GPT Medium used **1,365 fewer credits (46.5% lower)** than the
+accepted Opus Medium follow-up; both verified the same 100-point core target.
+This compares one original and one follow-up using the same frozen target,
+not matched repeats, identical advanced coverage or a clean five-way ranking.
+Opus's automatic refresh preempted two exact stale-form prerequisites; missing
+points for those unexercised cases do not demonstrate weaker concurrency.
 
 **Spend more when a required feature justifies it.** Test 3 Opus results
 demonstrated fuller preferences and sampled accessibility than lower-cost GPT
@@ -92,8 +97,13 @@ estimates or a universal model ranking.
 | Additional Test 3 | GPT Medium 573/85 vs Opus High 2,860/95 | 2,287 extra credits for fuller preferences and sampled accessibility coverage, not a different core approval/asset workflow |
 | Test 4, within one GPT Medium app | 1,095 first target vs 1,573 final credits | One correction added 478 credits; advanced coverage rose from 80 to 90, with safer repeated submission and sampled focus/naming improvements |
 
-Test 4 has one published observation. Its within-app improvement is not a
-comparison between models or reasoning levels.
+Test 4 separately adds the Opus Medium follow-up at **2,938 credits** versus
+the original GPT Medium's **1,573**, both core 100. The extra **1,365 credits**
+did not buy a higher core score or another completely verified advanced
+challenge in these observations. This is a disclosed cross-cohort comparison,
+not another row in the same-cohort table above. It does not establish equal
+overall quality: the apps differ in interface, live-update behavior and
+unexercised advanced prerequisites.
 
 Test 1's original 95 and additional 100 scores use different
 persistence-scoring/review methods: **that is not a model improvement**.
@@ -402,25 +412,31 @@ variance, success rates or future prices.
 
 ## Test 4: capability stress
 
-One accepted GPT 5.5 / Medium Device Allocation and Policy Hub received the
-four frozen stages, followed by one narrowly evidenced correction. There were
-no early corrections, clarification prompts or native self-reviews.
+Two accepted Device Allocation and Policy Hub observations received the same
+four frozen stages and independent review: original GPT Medium and the
+separately registered Opus Medium follow-up. Neither used clarification prompts
+or native self-review. Original outcomes and first-target assessments remain
+unchanged.
 
-| Configuration | First-target credits | First core / advanced | Final credits | Final core / advanced | Later corrections | Build time, approx. |
-|---|---:|---:|---:|---:|---:|---|
-| GPT 5.5 / Medium | 1,095 | 100 / 80 | 1,573 | 100 / 90 | 1 | 34m 52s |
+| Configuration / cohort | First-target credits | First core / advanced | Early corrections | Final credits | Final core / advanced | Later corrections | Build time, approx. |
+|---|---:|---:|---:|---:|---:|---:|---|
+| GPT 5.5 / Medium · original | 1,095 | 100 / 80 | 0 | 1,573 | 100 / 90 | 1 | 34m 52s |
+| Opus 5 / Medium · follow-up | 2,426 | 70 / 0 | 1 | 2,938 | 100 / 70 | 1 | 51m 38s |
 
-The displayed average is **1,573 credits across one app**. It is not evidence
-that GPT is the cheapest possible setting for this workload, or that more
-expensive settings cannot improve it. No cross-model ranking is supported.
+The displayed accepted-app average is **2,255.5 credits across two apps**.
+Sonnet Medium's 1,992 and Opus High's 8,144 spend-only readings are excluded;
+Sonnet High has no final measurement yet. One original and one follow-up can
+support the specific observed core-cost difference, not a universal ranking,
+repeatability claim or predicted future price.
 
-| Foundation | Workflows | Policy / pricing / themes | Resilience / first target | Final task total |
-|---:|---:|---:|---:|---:|
-| 210 | 431 | 677 | 1,095 | 1,573 |
+| Configuration | Foundation | Workflows | Policy / pricing / themes | Resilience / first target | Final task total |
+|---|---:|---:|---:|---:|---:|
+| GPT Medium | 210 | 431 | 677 | 1,095 | 1,573 |
+| Opus Medium | 585 | 1,392 | 1,928 | 2,426 | 2,938 |
 
 These readings are cumulative. **Do not add them.**
 
-### What the extra 478 credits improved
+### What GPT's extra 478 credits improved
 
 One corrective prompt made rapid repeated submission safe, restored Escape
 focus return and supplied the missing Requester field name. Core coverage
@@ -428,20 +444,34 @@ remained 100/100 while advanced coverage rose from 80 to 90. This is a
 verified improvement within the same app, not a standard repair price or
 proof that a higher-cost model would provide the same gain.
 
-| Advanced challenge | First target | Final verification |
-|---|---|---|
-| TA01: exact-pence discounts/VAT, half-up rounding and quoted-price preservation | Verified | Verified |
-| TA02: original V1 carryovers, revisions and exact V2 finance boundary | Verified | Verified |
-| TA03: no self-approval or same-person manager/finance decisions | Verified | Verified |
-| TA04: budget contention, reservation release and retry | Verified | Verified |
-| TA05: partial fulfilment, close remainder and penny conservation | Verified | Verified |
-| TA06: atomic multi-line fulfilment when one line has insufficient stock | Verified | Verified |
-| TA07: rapid repeated actions and stale decision/fulfilment attempts | Not met | Verified |
-| TA08: two intentionally stale finance views competing for one budget | Verified | Verified |
-| TA09: invalid/cancelled/stale imports and audited atomic valid import | Verified | Verified |
-| TA10: complete exact keyboard/search/rejection-dialog scenario | Not met | Not checked |
+### What Opus's extra 512 credits improved
 
-Every advanced pass requires all frozen subcases. The final TA10 entry is
+One early correction cost **196 credits**, taking the foundation's cumulative
+reading from 585 to 781; it is already included in the first-target 2,426.
+That first target had core 70 and no complete advanced passes: saved-data
+actions blocked several prerequisites while other scenarios were only partly
+exercised. Zero advanced points did not mean an app with no advanced features.
+
+The sole later correction cost **512 credits**. Native rechecks verified repaired
+saved-data actions, Escape focus return in all four width/theme combinations,
+and keyboard movement of 24 labelled overflowing tables. Core reached 100 and
+seven advanced challenges completed. This was repair and verification of the
+same app, not a replacement or extra hidden build.
+
+| Advanced challenge | GPT first | GPT final | Opus first | Opus final |
+|---|---|---|---|---|
+| TA01: exact-pence discounts/VAT, half-up rounding and quoted-price preservation | Verified | Verified | Not met | Verified |
+| TA02: original V1 carryovers, revisions and exact V2 finance boundary | Verified | Verified | Not met | Verified |
+| TA03: no self-approval or same-person manager/finance decisions | Verified | Verified | Not verified | Verified |
+| TA04: budget contention, reservation release and retry | Verified | Verified | Not verified | Verified |
+| TA05: partial fulfilment, close remainder and penny conservation | Verified | Verified | Not verified | Verified |
+| TA06: atomic multi-line fulfilment when one line has insufficient stock | Verified | Verified | Not verified | Verified |
+| TA07: rapid repeated actions and stale decision/fulfilment attempts | Not met | Verified | Not met | Not verified |
+| TA08: two intentionally stale finance views competing for one budget | Verified | Verified | Not verified | Not verified |
+| TA09: invalid/cancelled/stale imports and audited atomic valid import | Verified | Verified | Not met | Verified |
+| TA10: complete exact keyboard/search/rejection-dialog scenario | Not met | Not checked | Not met | Not met |
+
+Every advanced pass requires all frozen subcases. GPT's final TA10 entry is
 unverified because the exact request-search/rejection-dialog scenario could
 not be exercised: the app has no request-search control and uses an inline
 rejection form. These interface choices were not explicitly prohibited by
@@ -449,17 +479,36 @@ the build prompts. No TA10 points were awarded despite the independently
 verified focus/naming repairs and other sampled accessibility observations.
 Do not present that coverage gap as an unresolved demonstrated defect.
 
-The final layout/interaction evidence includes 40 main/error scenes and eight
+Opus provides a labelled request-search field and observed automatic cross-tab
+updates. In TA07 its pending decision card disappeared when the other view
+approved; in TA08 the other form automatically showed the reduced balance
+before its decision. No controller refresh was used, but the exact intentionally
+stale forms were no longer present. Those checks remain zero-point **coverage
+gaps, not demonstrated race failures**. Rapid submission and an already-open
+stale fulfilment confirmation were independently verified without duplication.
+
+Opus's remaining TA10 defect is narrower and measurable: light-theme inline
+rejection error text is **4.431:1 at 14px**, below **4.5:1**, at both widths.
+Its exact rejection-dialog subcase also remains unexercised because the
+interface is inline. These are distinct from its repaired focus and table
+keyboard behavior. Both allowed corrections were already used.
+
+GPT's final layout/interaction evidence includes 40 main/error scenes and eight
 import/reset confirmation scenes across desktop/mobile and both themes, with
 1,072 text samples. Earlier unaffected business-scenario evidence was retained,
 with targeted correction rechecks; this is not a claim that every historical
 case was recreated after the repair.
+Opus's final sample contains 48 area/error/confirmation scenes in both themes
+at actual 1440px/390px, plus the 24 keyboard-scroll checks. Its original V1 and
+continuity records were verified after repair and before explicit resets.
 
-**Maker takeaway:** this observation demonstrates substantial interacting
-business-rule coverage at 1,573 credits, including its guidance. It does not
-establish a model winner. Independently test the particular rules and
-interaction patterns your app needs; a complete core score does not guarantee
-full advanced coverage or production readiness.
+**Maker takeaway:** GPT Medium met the same verified core target for **1,365
+fewer credits (46.5% lower)** than the Opus Medium follow-up. Higher spending
+was not required for that core goal in these observations. Do not interpret
+90 versus 70 advanced points as a clean 20-point capability deficit: two Opus
+checks were not fully exercised because of live refresh. Choose against the
+particular rules, interactions and remaining gaps you need, not a universal
+model winner or a promised saving.
 
 ## Interpretation and limits
 
