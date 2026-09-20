@@ -83,6 +83,15 @@ are shown separately in the report.
 
 ### Test 4: capability stress
 
+**All five settings are now visible in the chart and testing-status table.**
+Four separately registered follow-ups cover Sonnet Medium, Opus High, Opus
+Medium and Sonnet High using the identical original prompts, fixtures and
+core/advanced checks. Each will undergo independent review, not assessment by
+an extra Cowork prompt. Until a final reading and review are available, their
+rows show testing/queued status rather than an invented cost or zero score.
+The original GPT result remains unchanged. Follow-up provenance is explicit;
+only accepted completed apps contribute to the accepted-app average.
+
 An eight-area Device Allocation and Policy Hub exercises interacting money,
 policy, budget, inventory and stale-state rules through four planned prompts.
 Business data and actors are synthetic; there is no live connector.
@@ -91,7 +100,7 @@ Business data and actors are synthetic; there is no live connector.
 |---|---:|---:|---:|---:|---:|
 | GPT 5.5 / Medium | 1,095 | 100 / 80 | 1,573 | 100 / 90 | 1 |
 
-The average is **1,573 credits across one shown app**, not a multi-model mean.
+The average is **1,573 credits across one accepted app**, not a multi-model mean.
 One later correction added **478 observed credits** and improved repeated-submit
 safety, Escape focus return and Requester field naming. Nine of ten complete
 advanced scenarios were verified. The exact request-search/rejection-dialog

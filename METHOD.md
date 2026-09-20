@@ -100,6 +100,20 @@ success-rate estimate or quantified cross-model saving.
 
 ## Controls shared within each test
 
+Test 4's later follow-up registration adds one fresh app for each of the four
+settings without an accepted original result: Sonnet Medium, Opus High, Opus
+Medium and Sonnet High. The original GPT result and historical outcomes are
+preserved. Follow-ups use the identical four prompts, fixtures, core/advanced
+rubrics and authoring/correction bounds, and are explicitly labelled rather
+than presented as original first attempts.
+
+All five settings appear in the chart and status table. Testing/queued entries
+have no cost bar or score until an actual final observation is available.
+Final spend for an unaccepted outcome, if present, is labelled spend-only and
+excluded from the accepted-app average and accepted capability matrix. This
+distinguishes testing coverage from accepted-result coverage without inventing
+zero costs, zero capability scores or a model success rate.
+
 Start a fresh Cowork task and managed app for each run. Select and record the
 model and reasoning setting before submitting the same authoring specification.
 Keep the starting fixture, requirements and acceptance checks consistent within

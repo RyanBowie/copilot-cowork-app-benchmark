@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "generatedAt": "2026-09-20T12:37:08.117Z",
+  "generatedAt": "2026-09-20T16:09:09.615Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-04",
   "scopeNote": "Four distinct test scopes: virtual procurement, live SharePoint requests, complex lifecycle apps and advanced policy/state stress testing. Original and additional cohorts remain separate; compare settings within each scope, not pooled scores or averages.",
@@ -5999,11 +5999,59 @@
       }
     ],
     "meanFinalCredits": 1573,
-    "note": "Accepted completed observations only, one per shown setting. This exploratory sample does not establish success rates, repeatability or a universal model ranking.",
+    "note": "All five model/effort settings are shown. Only accepted, independently reviewed completed apps enter the accepted-app average and capability matrix. Pending tests have no invented cost or zero capability score.",
     "scope": "Eight areas; multi-line virtual requests; versioned approvals; budget reservations; partial fulfilment; exact-pence pricing; stale-view guards; atomic price imports; light/dark desktop and mobile interaction. No live business or profile connector.",
     "scoreNote": "Core acceptance and ten advanced challenges are separate. Each check is worth ten points; every frozen subcase must be verified for an advanced pass. Fail, blocked and untested each earn zero. No combined quality-per-credit score.",
     "guidanceNote": "Four identical planned prompts per app. Early corrections are included in first-complete-target cost; it is not necessarily a no-guidance first pass. Later guidance is final minus first-complete-target credits. Cumulative readings must not be added.",
     "coverageNote": "The frozen keyboard scenario specifically includes request search and a rejection-reason dialog, whereas the authoring prompts allow other interfaces. An unexercised exact scenario remains a coverage gap, not automatically a demonstrated requested-feature defect. Final coverage retains unaffected earlier evidence and targeted post-correction rechecks, not a claim that every historical case was recreated.",
-    "limitation": "Controlled same-context local simulations and sampled accessibility do not establish production concurrency, real authorization or accessibility certification. The selected Cowork model does not prove every internal app-building worker used that model. Compare only within this test, not against Tests 1-3 scores or averages."
+    "limitation": "Controlled same-context local simulations and sampled accessibility do not establish production concurrency, real authorization or accessibility certification. The selected Cowork model does not prove every internal app-building worker used that model. Compare only within this test, not against Tests 1-3 scores or averages.",
+    "registeredSettings": [
+      {
+        "runId": "run-03",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "cohort": "Original",
+        "status": "accepted",
+        "finalSpend": {
+          "status": "observed",
+          "value": 1573,
+          "unit": "credits",
+          "scope": "Cowork task"
+        }
+      },
+      {
+        "runId": "run-06",
+        "model": "Sonnet 5",
+        "effort": "Medium",
+        "status": "testing",
+        "finalSpend": null,
+        "cohort": "Follow-up"
+      },
+      {
+        "runId": "run-07",
+        "model": "Opus 5",
+        "effort": "High",
+        "status": "pending",
+        "finalSpend": null,
+        "cohort": "Follow-up"
+      },
+      {
+        "runId": "run-08",
+        "model": "Opus 5",
+        "effort": "Medium",
+        "status": "pending",
+        "finalSpend": null,
+        "cohort": "Follow-up"
+      },
+      {
+        "runId": "run-09",
+        "model": "Sonnet 5",
+        "effort": "High",
+        "status": "pending",
+        "finalSpend": null,
+        "cohort": "Follow-up"
+      }
+    ],
+    "followupNote": "The original GPT Medium observation is retained alongside four separately registered follow-ups using the identical original prompts, fixtures, rubrics and authoring/correction limits. Original outcomes are not overwritten. This is a disclosed follow-up comparison, not five original first attempts; unfinished or unaccepted spend is excluded from accepted-app averages."
   }
 }

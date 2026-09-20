@@ -21,6 +21,13 @@ its core/advanced scores are not directly comparable with Test 3.
 
 ## Choosing a model without paying for unneeded capability
 
+**Test 4 follow-ups are now registered for the other four settings.** The chart
+shows all five settings, distinguishing the original accepted GPT observation
+from newly registered Sonnet Medium, Opus High, Opus Medium and Sonnet High
+follow-ups. Testing/queued rows are not final measurements and are excluded
+from averages. Existing measured comparisons below remain unchanged while
+the additional apps undergo independent functional review.
+
 **Start with a lower-cost setting supported by the relevant scope, independently
 verify the capabilities you need, then escalate for a demonstrated unmet need
 or a worthwhile reduction in corrective effort.** A complex app does not
