@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "generatedAt": "2026-09-20T22:37:41.775Z",
+  "generatedAt": "2026-09-21T01:32:34.698Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-04",
   "scopeNote": "Four distinct test scopes: virtual procurement, live SharePoint requests, complex lifecycle apps and advanced policy/state stress testing. Original and additional cohorts remain separate; compare settings within each scope, not pooled scores or averages.",
@@ -6260,7 +6260,7 @@
       }
     ],
     "meanFinalCredits": 2255.5,
-    "note": "All five model/effort settings are shown. Only accepted, independently reviewed completed apps enter the accepted-app average and capability matrix. Pending tests have no invented cost or zero capability score.",
+    "note": "All five model/effort settings have actual final task readings. Only accepted, independently reviewed completed apps enter the accepted-app average and capability matrix. Spend-only readings are actual task costs, not accepted-app prices or zero capability scores.",
     "scope": "Eight areas; multi-line virtual requests; versioned approvals; budget reservations; partial fulfilment; exact-pence pricing; stale-view guards; atomic price imports; light/dark desktop and mobile interaction. No live business or profile connector.",
     "scoreNote": "Core acceptance and ten advanced challenges are separate. Each check is worth ten points; every frozen subcase must be verified for an advanced pass. Fail, blocked and untested each earn zero. No combined quality-per-credit score.",
     "guidanceNote": "Four identical planned prompts per app. Early corrections are included in first-complete-target cost; it is not necessarily a no-guidance first pass. Later guidance is final minus first-complete-target credits. Cumulative readings must not be added.",
@@ -6323,11 +6323,16 @@
         "runId": "run-09",
         "model": "Sonnet 5",
         "effort": "High",
-        "status": "testing",
-        "finalSpend": null,
+        "status": "not-accepted",
+        "finalSpend": {
+          "status": "observed",
+          "value": 4229,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
         "cohort": "Follow-up"
       }
     ],
-    "followupNote": "The original GPT Medium observation is retained alongside four separately registered follow-ups using the identical original prompts, fixtures, rubrics and authoring/correction limits. Original outcomes are not overwritten. This is a disclosed follow-up comparison, not five original first attempts; unfinished or unaccepted spend is excluded from accepted-app averages."
+    "followupNote": "The original GPT Medium observation is retained alongside four separately registered follow-ups using the identical original prompts, fixtures, rubrics and authoring/correction limits. Original outcomes are not overwritten. All four follow-ups are closed. This is a disclosed follow-up comparison, not five original first attempts; unfinished or unaccepted spend is excluded from accepted-app averages."
   }
 }

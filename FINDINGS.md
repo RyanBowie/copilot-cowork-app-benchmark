@@ -21,20 +21,21 @@ its core/advanced scores are not directly comparable with Test 3.
 
 ## Choosing a model without paying for unneeded capability
 
-**Test 4 follow-ups are now registered for the other four settings.** The chart
+**Test 4 testing is closed and all five settings have final cost bars.** The chart
 shows all five settings, distinguishing the original accepted GPT observation
-from newly registered Sonnet Medium, Opus High, Opus Medium and Sonnet High
-follow-ups. Testing/queued rows are not final measurements and are excluded
-from averages. Existing measured comparisons below remain unchanged while
-the additional apps undergo independent functional review.
+from separately registered Sonnet Medium, Opus High, Opus Medium and Sonnet
+High follow-ups. Actual spend and accepted-app prices are clearly separated;
+no queued or testing entries remain.
 
-The Sonnet Medium and Opus High follow-ups have **1,992 and 8,144 observed
-final task credits**, respectively, shown as spend-only with no accepted
-full-target result or capability score. Both are excluded from the
+The Sonnet Medium, Opus High and Sonnet High follow-ups have **1,992, 8,144 and
+4,229 observed final task credits**, respectively, shown as spend-only with no
+accepted full-target result or capability score. No complete target was
+independently observed within their fixed authoring bounds; this is not proof
+of model incapability. All three are excluded from the
 accepted-app average and cannot establish a saving against an accepted app.
-Opus Medium is now accepted at **2,938 credits**, with core **100/100** and
-**70 verified advanced points**. Sonnet High is being tested. All 33 previously
-accepted measurements remain unchanged; this adds the 34th.
+Opus Medium is accepted at **2,938 credits**, with core **100/100** and
+**70 verified advanced points**. All 34 previously accepted measurements remain
+unchanged; the final Sonnet High reading does not add an accepted app.
 
 **Start with a lower-cost setting supported by the relevant scope, independently
 verify the capabilities you need, then escalate for a demonstrated unmet need
@@ -424,8 +425,8 @@ unchanged.
 | Opus 5 / Medium · follow-up | 2,426 | 70 / 0 | 1 | 2,938 | 100 / 70 | 1 | 51m 38s |
 
 The displayed accepted-app average is **2,255.5 credits across two apps**.
-Sonnet Medium's 1,992 and Opus High's 8,144 spend-only readings are excluded;
-Sonnet High has no final measurement yet. One original and one follow-up can
+Sonnet Medium's 1,992, Opus High's 8,144 and Sonnet High's 4,229 spend-only
+readings are excluded. One original and one follow-up can
 support the specific observed core-cost difference, not a universal ranking,
 repeatability claim or predicted future price.
 

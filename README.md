@@ -86,21 +86,21 @@ are shown separately in the report.
 
 ### Test 4: capability stress
 
-**All five settings are now visible in the chart and testing-status table.**
-Four separately registered follow-ups cover Sonnet Medium, Opus High, Opus
+**All five settings have been tested and plotted with actual final task credits.**
+Four separately registered follow-ups covered Sonnet Medium, Opus High, Opus
 Medium and Sonnet High using the identical original prompts, fixtures and
-core/advanced checks. Each will undergo independent review, not assessment by
-an extra Cowork prompt. Until a final reading and review are available, their
-rows show testing/queued status rather than an invented cost or zero score.
+core/advanced checks. All four are closed, with external review evidence
+rather than assessment by an extra Cowork prompt.
 The original GPT result remains unchanged. Follow-up provenance is explicit;
 only accepted completed apps contribute to the accepted-app average.
 
-The Sonnet Medium and Opus High follow-ups have final **spend-only readings
-of 1,992 and 8,144 credits**, respectively, not costs to accepted apps or
-completed-target capability scores. Opus Medium is now accepted at **2,938
-credits**, core **100/100**, with **70/100 verified advanced points**. Sonnet
-High is being tested. The accepted Test 4 average is **2,255.5 credits**;
-the two spend-only readings remain excluded.
+The Sonnet Medium, Opus High and Sonnet High follow-ups have final **spend-only
+readings of 1,992, 8,144 and 4,229 credits**, respectively. No complete target
+was independently observed within their fixed authoring bounds; these are
+not accepted-app prices, completed-target capability scores or proof of model
+incapability. Opus Medium is accepted at **2,938 credits**, core **100/100**,
+with **70/100 verified advanced points**. The accepted Test 4 average remains
+**2,255.5 credits**; all three spend-only readings are excluded.
 
 An eight-area Device Allocation and Policy Hub exercises interacting money,
 policy, budget, inventory and stale-state rules through four planned prompts.

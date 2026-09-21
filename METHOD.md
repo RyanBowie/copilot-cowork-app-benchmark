@@ -108,12 +108,18 @@ preserved. Follow-ups use the identical four prompts, fixtures, core/advanced
 rubrics and authoring/correction bounds, and are explicitly labelled rather
 than presented as original first attempts.
 
-All five settings appear in the chart and status table. Testing/queued entries
-have no cost bar or score until an actual final observation is available.
-Final spend for an unaccepted outcome, if present, is labelled spend-only and
+All five settings now have actual final readings in the chart and outcome
+table; all four registered follow-ups are closed. Final spend for an
+unaccepted outcome is labelled spend-only and
 excluded from the accepted-app average and accepted capability matrix. This
 distinguishes testing coverage from accepted-result coverage without inventing
-zero costs, zero capability scores or a model success rate.
+zero costs, zero capability scores or a model success rate. Sonnet Medium,
+Opus High and Sonnet High did not deliver an independently observed complete
+target within the unchanged authoring bounds. Their partial review evidence
+and post-stop previews are not promoted to completed-target scores. Their
+final credits are actual free `/cost` observations, not estimates or partial
+stage readings. The report retains 34 accepted observations, including two
+Test 4 apps with a mean of 2,255.5 credits.
 
 Start a fresh Cowork task and managed app for each run. Select and record the
 model and reasoning setting before submitting the same authoring specification.
