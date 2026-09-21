@@ -3,7 +3,7 @@
 Testing by **Ryan Bowen**, with automation assistance from **GitHub Copilot**.
 
 > **Demo benchmark — indicative costs only.** These limited synthetic-app tests
-> span a demo tenant and a separate corporate tenant. Your prompts, use cases,
+> run in demo tenant(s). Your prompts, use cases,
 > tenant setup, model settings and follow-up work can lead to substantially
 > different costs. This is a brief guide, not a quote or complete running-cost
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
@@ -84,7 +84,7 @@ explicitly scores verified local persistence; historical 95-point scores are
 unchanged. See the [additional findings](FINDINGS.md#additional-external-review-measurements)
 before comparing averages.
 
-The additional corporate **Test 3** results are **GPT 5.5 Medium: 573**,
+The additional **Test 3** results are **GPT 5.5 Medium: 573**,
 **Sonnet 5 High: 2,134**, and **Opus 5 High: 2,860** credits. Comparing exactly
 those same three settings gives an original mean of **2,102** versus an
 additional mean of **1,855.7**; the descriptive mean across their six observations

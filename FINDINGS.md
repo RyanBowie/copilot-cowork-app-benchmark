@@ -350,7 +350,7 @@ average, and do not treat these small samples as a guaranteed future price.
 
 ### Additional Test 3: complex apps
 
-Three additional corporate-tenant apps completed all four planned stages and
+Three additional demo apps completed all four planned stages and
 the independent final acceptance checks. Original results remain unchanged.
 The business prompts and rubric are consistent; the amended foundation prompt
 permits private owner-only publication. No native self-review prompt was sent.

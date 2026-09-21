@@ -15,8 +15,8 @@ with the preceding cohorts.
 Testing was conducted by **Ryan Bowen**, with automation assistance from
 **GitHub Copilot**.
 
-This is a small demonstration benchmark using synthetic apps across a demo
-tenant and a separate corporate tenant, not a production-cost study. Unique
+This is a small demonstration benchmark using synthetic apps in demo
+tenant(s), not a production-cost study. Unique
 prompts, use cases, app complexity, tenant setup, model/reasoning settings and
 follow-up work can produce substantially different costs. These results offer
 only a brief indication of app-building consumption, not a quote, guaranteed
@@ -200,7 +200,7 @@ The public template uses placeholders rather than private connection values.
 
 ## Test 3: complex multi-prompt virtual-data app
 
-Five corporate-tenant apps, with one observation per configuration:
+Five demo apps, with one observation per configuration:
 Sonnet 5 Medium, Opus 5 High, Opus 5 Medium, Sonnet 5 High and GPT 5.5 Medium.
 Every app receives four identical ordered prompts:
 
@@ -273,11 +273,11 @@ It excludes the SharePoint-only Opus Medium value from the matched mean, not
 from its published results. Different business scope and publication permissions
 still prevent treating the difference as an isolated connector price.
 
-## Additional corporate Test 3 observations
+## Additional Test 3 observations
 
 Three completed four-stage observations add GPT Medium, Sonnet High and Opus
 High to the original complex-app results, in that relative order. Use the
-same corporate account and tenant, exact synthetic fixture, policy-carryover
+same account and tenant, exact synthetic fixture, policy-carryover
 and low-stock scenarios, twenty checks and critical gates. The foundation
 [prompt](benchmark/test-03-repeat/stage-01-build.txt) changes only permission
 for private owner-only publication; the three subsequent prompts are identical
