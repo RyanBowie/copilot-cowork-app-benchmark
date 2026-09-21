@@ -49,6 +49,14 @@ without altering their recorded costs, scores or review-method differences.
 
 ## Comparing cost with delivered capability
 
+Overview cards report how many apps met that test's acceptance criteria,
+not a shared quality score. A score of 95 in one test is not evidence of a
+better app than a score of 90 in a different test: their checks and scope differ.
+Within a matched cohort, all models and reasoning settings use the same
+checklist; it is the per-app outcome, not the scoring standard, that can vary.
+Recorded per-run scores and verified/unverified capabilities remain in each
+test's detailed results.
+
 Use independently verified checks, not spending or a completion message, to
 identify capability differences. Compare models and Medium/High reasoning
 within the same cohort. Keep original/additional observations and methods
