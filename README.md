@@ -2,6 +2,9 @@
 
 Testing by **Ryan Bowen**, with automation assistance from **GitHub Copilot**.
 
+The interactive report defaults to dark regardless of OS preference. Use
+`?scoutTheme=light` for an explicit light-mode view.
+
 > **Demo benchmark — indicative costs only.** These limited synthetic-app tests
 > run in demo tenant(s). Your prompts, use cases,
 > tenant setup, model settings and follow-up work can lead to substantially
