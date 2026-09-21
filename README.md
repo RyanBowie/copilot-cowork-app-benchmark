@@ -1,5 +1,14 @@
 # Copilot Cowork managed-app benchmark
 
+Testing by **Ryan Bowen**, with automation assistance from **GitHub Copilot**.
+
+> **Demo benchmark — indicative costs only.** These limited synthetic-app tests
+> span a demo tenant and a separate corporate tenant. Your prompts, use cases,
+> tenant setup, model settings and follow-up work can lead to substantially
+> different costs. This is a brief guide, not a quote or complete running-cost
+> estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
+> separately.
+
 **34 completed app measurements across four test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored

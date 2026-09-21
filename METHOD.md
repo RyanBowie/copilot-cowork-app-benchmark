@@ -10,6 +10,24 @@ Test 4 adds two accepted capability-stress observations under a separate
 four-stage specification and separate core/advanced rubrics. It is not pooled
 with the preceding cohorts.
 
+## Scope and attribution
+
+Testing was conducted by **Ryan Bowen**, with automation assistance from
+**GitHub Copilot**.
+
+This is a small demonstration benchmark using synthetic apps across a demo
+tenant and a separate corporate tenant, not a production-cost study. Unique
+prompts, use cases, app complexity, tenant setup, model/reasoning settings and
+follow-up work can produce substantially different costs. These results offer
+only a brief indication of app-building consumption, not a quote, guaranteed
+price or complete running cost.
+
+The managed app builder is available in Copilot Cowork and Copilot Studio.
+This report measures Cowork `/cost` credits only; Copilot Studio costs were
+not measured separately. The top-of-page banner retains this distinction.
+The overview capability-summary cards focus on Test 3; Tests 1 and 2 retain
+their cost results and detailed capability evidence.
+
 ## Comparing app complexity
 
 Complexity is described qualitatively across three separate dimensions:
