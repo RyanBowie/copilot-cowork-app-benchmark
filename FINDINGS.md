@@ -1,7 +1,8 @@
 # Completed benchmark findings
 
 The 20 original apps in Tests 1-3, twelve additional reviewed observations and
-two separately scored Test 4 observations meet their final scoring and
+two separately scored Test 4 observations and three Test 5 reference
+recreations meet their final scoring and
 critical-check gates. Costs below are observed
 cumulative Cowork task credits. Keep original and additional samples distinct;
 app scope, model mix, review method and publication permission affect comparison.
@@ -18,6 +19,67 @@ and [complexity method](METHOD.md#comparing-app-complexity).
 Test 4 is a separate eight-area stress workload for interacting policy, money,
 budget and stale-state rules. It has no live connector or asset-return flow;
 its core/advanced scores are not directly comparable with Test 3.
+Test 5 adds a supplied HTML reference with separate functional and visual
+acceptance. Its original cohort is still incomplete; the preceding 34
+accepted observations remain unchanged.
+
+## Test 5: HTML-reference recreation
+
+Three of the five original settings are finalized. All received the same
+initial prompt, identical private HTML bytes and the same joint acceptance
+target. Required corrections stayed in the original app, with independent
+native review and no arbitrary authoring-time or credit cutoff.
+
+| Selected setting | Final cumulative credits | Authoring prompts | Corrections | Functional groups | Visual groups |
+|---|---:|---:|---:|---:|---:|
+| GPT 5.5 / Medium | **659** | 7 | 6 | 17 of 20 | 8 of 10 |
+| Sonnet 5 / Medium | 2,517 | 8 | 7 | 17 of 20 | 8 of 10 |
+| Opus 5 / High | 3,197 | 3 | 2 | 19 of 20 | 8 of 10 |
+
+Every critical group passes. These counts are scope-specific, not overall
+quality percentages. Opus Medium is testing; Sonnet High is queued. No interim
+cost, invented zero score or incomplete prompt total is plotted.
+
+**GPT met the same minimum at substantially lower observed cost, not because
+it was assigned an easier goal.** Its 659 credits are **1,858 / 73.8% below
+Sonnet Medium** and **2,538 / 79.4% below Opus High**. It needed one fewer
+authoring prompt than Sonnet and four more than Opus.
+
+The delivered apps are not feature-identical:
+
+- **Reporting:** GPT verifies the complete reporting/export/print group,
+  including all seven actual CSV downloads. Opus verifies report scopes,
+  chart data and CSVs but retains a print-layout defect. Sonnet retains broader
+  reporting limitations. A shared failed group does not imply the same defect.
+- **Drafts and approvals:** Sonnet and Opus retain confirmed draft deletion;
+  GPT does not. Opus additionally verifies confirmed selected-only bulk
+  approval, queue-moving delegation and delegation removal. GPT and Sonnet
+  retain gaps in this group.
+- **Finding and using information:** Opus has working request/person/policy
+  search, About and fuller keyboard behavior. GPT's search remains area-only
+  and About is absent; its explicit notification controls work.
+- **Visual fidelity:** Sonnet passes the reference typography/palette group.
+  GPT and Opus retain typography differences. All three retain some card/tab
+  grouping or spacing limitations; their equal visual totals conceal different
+  outcomes.
+
+**Extra Opus spend bought specific additional functionality and fewer guidance
+turns, not a universally better app.** GPT is a substantially lower-cost
+observed route to the shared minimum when its retained gaps are acceptable.
+Choose against required capabilities, rather than either price or equal group
+totals alone.
+
+This is one adaptive observation per selected setting, with model and reasoning
+differing together in the Opus comparison. Credit differences do not price the
+reviewer's time, establish internal worker identity, guarantee future savings
+or establish a general ranking. There is no whole-cohort cheapest-setting
+conclusion before the remaining original slots close.
+
+Only the completed cumulative cost is published. Final repairs were reviewed
+in the owner preview, not claimed republished; exact initial published resources
+were removed after evidence. The successful prompt sequences are retained for
+future testing. Guided replay is a separate cohort, has not started and has no
+selected donor.
 
 ## Choosing a model without paying for unneeded capability
 

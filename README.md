@@ -12,17 +12,18 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**34 completed app measurements across four test scopes:** the original 20 apps,
+**37 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
-capability-stress observations for Test 4. Compare
+capability-stress observations for Test 4 and three accepted HTML-reference
+recreations for Test 5. Two original Test 5 settings are not yet finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
 
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)
 
-The main page opens with an **overview of all four tests**: short app/test
+The main page opens with an **overview of all five tests**: short app/test
 descriptions, average credits per app, compact charts of configuration averages
 and links to each detailed result. The charts use a shared credit scale and show
 how many builds contribute to each configuration; the test scopes remain separate.
@@ -36,6 +37,9 @@ coverage, with separate original and additional observations.
 Test 4 now includes accepted GPT Medium and Opus Medium apps: both verified
 the complete core target, at 1,573 and 2,938 credits respectively. Advanced
 coverage and its limitations remain separate from that core comparison.
+Test 5 adds completed-app cost, exact authoring-prompt counts and all functional
+and visual verdicts. GPT Medium reached its shared minimum for **659 credits**,
+but the accepted apps have different strengths, not identical capabilities.
 [Read the capability-versus-cost interpretation](FINDINGS.md#did-higher-cost-buy-better-apps).
 
 **Maker decision: start lower-cost, verify, then escalate for a demonstrated
@@ -58,7 +62,37 @@ or guaranteed savings. Opus's fuller preferences and sampled accessibility in
 Test 3 remain reasons to consider higher spending when those features matter.
 [Model-selection guidance and comparison limits](FINDINGS.md#choosing-a-model-without-paying-for-unneeded-capability).
 
-### Original cohorts
+### Test 5: recreate the Annual Leave Manager reference
+
+| Selected setting | Completed-app credits | Authoring prompts to target | Status |
+|---|---:|---:|---|
+| GPT 5.5 / Medium | **659** | **7** | Accepted |
+| Sonnet 5 / Medium | 2,517 | 8 | Accepted |
+| Opus 5 / High | 3,197 | 3 | Accepted |
+| Opus 5 / Medium | Not yet measured | Not complete | Testing |
+| Sonnet 5 / High | Not yet measured | Not complete | Queued |
+
+Only **final cumulative completed-app cost** is shown. Prompt counts include
+the initial build and every corrective/clarification prompt, but exclude
+external review and free cost commands. The accepted-app average is
+**2,124.3 credits across three apps**, not five.
+
+GPT used **1,858 fewer credits (73.8% lower)** than Sonnet Medium and **2,538
+fewer (79.4% lower)** than Opus High against the same minimum acceptance target.
+It verifies reporting, actual CSV downloads and print layout, but retains
+draft deletion, bulk/delegation and search gaps. Sonnet retains confirmed
+draft deletion and better reference typography. Opus retains a more complete
+draft lifecycle, confirmed bulk approval, working delegation and better
+search/About/keyboard behavior, with four fewer authoring prompts than GPT,
+but still has a print-layout defect.
+
+These are **single observed builds, not identical apps, guaranteed savings or
+a completed five-way ranking**. Original adaptive builds remain separate from
+the not-yet-started guided replay. [Detailed cost/capability findings](FINDINGS.md#test-5-html-reference-recreation)
+and the [Test 5 page](https://ryanbowie.github.io/copilot-cowork-app-benchmark/#test-05)
+retain every failed group and all five registered statuses.
+
+### Original Tests 1-3 cohorts
 
 | Test | App scope | Accepted apps | Average final credits / app | Final scores |
 |---|---|---:|---:|---|

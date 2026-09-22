@@ -1,10 +1,10 @@
 {
-  "schemaVersion": 5,
-  "generatedAt": "2026-09-21T01:32:34.698Z",
+  "schemaVersion": 6,
+  "generatedAt": "2026-09-22T07:40:21.651Z",
   "publicationScope": "completed-results",
-  "activeExperiment": "test-04",
-  "scopeNote": "Four distinct test scopes: virtual procurement, live SharePoint requests, complex lifecycle apps and advanced policy/state stress testing. Original and additional cohorts remain separate; compare settings within each scope, not pooled scores or averages.",
-  "app": "Device Procurement and Availability; Device Lifecycle Hub; Device Allocation and Policy Hub",
+  "activeExperiment": "test-05",
+  "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
+  "app": "Device Procurement and Availability; Device Lifecycle Hub; Device Allocation and Policy Hub; Annual Leave Manager",
   "unitNote": "Observed Cowork task credits, not currency or a tenant invoice. Final cumulative readings are not added to initial readings.",
   "timingNote": "Observed build time per app sums the authoring turns: build, planned updates, clarifications and corrections. It excludes external review and screenshot-taking gaps between prompts, /cost commands and native self-review. Within-turn waits and observation uncertainty remain included; this is not pure model compute time. Missing authoring coverage is not estimated from elapsed test time.",
   "evidenceNote": "Exact prompts, visible transcripts, app screenshots, approval records, backend snapshots and raw cost evidence are retained privately. Public data is an explicit allowlisted projection, not a raw transcript export.",
@@ -6334,5 +6334,741 @@
       }
     ],
     "followupNote": "The original GPT Medium observation is retained alongside four separately registered follow-ups using the identical original prompts, fixtures, rubrics and authoring/correction limits. Original outcomes are not overwritten. All four follow-ups are closed. This is a disclosed follow-up comparison, not five original first attempts; unfinished or unaccepted spend is excluded from accepted-app averages."
+  },
+  "htmlReferenceTest": {
+    "test": "test-05",
+    "route": "test-05",
+    "cohort": "original-html-reference",
+    "title": "Test 5: recreate an HTML reference",
+    "reviewMode": "external-only",
+    "protocolSha256": "f93b8aaf313977049c80c523ce9cf0ddd75b5b9921bb2073eaece9fe6f99183c",
+    "buildPromptSha256": "c3c9e4e9de95e488fde6ecd99c7ba443be63302664b587c86ffc2bb6f1ef17ff",
+    "referenceSha256": "b04d8b8bb71e18b2429a4ddf995b698fcaebfbeac1f9926c804f437d256b0d28",
+    "referenceBytes": 188501,
+    "costMode": "complete-app-only",
+    "runs": [
+      {
+        "id": "run-01",
+        "model": "Sonnet 5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 2517,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 8,
+        "corrections": 7,
+        "clarifications": 0,
+        "freeCostCommands": 2,
+        "final": {
+          "accepted": true,
+          "functionalPassed": 17,
+          "functionalTotal": 20,
+          "visualPassed": 8,
+          "visualTotal": 10,
+          "allCriticalPassed": true
+        },
+        "functionalChecks": [
+          {
+            "id": "HF01",
+            "capability": "Working managed app, complete role-aware scope and reference fixture",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF02",
+            "capability": "Derived dashboards and balances",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF03",
+            "capability": "My Leave filters, sorting and empty states",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF04",
+            "capability": "Request detail and retained history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF05",
+            "capability": "Four-step request wizard",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF06",
+            "capability": "Working-day and half-day arithmetic",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF07",
+            "capability": "Blocking validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF08",
+            "capability": "Warnings and policy-dependent validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF09",
+            "capability": "Draft, edit and duplicate lifecycle",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF10",
+            "capability": "Submission, approval routing and notifications",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF11",
+            "capability": "Withdraw and cancel with balance reconciliation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF12",
+            "capability": "Manager decisions and reasons",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF13",
+            "capability": "HR second-step and no-manager routing",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF14",
+            "capability": "Bulk decisions, delegation and escalation",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF15",
+            "capability": "Team calendars",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF16",
+            "capability": "Scoped reports and actual CSV exports",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF17",
+            "capability": "Live policy and pro-rata calculator",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF18",
+            "capability": "Six working HR settings tabs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF19",
+            "capability": "Search, notifications, themes and keyboard interaction",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF20",
+            "capability": "Faithful demo lifecycle and isolation",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "visualChecks": [
+          {
+            "id": "HV01",
+            "capability": "Reference identity and shell",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HV02",
+            "capability": "Dashboard composition",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV03",
+            "capability": "Wizard and form hierarchy",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV04",
+            "capability": "Tables, filters and status treatment",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV05",
+            "capability": "Calendar visual encoding",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV06",
+            "capability": "Reports, charts and settings layouts",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV07",
+            "capability": "Light/dark palette and typography",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV08",
+            "capability": "Cards, spacing and content density",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV09",
+            "capability": "Dialogs, drawers and feedback",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV10",
+            "capability": "Responsive correspondence",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "timing": {
+          "build": {
+            "seconds": 5529.797,
+            "lowerBoundSeconds": 5453.061,
+            "observation": "interval-bounded",
+            "authoringPrompts": 8,
+            "observedPrompts": 8
+          }
+        },
+        "archived": true
+      },
+      {
+        "id": "run-02",
+        "model": "Opus 5",
+        "effort": "High",
+        "replicate": 1,
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 3197,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 3,
+        "corrections": 2,
+        "clarifications": 0,
+        "freeCostCommands": 1,
+        "final": {
+          "accepted": true,
+          "functionalPassed": 19,
+          "functionalTotal": 20,
+          "visualPassed": 8,
+          "visualTotal": 10,
+          "allCriticalPassed": true
+        },
+        "functionalChecks": [
+          {
+            "id": "HF01",
+            "capability": "Working managed app, complete role-aware scope and reference fixture",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF02",
+            "capability": "Derived dashboards and balances",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF03",
+            "capability": "My Leave filters, sorting and empty states",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF04",
+            "capability": "Request detail and retained history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF05",
+            "capability": "Four-step request wizard",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF06",
+            "capability": "Working-day and half-day arithmetic",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF07",
+            "capability": "Blocking validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF08",
+            "capability": "Warnings and policy-dependent validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF09",
+            "capability": "Draft, edit and duplicate lifecycle",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF10",
+            "capability": "Submission, approval routing and notifications",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF11",
+            "capability": "Withdraw and cancel with balance reconciliation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF12",
+            "capability": "Manager decisions and reasons",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF13",
+            "capability": "HR second-step and no-manager routing",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF14",
+            "capability": "Bulk decisions, delegation and escalation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF15",
+            "capability": "Team calendars",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF16",
+            "capability": "Scoped reports and actual CSV exports",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF17",
+            "capability": "Live policy and pro-rata calculator",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF18",
+            "capability": "Six working HR settings tabs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF19",
+            "capability": "Search, notifications, themes and keyboard interaction",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF20",
+            "capability": "Faithful demo lifecycle and isolation",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "visualChecks": [
+          {
+            "id": "HV01",
+            "capability": "Reference identity and shell",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HV02",
+            "capability": "Dashboard composition",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV03",
+            "capability": "Wizard and form hierarchy",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV04",
+            "capability": "Tables, filters and status treatment",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV05",
+            "capability": "Calendar visual encoding",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV06",
+            "capability": "Reports, charts and settings layouts",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV07",
+            "capability": "Light/dark palette and typography",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV08",
+            "capability": "Cards, spacing and content density",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV09",
+            "capability": "Dialogs, drawers and feedback",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV10",
+            "capability": "Responsive correspondence",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "timing": {
+          "build": {
+            "seconds": 3179,
+            "lowerBoundSeconds": 3140.938,
+            "observation": "interval-bounded",
+            "authoringPrompts": 3,
+            "observedPrompts": 3
+          }
+        },
+        "archived": true
+      },
+      {
+        "id": "run-03",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 659,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 7,
+        "corrections": 6,
+        "clarifications": 0,
+        "freeCostCommands": 1,
+        "final": {
+          "accepted": true,
+          "functionalPassed": 17,
+          "functionalTotal": 20,
+          "visualPassed": 8,
+          "visualTotal": 10,
+          "allCriticalPassed": true
+        },
+        "functionalChecks": [
+          {
+            "id": "HF01",
+            "capability": "Working managed app, complete role-aware scope and reference fixture",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF02",
+            "capability": "Derived dashboards and balances",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF03",
+            "capability": "My Leave filters, sorting and empty states",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF04",
+            "capability": "Request detail and retained history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF05",
+            "capability": "Four-step request wizard",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF06",
+            "capability": "Working-day and half-day arithmetic",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF07",
+            "capability": "Blocking validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF08",
+            "capability": "Warnings and policy-dependent validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF09",
+            "capability": "Draft, edit and duplicate lifecycle",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF10",
+            "capability": "Submission, approval routing and notifications",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF11",
+            "capability": "Withdraw and cancel with balance reconciliation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF12",
+            "capability": "Manager decisions and reasons",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF13",
+            "capability": "HR second-step and no-manager routing",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF14",
+            "capability": "Bulk decisions, delegation and escalation",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF15",
+            "capability": "Team calendars",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF16",
+            "capability": "Scoped reports and actual CSV exports",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF17",
+            "capability": "Live policy and pro-rata calculator",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF18",
+            "capability": "Six working HR settings tabs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF19",
+            "capability": "Search, notifications, themes and keyboard interaction",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF20",
+            "capability": "Faithful demo lifecycle and isolation",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "visualChecks": [
+          {
+            "id": "HV01",
+            "capability": "Reference identity and shell",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HV02",
+            "capability": "Dashboard composition",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV03",
+            "capability": "Wizard and form hierarchy",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV04",
+            "capability": "Tables, filters and status treatment",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV05",
+            "capability": "Calendar visual encoding",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV06",
+            "capability": "Reports, charts and settings layouts",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV07",
+            "capability": "Light/dark palette and typography",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV08",
+            "capability": "Cards, spacing and content density",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV09",
+            "capability": "Dialogs, drawers and feedback",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV10",
+            "capability": "Responsive correspondence",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "timing": {
+          "build": {
+            "seconds": 2909.171,
+            "lowerBoundSeconds": 2820.289,
+            "observation": "interval-bounded",
+            "authoringPrompts": 7,
+            "observedPrompts": 7
+          }
+        },
+        "archived": true
+      }
+    ],
+    "registeredSettings": [
+      {
+        "runId": "run-01",
+        "model": "Sonnet 5",
+        "effort": "Medium",
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 2517,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 8
+      },
+      {
+        "runId": "run-02",
+        "model": "Opus 5",
+        "effort": "High",
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 3197,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 3
+      },
+      {
+        "runId": "run-03",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 659,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 7
+      },
+      {
+        "runId": "run-04",
+        "model": "Opus 5",
+        "effort": "Medium",
+        "status": "testing",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "runId": "run-05",
+        "model": "Sonnet 5",
+        "effort": "High",
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      }
+    ],
+    "meanFinalCredits": 2124.3333333333335,
+    "complete": false,
+    "scope": "Annual Leave Manager: role-aware leave requests, approvals, calendars, reports and six HR settings tabs; fictional in-memory data only.",
+    "method": "Identical initial prompt and private HTML bytes in five fresh tasks. Independent native functional and visual review; targeted repairs in the same app. No arbitrary authoring-time or credit cutoff and no paid self-review.",
+    "acceptanceNote": "The frozen minimum requires 17 of 20 functional groups and 8 of 10 visual groups, including every critical group. Passing that minimum does not mean complete parity; all remaining failed groups are shown.",
+    "costNote": "Only cumulative task credits after full independent review and joint acceptance. No interim, repair-only or initial-output credit figures. Free cost commands do not count as authoring prompts.",
+    "limitation": "One original observation per setting; selected model and effort, not a proven internal worker model or a causal ranking. Guided replay is not included in this original cohort.",
+    "privacy": "Reference HTML, fictional records, native images, transcripts and account/task/resource identifiers remain private. Public evidence is an allowlisted measurement projection."
   }
 }

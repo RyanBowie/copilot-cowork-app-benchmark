@@ -9,6 +9,51 @@ sizes remain distinct.
 Test 4 adds two accepted capability-stress observations under a separate
 four-stage specification and separate core/advanced rubrics. It is not pooled
 with the preceding cohorts.
+Test 5 separately recreates a private Annual Leave Manager HTML reference.
+Three of its five original settings are finalized; only accepted completed-app
+costs are published, with unfinished settings labelled rather than assigned zeros.
+
+## Test 5: reference fidelity and completed-app cost
+
+Five fresh original tasks use the same frozen initial prompt and byte-identical
+HTML attachment, one per selected model/reasoning setting. Repairs continue in
+the same app until the frozen joint target: at least 17 of 20 functional groups
+and 8 of 10 visual groups, including every critical group. All 30 groups must
+be adjudicated; a pass requires every subcase. Meeting this minimum is not
+complete parity or an overall app-quality percentage.
+
+Review is independent and native: reference and app at 1440px/390px in both
+themes, all areas and settled overlays, role-specific workflows, actual CSV
+downloads, print layout, reset/reload behavior and isolation from prior apps.
+Only native UI actions change business state. Read-only DOM, source, state and
+actual exports corroborate the result; the reviewer does not patch generated
+code, invoke app functions or inject fixtures or clocks. No real HR transactions,
+communications or physical print jobs are performed.
+
+Every corrective prompt is at most 180 whitespace-delimited words and covers
+at most three demonstrated issue groups. First-output evidence is sealed
+before guidance. There is no arbitrary authoring-time or credit cutoff; optional
+repairs stop once joint acceptance passes. There is no paid Cowork self-review.
+
+After complete review and final app screenshots, one final cumulative `/cost`
+reading supplies the completed-app cost, including all authoring and guidance.
+No interim or repair-only cost is published. Authoring counts include the
+initial build, corrections and clarifications; free cost commands and external
+review are excluded. Approximate authoring time excludes review gaps and is not
+pure model compute time.
+
+Final repairs are verified in the owner preview; they are not claimed
+republished. Exact initial published resources are removed only after final
+evidence, with unrelated resources verified unchanged. Successful exact prompt
+sequences are sealed for future use. Private reference HTML, fictional records,
+native images, transcripts and account/task/resource identifiers are not public.
+The measurement export contains frozen prompt/reference hashes and allowlisted
+capability verdicts, not those private assets.
+
+The original adaptive cohort and any later guided replay remain separate.
+Guided replay has not started; donor selection follows closure of all five
+original slots. One observation per setting does not establish repeatability,
+internal worker identity, causal model pricing or guaranteed future savings.
 
 ## Scope and attribution
 
