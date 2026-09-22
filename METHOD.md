@@ -10,7 +10,7 @@ Test 4 adds two accepted capability-stress observations under a separate
 four-stage specification and separate core/advanced rubrics. It is not pooled
 with the preceding cohorts.
 Test 5 separately recreates a private Annual Leave Manager HTML reference.
-Three of its five original settings are finalized; only accepted completed-app
+Four of its five original settings are finalized; only accepted completed-app
 costs are published, with unfinished settings labelled rather than assigned zeros.
 
 ## Test 5: reference fidelity and completed-app cost

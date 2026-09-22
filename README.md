@@ -12,11 +12,11 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**37 completed app measurements across five test scopes:** the original 20 apps,
+**38 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
-capability-stress observations for Test 4 and three accepted HTML-reference
-recreations for Test 5. Two original Test 5 settings are not yet finalized. Compare
+capability-stress observations for Test 4 and four accepted HTML-reference
+recreations for Test 5. One original Test 5 setting is not yet finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
 
@@ -66,7 +66,7 @@ Test 3 remain reasons to consider higher spending when those features matter.
 
 **[View app & reference](test-05-showcase.html)** — try the original HTML demo,
 download the byte-identical benchmark input, and compare desktop/light and
-mobile/dark screenshots from the three accepted settings. The showcase contains
+mobile/dark screenshots from the four accepted settings. The showcase contains
 app-only captures and fictional sample data, not Cowork account or credit screens.
 
 | Selected setting | Completed-app credits | Authoring prompts to target | Status |
@@ -74,22 +74,29 @@ app-only captures and fictional sample data, not Cowork account or credit screen
 | GPT 5.5 / Medium | **659** | **7** | Accepted |
 | Sonnet 5 / Medium | 2,517 | 8 | Accepted |
 | Opus 5 / High | 3,197 | 3 | Accepted |
-| Opus 5 / Medium | Not yet measured | Not complete | Testing |
-| Sonnet 5 / High | Not yet measured | Not complete | Queued |
+| Opus 5 / Medium | 3,220 | 2 | Accepted |
+| Sonnet 5 / High | Not yet measured | Not complete | Testing |
 
 Only **final cumulative completed-app cost** is shown. Prompt counts include
 the initial build and every corrective/clarification prompt, but exclude
 external review and free cost commands. The accepted-app average is
-**2,124.3 credits across three apps**, not five.
+**2,398.3 credits across four apps**, not five.
 
 GPT used **1,858 fewer credits (73.8% lower)** than Sonnet Medium and **2,538
 fewer (79.4% lower)** than Opus High against the same minimum acceptance target.
 It verifies reporting, actual CSV downloads and print layout, but retains
 draft deletion, bulk/delegation and search gaps. Sonnet retains confirmed
-draft deletion and better reference typography. Opus retains a more complete
+draft deletion and better reference typography. Opus High retains a more complete
 draft lifecycle, confirmed bulk approval, working delegation and better
 search/About/keyboard behavior, with four fewer authoring prompts than GPT,
 but still has a print-layout defect.
+
+**Opus Medium verifies all 20 functional groups in two prompts**, including
+printing. Its 3,220 credits are **23 more (0.7%)** than Opus High, with one fewer
+prompt: Medium was not automatically cheaper and High was not required for
+that functional coverage. It retains font/accent and doughnut-legend differences.
+GPT cost **2,561 fewer credits (79.5% lower)** than Opus Medium, but required
+five more prompts and retains the draft, bulk/delegation and search gaps.
 
 These are **single observed builds, not identical apps, guaranteed savings or
 a completed five-way ranking**. Original adaptive builds remain separate from
