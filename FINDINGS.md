@@ -1,7 +1,7 @@
 # Completed benchmark findings
 
 The 20 original apps in Tests 1-3, twelve additional reviewed observations and
-two separately scored Test 4 observations and four Test 5 reference
+two separately scored Test 4 observations and five Test 5 reference
 recreations meet their final scoring and
 critical-check gates. Costs below are observed
 cumulative Cowork task credits. Keep original and additional samples distinct;
@@ -20,12 +20,12 @@ Test 4 is a separate eight-area stress workload for interacting policy, money,
 budget and stale-state rules. It has no live connector or asset-return flow;
 its core/advanced scores are not directly comparable with Test 3.
 Test 5 adds a supplied HTML reference with separate functional and visual
-acceptance. Its original cohort is still incomplete; the preceding 34
+acceptance. Its five-setting original cohort is complete; the preceding 34
 accepted observations remain unchanged.
 
 ## Test 5: HTML-reference recreation
 
-Four of the five original settings are finalized. All received the same
+All five original settings are finalized. All received the same
 initial prompt, identical frozen HTML bytes and the same joint acceptance
 target. Required corrections stayed in the original app, with independent
 native review and no arbitrary authoring-time or credit cutoff.
@@ -34,34 +34,39 @@ native review and no arbitrary authoring-time or credit cutoff.
 |---|---:|---:|---:|---:|---:|
 | GPT 5.5 / Medium | **659** | 7 | 6 | 17 of 20 | 8 of 10 |
 | Sonnet 5 / Medium | 2,517 | 8 | 7 | 17 of 20 | 8 of 10 |
+| Sonnet 5 / High | 2,523 | 3 | 2 | 18 of 20 | 8 of 10 |
 | Opus 5 / High | 3,197 | 3 | 2 | 19 of 20 | 8 of 10 |
 | Opus 5 / Medium | 3,220 | 2 | 1 | 20 of 20 | 8 of 10 |
 
 Every critical group passes. These counts are scope-specific, not overall
-quality percentages. Sonnet High is now testing. No interim
-cost, invented zero score or incomplete prompt total is plotted.
+quality percentages. The mean is **2,423.2 credits across all five apps**.
+No interim cost, invented zero score or incomplete prompt total is plotted.
 
 **GPT met the same minimum at substantially lower observed cost, not because
 it was assigned an easier goal.** Its 659 credits are **1,858 / 73.8% below
 Sonnet Medium** and **2,538 / 79.4% below Opus High**. It needed one fewer
-authoring prompt than Sonnet and four more than Opus.
+authoring prompt than Sonnet Medium and four more than Opus High.
 
 The delivered apps are not feature-identical:
 
 - **Reporting:** GPT verifies the complete reporting/export/print group,
-    including all seven actual CSV downloads. Opus High verifies report scopes,
-  chart data and CSVs but retains a print-layout defect. Sonnet retains broader
+  including all seven actual CSV downloads. Opus High verifies report scopes,
+  chart data and CSVs but retains a print-layout defect. Sonnet Medium retains broader
   reporting limitations. Opus Medium verifies the complete reporting group,
-  including unclipped printing. A shared failed group does not imply the same defect.
-- **Drafts and approvals:** Sonnet and Opus retain confirmed draft deletion;
+  including unclipped printing, as does Sonnet High. A shared failed group does not imply the same defect.
+- **Drafts and approvals:** Both Sonnet and Opus settings retain confirmed draft deletion;
   GPT does not. Opus additionally verifies confirmed selected-only bulk
-  approval, queue-moving delegation and delegation removal. GPT and Sonnet
-  retain gaps in this group.
+  approval, queue-moving delegation and delegation removal, as does Sonnet High.
+  GPT and Sonnet Medium retain gaps in this group.
 - **Finding and using information:** Opus has working request/person/policy
   search, About and fuller keyboard behavior. GPT's search remains area-only
-  and About is absent; its explicit notification controls work.
-- **Visual fidelity:** Sonnet passes the reference typography/palette group.
-  GPT and both Opus builds retain typography differences. GPT, Sonnet and Opus
+  and About is absent; its explicit notification controls work. Sonnet High
+  retains request/person-search gaps despite working notification and keyboard controls.
+- **Calendar:** Sonnet High retains Tuesday-shifted week navigation, an incorrect
+  current-day marker and absent half-day markers. The other accepted settings
+  pass this group; High's better reporting does not cancel out these defects.
+- **Visual fidelity:** Sonnet Medium passes the reference typography/palette group.
+  GPT, Sonnet High and both Opus builds retain typography differences. GPT, Sonnet Medium and Opus
   High retain card/tab grouping or spacing limitations. Opus Medium passes that
   spacing group but lacks the doughnut colour-key legend. Equal visual totals
   conceal different outcomes.
@@ -75,6 +80,15 @@ five fewer prompts and delivered the additional draft, bulk/delegation and
 search capabilities. This is an observed cost/capability tradeoff, not a
 repeatable or causal reasoning-level comparison.
 
+**Sonnet High reduced guidance, not total credits.** It used **2,523 credits and
+three prompts**, only **six credits (0.2%) more** than Medium's 2,517 but with
+**five fewer authoring prompts**. High adds confirmed bulk/delegation and complete
+reporting; Medium retains stronger calendar and typography coverage. High also
+passes report-legend and card-spacing fidelity where Medium falls short.
+The same eight visual groups passed in count, but not in identity.
+GPT used **1,864 fewer credits (73.9% lower)** than Sonnet High with four more
+prompts, retaining better calendar coverage but weaker draft/bulk/delegation coverage.
+
 **Extra Opus spend bought specific additional functionality and fewer guidance
 turns, not a universally better app.** GPT is a substantially lower-cost
 observed route to the shared minimum when its retained gaps are acceptable.
@@ -86,8 +100,14 @@ differing together when GPT is compared with Opus High. The two Opus settings
 hold the selected model constant but still have only one adaptive run each.
 Credit differences do not price the
 reviewer's time, establish internal worker identity, guarantee future savings
-or establish a general ranking. There is no whole-cohort cheapest-setting
-conclusion before the remaining original slots close.
+or establish a general ranking. GPT Medium is the lowest observed completed-app
+cost in this closed five-setting original cohort.
+
+Sonnet High's final image inspection exposed a desktop legend overlap after an
+initial provisional review. Acceptance was withdrawn before cost; the second
+correction passed 12 native dashboard cases, checking every applicable legend
+label/value against its card and neighbouring content. The final measurement
+includes both repairs. No provisional cost was recorded or published.
 
 Only the completed cumulative cost is published. Final repairs were reviewed
 in the owner preview, not claimed republished; exact initial published resources

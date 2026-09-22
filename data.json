@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-09-22T10:32:28.218Z",
+  "generatedAt": "2026-09-22T13:06:33.654Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -7222,6 +7222,225 @@
           }
         },
         "archived": true
+      },
+      {
+        "id": "run-05",
+        "model": "Sonnet 5",
+        "effort": "High",
+        "replicate": 1,
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 2523,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 3,
+        "corrections": 2,
+        "clarifications": 0,
+        "freeCostCommands": 1,
+        "final": {
+          "accepted": true,
+          "functionalPassed": 18,
+          "functionalTotal": 20,
+          "visualPassed": 8,
+          "visualTotal": 10,
+          "allCriticalPassed": true
+        },
+        "functionalChecks": [
+          {
+            "id": "HF01",
+            "capability": "Working managed app, complete role-aware scope and reference fixture",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF02",
+            "capability": "Derived dashboards and balances",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF03",
+            "capability": "My Leave filters, sorting and empty states",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF04",
+            "capability": "Request detail and retained history",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF05",
+            "capability": "Four-step request wizard",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF06",
+            "capability": "Working-day and half-day arithmetic",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF07",
+            "capability": "Blocking validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF08",
+            "capability": "Warnings and policy-dependent validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF09",
+            "capability": "Draft, edit and duplicate lifecycle",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF10",
+            "capability": "Submission, approval routing and notifications",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF11",
+            "capability": "Withdraw and cancel with balance reconciliation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF12",
+            "capability": "Manager decisions and reasons",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF13",
+            "capability": "HR second-step and no-manager routing",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF14",
+            "capability": "Bulk decisions, delegation and escalation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF15",
+            "capability": "Team calendars",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF16",
+            "capability": "Scoped reports and actual CSV exports",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF17",
+            "capability": "Live policy and pro-rata calculator",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF18",
+            "capability": "Six working HR settings tabs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF19",
+            "capability": "Search, notifications, themes and keyboard interaction",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF20",
+            "capability": "Faithful demo lifecycle and isolation",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "visualChecks": [
+          {
+            "id": "HV01",
+            "capability": "Reference identity and shell",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HV02",
+            "capability": "Dashboard composition",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV03",
+            "capability": "Wizard and form hierarchy",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV04",
+            "capability": "Tables, filters and status treatment",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV05",
+            "capability": "Calendar visual encoding",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV06",
+            "capability": "Reports, charts and settings layouts",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV07",
+            "capability": "Light/dark palette and typography",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV08",
+            "capability": "Cards, spacing and content density",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV09",
+            "capability": "Dialogs, drawers and feedback",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV10",
+            "capability": "Responsive correspondence",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "timing": {
+          "build": {
+            "seconds": 3651.981,
+            "lowerBoundSeconds": 3632.183,
+            "observation": "interval-bounded",
+            "authoringPrompts": 3,
+            "observedPrompts": 3
+          }
+        },
+        "archived": true
       }
     ],
     "registeredSettings": [
@@ -7281,13 +7500,18 @@
         "runId": "run-05",
         "model": "Sonnet 5",
         "effort": "High",
-        "status": "testing",
-        "finalCost": null,
-        "authoringPrompts": null
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 2523,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 3
       }
     ],
-    "meanFinalCredits": 2398.25,
-    "complete": false,
+    "meanFinalCredits": 2423.2,
+    "complete": true,
     "scope": "Annual Leave Manager: role-aware leave requests, approvals, calendars, reports and six HR settings tabs; fictional in-memory data only.",
     "method": "Identical initial prompt and frozen HTML bytes in five fresh tasks. Independent native functional and visual review; targeted repairs in the same app. No arbitrary authoring-time or credit cutoff and no paid self-review.",
     "acceptanceNote": "The frozen minimum requires 17 of 20 functional groups and 8 of 10 visual groups, including every critical group. Passing that minimum does not mean complete parity; all remaining failed groups are shown.",

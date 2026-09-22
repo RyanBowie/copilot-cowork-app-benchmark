@@ -78,6 +78,28 @@
       }
     },
     {
+      "id": "run-05",
+      "model": "Sonnet 5",
+      "effort": "High",
+      "credits": 2523,
+      "authoringPrompts": 3,
+      "capturedAt": "2026-09-22T12:59:58.221Z",
+      "images": {
+        "desktop": {
+          "file": "assets/test-05/run-05-desktop.png",
+          "sha256": "9a1e7d440a30c1cfbd428c704d711066e6dae447690726f3f9266bc1f3d482fa",
+          "width": 1441,
+          "height": 1000
+        },
+        "mobile": {
+          "file": "assets/test-05/run-05-mobile.png",
+          "sha256": "590f562c7656f63d918d5524d5ff09d91b15bf2d69c96464748b08760d8145a3",
+          "width": 390,
+          "height": 1000
+        }
+      }
+    },
+    {
       "id": "run-02",
       "model": "Opus 5",
       "effort": "High",

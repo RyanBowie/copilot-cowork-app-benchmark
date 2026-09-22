@@ -10,8 +10,8 @@ Test 4 adds two accepted capability-stress observations under a separate
 four-stage specification and separate core/advanced rubrics. It is not pooled
 with the preceding cohorts.
 Test 5 separately recreates a private Annual Leave Manager HTML reference.
-Four of its five original settings are finalized; only accepted completed-app
-costs are published, with unfinished settings labelled rather than assigned zeros.
+All five original settings are finalized; only accepted completed-app costs
+are published, with one adaptive observation per selected setting.
 
 ## Test 5: reference fidelity and completed-app cost
 
@@ -29,6 +29,11 @@ Only native UI actions change business state. Read-only DOM, source, state and
 actual exports corroborate the result; the reviewer does not patch generated
 code, invoke app functions or inject fixtures or clocks. No real HR transactions,
 communications or physical print jobs are performed.
+Zero document overflow alone does not prove containment: native scrolling must
+reach hidden columns/rows, and nested legends/values must fit their own cards
+without sibling overlap. Final images are inspected before the cost command;
+a missed critical defect withdraws provisional acceptance and triggers another
+bounded repair in the same app.
 
 Every corrective prompt is at most 180 whitespace-delimited words and covers
 at most three demonstrated issue groups. First-output evidence is sealed
