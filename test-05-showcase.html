@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Try the exact Annual Leave Manager HTML reference and compare final Copilot Cowork app screenshots by model and reasoning.">
+<title>Test 5 · App &amp; reference showcase</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<script>document.documentElement.dataset.theme = new URLSearchParams(location.search).get("scoutTheme") === "light" ? "light" : "dark";</script>
+<style>:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cp-bg);color:var(--cp-text);font:16px/1.6 "Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif}
+header,main,footer{max-width:1360px;margin:auto;padding:24px 40px}
+header,.toolbar,.actions{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+a{color:var(--cp-link);text-underline-offset:4px}
+a:hover{color:var(--cp-accent-hover)}
+button,select,.button{font:inherit;border:1px solid var(--cp-border);border-radius:.625rem;padding:10px 16px;background:var(--cp-surface);color:var(--cp-text)}
+button,.button{cursor:pointer}.button{display:inline-block;text-decoration:none}
+.primary{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+:focus-visible{outline:3px solid var(--cp-accent);outline-offset:4px}
+h1{font-size:clamp(32px,5vw,56px);line-height:1.12;letter-spacing:-.03em;margin:16px 0}
+h2{font-size:28px;line-height:1.25;margin:0 0 12px}h3{font-size:19px;margin:0}
+p{max-width:960px}.lead{font-size:20px;color:var(--cp-text-muted)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cp-accent)}
+.card{padding:28px;border:1px solid var(--cp-border);border-radius:16px;background:var(--cp-surface);margin:28px 0}
+.note,figcaption,footer{color:var(--cp-text-muted);font-size:14px}
+.toolbar{justify-content:flex-start;align-items:flex-end;margin:24px 0}
+label{display:grid;gap:8px;font-weight:600;max-width:100%}select{max-width:100%}
+.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+figure{margin:0;min-width:0}
+.image-link{display:block;background:var(--cp-surface-soft);border:1px solid var(--cp-border);border-radius:.625rem;padding:12px;margin:12px 0}
+img{display:block;width:100%;height:auto}
+.comparison[data-scene="mobile"] img{max-width:390px;margin:auto}
+.pill{display:inline-block;border-radius:.625rem;padding:8px 12px;background:var(--cp-accent-soft);color:var(--cp-text)}
+.reference-window{width:100%;overflow:auto;margin:20px 0;border:1px solid var(--cp-border);border-radius:.625rem;background:var(--cp-surface-soft)}
+iframe{display:block;width:100%;height:800px;border:0;background:var(--cp-surface)}
+code{font:13px/1.5 Consolas,"Courier New",Courier,monospace;overflow-wrap:anywhere}
+.actions{justify-content:flex-start}[hidden]{display:none!important}
+@media(max-width:700px){header,main,footer{padding:20px}.card{padding:20px}.comparison{grid-template-columns:1fr}.toolbar{align-items:stretch}.toolbar label{width:100%}iframe{height:720px}}
+</style></head><body>
+<header><a href="index.html#test-05">← Back to Test 5 results</a><button id="theme-toggle" type="button">Switch to light theme</button></header>
+<main>
+<div class="eyebrow">Test 5 · Annual Leave Manager</div>
+<h1>From HTML reference<br>to managed app.</h1>
+<p class="lead">Explore the original design, then compare what the completed builds actually look like. Same starting reference, different models, reasoning and guidance.</p>
+<div class="actions"><a class="button primary" href="#screenshots">Compare app screenshots</a><a class="button" href="#reference">Try the HTML reference</a></div>
+<section id="screenshots" class="card" aria-labelledby="screenshots-heading">
+<h2 id="screenshots-heading">Reference beside the finished app</h2>
+<p>These are retained final owner-preview screenshots, not mockups or new deployments. Only completed, accepted settings appear. Select an image to open it at full resolution.</p>
+<div class="toolbar">
+<label>Model and reasoning<select id="model" aria-label="Model and reasoning"><option value="run-03">GPT 5.5 / Medium</option><option value="run-01">Sonnet 5 / Medium</option><option value="run-02">Opus 5 / High</option></select></label>
+<label>Capture<select id="scene" aria-label="Capture"><option value="desktop">Desktop · light · 1440px</option><option value="mobile">Mobile · dark · 390px</option></select></label>
+<span id="cost" class="pill" role="status" aria-live="polite"></span></div>
+<div id="comparison" class="comparison" data-scene="desktop">
+<figure><h3>Original HTML reference</h3><a id="reference-image-link" class="image-link" target="_blank" rel="noopener"><img id="reference-image" alt=""></a><figcaption id="reference-caption"></figcaption></figure>
+<figure><h3 id="app-heading"></h3><a id="app-image-link" class="image-link" target="_blank" rel="noopener"><img id="app-image" alt=""></a><figcaption id="app-caption"></figcaption></figure>
+</div>
+<p class="note">Desktop and mobile captures use the same 1440px and 390px content widths as the review. The app frame is shown without Cowork chrome. On-screen people and leave records belong to the fictional demo fixture, not live HR data. Capture dates differ; greetings and date-relative labels may differ too.</p>
+<p class="note">A screenshot does not establish functional parity. <a href="index.html#test-05">Read the cost, guidance and remaining capability differences</a> before choosing a setting.</p>
+</section>
+<section id="reference" class="card" aria-labelledby="reference-heading">
+<h2 id="reference-heading">Try the exact HTML reference</h2>
+<p>This is the original standalone HTML supplied to every build, unchanged. It is <strong>not a generated Cowork app</strong>. Use the demo role switcher to explore requests, approvals, reports and settings. Business changes are in-memory; reload restores the sample data.</p>
+<div class="actions"><button id="load-reference" type="button" class="primary">Load interactive reference</button>
+<a class="button" href="assets/test-05/annual_leave_manager.html" target="_blank" rel="noopener">Open reference in a new tab</a>
+<a class="button" id="download-reference" href="assets/test-05/annual_leave_manager.html" download="annual_leave_manager.html">Download HTML reference</a></div>
+<div id="reference-controls" class="toolbar" hidden><label>Preview width<select id="preview-width" aria-label="Preview width"><option value="100%">Fit this page</option><option value="1440px">Desktop · 1440px</option><option value="390px">Mobile · 390px</option></select></label><button id="reload-reference" type="button">Reload sample data</button></div>
+<div id="reference-window" class="reference-window" hidden></div>
+<p class="note">The embedded demo is sandboxed, without access to this page or its storage. There is no live HR connection, real approval or message delivery. Its own blue design and theme controls are deliberately preserved.</p>
+<details><summary>Reference identity and capture provenance</summary><p>188,501 bytes · SHA-256<br><code>b04d8b8bb71e18b2429a4ddf995b698fcaebfbeac1f9926c804f437d256b0d28</code></p><p>The downloadable HTML is byte-identical to the frozen benchmark input. Screenshots are copied from retained evidence without visual edits. <a href="assets/test-05/manifest.json">View public asset hashes and capture dates</a>.</p></details>
+</section>
+</main><footer>Demo tenant(s) · Exploratory single builds, not a guarantee of future cost or production readiness. <a href="index.html#overview">All five test scopes</a></footer>
+<script>
+const DATA={"reference":{"file":"assets/test-05/annual_leave_manager.html","sha256":"b04d8b8bb71e18b2429a4ddf995b698fcaebfbeac1f9926c804f437d256b0d28","bytes":188501},"scenes":[{"id":"desktop","title":"Desktop · light","theme":"light","width":1440},{"id":"mobile","title":"Mobile · dark","theme":"dark","width":390}],"referenceImages":{"desktop":{"file":"assets/test-05/reference-desktop.png","sha256":"9bddd304980a83bd90654f03bab39503efc01fe880e846a525bfe2d241d2766b","width":1440,"height":1000},"mobile":{"file":"assets/test-05/reference-mobile.png","sha256":"3658eea83ef9ec66a4fd633c0c1b24b9ceea1053f6d548af83f902f5de59b608","width":390,"height":1000}},"runs":[{"id":"run-03","model":"GPT 5.5","effort":"Medium","credits":659,"authoringPrompts":7,"capturedAt":"2026-09-22T06:59:55.574Z","images":{"desktop":{"file":"assets/test-05/run-03-desktop.png","sha256":"d3f3c32a9d63f06e4f2d805761df49f6ccbcdf2676d65bdac95edba9803ffb26","width":1441,"height":1000},"mobile":{"file":"assets/test-05/run-03-mobile.png","sha256":"4932a9f01c9b7df8f2d05a22834a1dd3bf086c9e24635706cb35f627ec772a1b","width":390,"height":1000}}},{"id":"run-01","model":"Sonnet 5","effort":"Medium","credits":2517,"authoringPrompts":8,"capturedAt":"2026-09-22T01:25:05.437Z","images":{"desktop":{"file":"assets/test-05/run-01-desktop.png","sha256":"d1b4e3a5f0029b12f4026b5852f2d3e92bcb1b22aba117c79a70afde5a95cf5d","width":1441,"height":1000},"mobile":{"file":"assets/test-05/run-01-mobile.png","sha256":"da2b99d9fc9658b16b128bae476e4a6ded8f821aa69c9c52c73ecfb07a1912f0","width":390,"height":1000}}},{"id":"run-02","model":"Opus 5","effort":"High","credits":3197,"authoringPrompts":3,"capturedAt":"2026-09-22T03:43:00.629Z","images":{"desktop":{"file":"assets/test-05/run-02-desktop.png","sha256":"b6038a1c427f9630426dfbef22cc5c33e72221fbb1fb65832a07c81ea28f6e74","width":1441,"height":1000},"mobile":{"file":"assets/test-05/run-02-mobile.png","sha256":"97a3b333ce5eac0e99768e6cff3d28f09ba73eca8f1f4d1a50629151b44ae389","width":390,"height":1000}}}],"referenceCapturedAt":"2026-09-22T08:57:00.192Z"};
+const byId=id=>document.getElementById(id);
+const themeButton=byId('theme-toggle');
+function themeLabel(){themeButton.textContent='Switch to '+(document.documentElement.dataset.theme==='dark'?'light':'dark')+' theme';}
+themeButton.addEventListener('click',()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';themeLabel();});themeLabel();
+function renderCapture(){
+ const run=DATA.runs.find(item=>item.id===byId('model').value),scene=DATA.scenes.find(item=>item.id===byId('scene').value);
+ byId('comparison').dataset.scene=scene.id;
+ const name=run.model+' / '+run.effort;
+ byId('app-heading').textContent=name;
+ byId('cost').textContent=run.credits.toLocaleString('en-GB')+' completed-app credits · '+run.authoringPrompts+' authoring prompts';
+ for(const [id,image,label] of [['reference',DATA.referenceImages[scene.id],'Original HTML reference'],['app',run.images[scene.id],name+' final accepted app']]){
+  const img=byId(id+'-image');img.src=image.file;img.width=image.width;img.height=image.height;img.alt=label+' — employee dashboard, '+scene.title.toLowerCase()+', '+scene.width+'px content width';
+  byId(id+'-image-link').href=image.file;byId(id+'-image-link').setAttribute('aria-label','Open full-size '+img.alt);
+ }
+ byId('reference-caption').textContent=scene.title+' · Frozen reference capture · '+DATA.referenceCapturedAt.slice(0,10);
+ byId('app-caption').textContent=scene.title+' · Final accepted owner preview · '+run.capturedAt.slice(0,10);
+}
+if(DATA.runs.length){byId('model').addEventListener('change',renderCapture);byId('scene').addEventListener('change',renderCapture);renderCapture();}
+let preview;
+byId('load-reference').addEventListener('click',()=>{
+ preview=document.createElement('iframe');preview.title='Original HTML reference — interactive fictional demo';
+ preview.setAttribute('sandbox','allow-scripts allow-downloads');preview.referrerPolicy='no-referrer';
+ preview.src=DATA.reference.file;byId('reference-window').append(preview);
+ byId('reference-window').hidden=false;byId('reference-controls').hidden=false;
+ byId('load-reference').hidden=true;preview.focus();
+});
+byId('preview-width').addEventListener('change',()=>{preview.style.width=byId('preview-width').value;});
+byId('reload-reference').addEventListener('click',()=>{preview.src=DATA.reference.file;});
+</script></body></html>

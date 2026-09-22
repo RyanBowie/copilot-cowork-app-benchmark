@@ -1,13 +1,13 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-09-22T07:40:21.651Z",
+  "generatedAt": "2026-09-22T08:57:04.481Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
   "app": "Device Procurement and Availability; Device Lifecycle Hub; Device Allocation and Policy Hub; Annual Leave Manager",
   "unitNote": "Observed Cowork task credits, not currency or a tenant invoice. Final cumulative readings are not added to initial readings.",
   "timingNote": "Observed build time per app sums the authoring turns: build, planned updates, clarifications and corrections. It excludes external review and screenshot-taking gaps between prompts, /cost commands and native self-review. Within-turn waits and observation uncertainty remain included; this is not pure model compute time. Missing authoring coverage is not estimated from elapsed test time.",
-  "evidenceNote": "Exact prompts, visible transcripts, app screenshots, approval records, backend snapshots and raw cost evidence are retained privately. Public data is an explicit allowlisted projection, not a raw transcript export.",
+  "evidenceNote": "Exact prompts, visible transcripts, approval records, backend snapshots and raw cost evidence are retained privately. Test 5 separately publishes its authorized HTML reference and selected final app-only screenshots. Public data remains an explicit allowlisted projection, not a raw transcript export.",
   "experiments": [
     {
       "id": "test-03",
@@ -7065,10 +7065,10 @@
     "meanFinalCredits": 2124.3333333333335,
     "complete": false,
     "scope": "Annual Leave Manager: role-aware leave requests, approvals, calendars, reports and six HR settings tabs; fictional in-memory data only.",
-    "method": "Identical initial prompt and private HTML bytes in five fresh tasks. Independent native functional and visual review; targeted repairs in the same app. No arbitrary authoring-time or credit cutoff and no paid self-review.",
+    "method": "Identical initial prompt and frozen HTML bytes in five fresh tasks. Independent native functional and visual review; targeted repairs in the same app. No arbitrary authoring-time or credit cutoff and no paid self-review.",
     "acceptanceNote": "The frozen minimum requires 17 of 20 functional groups and 8 of 10 visual groups, including every critical group. Passing that minimum does not mean complete parity; all remaining failed groups are shown.",
     "costNote": "Only cumulative task credits after full independent review and joint acceptance. No interim, repair-only or initial-output credit figures. Free cost commands do not count as authoring prompts.",
     "limitation": "One original observation per setting; selected model and effort, not a proven internal worker model or a causal ranking. Guided replay is not included in this original cohort.",
-    "privacy": "Reference HTML, fictional records, native images, transcripts and account/task/resource identifiers remain private. Public evidence is an allowlisted measurement projection."
+    "privacy": "The exact HTML reference and selected final app-only screenshots are available in the authorized Test 5 showcase. The fixture is fictional. Transcripts, generated source, account/task/resource identifiers and other raw evidence remain private."
   }
 }

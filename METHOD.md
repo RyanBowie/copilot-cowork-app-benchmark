@@ -45,10 +45,15 @@ pure model compute time.
 Final repairs are verified in the owner preview; they are not claimed
 republished. Exact initial published resources are removed only after final
 evidence, with unrelated resources verified unchanged. Successful exact prompt
-sequences are sealed for future use. Private reference HTML, fictional records,
-native images, transcripts and account/task/resource identifiers are not public.
-The measurement export contains frozen prompt/reference hashes and allowlisted
-capability verdicts, not those private assets.
+sequences are sealed for future use. The separately authorized
+[Test 5 showcase](test-05-showcase.html) publishes the byte-identical supplied
+HTML reference, its fictional fixture and selected final app-only dashboard
+screenshots. It supports desktop/light and mobile/dark comparison by setting.
+The embedded reference is a sandboxed standalone demo, not a generated Cowork
+deployment. Image hashes and capture dates are in the public asset manifest.
+Transcripts, generated app source, account/task/resource identifiers, cost
+screenshots and other raw evidence remain private. The measurement export
+retains frozen prompt/reference hashes and allowlisted capability verdicts.
 
 The original adaptive cohort and any later guided replay remain separate.
 Guided replay has not started; donor selection follows closure of all five

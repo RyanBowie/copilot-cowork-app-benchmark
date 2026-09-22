@@ -64,6 +64,11 @@ Test 3 remain reasons to consider higher spending when those features matter.
 
 ### Test 5: recreate the Annual Leave Manager reference
 
+**[View app & reference](test-05-showcase.html)** — try the original HTML demo,
+download the byte-identical benchmark input, and compare desktop/light and
+mobile/dark screenshots from the three accepted settings. The showcase contains
+app-only captures and fictional sample data, not Cowork account or credit screens.
+
 | Selected setting | Completed-app credits | Authoring prompts to target | Status |
 |---|---:|---:|---|
 | GPT 5.5 / Medium | **659** | **7** | Accepted |

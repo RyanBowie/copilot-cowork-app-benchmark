@@ -26,7 +26,7 @@ accepted observations remain unchanged.
 ## Test 5: HTML-reference recreation
 
 Three of the five original settings are finalized. All received the same
-initial prompt, identical private HTML bytes and the same joint acceptance
+initial prompt, identical frozen HTML bytes and the same joint acceptance
 target. Required corrections stayed in the original app, with independent
 native review and no arbitrary authoring-time or credit cutoff.
 

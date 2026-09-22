@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Annual Leave Manager — Contoso UK (Sample)</title>
+<style>
+/* ───────────────────────── Design tokens ───────────────────────── */
+:root{
+  --accent:#0078D4; --accent-hover:#106EBE; --accent-pressed:#005A9E; --accent-soft:rgba(0,120,212,.12);
+  --bg:#F3F2F1; --surface:#FFFFFF; --surface-2:#FAF9F8; --surface-3:#EDEBE9;
+  --text:#201F1E; --text-2:#605E5C; --text-3:#8A8886; --border:#E1DFDD; --border-strong:#C8C6C4;
+  --success:#107C10; --success-soft:rgba(16,124,16,.14); --warning:#C19C00; --warning-soft:rgba(255,185,0,.18); --warning-text:#7A5B00;
+  --danger:#D13438; --danger-soft:rgba(209,52,56,.14); --info:#0078D4; --info-soft:rgba(0,120,212,.12);
+  --shadow-1:0 1.6px 3.6px rgba(0,0,0,.13),0 .3px .9px rgba(0,0,0,.11);
+  --shadow-2:0 6.4px 14.4px rgba(0,0,0,.13),0 1.2px 3.6px rgba(0,0,0,.11);
+  --shadow-3:0 25.6px 57.6px rgba(0,0,0,.22),0 4.8px 14.4px rgba(0,0,0,.18);
+  --radius:6px; --radius-lg:10px; --nav-w:240px; --top-h:56px;
+  --font:"Segoe UI","Segoe UI Web (West European)",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --skeleton-a:#EDEBE9; --skeleton-b:#F8F7F6;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --accent:#2899F5; --accent-hover:#3AA0FF; --accent-pressed:#0078D4; --accent-soft:rgba(40,153,245,.18);
+  --bg:#1B1A19; --surface:#252423; --surface-2:#2D2C2B; --surface-3:#3B3A39;
+  --text:#F3F2F1; --text-2:#C8C6C4; --text-3:#979593; --border:#3B3A39; --border-strong:#605E5C;
+  --success:#6CCB5F; --success-soft:rgba(108,203,95,.18); --warning:#FCE100; --warning-soft:rgba(252,225,0,.16); --warning-text:#FCE100;
+  --danger:#F1707B; --danger-soft:rgba(241,112,123,.18); --info:#2899F5; --info-soft:rgba(40,153,245,.18);
+  --skeleton-a:#2D2C2B; --skeleton-b:#3B3A39;
+  --shadow-1:0 1.6px 3.6px rgba(0,0,0,.4),0 .3px .9px rgba(0,0,0,.3);
+  --shadow-2:0 6.4px 14.4px rgba(0,0,0,.5),0 1.2px 3.6px rgba(0,0,0,.4);
+  --shadow-3:0 25.6px 57.6px rgba(0,0,0,.6),0 4.8px 14.4px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){
+    --accent:#2899F5; --accent-hover:#3AA0FF; --accent-pressed:#0078D4; --accent-soft:rgba(40,153,245,.18);
+    --bg:#1B1A19; --surface:#252423; --surface-2:#2D2C2B; --surface-3:#3B3A39;
+    --text:#F3F2F1; --text-2:#C8C6C4; --text-3:#979593; --border:#3B3A39; --border-strong:#605E5C;
+    --success:#6CCB5F; --success-soft:rgba(108,203,95,.18); --warning:#FCE100; --warning-soft:rgba(252,225,0,.16); --warning-text:#FCE100;
+    --danger:#F1707B; --danger-soft:rgba(241,112,123,.18); --info:#2899F5; --info-soft:rgba(40,153,245,.18);
+    --skeleton-a:#2D2C2B; --skeleton-b:#3B3A39;
+    color-scheme:dark;
+  }
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:var(--font);font-size:14px;line-height:1.45;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.25}
+h1{font-size:24px}h2{font-size:18px}h3{font-size:15px}h4{font-size:12px;color:var(--text-2);text-transform:uppercase;letter-spacing:.04em}
+p{margin:0 0 .75em}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.sr-only{position:absolute;inline-size:1px;block-size:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.muted{color:var(--text-2)}
+.small{font-size:12px}
+.mono{font-family:Consolas,"Cascadia Mono",monospace;font-size:12px}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.between{justify-content:space-between}
+.grow{flex:1 1 auto}
+.stack{display:flex;flex-direction:column;gap:8px}
+.mt{margin-block-start:16px}.mb{margin-block-end:16px}
+.hidden{display:none !important}
+.right{text-align:end}
+.nowrap{white-space:nowrap}
+ul.plain{margin:0 0 .75em;padding-inline-start:20px}
+
+/* ───────────────────────── App shell ───────────────────────── */
+.app{display:grid;grid-template-columns:var(--nav-w) 1fr;grid-template-rows:var(--top-h) 1fr;min-block-size:100vh}
+.topbar{grid-column:1/-1;position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding-inline:12px 16px;background:var(--surface);border-block-end:1px solid var(--border);box-shadow:var(--shadow-1)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px;inline-size:calc(var(--nav-w) - 12px)}
+.brand .logo{inline-size:32px;block-size:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#50E6FF);display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+.brand .sub{display:block;font-size:11px;font-weight:400;color:var(--text-2)}
+.hamburger{display:none}
+.search{position:relative;flex:1 1 320px;max-inline-size:520px}
+.search input{inline-size:100%;padding:8px 12px 8px 36px;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--surface-2)}
+.search input:focus{border-color:var(--accent);background:var(--surface)}
+.search>svg{position:absolute;inset-inline-start:12px;inset-block-start:50%;transform:translateY(-50%);inline-size:16px;block-size:16px;fill:var(--text-2);pointer-events:none}
+.search-results{position:absolute;inset-inline:0;inset-block-start:calc(100% + 4px);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-2);max-block-size:360px;overflow:auto;z-index:60}
+.search-results button{display:flex;gap:10px;align-items:center;inline-size:100%;text-align:start;padding:8px 12px;border:0;background:none;cursor:pointer}
+.search-results button:hover,.search-results button:focus{background:var(--surface-2)}
+.search-results .kind{font-size:11px;color:var(--text-3);min-inline-size:60px;text-transform:uppercase}
+.topbar .actions{display:flex;align-items:center;gap:4px;margin-inline-start:auto}
+.role-switch{display:flex;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden}
+.role-switch button{padding:6px 10px;border:0;background:var(--surface);cursor:pointer;font-size:13px}
+.role-switch button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.icon-btn{position:relative;inline-size:36px;block-size:36px;display:grid;place-items:center;border:0;border-radius:var(--radius);background:transparent;cursor:pointer;color:var(--text)}
+.icon-btn:hover{background:var(--surface-3)}
+.icon-btn svg{inline-size:20px;block-size:20px;fill:currentColor}
+.badge-dot{position:absolute;inset-block-start:4px;inset-inline-end:4px;min-inline-size:16px;block-size:16px;padding-inline:4px;border-radius:8px;background:var(--danger);color:#fff;font-size:10px;font-weight:700;display:grid;place-items:center}
+.avatar{inline-size:32px;block-size:32px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:600;color:#fff;background:var(--accent);flex:none}
+.avatar.sm{inline-size:24px;block-size:24px;font-size:10px}
+.avatar.lg{inline-size:48px;block-size:48px;font-size:16px}
+.user-chip{display:flex;align-items:center;gap:8px;padding:4px 8px 4px 4px;border-radius:20px;border:0;background:transparent;cursor:pointer;text-align:start}
+.user-chip:hover{background:var(--surface-3)}
+.user-chip .name{font-weight:600;font-size:13px;line-height:1.1}
+.user-chip .title{font-size:11px;color:var(--text-2)}
+.popover{position:absolute;inset-block-start:calc(var(--top-h) - 6px);inset-inline-end:16px;inline-size:360px;max-inline-size:calc(100vw - 24px);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-3);z-index:70;overflow:hidden}
+.popover header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-block-end:1px solid var(--border);font-weight:600}
+.popover .list{max-block-size:380px;overflow:auto}
+.notif{display:flex;gap:10px;padding:10px 14px;border-block-end:1px solid var(--border);cursor:pointer;background:none;border-inline:0;border-block-start:0;inline-size:100%;text-align:start}
+.notif:hover{background:var(--surface-2)}
+.notif.unread{background:var(--accent-soft)}
+.notif .dot{inline-size:8px;block-size:8px;border-radius:50%;background:var(--accent);margin-block-start:6px;flex:none}
+.notif.read .dot{background:transparent}
+.notif time{display:block;font-size:11px;color:var(--text-3)}
+
+nav.sidenav{grid-row:2;position:sticky;top:var(--top-h);block-size:calc(100vh - var(--top-h));overflow:auto;background:var(--surface);border-inline-end:1px solid var(--border);padding:12px 8px;display:flex;flex-direction:column}
+.sidenav ul{list-style:none;margin:0;padding:0}
+.sidenav li a{display:flex;align-items:center;gap:12px;padding:9px 12px;margin-block:2px;border-radius:var(--radius);color:var(--text);text-decoration:none;font-weight:500;position:relative}
+.sidenav li a:hover{background:var(--surface-3)}
+.sidenav li a[aria-current="page"]{background:var(--accent-soft);color:var(--accent)}
+.sidenav li a[aria-current="page"]::before{content:"";position:absolute;inset-inline-start:0;inset-block:8px;inline-size:3px;border-radius:2px;background:var(--accent)}
+.sidenav svg{inline-size:20px;block-size:20px;fill:currentColor;flex:none}
+.sidenav .count{margin-inline-start:auto;font-size:11px;background:var(--danger);color:#fff;border-radius:10px;padding:1px 7px;font-weight:600}
+.sidenav .nav-foot{margin-block-start:auto;padding:12px;font-size:11px;color:var(--text-3);border-block-start:1px solid var(--border)}
+.sidenav .persona{display:flex;gap:10px;align-items:center;padding:8px 12px 14px;border-block-end:1px solid var(--border);margin-block-end:8px}
+.sidenav .persona .name{font-weight:600}
+.sidenav .persona .role{font-size:11px;color:var(--text-2)}
+
+main{grid-column:2;grid-row:2;padding:20px 24px 80px;min-inline-size:0}
+.breadcrumb{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--text-2);margin-block-end:10px}
+.breadcrumb a{color:var(--text-2);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-block-end:18px}
+.page-head p{color:var(--text-2);margin:4px 0 0}
+
+/* ───────────────────────── Components ───────────────────────── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-1);padding:16px}
+.card h3{margin-block-end:10px}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-block-end:12px}
+.card-head h3{margin:0}
+.grid{display:grid;gap:16px}
+.grid.kpis{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.kpi{padding:14px 16px 14px 20px;position:relative;overflow:hidden}
+.kpi .label{font-size:12px;color:var(--text-2);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.kpi .value{font-size:28px;font-weight:700;margin-block:4px;line-height:1.1}
+.kpi .value small{font-size:13px;font-weight:500;color:var(--text-2)}
+.kpi .hint{font-size:12px;color:var(--text-3)}
+.kpi::after{content:"";position:absolute;inset-inline-start:0;inset-block:0;inline-size:4px;background:var(--kpi-color,var(--accent))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 14px;border-radius:var(--radius);border:1px solid var(--border-strong);background:var(--surface);color:var(--text);cursor:pointer;font-weight:600;font-size:13px;min-block-size:32px;text-decoration:none;white-space:nowrap}
+.btn:hover{background:var(--surface-3)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.subtle{border-color:transparent;background:transparent}
+.btn.subtle:hover{background:var(--surface-3)}
+.btn.sm{padding:4px 10px;min-block-size:26px;font-size:12px}
+.btn svg{inline-size:16px;block-size:16px;fill:currentColor}
+.btn.success{background:var(--success);border-color:var(--success);color:#fff}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600;line-height:18px;white-space:nowrap}
+.chip::before{content:"";inline-size:7px;block-size:7px;border-radius:50%;background:currentColor}
+.chip.draft{background:var(--surface-3);color:var(--text-2)}
+.chip.pending{background:var(--warning-soft);color:var(--warning-text)}
+.chip.amended{background:var(--info-soft);color:var(--accent)}
+.chip.approved{background:var(--success-soft);color:var(--success)}
+.chip.rejected{background:var(--danger-soft);color:var(--danger)}
+.chip.cancelled{background:var(--surface-3);color:var(--text-3)}
+.type-dot{display:inline-block;inline-size:10px;block-size:10px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.tag{display:inline-block;padding:1px 8px;border-radius:4px;background:var(--surface-3);font-size:11px;font-weight:600;color:var(--text-2)}
+.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:var(--radius);max-block-size:70vh;background:var(--surface)}
+table{inline-size:100%;border-collapse:separate;border-spacing:0;font-size:13px}
+thead th{position:sticky;top:0;z-index:2;background:var(--surface-2);text-align:start;padding:10px 12px;font-weight:600;border-block-end:1px solid var(--border);white-space:nowrap}
+thead th button{all:unset;cursor:pointer;display:inline-flex;gap:4px;align-items:center;font-weight:600}
+thead th button:hover{color:var(--accent)}
+tbody td{padding:9px 12px;border-block-end:1px solid var(--border);vertical-align:middle}
+tbody tr:hover td{background:var(--surface-2)}
+tbody tr.highlight td{background:var(--accent-soft)}
+tbody tr:last-child td{border-block-end:0}
+td input[type=number]{inline-size:70px;padding:4px 6px;border:1px solid var(--border-strong);border-radius:4px;background:var(--surface)}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:12px;font-weight:600;color:var(--text-2)}
+.field input,.field select,.field textarea{padding:7px 10px;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--surface);min-block-size:32px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 1px var(--accent)}
+.field textarea{min-block-size:80px;resize:vertical}
+.field .help{font-size:11px;color:var(--text-3)}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-block-end:12px}
+.filters .field{min-inline-size:140px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-block-end:12px}
+.progress{block-size:8px;border-radius:4px;background:var(--surface-3);overflow:hidden;min-inline-size:80px}
+.progress span{display:block;block-size:100%;background:var(--accent);border-radius:4px}
+.progress span.warn{background:var(--warning)}
+.progress span.bad{background:var(--danger)}
+.alert{display:flex;gap:10px;padding:10px 12px;border-radius:var(--radius);border:1px solid;font-size:13px;align-items:flex-start}
+.alert svg{inline-size:18px;block-size:18px;flex:none;fill:currentColor;margin-block-start:1px}
+.alert.error{background:var(--danger-soft);border-color:var(--danger);color:var(--text)}
+.alert.error svg{fill:var(--danger)}
+.alert.warn{background:var(--warning-soft);border-color:var(--warning);color:var(--text)}
+.alert.warn svg{fill:var(--warning-text)}
+.alert.ok{background:var(--success-soft);border-color:var(--success)}
+.alert.ok svg{fill:var(--success)}
+.alert.info{background:var(--info-soft);border-color:var(--accent)}
+.alert.info svg{fill:var(--accent)}
+.empty{text-align:center;padding:32px 16px;color:var(--text-2)}
+.empty svg{inline-size:56px;block-size:56px;fill:var(--text-3);margin-block-end:8px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:flex;gap:12px;align-items:center;padding:10px 0;border-block-end:1px solid var(--border)}
+.list li:last-child{border-block-end:0}
+.list .when{min-inline-size:90px;font-size:12px;color:var(--text-2)}
+.date-block{inline-size:44px;block-size:44px;border-radius:8px;background:var(--surface-3);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;flex:none}
+.date-block b{font-size:16px}
+.date-block span{font-size:10px;text-transform:uppercase;color:var(--text-2)}
+.feed li{align-items:flex-start}
+.feed .avatar{margin-block-start:2px}
+.feed time{font-size:11px;color:var(--text-3);display:block}
+.kbd{display:inline-block;padding:0 6px;border:1px solid var(--border-strong);border-block-end-width:2px;border-radius:4px;font-family:inherit;font-size:11px;background:var(--surface-2)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--text-2)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.tabs{display:flex;gap:2px;border-block-end:1px solid var(--border);margin-block-end:16px;overflow:auto}
+.tabs button{padding:8px 14px;border:0;border-block-end:2px solid transparent;background:none;cursor:pointer;font-weight:600;color:var(--text-2);white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--accent);border-color:var(--accent)}
+.switch{position:relative;inline-size:40px;block-size:20px;border-radius:10px;background:var(--border-strong);border:0;cursor:pointer;flex:none;padding:0}
+.switch::after{content:"";position:absolute;inset-block-start:2px;inset-inline-start:2px;inline-size:16px;block-size:16px;border-radius:50%;background:#fff;transition:transform .15s}
+.switch[aria-checked="true"]{background:var(--accent)}
+.switch[aria-checked="true"]::after{transform:translateX(20px)}
+.rule-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-block-end:1px solid var(--border)}
+.rule-row:last-child{border-block-end:0}
+.rule-row .desc{font-size:12px;color:var(--text-2)}
+.color-swatch{inline-size:22px;block-size:22px;border-radius:6px;border:1px solid var(--border);display:inline-block;vertical-align:middle}
+
+/* Wizard */
+.steps{display:flex;gap:0;margin:0 0 20px;padding:0;counter-reset:s}
+.steps li{flex:1;list-style:none;display:flex;align-items:center;gap:8px;padding:8px 10px;border-block-end:3px solid var(--border);color:var(--text-2);font-size:13px;font-weight:600}
+.steps li::before{counter-increment:s;content:counter(s);inline-size:24px;block-size:24px;border-radius:50%;display:grid;place-items:center;background:var(--surface-3);font-size:12px;flex:none}
+.steps li.active{color:var(--accent);border-color:var(--accent)}
+.steps li.active::before{background:var(--accent);color:#fff}
+.steps li.done{color:var(--success);border-color:var(--success)}
+.steps li.done::before{content:"✓";background:var(--success);color:#fff}
+.type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.type-card{text-align:start;padding:12px;border:2px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.type-card:hover{border-color:var(--border-strong)}
+.type-card[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.type-card .name{font-weight:600;display:flex;align-items:center;gap:8px}
+.type-card .name i{inline-size:12px;block-size:12px;border-radius:50%;display:inline-block}
+.type-card .desc{font-size:12px;color:var(--text-2)}
+.seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden}
+.seg button{border:0;background:var(--surface);padding:5px 10px;cursor:pointer;font-size:12px;font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.summary{display:grid;grid-template-columns:140px 1fr;gap:6px 12px;font-size:13px;margin:0}
+.summary dt{color:var(--text-2)}
+.summary dd{margin:0;font-weight:500}
+.wizard-foot{display:flex;justify-content:space-between;gap:8px;margin-block-start:20px;padding-block-start:16px;border-block-start:1px solid var(--border);flex-wrap:wrap}
+.calc-days{font-size:32px;font-weight:700;color:var(--accent)}
+.att{display:flex;gap:8px;align-items:center;padding:6px 10px;border:1px dashed var(--border-strong);border-radius:var(--radius);font-size:12px}
+.mini-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;font-size:11px;text-align:center}
+.mini-cal div{padding:4px 0;border-radius:4px}
+.mini-cal .h{color:var(--text-3);font-weight:600}
+.mini-cal .we{color:var(--text-3)}
+.mini-cal .bh{background:var(--danger-soft);color:var(--danger)}
+.mini-cal .sel{background:var(--accent);color:#fff}
+.mini-cal .half{background:linear-gradient(135deg,var(--accent) 50%,var(--surface-3) 50%);color:var(--text)}
+
+/* Calendar */
+.cal-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-block-end:12px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--border);gap:1px}
+.cal-grid .dow{background:var(--surface-2);padding:6px;text-align:center;font-size:12px;font-weight:600;color:var(--text-2)}
+.cal-cell{background:var(--surface);min-block-size:104px;padding:6px 4px 4px;display:flex;flex-direction:column;gap:2px;position:relative}
+.cal-cell.other{background:var(--surface-2);color:var(--text-3)}
+.cal-cell.weekend{background:var(--surface-2)}
+.cal-cell.today .dnum{background:var(--accent);color:#fff}
+.cal-cell .dnum{inline-size:24px;block-size:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:600;align-self:flex-start}
+.cal-cell .heat{position:absolute;inset-block-start:0;inset-inline:0;block-size:3px}
+.cal-cell.bh{background:var(--danger-soft)}
+.cal-cell.blackout::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(209,52,56,.10) 8px 12px)}
+.cal-cell .bh-label,.cal-cell .bo-label{font-size:10px;color:var(--danger);font-weight:600;line-height:1.2}
+.lv-chip{display:flex;align-items:center;gap:4px;font-size:11px;padding:1px 6px;border-radius:4px;color:#fff;border:0;cursor:pointer;text-align:start;inline-size:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:500;line-height:16px}
+.lv-chip.pending,.lv-chip.amended{opacity:.75;outline:1px dashed rgba(255,255,255,.9);outline-offset:-2px}
+.lv-chip:hover{filter:brightness(1.1)}
+.cal-cell .more{font-size:10px;color:var(--text-2);margin-block-start:auto}
+.week-grid{display:grid;grid-template-columns:180px repeat(7,1fr);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--border);gap:1px}
+.week-grid>div{background:var(--surface);padding:6px 8px;min-block-size:38px;font-size:12px;display:flex;align-items:center;gap:6px}
+.week-grid .hd{background:var(--surface-2);font-weight:600;color:var(--text-2);flex-direction:column;align-items:center;gap:0;justify-content:center}
+.week-grid .hd.today{color:var(--accent)}
+.week-grid .name{font-weight:500;background:var(--surface-2)}
+.week-grid .we{background:var(--surface-2)}
+.week-grid .bhc{background:var(--danger-soft)}
+.week-grid .lv{inline-size:100%;block-size:100%;min-block-size:26px;border-radius:4px;color:#fff;font-size:11px;padding:3px 6px;border:0;cursor:pointer;text-align:start}
+.week-grid .lv.pending,.week-grid .lv.amended{opacity:.75;outline:1px dashed rgba(255,255,255,.9);outline-offset:-2px}
+.cap-row{display:grid;grid-template-columns:180px repeat(7,1fr);gap:1px;margin-block-start:8px}
+.cap{text-align:center;font-size:11px;padding:4px;border-radius:4px;font-weight:600}
+
+/* Approvals */
+.appr{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:14px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);margin-block-end:10px}
+.appr .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--text-2);margin-block-start:6px}
+.appr .acts{display:flex;flex-direction:column;gap:6px;align-items:stretch;min-inline-size:150px}
+.appr.selected{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.appr input[type=checkbox]{inline-size:18px;block-size:18px;margin-block-start:10px}
+.sla{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:1px 8px;border-radius:10px}
+.sla.ok{background:var(--success-soft);color:var(--success)}
+.sla.warn{background:var(--warning-soft);color:var(--warning-text)}
+.sla.bad{background:var(--danger-soft);color:var(--danger)}
+.conflict{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--danger);font-weight:600}
+
+/* Charts */
+.chart{inline-size:100%;block-size:auto;font-family:var(--font);display:block}
+.chart text{fill:var(--text-2);font-size:11px}
+.chart .grid-line{stroke:var(--border);stroke-width:1}
+.chart .bar{fill:var(--accent)}
+.chart .bar:hover{fill:var(--accent-hover)}
+.chart .axis{stroke:var(--border-strong)}
+.chart .line{fill:none;stroke:var(--danger);stroke-width:2}
+.chart .dotp{fill:var(--danger)}
+.donut-wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.donut-legend{display:flex;flex-direction:column;gap:6px;font-size:12px;flex:1;min-inline-size:140px}
+.donut-legend span{display:flex;align-items:center;gap:8px}
+.donut-legend b{margin-inline-start:auto}
+
+/* Drawer / Modal / Toast */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:80;display:flex;align-items:center;justify-content:center;padding:16px}
+.drawer{position:fixed;inset-block:0;inset-inline-end:0;inline-size:480px;max-inline-size:100vw;background:var(--surface);box-shadow:var(--shadow-3);z-index:90;display:flex;flex-direction:column;animation:slide .18s ease-out}
+@keyframes slide{from{transform:translateX(20px);opacity:0}to{transform:none;opacity:1}}
+.drawer header{display:flex;align-items:center;gap:8px;padding:14px 16px;border-block-end:1px solid var(--border)}
+.drawer header h2{flex:1}
+.drawer .body{padding:16px;overflow:auto;flex:1}
+.drawer footer{padding:12px 16px;border-block-start:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap}
+.modal{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-3);inline-size:520px;max-inline-size:100%;max-block-size:90vh;display:flex;flex-direction:column;animation:pop .15s ease-out}
+.modal.wide{inline-size:820px}
+@keyframes pop{from{transform:scale(.97);opacity:0}to{transform:none;opacity:1}}
+.modal header{padding:16px 20px 8px;font-size:18px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.modal .body{padding:8px 20px 16px;overflow:auto}
+.modal footer{padding:12px 20px 16px;display:flex;justify-content:flex-end;gap:8px}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;inset-inline-start:9px;inset-block:6px;inline-size:2px;background:var(--border)}
+.timeline li{position:relative;padding-inline-start:30px;padding-block:6px}
+.timeline li::before{content:"";position:absolute;inset-inline-start:4px;inset-block-start:11px;inline-size:12px;block-size:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.timeline li.approved::before{border-color:var(--success);background:var(--success)}
+.timeline li.rejected::before,.timeline li.cancelled::before{border-color:var(--danger);background:var(--danger)}
+.timeline time{display:block;font-size:11px;color:var(--text-3)}
+.toasts{position:fixed;inset-block-end:16px;inset-inline-end:16px;display:flex;flex-direction:column;gap:8px;z-index:120;max-inline-size:360px}
+.toast{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);border-inline-start:4px solid var(--accent);box-shadow:var(--shadow-2);animation:pop .15s ease-out}
+.toast.success{border-inline-start-color:var(--success)}
+.toast.error{border-inline-start-color:var(--danger)}
+.toast.warn{border-inline-start-color:var(--warning)}
+.toast .close{margin-inline-start:auto;border:0;background:none;cursor:pointer;color:var(--text-2);font-size:16px;line-height:1}
+
+/* Skeleton */
+.skeleton{background:linear-gradient(90deg,var(--skeleton-a) 25%,var(--skeleton-b) 50%,var(--skeleton-a) 75%);background-size:200% 100%;animation:shimmer 1.2s infinite;border-radius:6px}
+@keyframes shimmer{to{background-position:-200% 0}}
+
+/* Responsive */
+@media (max-width: 900px){
+  .app{grid-template-columns:1fr}
+  nav.sidenav{position:fixed;inset-block:var(--top-h) 0;inset-inline-start:0;inline-size:var(--nav-w);transform:translateX(-100%);transition:transform .2s;z-index:50}
+  nav.sidenav.open{transform:none;box-shadow:var(--shadow-3)}
+  main{grid-column:1;padding:14px 12px 80px}
+  .hamburger{display:grid}
+  .brand{inline-size:auto}
+  .brand .sub{display:none}
+  .search{flex:1 1 120px}
+  .role-switch button{padding:6px 7px;font-size:12px}
+  .user-chip .name,.user-chip .title{display:none}
+  .drawer{inline-size:100vw}
+  .cal-cell{min-block-size:64px}
+  .appr{grid-template-columns:auto 1fr}
+  .appr .acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}
+  .week-grid,.cap-row{grid-template-columns:90px repeat(7,1fr)}
+  .summary{grid-template-columns:1fr}
+  .steps li span{display:none}
+}
+@media (max-width:600px){
+  .role-switch{display:none}
+  .search{display:none}
+}
+@media print{
+  .topbar,nav.sidenav,.toasts,.no-print,.breadcrumb{display:none !important}
+  .app{display:block}
+  main{padding:0}
+  .card{box-shadow:none;break-inside:avoid}
+  body{background:#fff;color:#000}
+  .table-wrap{max-block-size:none;overflow:visible}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#view">Skip to main content</a>
+<div class="app" id="app">
+  <header class="topbar" role="banner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidenav">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </button>
+    <div class="brand"><span class="logo" aria-hidden="true">AL</span><span>Leave Manager<span class="sub">Contoso UK · Sample data</span></span></div>
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+      <input id="globalSearch" type="search" placeholder="Search requests, people, policies…  ( / )" aria-label="Global search" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+      <div id="searchResults" class="search-results hidden" role="listbox" aria-label="Search results"></div>
+    </div>
+    <div class="actions">
+      <div class="role-switch" role="group" aria-label="Act as role" id="roleSwitch">
+        <button type="button" data-role="employee" aria-pressed="true">Employee</button>
+        <button type="button" data-role="manager" aria-pressed="false">Manager</button>
+        <button type="button" data-role="hr" aria-pressed="false">HR Admin</button>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme (T)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.3A5.5 5.5 0 0 1 13.3 3.1C12.9 3 12.5 3 12 3z"/></svg>
+      </button>
+      <button class="icon-btn" id="aboutBtn" aria-label="About and design notes" title="About / design notes (?)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 17h2v-6h-2v6zm1-15a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 9h2V7h-2v2z"/></svg>
+      </button>
+      <button class="icon-btn" id="notifBtn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 0 0-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        <span class="badge-dot hidden" id="notifBadge"></span>
+      </button>
+      <button class="user-chip" id="userChip" aria-label="Signed-in user">
+        <span class="avatar" id="userAvatar">RB</span>
+        <span><span class="name" id="userName">Ryan Bowen</span><br><span class="title" id="userTitle">Cloud Solution Architect</span></span>
+      </button>
+    </div>
+    <div id="notifPopover" class="popover hidden" role="dialog" aria-label="Notifications"></div>
+  </header>
+
+  <nav class="sidenav" id="sidenav" aria-label="Primary"></nav>
+
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="breadcrumb"></nav>
+    <div id="view" tabindex="-1" aria-live="polite"></div>
+  </main>
+</div>
+
+<div id="layer"></div>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<script>
+/* =====================================================================
+   Annual Leave Manager — single-file demo application
+   ---------------------------------------------------------------------
+   Architecture
+     • DATA      : seed sample data (employees, teams, leave types, requests …)
+     • STORE     : in-memory state + mutation helpers (no persistence by design)
+     • DOMAIN    : working-day maths, balances, validation rules, coverage
+     • ROUTER    : hash-based router → view render functions
+     • VIEWS     : each page renders an HTML string, then binds via delegation
+     • UI KIT    : toasts, modals, drawer, popovers, keyboard shortcuts
+   All sample data is fictional. Leave is measured in DAYS (UK, Eng & Wales
+   bank holidays 2026, leave year 1 Jan – 31 Dec).
+   ===================================================================== */
+'use strict';
+
+/* ───────────────────────────── DATA ─────────────────────────────── */
+const SEED = {
+  teams: [
+    { id: 't1', name: 'Cloud Solutions',  leadId: 'e02', colour: '#0078D4' },
+    { id: 't2', name: 'Data & AI',        leadId: 'e06', colour: '#8764B8' },
+    { id: 't3', name: 'Customer Success', leadId: 'e10', colour: '#038387' },
+  ],
+  employees: [
+    { id: 'e01', name: 'Ryan Bowen',      title: 'Cloud Solution Architect',   teamId: 't1', managerId: 'e02', entitlement: 25, carryOver: 3, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2019-03-04', toil: 1.5, email: 'ryan.bowen@contoso.co.uk', colour: '#0078D4' },
+    { id: 'e02', name: 'Sarah Bergg',     title: 'Head of Cloud Solutions',    teamId: 't1', managerId: null,  entitlement: 28, carryOver: 2, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2015-09-14', toil: 0,   email: 'sarah.bergg@contoso.co.uk', colour: '#005A9E' },
+    { id: 'e03', name: 'Priya Nair',      title: 'Senior Cloud Solution Architect', teamId: 't1', managerId: 'e02', entitlement: 27, carryOver: 2, fte: 1, workingDays: [1,2,3,4,5], startDate: '2017-06-19', toil: 0.5, email: 'priya.nair@contoso.co.uk', colour: '#C239B3' },
+    { id: 'e04', name: 'Tom Whitfield',   title: 'Cloud Solution Architect',   teamId: 't1', managerId: 'e02', entitlement: 25, carryOver: 5, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2021-01-11', toil: 0,   email: 'tom.whitfield@contoso.co.uk', colour: '#CA5010' },
+    { id: 'e05', name: 'Amara Okafor',    title: 'Technical Specialist (0.8 FTE)', teamId: 't1', managerId: 'e02', entitlement: 20, carryOver: 0, fte: 0.8, workingDays: [1,2,3,4], startDate: '2022-10-03', toil: 0, email: 'amara.okafor@contoso.co.uk', colour: '#00B294' },
+    { id: 'e06', name: 'James Holloway',  title: 'Head of Data & AI',          teamId: 't2', managerId: null,  entitlement: 28, carryOver: 0, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2016-02-01', toil: 0,   email: 'james.holloway@contoso.co.uk', colour: '#8764B8' },
+    { id: 'e07', name: 'Chloe Martin',    title: 'Data Scientist',             teamId: 't2', managerId: 'e06', entitlement: 25, carryOver: 1, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2020-08-17', toil: 0,   email: 'chloe.martin@contoso.co.uk', colour: '#E3008C' },
+    { id: 'e08', name: 'Dev Patel',       title: 'AI Engineer',                teamId: 't2', managerId: 'e06', entitlement: 25, carryOver: 0, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2023-04-03', toil: 1,   email: 'dev.patel@contoso.co.uk', colour: '#4F6BED' },
+    { id: 'e09', name: 'Hannah Reid',     title: 'Data Engineer',              teamId: 't2', managerId: 'e06', entitlement: 25, carryOver: 1, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2019-11-25', toil: 0,   email: 'hannah.reid@contoso.co.uk', colour: '#498205' },
+    { id: 'e10', name: 'Olivia Grant',    title: 'Head of Customer Success',   teamId: 't3', managerId: null,  entitlement: 28, carryOver: 3, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2014-05-06', toil: 0,   email: 'olivia.grant@contoso.co.uk', colour: '#038387' },
+    { id: 'e11', name: 'Marcus Lee',      title: 'Customer Success Manager',   teamId: 't3', managerId: 'e10', entitlement: 25, carryOver: 0, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2018-07-02', toil: 0,   email: 'marcus.lee@contoso.co.uk', colour: '#DA3B01' },
+    { id: 'e12', name: 'Grace Chen',      title: 'HR Business Partner',        teamId: 't3', managerId: 'e10', entitlement: 25, carryOver: 2, fte: 1,   workingDays: [1,2,3,4,5], startDate: '2016-09-12', toil: 0,   email: 'grace.chen@contoso.co.uk', colour: '#69797E', isHR: true },
+  ],
+  leaveTypes: [
+    { id: 'annual',        name: 'Annual leave',        colour: '#0078D4', paid: true,  requiresEvidence: false, deducts: true,  active: true, desc: 'Planned holiday from your annual entitlement.' },
+    { id: 'sick',          name: 'Sickness absence',    colour: '#D13438', paid: true,  requiresEvidence: true,  deducts: false, active: true, desc: 'Self-certify up to 7 days; fit note thereafter.' },
+    { id: 'compassionate', name: 'Compassionate leave', colour: '#8764B8', paid: true,  requiresEvidence: false, deducts: false, active: true, desc: 'Bereavement or family emergency, up to 5 days.' },
+    { id: 'parental',      name: 'Parental leave',      colour: '#00B294', paid: true,  requiresEvidence: true,  deducts: false, active: true, desc: 'Maternity, paternity, adoption or shared parental.' },
+    { id: 'unpaid',        name: 'Unpaid leave',        colour: '#605E5C', paid: false, requiresEvidence: false, deducts: false, active: true, desc: 'Unpaid time off, subject to approval.' },
+    { id: 'study',         name: 'Study / exam leave',  colour: '#C19C00', paid: true,  requiresEvidence: true,  deducts: false, active: true, desc: 'Certification exams and approved study days.' },
+    { id: 'toil',          name: 'TOIL',                colour: '#038387', paid: true,  requiresEvidence: false, deducts: false, active: true, desc: 'Time off in lieu of pre-agreed overtime.' },
+  ],
+  bankHolidays: [
+    { date: '2026-01-01', name: "New Year's Day" },
+    { date: '2026-04-03', name: 'Good Friday' },
+    { date: '2026-04-06', name: 'Easter Monday' },
+    { date: '2026-05-04', name: 'Early May bank holiday' },
+    { date: '2026-05-25', name: 'Spring bank holiday' },
+    { date: '2026-08-31', name: 'Summer bank holiday' },
+    { date: '2026-12-25', name: 'Christmas Day' },
+    { date: '2026-12-28', name: 'Boxing Day (substitute)' },
+  ],
+  blackouts: [
+    { id: 'b1', name: 'Year-end close',        start: '2026-12-14', end: '2026-12-18', teamId: null, hard: false, note: 'Finance & delivery close-down. Leave discouraged.' },
+    { id: 'b2', name: 'FY27 Q1 platform launch', start: '2026-07-06', end: '2026-07-10', teamId: 't1', hard: true,  note: 'No leave for Cloud Solutions during launch week.' },
+    { id: 'b3', name: 'Ignite readiness week', start: '2026-11-16', end: '2026-11-20', teamId: 't2', hard: false, note: 'Data & AI demo builds — leave requires HR sign-off.' },
+  ],
+  policy: {
+    baseEntitlement: 25, carryOverMax: 5, carryOverExpiry: '2026-10-31',
+    noticeMultiplier: 2, minNoticeDays: 5, maxConsecutiveDays: 15, teamCoverageWarnPct: 30,
+    hrApprovalThresholdDays: 10, escalationDays: 5, allowNegativeBalance: false, sickSelfCertDays: 7,
+    enforceNotice: true, enforceBlackouts: true, enforceCoverage: true, halfDaysEnabled: true, hrSecondStep: true,
+  },
+  /* [id, employeeId, typeId, start, end, status, notes, startHalf, endHalf, extra] */
+  requests: [
+    ['R-1001','e01','annual','2026-01-12','2026-01-16','approved','Skiing in Val Thorens'],
+    ['R-1002','e01','sick','2026-02-11','2026-02-11','approved','Migraine — self-certified'],
+    ['R-1003','e01','annual','2026-03-02','2026-03-03','cancelled','Plans changed'],
+    ['R-1004','e01','annual','2026-04-07','2026-04-10','approved','Easter break'],
+    ['R-1005','e01','annual','2026-06-22','2026-06-26','approved','Cornwall with family'],
+    ['R-1006','e01','annual','2026-08-24','2026-08-28','approved','Summer holiday'],
+    ['R-1007','e01','toil','2026-09-04','2026-09-04','approved','TOIL from Ignite prep weekend','PM',''],
+    ['R-1008','e01','annual','2026-11-12','2026-11-13','pending','Long weekend away','','', { coverId: 'e03' }],
+    ['R-1009','e01','annual','2026-12-14','2026-12-18','rejected','Pre-Christmas break','','', { reason: 'Falls within the Year-end close blackout period.' }],
+    ['R-1010','e01','annual','2026-12-21','2026-12-23','approved','Christmas','','', { coverId: 'e04' }],
+    ['R-1011','e01','annual','2026-10-15','2026-10-15','draft','Dentist / admin day'],
+    ['R-1012','e01','study','2026-05-19','2026-05-19','approved','AZ-305 exam'],
+    ['R-1013','e03','annual','2026-02-16','2026-02-20','approved','Half-term'],
+    ['R-1014','e03','annual','2026-10-05','2026-10-09','pending','Diwali trip to Kerala','','', { coverId: 'e01' }],
+    ['R-1015','e03','sick','2026-07-13','2026-07-14','approved','Flu'],
+    ['R-1016','e04','annual','2026-05-26','2026-05-29','approved','Lake District'],
+    ['R-1017','e04','annual','2026-10-26','2026-10-30','pending','Half-term with kids','','', { coverId: 'e05' }],
+    ['R-1018','e04','annual','2026-12-14','2026-12-16','pending','Christmas shopping!'],
+    ['R-1019','e05','annual','2026-03-16','2026-03-19','approved','Lagos family visit'],
+    ['R-1020','e05','annual','2026-11-12','2026-11-13','pending','Wedding'],
+    ['R-1021','e05','compassionate','2026-06-08','2026-06-10','approved','Family bereavement'],
+    ['R-1022','e02','annual','2026-07-20','2026-07-31','approved','Italy'],
+    ['R-1023','e02','annual','2026-10-19','2026-10-23','pending','October half-term'],
+    ['R-1024','e06','annual','2026-08-03','2026-08-14','approved','Portugal'],
+    ['R-1025','e07','annual','2026-04-13','2026-04-17','approved','Easter hols'],
+    ['R-1026','e07','annual','2026-09-28','2026-10-02','pending','Walking in Snowdonia'],
+    ['R-1027','e08','parental','2026-10-12','2026-10-27','pending','Paternity leave (2 weeks)','','', { step2: true }],
+    ['R-1028','e08','annual','2026-02-23','2026-02-27','approved','Ski trip'],
+    ['R-1029','e09','sick','2026-03-09','2026-03-13','approved','Chest infection — fit note attached'],
+    ['R-1030','e09','annual','2026-06-01','2026-06-05','approved','Glastonbury prep'],
+    ['R-1031','e09','annual','2026-09-21','2026-09-25','approved','Autumn break'],
+    ['R-1032','e10','annual','2026-05-05','2026-05-08','approved','Long weekend'],
+    ['R-1033','e11','annual','2026-01-19','2026-01-23','approved','Winter sun'],
+    ['R-1034','e11','annual','2026-09-22','2026-09-23','approved','Moving house'],
+    ['R-1035','e11','unpaid','2026-11-02','2026-11-06','pending','Extended travel'],
+    ['R-1036','e12','annual','2026-08-17','2026-08-21','approved','Edinburgh Fringe'],
+    ['R-1037','e12','study','2026-10-06','2026-10-06','approved','CIPD module exam'],
+    ['R-1038','e03','annual','2026-12-28','2026-12-31','approved','Twixmas'],
+    ['R-1039','e04','sick','2026-09-15','2026-09-16','approved','Stomach bug'],
+    ['R-1040','e05','annual','2026-09-24','2026-09-25','approved','Long weekend'],
+    ['R-1041','e07','annual','2026-07-06','2026-07-10','rejected','Festival','','', { reason: 'Team capacity — two colleagues already off that week.' }],
+    ['R-1042','e09','annual','2026-11-16','2026-11-20','amended','Family visit (dates amended)'],
+    ['R-1043','e11','annual','2026-04-20','2026-04-24','cancelled','Cancelled — client escalation'],
+    ['R-1044','e08','sick','2026-09-18','2026-09-18','approved','Cold'],
+  ],
+  notifications: {
+    e01: [
+      { id: 'n1', at: '2026-09-19T09:12:00', text: 'Sarah Bergg approved your request R-1010 (21–23 Dec).', read: false, route: 'my-leave', requestId: 'R-1010' },
+      { id: 'n2', at: '2026-09-18T08:00:00', text: 'Reminder: carry-over days expire on 31 Oct 2026. Check your balance.', read: false, route: 'dashboard' },
+      { id: 'n3', at: '2026-09-16T14:30:00', text: 'Priya Nair has requested leave 5–9 Oct — you are named as cover.', read: false, route: 'team-calendar' },
+      { id: 'n4', at: '2026-09-10T11:00:00', text: 'Your request R-1009 (14–18 Dec) was rejected: blackout period.', read: true, route: 'my-leave', requestId: 'R-1009' },
+    ],
+    e02: [
+      { id: 'n5', at: '2026-09-20T17:45:00', text: 'Tom Whitfield submitted R-1018 (14–16 Dec) — falls in a blackout period.', read: false, route: 'approvals' },
+      { id: 'n6', at: '2026-09-19T10:05:00', text: 'Amara Okafor submitted R-1020 (12–13 Nov). Coverage conflict with Ryan Bowen.', read: false, route: 'approvals' },
+      { id: 'n7', at: '2026-09-15T09:30:00', text: 'Priya Nair submitted R-1014 (5–9 Oct).', read: false, route: 'approvals' },
+      { id: 'n8', at: '2026-09-12T16:10:00', text: 'SLA: R-1014 has been waiting more than 5 days.', read: true, route: 'approvals' },
+    ],
+    e12: [
+      { id: 'n9', at: '2026-09-20T09:00:00', text: 'R-1027 (Dev Patel, parental, 12 days) needs HR second-step approval.', read: false, route: 'approvals' },
+      { id: 'n10', at: '2026-09-17T12:00:00', text: 'Sarah Bergg submitted R-1023 — no line manager, routed to HR.', read: false, route: 'approvals' },
+      { id: 'n11', at: '2026-09-01T08:00:00', text: 'Q3 absence report is ready for review.', read: true, route: 'reports' },
+    ],
+  },
+};
+
+/* ───────────────────────────── HELPERS ──────────────────────────── */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+const parseISO = iso => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d); };
+const toISO = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const addDays = (iso, n) => { const d = parseISO(iso); d.setDate(d.getDate() + n); return toISO(d); };
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTHS_S = MONTHS.map(m => m.slice(0, 3));
+const DOW_S = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const fmtDate = iso => { if (!iso) return '—'; const d = parseISO(iso); return `${d.getDate()} ${MONTHS_S[d.getMonth()]} ${d.getFullYear()}`; };
+const fmtDateShort = iso => { const d = parseISO(iso); return `${DOW_S[(d.getDay() + 6) % 7]} ${d.getDate()} ${MONTHS_S[d.getMonth()]}`; };
+const fmtRange = (a, b) => a === b ? fmtDate(a) : `${fmtDate(a)} – ${fmtDate(b)}`;
+const fmtDT = iso => { const d = new Date(iso); return `${d.getDate()} ${MONTHS_S[d.getMonth()]} ${d.getFullYear()}, ${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+const fmtDays = n => `${Number.isInteger(n) ? n : n.toFixed(1)} day${n === 1 ? '' : 's'}`;
+const initials = name => name.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase();
+const daysBetween = (a, b) => Math.round((parseISO(b) - parseISO(a)) / 86400000);
+const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
+const uid = (() => { let i = 1100; return (p = 'R-') => `${p}${++i}`; })();
+const nowISO = () => new Date().toISOString();
+
+/* "Today" — anchored to the real clock while it is 2026 (the sample data year);
+   otherwise pinned so the demo stays coherent. */
+const TODAY = (() => { const d = new Date(); return d.getFullYear() === 2026 ? toISO(d) : '2026-09-21'; })();
+const YEAR = 2026;
+
+/* Safe storage wrapper — the preview may run in an opaque origin where any
+   storage access throws. We only use it for the theme preference and always
+   fall back to memory. */
+const safeStore = {
+  get(k) { try { return window.localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { window.localStorage.setItem(k, v); } catch { /* memory only */ } },
+};
+
+/* ───────────────────────────── STORE ────────────────────────────── */
+const state = {
+  role: 'employee',           // employee | manager | hr
+  currentUserId: 'e01',
+  route: 'dashboard',
+  routeParams: {},
+  theme: 'light',
+  teams: [], employees: [], leaveTypes: [], requests: [], bankHolidays: [], blackouts: [],
+  policy: {}, notifications: {}, delegations: [],
+  ui: {
+    myLeave: { status: 'all', type: 'all', year: String(YEAR), q: '', sort: 'start', dir: 'desc', highlight: null },
+    calendar: { view: 'month', year: YEAR, month: parseISO(TODAY).getMonth(), weekStart: null, team: 'all', person: 'all', type: 'all' },
+    approvals: { selected: new Set(), filter: 'mine', sort: 'waiting' },
+    reports: { team: 'all' },
+    admin: { tab: 'types' },
+    wizard: null,
+    drawerRequestId: null,
+    notifOpen: false,
+    booted: false,
+  },
+};
+
+function personaFor(role) {
+  return role === 'manager' ? 'e02' : role === 'hr' ? 'e12' : 'e01';
+}
+const me = () => empById(state.currentUserId);
+const empById = id => state.employees.find(e => e.id === id);
+const teamById = id => state.teams.find(t => t.id === id);
+const typeById = id => state.leaveTypes.find(t => t.id === id) || { id, name: id, colour: '#888', deducts: false };
+const reqById = id => state.requests.find(r => r.id === id);
+const teamMembers = teamId => state.employees.filter(e => e.teamId === teamId);
+const directReports = mgrId => state.employees.filter(e => e.managerId === mgrId);
+const isHR = emp => !!emp?.isHR;
+
+/* Hydrate the store from SEED and build realistic audit timelines. */
+function seedStore() {
+  const clone = o => JSON.parse(JSON.stringify(o));
+  state.teams = clone(SEED.teams);
+  state.employees = clone(SEED.employees);
+  state.leaveTypes = clone(SEED.leaveTypes);
+  state.bankHolidays = clone(SEED.bankHolidays);
+  state.blackouts = clone(SEED.blackouts);
+  state.policy = clone(SEED.policy);
+  state.notifications = clone(SEED.notifications);
+  state.requests = SEED.requests.map(row => {
+    const [id, employeeId, typeId, start, end, status, notes, startHalf = '', endHalf = '', extra = {}] = row;
+    const emp = empById(employeeId);
+    const days = workingDays(emp, start, end, startHalf, endHalf);
+    const submittedAt = addDays(start, -Math.max(7, Math.round(days * 2) + 3)) + 'T09:15:00';
+    const decidedAt = addDays(start, -Math.max(5, Math.round(days * 2))) + 'T14:20:00';
+    const approverId = emp.managerId || 'e12';
+    const approver = empById(approverId);
+    const timeline = [{ at: submittedAt, by: employeeId, action: 'submitted', note: 'Request submitted' }];
+    const approvals = [{ step: 1, role: emp.managerId ? 'manager' : 'hr', approverId, status: 'pending' }];
+    if (status === 'approved') {
+      approvals[0].status = 'approved'; approvals[0].at = decidedAt;
+      timeline.push({ at: decidedAt, by: approverId, action: 'approved', note: `Approved by ${approver.name}` });
+    } else if (status === 'rejected') {
+      approvals[0].status = 'rejected'; approvals[0].at = decidedAt;
+      timeline.push({ at: decidedAt, by: approverId, action: 'rejected', note: extra.reason || 'Rejected' });
+    } else if (status === 'cancelled') {
+      approvals[0].status = 'approved'; approvals[0].at = decidedAt;
+      timeline.push({ at: decidedAt, by: approverId, action: 'approved', note: `Approved by ${approver.name}` });
+      timeline.push({ at: addDays(start, -2) + 'T10:00:00', by: employeeId, action: 'cancelled', note: notes });
+    } else if (status === 'amended') {
+      timeline.push({ at: addDays(start, -20) + 'T11:00:00', by: employeeId, action: 'amended', note: 'Dates changed after blackout warning' });
+    } else if (status === 'draft') {
+      timeline.length = 0; timeline.push({ at: '2026-09-18T16:40:00', by: employeeId, action: 'draft', note: 'Draft saved' });
+    }
+    if (extra.step2) {
+      approvals[0].status = 'approved'; approvals[0].at = '2026-09-19T15:00:00';
+      approvals.push({ step: 2, role: 'hr', approverId: 'e12', status: 'pending' });
+      timeline.push({ at: '2026-09-19T15:00:00', by: approverId, action: 'approved', note: `Step 1 approved by ${approver.name} — routed to HR (over ${state.policy.hrApprovalThresholdDays} days)` });
+    }
+    // Make the manager queue interesting: a few requests waiting for different lengths of time.
+    if (status === 'pending' && !extra.step2) {
+      const waitMap = { 'R-1014': 9, 'R-1017': 3, 'R-1018': 1, 'R-1020': 2, 'R-1008': 4, 'R-1023': 4, 'R-1026': 6, 'R-1035': 2 };
+      const w = waitMap[id] ?? 3;
+      timeline[0].at = addDays(TODAY, -w) + 'T09:15:00';
+    }
+    return {
+      id, employeeId, typeId, start, end, status, notes: notes || '', startHalf, endHalf, days,
+      coverId: extra.coverId || null, reason: extra.reason || null,
+      attachments: typeById(typeId).requiresEvidence && status === 'approved' ? [{ name: `${typeId}-evidence.pdf`, size: '84 KB' }] : [],
+      createdAt: timeline[0].at, timeline, approvals,
+    };
+  });
+}
+
+/* ───────────────────────────── DOMAIN ───────────────────────────── */
+const bankHolidaySet = () => new Set(state.bankHolidays.map(b => b.date));
+const isWeekend = iso => { const d = parseISO(iso).getDay(); return d === 0 || d === 6; };
+const isWorkingDay = (emp, iso, bh = bankHolidaySet()) => {
+  const dow = parseISO(iso).getDay();
+  if (bh.has(iso)) return false;
+  const wd = emp?.workingDays || [1, 2, 3, 4, 5];
+  return wd.includes(dow);
+};
+function eachDay(start, end, fn) { for (let d = start; d <= end; d = addDays(d, 1)) fn(d); }
+
+/* Working days in a range for an employee, excluding weekends/non-working days
+   and bank holidays, adjusted for half days. */
+function workingDays(emp, start, end, startHalf = '', endHalf = '') {
+  if (!start || !end || end < start) return 0;
+  const bh = bankHolidaySet();
+  let days = 0;
+  eachDay(start, end, d => { if (isWorkingDay(emp, d, bh)) days += 1; });
+  if (days === 0) return 0;
+  if (start === end) { if (startHalf) days -= 0.5; }
+  else { if (startHalf === 'PM' && isWorkingDay(emp, start, bh)) days -= 0.5; if (endHalf === 'AM' && isWorkingDay(emp, end, bh)) days -= 0.5; }
+  return Math.max(0, days);
+}
+/* Working days from TODAY (exclusive) to `start` (exclusive) — notice given. */
+function noticeWorkingDays(emp, start) {
+  if (start <= TODAY) return 0;
+  let n = 0; const bh = bankHolidaySet();
+  eachDay(addDays(TODAY, 1), addDays(start, -1), d => { if (isWorkingDay(emp, d, bh)) n++; });
+  return n;
+}
+const ACTIVE = new Set(['pending', 'amended', 'approved']);
+const PENDING = new Set(['pending', 'amended']);
+const overlaps = (a1, a2, b1, b2) => a1 <= b2 && b1 <= a2;
+
+/* Annual-leave balance for an employee for the leave year. */
+function balanceFor(empId) {
+  const emp = empById(empId);
+  const p = state.policy;
+  const reqs = state.requests.filter(r => r.employeeId === empId && typeById(r.typeId).deducts && r.start.slice(0, 4) === String(YEAR));
+  let taken = 0, booked = 0, pending = 0, takenBeforeExpiry = 0;
+  reqs.forEach(r => {
+    if (r.status === 'approved') {
+      if (r.end < TODAY) taken += r.days; else booked += r.days;
+      if (r.end <= p.carryOverExpiry) takenBeforeExpiry += r.days;
+    } else if (PENDING.has(r.status)) pending += r.days;
+  });
+  const carryOver = Math.min(emp.carryOver || 0, p.carryOverMax);
+  const carryUsed = Math.min(carryOver, takenBeforeExpiry);
+  const carryExpiringUnused = Math.max(0, carryOver - carryUsed);
+  const carryExpired = TODAY > p.carryOverExpiry ? carryExpiringUnused : 0;
+  const total = emp.entitlement + carryOver - carryExpired;
+  const remaining = total - taken - booked;
+  const available = remaining - pending;
+  const daysToExpiry = daysBetween(TODAY, p.carryOverExpiry);
+  return { entitlement: emp.entitlement, carryOver, carryUsed, carryExpiringUnused, carryExpired, daysToExpiry, total, taken, booked, pending, remaining, available, toil: emp.toil || 0 };
+}
+
+/* Team coverage: highest % of the team off on any working day in the range,
+   excluding `excludeEmpId`. Returns { pct, peak, people:[...] } */
+function teamCoverage(teamId, start, end, excludeEmpId = null, includePending = true) {
+  const members = teamMembers(teamId).filter(e => e.id !== excludeEmpId);
+  if (!members.length) return { pct: 0, peakDate: null, people: [] };
+  const statuses = includePending ? ACTIVE : new Set(['approved']);
+  const offReqs = state.requests.filter(r => statuses.has(r.status) && r.employeeId !== excludeEmpId && members.some(m => m.id === r.employeeId) && overlaps(r.start, r.end, start, end));
+  let peak = 0, peakDate = null; const people = new Set();
+  eachDay(start, end, d => {
+    if (isWeekend(d)) return;
+    const off = offReqs.filter(r => r.start <= d && d <= r.end);
+    off.forEach(r => people.add(r.employeeId));
+    if (off.length > peak) { peak = off.length; peakDate = d; }
+  });
+  return { pct: Math.round(100 * peak / (members.length + (excludeEmpId ? 1 : 0))), peak, peakDate, people: [...people].map(empById), teamSize: members.length + (excludeEmpId ? 1 : 0) };
+}
+function blackoutsFor(teamId, start, end) {
+  return state.blackouts.filter(b => (b.teamId === null || b.teamId === teamId) && overlaps(b.start, b.end, start, end));
+}
+
+/* Validate a draft request; returns { errors:[], warnings:[], days } */
+function validateRequest(draft, excludeId = null) {
+  const errors = [], warnings = [];
+  const emp = empById(draft.employeeId);
+  const type = typeById(draft.typeId);
+  const p = state.policy;
+  if (!draft.typeId) errors.push('Choose a leave type.');
+  if (!draft.start || !draft.end) { errors.push('Choose a start and end date.'); return { errors, warnings, days: 0 }; }
+  if (draft.end < draft.start) errors.push('End date must be on or after the start date.');
+  const days = workingDays(emp, draft.start, draft.end, draft.startHalf, draft.endHalf);
+  if (days === 0 && draft.end >= draft.start) errors.push('The selected range contains no working days (weekends / bank holidays / non-working days).');
+  if (draft.start.slice(0, 4) !== String(YEAR) || draft.end.slice(0, 4) !== String(YEAR)) warnings.push(`This request falls outside the ${YEAR} leave year; balances shown are for ${YEAR}.`);
+  // Overlap
+  const clash = state.requests.find(r => r.id !== excludeId && r.employeeId === draft.employeeId && ACTIVE.has(r.status) && overlaps(r.start, r.end, draft.start, draft.end));
+  if (clash) errors.push(`Overlaps your existing ${clash.status} request ${clash.id} (${fmtRange(clash.start, clash.end)}).`);
+  // Balance
+  if (type.deducts) {
+    const bal = balanceFor(draft.employeeId);
+    const avail = bal.available + (excludeId ? (reqById(excludeId)?.days || 0) : 0);
+    if (days > avail) {
+      const msg = `Insufficient balance: ${fmtDays(days)} requested but only ${fmtDays(Math.max(0, avail))} available (after pending requests).`;
+      p.allowNegativeBalance ? warnings.push(msg + ' Negative balance is permitted by policy.') : errors.push(msg);
+    }
+  }
+  // Notice period (annual/unpaid/study/toil only; sick, compassionate, parental exempt)
+  if (p.enforceNotice && ['annual', 'unpaid', 'study', 'toil'].includes(draft.typeId) && draft.start > TODAY) {
+    const required = Math.max(p.minNoticeDays, Math.ceil(days * p.noticeMultiplier));
+    const given = noticeWorkingDays(emp, draft.start);
+    if (given < required) errors.push(`Notice period: ${required} working days' notice required for ${fmtDays(days)} (max of ${p.minNoticeDays} and ${p.noticeMultiplier}× duration); only ${given} given.`);
+  }
+  if (draft.start < TODAY && !['sick', 'compassionate'].includes(draft.typeId)) warnings.push('Start date is in the past — retrospective requests require manager confirmation.');
+  // Max consecutive
+  if (days > p.maxConsecutiveDays && type.id !== 'parental') errors.push(`Exceeds the maximum of ${p.maxConsecutiveDays} consecutive working days (${fmtDays(days)} requested).`);
+  // Blackouts
+  if (p.enforceBlackouts) blackoutsFor(emp.teamId, draft.start, draft.end).forEach(b => {
+    const msg = `Blackout period "${b.name}" (${fmtRange(b.start, b.end)}): ${b.note}`;
+    (b.hard && type.id === 'annual') ? errors.push(msg) : warnings.push(msg);
+  });
+  // Team coverage
+  if (p.enforceCoverage && emp.teamId) {
+    const cov = teamCoverage(emp.teamId, draft.start, draft.end, emp.id);
+    const pctWithMe = Math.round(100 * (cov.peak + 1) / cov.teamSize);
+    if (pctWithMe > p.teamCoverageWarnPct) warnings.push(`Team coverage: ${pctWithMe}% of ${teamById(emp.teamId).name} would be off on ${fmtDateShort(cov.peakDate || draft.start)} (${cov.people.map(x => x.name).join(', ')}). Threshold is ${p.teamCoverageWarnPct}%.`);
+  }
+  // Evidence
+  if (type.requiresEvidence && !(draft.attachments || []).length) {
+    if (type.id === 'sick' && days <= p.sickSelfCertDays) warnings.push(`Self-certification applies (≤ ${p.sickSelfCertDays} days). A fit note is required beyond that.`);
+    else warnings.push(`${type.name} normally requires supporting evidence — attach a document or your manager may request one.`);
+  }
+  return { errors, warnings, days };
+}
+
+/* Who should approve step N of a request? */
+function approverForStep(req, step) {
+  const emp = empById(req.employeeId);
+  if (step === 1) return emp.managerId || 'e12';
+  return 'e12'; // HR
+}
+function effectiveApprover(approverId) {
+  const d = state.delegations.find(x => x.fromId === approverId && x.from <= TODAY && TODAY <= x.to);
+  return d ? d.toId : approverId;
+}
+function currentApproval(req) { return req.approvals.find(a => a.status === 'pending'); }
+function waitingDays(req) { const sub = [...req.timeline].reverse().find(t => t.action === 'submitted' || t.action === 'amended'); return sub ? Math.max(0, daysBetween(sub.at.slice(0, 10), TODAY)) : 0; }
+
+/* Approval queue visible to the current user. */
+function approvalQueue(userId) {
+  const user = empById(userId);
+  return state.requests.filter(r => {
+    if (!PENDING.has(r.status)) return false;
+    const cur = currentApproval(r); if (!cur) return false;
+    if (isHR(user) && state.ui.approvals.filter === 'all') return true;
+    return effectiveApprover(cur.approverId) === userId || (isHR(user) && cur.role === 'hr');
+  });
+}
+
+/* Notifications for current persona */
+function myNotifs() { return (state.notifications[state.currentUserId] ||= []); }
+function notify(userId, text, route = 'my-leave', requestId = null) {
+  (state.notifications[userId] ||= []).unshift({ id: uid('n'), at: nowISO(), text, read: false, route, requestId });
+  if (userId === state.currentUserId) renderTopbar();
+}
+
+/* Mutations ------------------------------------------------------- */
+function addTimeline(req, action, note, by = state.currentUserId) { req.timeline.push({ at: nowISO(), by, action, note }); }
+
+function submitRequest(draft, editingId = null) {
+  const emp = empById(draft.employeeId);
+  const days = workingDays(emp, draft.start, draft.end, draft.startHalf, draft.endHalf);
+  let req;
+  if (editingId) {
+    req = reqById(editingId);
+    Object.assign(req, { typeId: draft.typeId, start: draft.start, end: draft.end, startHalf: draft.startHalf, endHalf: draft.endHalf, notes: draft.notes, coverId: draft.coverId, attachments: draft.attachments, days });
+    req.status = req.status === 'draft' ? 'pending' : 'amended';
+    req.approvals = [{ step: 1, role: emp.managerId ? 'manager' : 'hr', approverId: approverForStep(req, 1), status: 'pending' }];
+    addTimeline(req, req.status === 'amended' ? 'amended' : 'submitted', req.status === 'amended' ? 'Request amended and resubmitted' : 'Request submitted');
+  } else {
+    req = {
+      id: uid(), employeeId: draft.employeeId, typeId: draft.typeId, start: draft.start, end: draft.end, startHalf: draft.startHalf, endHalf: draft.endHalf,
+      days, status: 'pending', notes: draft.notes || '', coverId: draft.coverId || null, reason: null, attachments: draft.attachments || [],
+      createdAt: nowISO(), timeline: [], approvals: [{ step: 1, role: emp.managerId ? 'manager' : 'hr', approverId: null, status: 'pending' }],
+    };
+    req.approvals[0].approverId = approverForStep(req, 1);
+    addTimeline(req, 'submitted', 'Request submitted');
+    state.requests.unshift(req);
+  }
+  const approver = effectiveApprover(req.approvals[0].approverId);
+  notify(approver, `${emp.name} submitted ${req.id} (${fmtRange(req.start, req.end)}, ${fmtDays(days)}).`, 'approvals', req.id);
+  if (req.coverId) notify(req.coverId, `${emp.name} named you as cover for ${fmtRange(req.start, req.end)}.`, 'team-calendar', req.id);
+  return req;
+}
+function saveDraft(draft, editingId = null) {
+  const emp = empById(draft.employeeId);
+  const days = workingDays(emp, draft.start, draft.end, draft.startHalf, draft.endHalf);
+  let req = editingId ? reqById(editingId) : null;
+  if (!req) {
+    req = { id: uid(), employeeId: draft.employeeId, status: 'draft', timeline: [], approvals: [], attachments: [], createdAt: nowISO(), reason: null };
+    state.requests.unshift(req);
+  }
+  Object.assign(req, { typeId: draft.typeId, start: draft.start, end: draft.end, startHalf: draft.startHalf, endHalf: draft.endHalf, notes: draft.notes || '', coverId: draft.coverId || null, attachments: draft.attachments || [], days });
+  addTimeline(req, 'draft', 'Draft saved');
+  return req;
+}
+function decideRequest(req, decision, note) {
+  const cur = currentApproval(req); if (!cur) return;
+  cur.status = decision; cur.at = nowISO(); cur.by = state.currentUserId; cur.note = note;
+  const by = me();
+  if (decision === 'rejected') {
+    req.status = 'rejected'; req.reason = note;
+    addTimeline(req, 'rejected', `Rejected by ${by.name}: ${note}`);
+    notify(req.employeeId, `${by.name} rejected your request ${req.id}: ${note}`, 'my-leave', req.id);
+  } else if (decision === 'changes') {
+    cur.status = 'pending';
+    addTimeline(req, 'changes', `${by.name} requested changes: ${note}`);
+    notify(req.employeeId, `${by.name} requested changes to ${req.id}: ${note}`, 'my-leave', req.id);
+  } else {
+    // approved this step — does the chain need HR?
+    const needsHR = state.policy.hrSecondStep && cur.step === 1 && cur.role !== 'hr' && req.days > state.policy.hrApprovalThresholdDays;
+    if (needsHR) {
+      req.approvals.push({ step: 2, role: 'hr', approverId: 'e12', status: 'pending' });
+      addTimeline(req, 'approved', `Step 1 approved by ${by.name} — routed to HR (over ${state.policy.hrApprovalThresholdDays} days)`);
+      notify('e12', `${req.id} (${empById(req.employeeId).name}, ${fmtDays(req.days)}) needs HR second-step approval.`, 'approvals', req.id);
+      notify(req.employeeId, `${by.name} approved ${req.id}; awaiting HR second-step approval.`, 'my-leave', req.id);
+    } else {
+      req.status = 'approved';
+      addTimeline(req, 'approved', `Approved by ${by.name}${note ? ': ' + note : ''}`);
+      notify(req.employeeId, `${by.name} approved your request ${req.id} (${fmtRange(req.start, req.end)}).`, 'my-leave', req.id);
+    }
+  }
+}
+function cancelRequest(req, mode = 'cancelled', note = '') {
+  req.status = 'cancelled';
+  req.approvals.forEach(a => { if (a.status === 'pending') a.status = 'withdrawn'; });
+  addTimeline(req, mode === 'withdrawn' ? 'withdrawn' : 'cancelled', mode === 'withdrawn' ? 'Withdrawn by employee' : (note || 'Cancelled by employee'));
+}
+function escalateRequest(req) {
+  const cur = currentApproval(req); if (!cur) return;
+  const emp = empById(cur.approverId);
+  const next = emp?.managerId || 'e12';
+  addTimeline(req, 'escalated', `Escalated from ${emp?.name || 'approver'} to ${empById(next).name} (SLA breach)`);
+  cur.approverId = next; cur.escalated = true;
+  notify(next, `${req.id} escalated to you after ${waitingDays(req)} days without decision.`, 'approvals', req.id);
+}
+
+/* ───────────────────────────── ICONS ────────────────────────────── */
+const ICON = {
+  dashboard: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>',
+  leave: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>',
+  plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>',
+  calendar: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4-7h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11z"/></svg>',
+  approvals: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>',
+  reports: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg>',
+  policies: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>',
+  admin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.4 13a7.9 7.9 0 0 0 .1-1 7.9 7.9 0 0 0-.1-1l2.1-1.7a.5.5 0 0 0 .1-.6l-2-3.5a.5.5 0 0 0-.6-.2l-2.5 1a7.3 7.3 0 0 0-1.7-1l-.4-2.6A.5.5 0 0 0 14 2h-4a.5.5 0 0 0-.5.4L9.1 5a7.3 7.3 0 0 0-1.7 1l-2.5-1a.5.5 0 0 0-.6.2l-2 3.5a.5.5 0 0 0 .1.6L4.6 11a7.9 7.9 0 0 0-.1 1 7.9 7.9 0 0 0 .1 1l-2.1 1.7a.5.5 0 0 0-.1.6l2 3.5c.1.2.4.3.6.2l2.5-1a7.3 7.3 0 0 0 1.7 1l.4 2.6c0 .2.2.4.5.4h4c.2 0 .5-.2.5-.4l.4-2.6a7.3 7.3 0 0 0 1.7-1l2.5 1c.2.1.5 0 .6-.2l2-3.5a.5.5 0 0 0-.1-.6L19.4 13zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>',
+  warn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>',
+  error: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>',
+  ok: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 15-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/></svg>',
+  info: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>',
+  empty: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm0 12H4V8h16v10z"/></svg>',
+  download: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>',
+  print: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 8H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3zm-3 11H8v-5h8v5zm3-7a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-1-9H6v4h12V3z"/></svg>',
+  chevL: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>',
+  chevR: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg>',
+  close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4l5.6 5.6L5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6z"/></svg>',
+};
+const NAV = [
+  { id: 'dashboard', label: 'Dashboard', icon: 'dashboard', roles: ['employee', 'manager', 'hr'] },
+  { id: 'my-leave', label: 'My Leave', icon: 'leave', roles: ['employee', 'manager', 'hr'] },
+  { id: 'new-request', label: 'New Request', icon: 'plus', roles: ['employee', 'manager', 'hr'] },
+  { id: 'team-calendar', label: 'Team Calendar', icon: 'calendar', roles: ['employee', 'manager', 'hr'] },
+  { id: 'approvals', label: 'Approvals', icon: 'approvals', roles: ['manager', 'hr'] },
+  { id: 'reports', label: 'Reports', icon: 'reports', roles: ['manager', 'hr'] },
+  { id: 'policies', label: 'Policies', icon: 'policies', roles: ['employee', 'manager', 'hr'] },
+  { id: 'admin', label: 'Admin / Settings', icon: 'admin', roles: ['hr'] },
+];
+const navItem = id => NAV.find(n => n.id === id);
+
+/* ───────────────────────────── UI KIT ───────────────────────────── */
+function toast(text, kind = 'info', ms = 4200) {
+  const el = document.createElement('div');
+  el.className = `toast ${kind}`;
+  el.innerHTML = `<span class="alert-ico" aria-hidden="true">${kind === 'success' ? ICON.ok : kind === 'error' ? ICON.error : kind === 'warn' ? ICON.warn : ICON.info}</span><div>${esc(text)}</div><button class="close" aria-label="Dismiss">×</button>`;
+  el.querySelector('.alert-ico svg').style.cssText = 'width:18px;height:18px;fill:currentColor;flex:none';
+  $('#toasts').appendChild(el);
+  const remove = () => { el.remove(); };
+  el.querySelector('.close').addEventListener('click', remove);
+  setTimeout(remove, ms);
+}
+let lastFocus = null;
+function openLayer(html) {
+  lastFocus = document.activeElement;
+  const layer = $('#layer');
+  layer.innerHTML = html;
+  const focusable = layer.querySelector('[data-autofocus], input, select, textarea, button');
+  if (focusable) setTimeout(() => focusable.focus(), 30);
+  document.body.style.overflow = 'hidden';
+}
+function closeLayer() {
+  $('#layer').innerHTML = '';
+  document.body.style.overflow = '';
+  state.ui.drawerRequestId = null;
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+/* Generic confirm modal → Promise<boolean|string>. If `textarea` is true the
+   promise resolves with the entered text (or false on cancel). */
+function confirmModal({ title, body, confirmText = 'Confirm', danger = false, textarea = false, placeholder = '', required = false }) {
+  return new Promise(resolve => {
+    openLayer(`
+      <div class="scrim" data-scrim>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+          <header><span id="mTitle">${esc(title)}</span><button class="icon-btn" data-cancel aria-label="Close">${ICON.close}</button></header>
+          <div class="body">${body}
+            ${textarea ? `<div class="field mt"><label for="mText">${required ? 'Reason (required)' : 'Comment (optional)'}</label><textarea id="mText" data-autofocus placeholder="${esc(placeholder)}"></textarea></div>` : ''}
+          </div>
+          <footer><button class="btn" data-cancel>Cancel</button><button class="btn ${danger ? 'danger' : 'primary'}" data-ok ${required ? 'disabled' : ''}>${esc(confirmText)}</button></footer>
+        </div>
+      </div>`);
+    const layer = $('#layer');
+    const done = v => { closeLayer(); resolve(v); };
+    $$('[data-cancel]', layer).forEach(b => b.addEventListener('click', () => done(false)));
+    layer.querySelector('[data-scrim]').addEventListener('click', e => { if (e.target.hasAttribute('data-scrim')) done(false); });
+    const ta = layer.querySelector('#mText');
+    if (ta && required) ta.addEventListener('input', () => { layer.querySelector('[data-ok]').disabled = !ta.value.trim(); });
+    layer.querySelector('[data-ok]').addEventListener('click', () => done(textarea ? (ta.value.trim() || true) : true));
+  });
+}
+function statusChip(s) { const label = { draft: 'Draft', pending: 'Pending', amended: 'Amended', approved: 'Approved', rejected: 'Rejected', cancelled: 'Cancelled' }[s] || s; return `<span class="chip ${s}">${label}</span>`; }
+function typeLabel(id) { const t = typeById(id); return `<span class="type-dot" style="background:${t.colour}"></span>${esc(t.name)}`; }
+function avatar(emp, cls = '') { return `<span class="avatar ${cls}" style="background:${emp.colour}" aria-hidden="true">${initials(emp.name)}</span>`; }
+function alertBox(kind, text) { return `<div class="alert ${kind}">${ICON[kind === 'error' ? 'error' : kind === 'warn' ? 'warn' : kind === 'ok' ? 'ok' : 'info']}<div>${text}</div></div>`; }
+function emptyState(text, action = '') { return `<div class="empty">${ICON.empty}<p>${esc(text)}</p>${action}</div>`; }
+function halfLabel(r) {
+  if (r.start === r.end) return r.startHalf ? `Half day (${r.startHalf})` : 'Full day';
+  const parts = []; if (r.startHalf === 'PM') parts.push('starts PM'); if (r.endHalf === 'AM') parts.push('ends AM');
+  return parts.length ? parts.join(', ') : 'Full days';
+}
+
+/* ───────────────────────────── ROUTER ───────────────────────────── */
+const VIEWS = {};  // route id → render fn (registered by each view module)
+function navigate(route, params = {}) {
+  const hash = '#/' + route + (Object.keys(params).length ? '?' + new URLSearchParams(params).toString() : '');
+  if (location.hash === hash) render(); else location.hash = hash;
+}
+function parseHash() {
+  const h = location.hash.replace(/^#\/?/, '');
+  const [path, qs] = h.split('?');
+  const params = Object.fromEntries(new URLSearchParams(qs || ''));
+  return { route: path || 'dashboard', params };
+}
+function render() {
+  const { route, params } = parseHash();
+  const item = navItem(route);
+  const allowed = item && item.roles.includes(state.role);
+  state.route = allowed ? route : 'dashboard';
+  state.routeParams = params;
+  if (!allowed && route !== 'dashboard') { toast(`"${item ? item.label : route}" is not available in the ${roleLabel()} role.`, 'warn'); location.hash = '#/dashboard'; return; }
+  renderNav();
+  $('#breadcrumb').innerHTML = `<a href="#/dashboard">Leave Manager</a><span aria-hidden="true">›</span><span aria-current="page">${esc(item.label)}</span>`;
+  $('#view').innerHTML = VIEWS[state.route](params);
+  $('#sidenav').classList.remove('open');
+  $('#hamburger').setAttribute('aria-expanded', 'false');
+  document.title = `${item.label} · Annual Leave Manager`;
+  window.scrollTo({ top: 0 });
+  // Post-render hooks (focus / highlight)
+  const hl = $('#view .highlight'); if (hl) hl.scrollIntoView({ block: 'center' });
+}
+const roleLabel = () => ({ employee: 'Employee', manager: 'Manager', hr: 'HR Admin' }[state.role]);
+
+/* ───────────────────────────── SHELL ────────────────────────────── */
+function renderNav() {
+  const u = me();
+  const pendingCount = state.role !== 'employee' ? approvalQueue(u.id).length : 0;
+  $('#sidenav').innerHTML = `
+    <div class="persona">${avatar(u)}<div><div class="name">${esc(u.name)}</div><div class="role">Acting as ${roleLabel()} · ${esc(teamById(u.teamId).name)}</div></div></div>
+    <ul>${NAV.filter(n => n.roles.includes(state.role)).map(n => `<li><a href="#/${n.id}" ${state.route === n.id ? 'aria-current="page"' : ''}>${ICON[n.icon]}<span>${n.label}</span>${n.id === 'approvals' && pendingCount ? `<span class="count" aria-label="${pendingCount} pending">${pendingCount}</span>` : ''}</a></li>`).join('')}</ul>
+    <div class="nav-foot">Leave year ${YEAR} · Today ${fmtDate(TODAY)}<br>Shortcuts: <span class="kbd">N</span> new · <span class="kbd">/</span> search · <span class="kbd">T</span> theme · <span class="kbd">?</span> about</div>`;
+}
+function renderTopbar() {
+  const u = me();
+  $('#userAvatar').textContent = initials(u.name); $('#userAvatar').style.background = u.colour;
+  $('#userName').textContent = u.name; $('#userTitle').textContent = u.title;
+  $$('#roleSwitch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.role === state.role)));
+  const unread = myNotifs().filter(n => !n.read).length;
+  const badge = $('#notifBadge'); badge.textContent = unread; badge.classList.toggle('hidden', unread === 0);
+  $('#notifBtn').setAttribute('aria-label', `Notifications, ${unread} unread`);
+  if (state.ui.notifOpen) renderNotifPopover();
+}
+function renderNotifPopover() {
+  const list = myNotifs();
+  $('#notifPopover').innerHTML = `
+    <header><span>Notifications</span><button class="btn sm subtle" data-act="markAllRead">Mark all read</button></header>
+    <div class="list">${list.length ? list.map(n => `<button class="notif ${n.read ? 'read' : 'unread'}" data-act="openNotif" data-id="${n.id}"><span class="dot" aria-hidden="true"></span><span><span>${esc(n.text)}</span><time>${fmtDT(n.at)}</time></span></button>`).join('') : emptyState('You are all caught up.')}</div>`;
+}
+function setRole(role) {
+  state.role = role; state.currentUserId = personaFor(role);
+  state.ui.approvals.selected.clear();
+  state.ui.notifOpen = false; $('#notifPopover').classList.add('hidden'); $('#notifBtn').setAttribute('aria-expanded', 'false');
+  renderTopbar();
+  const cur = parseHash().route;
+  const item = navItem(cur);
+  if (!item || !item.roles.includes(role)) location.hash = '#/dashboard'; else render();
+  toast(`Now acting as ${roleLabel()} — ${me().name}.`, 'info', 2500);
+}
+function applyTheme(t) {
+  state.theme = t; document.documentElement.setAttribute('data-theme', t);
+  safeStore.set('alm-theme', t);
+  $('#themeToggle').setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+}
+
+/* Global search */
+function runSearch(q) {
+  const box = $('#searchResults'); const input = $('#globalSearch');
+  q = q.trim().toLowerCase();
+  if (!q) { box.classList.add('hidden'); input.setAttribute('aria-expanded', 'false'); return; }
+  const results = [];
+  NAV.filter(n => n.roles.includes(state.role) && n.label.toLowerCase().includes(q)).forEach(n => results.push({ kind: 'Page', label: n.label, act: () => navigate(n.id) }));
+  state.employees.filter(e => e.name.toLowerCase().includes(q) || e.title.toLowerCase().includes(q)).slice(0, 4).forEach(e => results.push({ kind: 'Person', label: `${e.name} — ${e.title}`, act: () => { state.ui.calendar.person = e.id; state.ui.calendar.team = 'all'; navigate('team-calendar'); } }));
+  const visibleReqs = state.role === 'employee' ? state.requests.filter(r => r.employeeId === state.currentUserId) : state.requests;
+  visibleReqs.filter(r => r.id.toLowerCase().includes(q) || r.notes.toLowerCase().includes(q) || empById(r.employeeId).name.toLowerCase().includes(q) || typeById(r.typeId).name.toLowerCase().includes(q)).slice(0, 6)
+    .forEach(r => results.push({ kind: 'Request', label: `${r.id} · ${empById(r.employeeId).name} · ${fmtRange(r.start, r.end)} · ${r.status}`, act: () => openDrawer(r.id) }));
+  [['carry-over', 'Carry-over rules'], ['notice', 'Notice periods'], ['sick', 'Sickness reporting'], ['bank holiday', 'Bank holidays'], ['part-time', 'Pro-rata for part-time'], ['entitlement', 'Entitlement rules']].filter(([k]) => k.includes(q) || q.includes(k.split('-')[0])).forEach(([, l]) => results.push({ kind: 'Policy', label: l, act: () => navigate('policies') }));
+  box.innerHTML = results.length ? results.slice(0, 10).map((r, i) => `<button role="option" data-i="${i}"><span class="kind">${r.kind}</span><span>${esc(r.label)}</span></button>`).join('') : `<div class="empty small" style="padding:12px">No results for “${esc(q)}”</div>`;
+  box.classList.remove('hidden'); input.setAttribute('aria-expanded', 'true');
+  $$('button', box).forEach(b => b.addEventListener('click', () => { results[+b.dataset.i].act(); box.classList.add('hidden'); input.value = ''; }));
+}
+
+/* Request detail drawer (shared by many views) */
+function openDrawer(id) {
+  const r = reqById(id); if (!r) return;
+  state.ui.drawerRequestId = id;
+  const emp = empById(r.employeeId); const t = typeById(r.typeId);
+  const mine = r.employeeId === state.currentUserId;
+  const canAct = mine;
+  const future = r.start > TODAY;
+  const cur = currentApproval(r);
+  const bal = t.deducts ? balanceFor(r.employeeId) : null;
+  const actions = [];
+  if (canAct && (PENDING.has(r.status) || r.status === 'draft')) actions.push(`<button class="btn" data-act="editReq" data-id="${r.id}">${r.status === 'draft' ? 'Continue draft' : 'Edit'}</button>`);
+  if (canAct && PENDING.has(r.status)) actions.push(`<button class="btn" data-act="withdrawReq" data-id="${r.id}">Withdraw</button>`);
+  if (canAct && r.status === 'approved' && future) actions.push(`<button class="btn danger" data-act="cancelReq" data-id="${r.id}">Cancel leave</button>`);
+  if (canAct && r.status === 'draft') actions.push(`<button class="btn danger" data-act="deleteDraft" data-id="${r.id}">Delete draft</button>`);
+  if (canAct) actions.push(`<button class="btn subtle" data-act="dupReq" data-id="${r.id}">Duplicate</button>`);
+  if (!mine && PENDING.has(r.status) && cur && state.role !== 'employee') actions.push(`<button class="btn success" data-act="approve" data-id="${r.id}">Approve</button><button class="btn danger" data-act="reject" data-id="${r.id}">Reject</button>`);
+  openLayer(`
+    <div class="scrim" data-scrim style="background:transparent"></div>
+    <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+      <header>${avatar(emp)}<h2 id="dTitle">${esc(r.id)} · ${esc(emp.name)}</h2>${statusChip(r.status)}<button class="icon-btn" data-close aria-label="Close details" data-autofocus>${ICON.close}</button></header>
+      <div class="body">
+        <dl class="summary">
+          <dt>Type</dt><dd>${typeLabel(r.typeId)} ${t.paid ? '' : '<span class="tag">Unpaid</span>'}</dd>
+          <dt>Dates</dt><dd>${fmtRange(r.start, r.end)} <span class="muted small">(${halfLabel(r)})</span></dd>
+          <dt>Working days</dt><dd><b>${fmtDays(r.days)}</b>${t.deducts ? '' : ' <span class="muted small">— not deducted from annual balance</span>'}</dd>
+          ${bal ? `<dt>Balance after</dt><dd>${fmtDays(r.status === 'approved' ? bal.remaining : bal.remaining - r.days)} remaining of ${fmtDays(bal.total)}</dd>` : ''}
+          <dt>Team</dt><dd>${esc(teamById(emp.teamId).name)}</dd>
+          <dt>Cover</dt><dd>${r.coverId ? esc(empById(r.coverId).name) : '<span class="muted">None named</span>'}</dd>
+          <dt>Notes</dt><dd>${r.notes ? esc(r.notes) : '<span class="muted">—</span>'}</dd>
+          ${r.reason ? `<dt>Decision reason</dt><dd>${esc(r.reason)}</dd>` : ''}
+          <dt>Attachments</dt><dd>${r.attachments.length ? r.attachments.map(a => `<span class="att">📎 ${esc(a.name)} <span class="muted">${esc(a.size)}</span></span>`).join(' ') : '<span class="muted">None</span>'}</dd>
+          <dt>Approval chain</dt><dd>${r.approvals.length ? r.approvals.map(a => `<div class="small">Step ${a.step} · ${a.role === 'hr' ? 'HR' : 'Line manager'} (${esc(empById(effectiveApprover(a.approverId))?.name || '—')}) — <b>${a.status}</b>${a.escalated ? ' <span class="tag">escalated</span>' : ''}</div>`).join('') : '<span class="muted">Not yet submitted</span>'}</dd>
+        </dl>
+        <h4 class="mt mb">Timeline / audit trail</h4>
+        <ol class="timeline">${r.timeline.map(ev => `<li class="${ev.action}"><div><b>${esc(ev.action[0].toUpperCase() + ev.action.slice(1))}</b> — ${esc(ev.note)}</div><time>${fmtDT(ev.at)} · ${esc(empById(ev.by)?.name || ev.by)}</time></li>`).join('')}</ol>
+      </div>
+      <footer>${actions.join('') || '<span class="muted small">No actions available for this request.</span>'}</footer>
+    </aside>`);
+  const layer = $('#layer');
+  layer.querySelector('[data-scrim]').addEventListener('click', closeLayer);
+  layer.querySelector('[data-close]').addEventListener('click', closeLayer);
+}
+
+/* Shared request actions (used by drawer, My Leave table, Approvals) */
+async function requestAction(act, id) {
+  const r = reqById(id); if (!r) return;
+  switch (act) {
+    case 'view': openDrawer(id); break;
+    case 'editReq': closeLayer(); startWizard({ editingId: id }); break;
+    case 'dupReq': closeLayer(); startWizard({ duplicateOf: id }); break;
+    case 'withdrawReq': {
+      const ok = await confirmModal({ title: 'Withdraw request?', body: `<p>Withdraw <b>${esc(r.id)}</b> (${fmtRange(r.start, r.end)}, ${fmtDays(r.days)})? It will be removed from the approval queue.</p>`, confirmText: 'Withdraw', danger: true });
+      if (ok) { cancelRequest(r, 'withdrawn'); toast(`${r.id} withdrawn.`, 'success'); render(); }
+      break;
+    }
+    case 'cancelReq': {
+      const ok = await confirmModal({ title: 'Cancel approved leave?', body: `<p>Cancel <b>${esc(r.id)}</b> (${fmtRange(r.start, r.end)})? ${typeById(r.typeId).deducts ? `<b>${fmtDays(r.days)}</b> will be returned to your balance.` : ''} Your manager will be notified.</p>`, confirmText: 'Cancel leave', danger: true, textarea: true, placeholder: 'Reason for cancelling (optional)' });
+      if (ok) { cancelRequest(r, 'cancelled', typeof ok === 'string' ? ok : ''); notify(empById(r.employeeId).managerId || 'e12', `${me().name} cancelled approved leave ${r.id} (${fmtRange(r.start, r.end)}).`, 'team-calendar', r.id); toast(`${r.id} cancelled — balance restored.`, 'success'); render(); }
+      break;
+    }
+    case 'deleteDraft': {
+      const ok = await confirmModal({ title: 'Delete draft?', body: '<p>This draft will be permanently removed.</p>', confirmText: 'Delete', danger: true });
+      if (ok) { state.requests = state.requests.filter(x => x.id !== id); closeLayer(); toast('Draft deleted.', 'success'); render(); }
+      break;
+    }
+    case 'approve': {
+      const cov = teamCoverage(empById(r.employeeId).teamId, r.start, r.end, r.employeeId);
+      const note = await confirmModal({ title: `Approve ${r.id}?`, body: `<p><b>${esc(empById(r.employeeId).name)}</b> · ${typeById(r.typeId).name} · ${fmtRange(r.start, r.end)} · <b>${fmtDays(r.days)}</b></p><p class="small muted">Team coverage on those dates: ${cov.peak} other colleague${cov.peak === 1 ? '' : 's'} off (${cov.pct}% of team).</p>`, confirmText: 'Approve', textarea: true, placeholder: 'Optional comment for the employee' });
+      if (note !== false) { decideRequest(r, 'approved', typeof note === 'string' ? note : ''); toast(`${r.id} approved.`, 'success'); render(); }
+      break;
+    }
+    case 'reject': {
+      const reason = await confirmModal({ title: `Reject ${r.id}?`, body: `<p>A reason is required and will be shared with <b>${esc(empById(r.employeeId).name)}</b>.</p>`, confirmText: 'Reject', danger: true, textarea: true, required: true, placeholder: 'e.g. Insufficient team cover during the launch week' });
+      if (reason) { decideRequest(r, 'rejected', reason); toast(`${r.id} rejected.`, 'warn'); render(); }
+      break;
+    }
+    case 'changes': {
+      const note = await confirmModal({ title: `Request changes to ${r.id}`, body: '<p>Describe what the employee should change. The request stays pending.</p>', confirmText: 'Send', textarea: true, required: true, placeholder: 'e.g. Could you move this to the following week?' });
+      if (note) { decideRequest(r, 'changes', note); toast('Change request sent.', 'success'); render(); }
+      break;
+    }
+    case 'escalate': { escalateRequest(r); toast(`${r.id} escalated.`, 'warn'); render(); break; }
+  }
+}
+
+/* ───────────────────────────── CHARTS (inline SVG) ──────────────── */
+function donutSVG(parts, size = 150, stroke = 22) {
+  const total = parts.reduce((s, p) => s + p.value, 0) || 1;
+  const r = (size - stroke) / 2, c = 2 * Math.PI * r; let off = 0;
+  const segs = parts.filter(p => p.value > 0).map(p => {
+    const len = c * p.value / total; const s = `<circle r="${r}" cx="${size / 2}" cy="${size / 2}" fill="none" stroke="${p.colour}" stroke-width="${stroke}" stroke-dasharray="${len} ${c - len}" stroke-dashoffset="${-off}" transform="rotate(-90 ${size / 2} ${size / 2})"><title>${esc(p.label)}: ${p.value}</title></circle>`; off += len; return s;
+  }).join('');
+  return `<svg class="chart" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="Donut chart"><circle r="${r}" cx="${size / 2}" cy="${size / 2}" fill="none" stroke="var(--surface-3)" stroke-width="${stroke}"/>${segs}</svg>`;
+}
+function barChartSVG(data, { height = 220, colourFn = null, valueFmt = v => v, label = 'Bar chart' } = {}) {
+  const w = 600, padL = 34, padB = 28, padT = 12, innerH = height - padB - padT;
+  const max = Math.max(1, ...data.map(d => d.value));
+  const nice = Math.ceil(max / 5) * 5 || 5;
+  const bw = (w - padL - 10) / data.length;
+  const grid = [0, .25, .5, .75, 1].map(f => { const y = padT + innerH - f * innerH; return `<line class="grid-line" x1="${padL}" x2="${w}" y1="${y}" y2="${y}"/><text x="${padL - 6}" y="${y + 4}" text-anchor="end">${Math.round(nice * f)}</text>`; }).join('');
+  const bars = data.map((d, i) => { const h = innerH * d.value / nice; const x = padL + i * bw + bw * .15; const y = padT + innerH - h; return `<rect class="bar" x="${x}" y="${y}" width="${bw * .7}" height="${h}" rx="3" ${colourFn ? `style="fill:${colourFn(d)}"` : ''}><title>${esc(d.label)}: ${valueFmt(d.value)}</title></rect><text x="${x + bw * .35}" y="${height - 8}" text-anchor="middle">${esc(d.short || d.label)}</text>${d.value ? `<text x="${x + bw * .35}" y="${y - 4}" text-anchor="middle" style="font-weight:600">${valueFmt(d.value)}</text>` : ''}`; }).join('');
+  return `<svg class="chart" viewBox="0 0 ${w} ${height}" role="img" aria-label="${esc(label)}">${grid}${bars}</svg>`;
+}
+function hBarChartSVG(data, { colourFn = null, valueFmt = v => v, label = 'Bar chart' } = {}) {
+  const w = 600, rowH = 30, padL = 150, h = data.length * rowH + 10;
+  const max = Math.max(1, ...data.map(d => d.value));
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label)}">${data.map((d, i) => { const y = 5 + i * rowH; const bw = (w - padL - 60) * d.value / max; return `<text x="${padL - 8}" y="${y + 19}" text-anchor="end">${esc(d.label)}</text><rect class="bar" x="${padL}" y="${y + 6}" width="${bw}" height="18" rx="3" ${colourFn ? `style="fill:${colourFn(d)}"` : ''}><title>${esc(d.label)}: ${valueFmt(d.value)}</title></rect><text x="${padL + bw + 6}" y="${y + 19}" style="font-weight:600">${valueFmt(d.value)}</text>`; }).join('')}</svg>`;
+}
+function lineChartSVG(data, { height = 200, valueFmt = v => v, label = 'Line chart' } = {}) {
+  const w = 600, padL = 40, padB = 26, padT = 12, innerH = height - padB - padT, innerW = w - padL - 12;
+  const max = Math.max(1, ...data.map(d => d.value)) * 1.15;
+  const pts = data.map((d, i) => [padL + i * innerW / (data.length - 1 || 1), padT + innerH - innerH * d.value / max]);
+  const grid = [0, .5, 1].map(f => { const y = padT + innerH - f * innerH; return `<line class="grid-line" x1="${padL}" x2="${w}" y1="${y}" y2="${y}"/><text x="${padL - 6}" y="${y + 4}" text-anchor="end">${valueFmt(max * f)}</text>`; }).join('');
+  return `<svg class="chart" viewBox="0 0 ${w} ${height}" role="img" aria-label="${esc(label)}">${grid}<path class="line" d="${pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ')}"/>${pts.map((p, i) => `<circle class="dotp" cx="${p[0]}" cy="${p[1]}" r="3.5"><title>${esc(data[i].label)}: ${valueFmt(data[i].value)}</title></circle><text x="${p[0]}" y="${height - 8}" text-anchor="middle">${esc(data[i].short || data[i].label)}</text>`).join('')}</svg>`;
+}
+
+/* ───────────────────────────── DASHBOARD ────────────────────────── */
+VIEWS['dashboard'] = () => {
+  const u = me(); const b = balanceFor(u.id);
+  const mine = state.requests.filter(r => r.employeeId === u.id);
+  const upcoming = mine.filter(r => ACTIVE.has(r.status) && r.end >= TODAY).sort((a, c) => a.start.localeCompare(c.start)).slice(0, 5);
+  const bhs = state.bankHolidays.filter(b => b.date >= TODAY).slice(0, 4);
+  const scope = state.role === 'employee' ? mine : state.role === 'manager' ? state.requests.filter(r => empById(r.employeeId).teamId === u.teamId) : state.requests;
+  const feed = scope.flatMap(r => r.timeline.map(t => ({ ...t, r }))).sort((a, c) => c.at.localeCompare(a.at)).slice(0, 7);
+  const kpi = (label, value, hint, colour, unit = 'days') => `<div class="card kpi" style="--kpi-color:${colour}"><div class="label">${label}</div><div class="value">${value} <small>${unit}</small></div><div class="hint">${hint}</div></div>`;
+  const pctUsed = Math.round(100 * (b.taken + b.booked) / b.total);
+  let teamBlock = '';
+  if (state.role !== 'employee') {
+    const members = state.role === 'hr' ? state.employees : teamMembers(u.teamId);
+    const offToday = state.requests.filter(r => r.status === 'approved' && r.start <= TODAY && TODAY <= r.end && members.some(m => m.id === r.employeeId));
+    const q = approvalQueue(u.id);
+    const weekEnd = addDays(TODAY, 6);
+    const offWeek = state.requests.filter(r => ACTIVE.has(r.status) && overlaps(r.start, r.end, TODAY, weekEnd) && members.some(m => m.id === r.employeeId));
+    teamBlock = `<div class="card"><div class="card-head"><h3>${state.role === 'hr' ? 'Organisation' : teamById(u.teamId).name} snapshot</h3><a class="btn sm" href="#/approvals">Approvals (${q.length})</a></div>
+      <div class="grid kpis" style="gap:10px">
+        <div><div class="muted small">Off today</div><div style="font-size:22px;font-weight:700">${offToday.length} <span class="muted small">/ ${members.length}</span></div>${offToday.map(r => `<div class="small">${avatar(empById(r.employeeId), 'sm')} ${esc(empById(r.employeeId).name)}</div>`).join('')}</div>
+        <div><div class="muted small">Off in next 7 days</div><div style="font-size:22px;font-weight:700">${new Set(offWeek.map(r => r.employeeId)).size}</div><div class="small muted">${offWeek.slice(0, 3).map(r => esc(empById(r.employeeId).name.split(' ')[0])).join(', ')}${offWeek.length > 3 ? '…' : ''}</div></div>
+        <div><div class="muted small">Awaiting your decision</div><div style="font-size:22px;font-weight:700;color:${q.length ? 'var(--warning-text)' : 'inherit'}">${q.length}</div><div class="small muted">${q.filter(r => waitingDays(r) > state.policy.escalationDays).length} over SLA</div></div>
+        <div><div class="muted small">Avg. remaining balance</div><div style="font-size:22px;font-weight:700">${(members.reduce((s, m) => s + balanceFor(m.id).remaining, 0) / members.length).toFixed(1)}</div><div class="small muted">days per person</div></div>
+      </div></div>`;
+  }
+  return `
+    <div class="page-head"><div><h1>Good ${new Date().getHours() < 12 ? 'morning' : 'afternoon'}, ${esc(u.name.split(' ')[0])}</h1><p>${fmtDateShort(TODAY)} ${YEAR} · Leave year 1 Jan – 31 Dec · ${esc(u.title)}</p></div>
+      <div class="row"><a class="btn primary" href="#/new-request">${ICON.plus} New request</a><a class="btn" href="#/team-calendar">Team calendar</a></div></div>
+    <div class="grid kpis mb">
+      ${kpi('Entitlement', b.entitlement, `+ ${b.carryOver} carried over = ${b.total} total`, '#0078D4')}
+      ${kpi('Taken', b.taken, `${pctUsed}% of total used or booked`, '#8764B8')}
+      ${kpi('Booked', b.booked, 'Approved, in the future', '#107C10')}
+      ${kpi('Pending', b.pending, 'Awaiting approval', '#C19C00')}
+      ${kpi('Remaining', b.remaining, `${fmtDays(b.available)} available to book`, b.remaining <= 2 ? '#D13438' : '#038387')}
+      ${kpi('Carry-over expiring', b.carryExpired || b.carryExpiringUnused, b.carryExpired ? `Expired on ${fmtDate(state.policy.carryOverExpiry)}` : b.carryExpiringUnused ? `Use by ${fmtDate(state.policy.carryOverExpiry)} (${b.daysToExpiry} days)` : `All ${b.carryOver} carried days already used ✓`, b.carryExpiringUnused ? '#D13438' : '#605E5C')}
+    </div>
+    ${teamBlock ? `<div class="mb">${teamBlock}</div>` : ''}
+    <div class="grid three">
+      <div class="card"><h3>Balance breakdown</h3>
+        <div class="donut-wrap">${donutSVG([{ label: 'Taken', value: b.taken, colour: '#8764B8' }, { label: 'Booked', value: b.booked, colour: '#107C10' }, { label: 'Pending', value: b.pending, colour: '#C19C00' }, { label: 'Available', value: Math.max(0, b.available), colour: '#0078D4' }])}
+        <div class="donut-legend">
+          <span><i class="type-dot" style="background:#8764B8"></i>Taken<b>${b.taken}</b></span><span><i class="type-dot" style="background:#107C10"></i>Booked<b>${b.booked}</b></span><span><i class="type-dot" style="background:#C19C00"></i>Pending<b>${b.pending}</b></span><span><i class="type-dot" style="background:#0078D4"></i>Available<b>${b.available}</b></span>
+          <span class="muted" style="border-top:1px solid var(--border);padding-top:6px">Total<b>${b.total}</b></span>
+          ${b.toil ? `<span class="muted">TOIL balance<b>${b.toil}</b></span>` : ''}
+        </div></div>
+        <div class="mt"><div class="row between small muted"><span>Year progress</span><span>${Math.round(100 * daysBetween(`${YEAR}-01-01`, TODAY) / 365)}% of year · ${pctUsed}% of leave</span></div><div class="progress" aria-label="Leave used vs year elapsed"><span style="width:${pctUsed}%"></span></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>Upcoming leave</h3><a href="#/my-leave" class="small">View all</a></div>
+        ${upcoming.length ? `<ul class="list">${upcoming.map(r => `<li><div class="date-block"><b>${parseISO(r.start).getDate()}</b><span>${MONTHS_S[parseISO(r.start).getMonth()]}</span></div><div class="grow"><div><b>${esc(typeById(r.typeId).name)}</b> · ${fmtDays(r.days)}</div><div class="small muted">${fmtRange(r.start, r.end)}${r.notes ? ' · ' + esc(r.notes) : ''}</div></div>${statusChip(r.status)}<button class="btn sm subtle" data-act="view" data-id="${r.id}" aria-label="View ${r.id}">›</button></li>`).join('')}</ul>` : emptyState('No upcoming leave booked.', '<a class="btn primary sm" href="#/new-request">Book some time off</a>')}
+        <h4 class="mt mb">Upcoming UK bank holidays</h4>
+        <ul class="list">${bhs.map(b => `<li><span class="when">${fmtDateShort(b.date)}</span><span>${esc(b.name)}</span><span class="muted small" style="margin-inline-start:auto">in ${daysBetween(TODAY, b.date)} days</span></li>`).join('') || '<li class="muted">None remaining this year.</li>'}</ul>
+      </div>
+      <div class="card"><h3>Recent activity</h3>
+        <ul class="list feed">${feed.map(f => `<li>${avatar(empById(f.by) || { name: '?', colour: '#888' }, 'sm')}<div class="grow small"><div><b>${esc(empById(f.by)?.name || 'System')}</b> ${esc(f.action)} <button class="btn sm subtle" data-act="view" data-id="${f.r.id}" style="padding:0 4px;min-height:auto">${f.r.id}</button> <span class="muted">· ${esc(empById(f.r.employeeId).name)} · ${fmtRange(f.r.start, f.r.end)}</span></div><time>${fmtDT(f.at)}</time></div></li>`).join('')}</ul>
+      </div>
+    </div>`;
+};
+
+/* ───────────────────────────── MY LEAVE ─────────────────────────── */
+VIEWS['my-leave'] = params => {
+  const f = state.ui.myLeave; if (params.highlight) f.highlight = params.highlight;
+  const u = me(); const b = balanceFor(u.id);
+  let rows = state.requests.filter(r => r.employeeId === u.id);
+  const counts = {}; rows.forEach(r => counts[r.status] = (counts[r.status] || 0) + 1);
+  if (f.status !== 'all') rows = rows.filter(r => r.status === f.status);
+  if (f.type !== 'all') rows = rows.filter(r => r.typeId === f.type);
+  if (f.year !== 'all') rows = rows.filter(r => r.start.startsWith(f.year));
+  if (f.q) rows = rows.filter(r => (r.id + r.notes + typeById(r.typeId).name).toLowerCase().includes(f.q.toLowerCase()));
+  const keyFn = { start: r => r.start, days: r => r.days, type: r => typeById(r.typeId).name, status: r => r.status, submitted: r => r.createdAt, id: r => r.id }[f.sort];
+  rows.sort((a, c) => { const x = keyFn(a), y = keyFn(c); return (x > y ? 1 : x < y ? -1 : 0) * (f.dir === 'asc' ? 1 : -1); });
+  const th = (key, label) => `<th scope="col" aria-sort="${f.sort === key ? (f.dir === 'asc' ? 'ascending' : 'descending') : 'none'}"><button data-sort="${key}">${label} ${f.sort === key ? (f.dir === 'asc' ? '▲' : '▼') : '<span class="muted">⇅</span>'}</button></th>`;
+  return `
+    <div class="page-head"><div><h1>My Leave</h1><p>${fmtDays(b.remaining)} remaining · ${fmtDays(b.pending)} pending · ${fmtDays(b.available)} available to book</p></div>
+      <div class="row"><button class="btn" data-act="exportMine">${ICON.download} Export CSV</button><a class="btn primary" href="#/new-request">${ICON.plus} New request</a></div></div>
+    <div class="card">
+      <div class="filters">
+        <div class="field"><label for="flStatus">Status</label><select id="flStatus" data-filter="status"><option value="all">All (${state.requests.filter(r => r.employeeId === u.id).length})</option>${['draft', 'pending', 'amended', 'approved', 'rejected', 'cancelled'].map(s => `<option value="${s}" ${f.status === s ? 'selected' : ''}>${s[0].toUpperCase() + s.slice(1)} (${counts[s] || 0})</option>`).join('')}</select></div>
+        <div class="field"><label for="flType">Type</label><select id="flType" data-filter="type"><option value="all">All types</option>${state.leaveTypes.map(t => `<option value="${t.id}" ${f.type === t.id ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div>
+        <div class="field"><label for="flYear">Leave year</label><select id="flYear" data-filter="year"><option value="all">All</option><option value="2026" ${f.year === '2026' ? 'selected' : ''}>2026</option><option value="2027" ${f.year === '2027' ? 'selected' : ''}>2027</option></select></div>
+        <div class="field grow"><label for="flQ">Search</label><input id="flQ" type="search" data-filter="q" value="${esc(f.q)}" placeholder="ID, notes, type…"></div>
+        <button class="btn subtle" data-act="clearFilters">Clear</button>
+      </div>
+      ${rows.length ? `<div class="table-wrap"><table>
+        <thead><tr>${th('id', 'Ref')}${th('type', 'Type')}${th('start', 'Dates')}${th('days', 'Days')}${th('status', 'Status')}<th scope="col">Cover</th>${th('submitted', 'Submitted')}<th scope="col" class="right">Actions</th></tr></thead>
+        <tbody>${rows.map(r => `<tr class="${f.highlight === r.id ? 'highlight' : ''}">
+          <td><button class="btn sm subtle mono" data-act="view" data-id="${r.id}">${r.id}</button></td>
+          <td>${typeLabel(r.typeId)}</td>
+          <td>${fmtRange(r.start, r.end)}<div class="small muted">${halfLabel(r)}${r.notes ? ' · ' + esc(r.notes) : ''}</div></td>
+          <td><b>${r.days}</b></td>
+          <td>${statusChip(r.status)}${PENDING.has(r.status) && currentApproval(r) ? `<div class="small muted">with ${esc(empById(effectiveApprover(currentApproval(r).approverId))?.name)}</div>` : ''}</td>
+          <td>${r.coverId ? esc(empById(r.coverId).name) : '<span class="muted">—</span>'}</td>
+          <td class="small muted">${fmtDate(r.createdAt.slice(0, 10))}</td>
+          <td class="right nowrap">
+            ${PENDING.has(r.status) || r.status === 'draft' ? `<button class="btn sm" data-act="editReq" data-id="${r.id}">${r.status === 'draft' ? 'Continue' : 'Edit'}</button>` : ''}
+            ${PENDING.has(r.status) ? `<button class="btn sm" data-act="withdrawReq" data-id="${r.id}">Withdraw</button>` : ''}
+            ${r.status === 'approved' && r.start > TODAY ? `<button class="btn sm danger" data-act="cancelReq" data-id="${r.id}">Cancel</button>` : ''}
+            <button class="btn sm subtle" data-act="dupReq" data-id="${r.id}" title="Duplicate">⧉</button>
+            <button class="btn sm subtle" data-act="view" data-id="${r.id}" aria-label="Details for ${r.id}">›</button>
+          </td></tr>`).join('')}</tbody></table></div>` : emptyState('No requests match these filters.', '<button class="btn sm" data-act="clearFilters">Clear filters</button>')}
+    </div>`;
+};
+
+/* ───────────────────────────── NEW REQUEST WIZARD ───────────────── */
+function initWizard({ editingId = null, duplicateOf = null } = {}) {
+  const src = reqById(editingId || duplicateOf);
+  state.ui.wizard = {
+    step: src ? 2 : 1, editingId, employeeId: state.currentUserId,
+    typeId: src?.typeId || 'annual', start: src && !duplicateOf ? src.start : '', end: src && !duplicateOf ? src.end : '',
+    startHalf: src?.startHalf || '', endHalf: src?.endHalf || '', notes: src?.notes || '', coverId: src?.coverId || '',
+    attachments: src ? [...src.attachments] : [], ack: false,
+  };
+  if (duplicateOf) state.ui.wizard.step = 1;
+}
+function startWizard(opts) { initWizard(opts); navigate('new-request'); }
+VIEWS['new-request'] = () => {
+  if (!state.ui.wizard) initWizard();
+  const w = state.ui.wizard; const u = me(); const b = balanceFor(u.id);
+  const v = validateRequest(w, w.editingId);
+  const type = typeById(w.typeId);
+  const steps = ['Leave type', 'Dates', 'Details', 'Review'];
+  const stepHTML = `<ol class="steps">${steps.map((s, i) => `<li class="${i + 1 === w.step ? 'active' : i + 1 < w.step ? 'done' : ''}" ${i + 1 === w.step ? 'aria-current="step"' : ''}><span>${s}</span></li>`).join('')}</ol>`;
+  let body = '';
+  if (w.step === 1) {
+    body = `<h2 class="mb">What type of leave?</h2><div class="type-grid">${state.leaveTypes.filter(t => t.active).map(t => `<button class="type-card" data-type="${t.id}" aria-pressed="${w.typeId === t.id}"><span class="name"><i style="background:${t.colour}"></i>${esc(t.name)}</span><span class="desc">${esc(t.desc)}</span><span class="row small muted">${t.paid ? '<span class="tag">Paid</span>' : '<span class="tag">Unpaid</span>'}${t.deducts ? '<span class="tag">Deducts balance</span>' : ''}${t.requiresEvidence ? '<span class="tag">Evidence</span>' : ''}</span></button>`).join('')}</div>
+      ${type.deducts ? `<div class="mt">${alertBox('info', `You have <b>${fmtDays(b.available)}</b> available to book (${fmtDays(b.remaining)} remaining minus ${fmtDays(b.pending)} pending).`)}</div>` : ''}
+      ${type.id === 'toil' ? `<div class="mt">${alertBox('info', `TOIL balance: <b>${fmtDays(b.toil)}</b>.`)}</div>` : ''}`;
+  } else if (w.step === 2) {
+    const single = w.start && w.start === w.end;
+    body = `<h2 class="mb">When?</h2>
+      <div class="form-grid">
+        <div class="field"><label for="wStart">First day</label><input type="date" id="wStart" data-w="start" value="${w.start}" min="${YEAR}-01-01" max="${YEAR + 1}-12-31"></div>
+        <div class="field"><label for="wEnd">Last day</label><input type="date" id="wEnd" data-w="end" value="${w.end}" min="${w.start || YEAR + '-01-01'}" max="${YEAR + 1}-12-31"></div>
+        ${state.policy.halfDaysEnabled ? (single ? `<div class="field"><label id="lblHalf">Duration</label><div class="seg" role="group" aria-labelledby="lblHalf"><button data-half="start" data-val="" aria-pressed="${!w.startHalf}">Full day</button><button data-half="start" data-val="AM" aria-pressed="${w.startHalf === 'AM'}">AM only</button><button data-half="start" data-val="PM" aria-pressed="${w.startHalf === 'PM'}">PM only</button></div></div>`
+          : `<div class="field"><label id="lblS">First day</label><div class="seg" role="group" aria-labelledby="lblS"><button data-half="start" data-val="" aria-pressed="${!w.startHalf}">Full</button><button data-half="start" data-val="PM" aria-pressed="${w.startHalf === 'PM'}">PM only (½)</button></div></div>
+             <div class="field"><label id="lblE">Last day</label><div class="seg" role="group" aria-labelledby="lblE"><button data-half="end" data-val="" aria-pressed="${!w.endHalf}">Full</button><button data-half="end" data-val="AM" aria-pressed="${w.endHalf === 'AM'}">AM only (½)</button></div></div>`) : ''}
+      </div>
+      <div class="grid two mt">
+        <div class="card" style="background:var(--surface-2)"><div class="muted small">Working days requested</div><div class="calc-days">${v.days}</div><div class="small muted">Excludes weekends, ${u.workingDays.length < 5 ? 'your non-working days, ' : ''}and UK bank holidays${w.start ? ` · calendar span ${daysBetween(w.start, w.end) + 1} day${daysBetween(w.start, w.end) ? 's' : ''}` : ''}</div>
+          ${type.deducts && w.start ? `<div class="mt small">Balance after: <b>${fmtDays(b.available - v.days + (w.editingId ? reqById(w.editingId).days : 0))}</b> available</div>` : ''}
+          ${w.start ? `<div class="mt small">Notice given: <b>${noticeWorkingDays(u, w.start)} working days</b> (required ${Math.max(state.policy.minNoticeDays, Math.ceil(v.days * state.policy.noticeMultiplier))})</div>` : ''}</div>
+        <div class="card" style="background:var(--surface-2)">${miniCalendar(w, u)}</div>
+      </div>
+      <div class="stack mt">${v.errors.map(e => alertBox('error', esc(e))).join('')}${v.warnings.map(e => alertBox('warn', esc(e))).join('')}${!v.errors.length && w.start ? alertBox('ok', 'Dates look good.') : ''}</div>`;
+  } else if (w.step === 3) {
+    const peers = state.employees.filter(e => e.id !== u.id && e.teamId === u.teamId);
+    body = `<h2 class="mb">Details</h2>
+      <div class="form-grid">
+        <div class="field"><label for="wCover">Cover / delegate</label><select id="wCover" data-w="coverId"><option value="">No cover named</option>${peers.map(p => { const away = state.requests.some(r => r.employeeId === p.id && ACTIVE.has(r.status) && overlaps(r.start, r.end, w.start, w.end)); return `<option value="${p.id}" ${w.coverId === p.id ? 'selected' : ''} ${away ? 'disabled' : ''}>${esc(p.name)}${away ? ' (also away)' : ''}</option>`; }).join('')}</select><span class="help">Colleagues who are away on your dates are greyed out.</span></div>
+        <div class="field"><label for="wNotes">Notes for your manager</label><textarea id="wNotes" data-w="notes" maxlength="300" placeholder="Optional context, e.g. handover plan">${esc(w.notes)}</textarea><span class="help">${w.notes.length}/300</span></div>
+        <div class="field"><label>Attachments ${type.requiresEvidence ? '<span class="tag">Recommended</span>' : ''}</label>
+          <div class="stack">${w.attachments.map((a, i) => `<span class="att">📎 ${esc(a.name)} <span class="muted">${esc(a.size)}</span><button class="btn sm subtle" data-att-remove="${i}" aria-label="Remove ${esc(a.name)}" style="margin-inline-start:auto">×</button></span>`).join('')}
+          <button class="btn sm" data-act="addAttachment">+ Attach document (placeholder)</button></div><span class="help">Demo: no file is uploaded; a placeholder entry is added.</span></div>
+      </div>`;
+  } else {
+    const cov = teamCoverage(u.teamId, w.start, w.end, u.id);
+    body = `<h2 class="mb">Review &amp; submit</h2>
+      <dl class="summary">
+        <dt>Employee</dt><dd>${esc(u.name)} · ${esc(teamById(u.teamId).name)}</dd>
+        <dt>Type</dt><dd>${typeLabel(w.typeId)}</dd>
+        <dt>Dates</dt><dd>${fmtRange(w.start, w.end)} <span class="muted small">(${halfLabel(w)})</span></dd>
+        <dt>Working days</dt><dd><b>${fmtDays(v.days)}</b></dd>
+        ${type.deducts ? `<dt>Balance after</dt><dd>${fmtDays(b.available - v.days + (w.editingId ? reqById(w.editingId).days : 0))} available (${fmtDays(b.remaining - v.days + (w.editingId ? reqById(w.editingId).days : 0))} remaining once approved)</dd>` : ''}
+        <dt>Team coverage</dt><dd>${cov.peak ? `${cov.peak} colleague${cov.peak > 1 ? 's' : ''} also off (${cov.people.map(p => esc(p.name)).join(', ')})` : 'No one else off ✓'}</dd>
+        <dt>Cover</dt><dd>${w.coverId ? esc(empById(w.coverId).name) : '<span class="muted">None</span>'}</dd>
+        <dt>Notes</dt><dd>${w.notes ? esc(w.notes) : '<span class="muted">—</span>'}</dd>
+        <dt>Attachments</dt><dd>${w.attachments.length ? w.attachments.map(a => esc(a.name)).join(', ') : '<span class="muted">None</span>'}</dd>
+        <dt>Approver</dt><dd>${esc(empById(effectiveApprover(u.managerId || 'e12')).name)}${state.policy.hrSecondStep && v.days > state.policy.hrApprovalThresholdDays ? ' → then HR (over ' + state.policy.hrApprovalThresholdDays + ' days)' : ''}</dd>
+      </dl>
+      <div class="stack mt">${v.errors.map(e => alertBox('error', esc(e))).join('')}${v.warnings.map(e => alertBox('warn', esc(e))).join('')}
+      ${v.warnings.length ? `<label class="row small"><input type="checkbox" id="wAck" ${w.ack ? 'checked' : ''}> I acknowledge the warnings above and want to submit anyway.</label>` : ''}</div>`;
+  }
+  const canNext = w.step === 1 ? !!w.typeId : w.step === 2 ? (!v.errors.length && v.days > 0) : true;
+  const canSubmit = !v.errors.length && v.days > 0 && (!v.warnings.length || w.ack);
+  return `
+    <div class="page-head"><div><h1>${w.editingId ? `Edit ${w.editingId}` : 'New leave request'}</h1><p>Step ${w.step} of 4 — ${steps[w.step - 1]}</p></div></div>
+    <div class="card">${stepHTML}${body}
+      <div class="wizard-foot">
+        <div class="row"><button class="btn subtle" data-act="wizCancel">Cancel</button>${w.start && w.step > 1 ? `<button class="btn" data-act="wizDraft">Save draft</button>` : ''}</div>
+        <div class="row">${w.step > 1 ? `<button class="btn" data-act="wizBack">${ICON.chevL} Back</button>` : ''}
+        ${w.step < 4 ? `<button class="btn primary" data-act="wizNext" ${canNext ? '' : 'disabled'}>Next ${ICON.chevR}</button>` : `<button class="btn primary" data-act="wizSubmit" ${canSubmit ? '' : 'disabled'}>${w.editingId && reqById(w.editingId)?.status !== 'draft' ? 'Resubmit request' : 'Submit request'}</button>`}</div>
+      </div></div>`;
+};
+function miniCalendar(w, emp) {
+  const base = parseISO(w.start || TODAY); const y = base.getFullYear(), m = base.getMonth();
+  const first = new Date(y, m, 1); const offset = (first.getDay() + 6) % 7; const dim = new Date(y, m + 1, 0).getDate();
+  const bh = bankHolidaySet(); const cells = [];
+  for (let i = 0; i < offset; i++) cells.push('<div></div>');
+  for (let d = 1; d <= dim; d++) {
+    const iso = `${y}-${pad(m + 1)}-${pad(d)}`; const inSel = w.start && iso >= w.start && iso <= w.end;
+    const half = inSel && ((iso === w.start && w.startHalf) || (iso === w.end && w.endHalf && w.start !== w.end));
+    const cls = bh.has(iso) ? 'bh' : !isWorkingDay(emp, iso, bh) ? 'we' : inSel ? (half ? 'half' : 'sel') : '';
+    cells.push(`<div class="${cls}" title="${bh.has(iso) ? esc(state.bankHolidays.find(b => b.date === iso).name) : ''}">${d}</div>`);
+  }
+  return `<div class="row between mb"><b>${MONTHS[m]} ${y}</b><span class="legend"><span><i class="type-dot" style="background:var(--accent)"></i>selected</span><span><i class="type-dot" style="background:var(--danger)"></i>bank hol.</span></span></div><div class="mini-cal" aria-hidden="true">${DOW_S.map(d => `<div class="h">${d[0]}</div>`).join('')}${cells.join('')}</div>`;
+}
+async function wizardAction(act, el) {
+  const w = state.ui.wizard; if (!w) return;
+  switch (act) {
+    case 'wizNext': w.step = Math.min(4, w.step + 1); render(); break;
+    case 'wizBack': w.step = Math.max(1, w.step - 1); render(); break;
+    case 'wizCancel': {
+      const dirty = w.start || w.notes;
+      if (!dirty || await confirmModal({ title: 'Discard request?', body: '<p>Your unsaved changes will be lost.</p>', confirmText: 'Discard', danger: true })) { state.ui.wizard = null; navigate('my-leave'); }
+      break;
+    }
+    case 'wizDraft': { const r = saveDraft(w, w.editingId); state.ui.wizard = null; toast(`Draft ${r.id} saved.`, 'success'); navigate('my-leave', { highlight: r.id }); break; }
+    case 'wizSubmit': {
+      const r = submitRequest(w, w.editingId); state.ui.wizard = null;
+      toast(`${r.id} submitted — ${fmtDays(r.days)} ${typeById(r.typeId).name.toLowerCase()} sent to ${empById(effectiveApprover(r.approvals[0].approverId)).name} for approval.`, 'success', 6000);
+      navigate('my-leave', { highlight: r.id }); break;
+    }
+    case 'addAttachment': { w.attachments.push({ name: `evidence-${w.attachments.length + 1}.pdf`, size: `${40 + Math.round(Math.random() * 200)} KB` }); render(); break; }
+  }
+}
+
+/* ───────────────────────────── TEAM CALENDAR ────────────────────── */
+function calendarPeople() {
+  const c = state.ui.calendar;
+  let people = state.employees;
+  if (c.team !== 'all') people = people.filter(e => e.teamId === c.team);
+  if (c.person !== 'all') people = people.filter(e => e.id === c.person);
+  return people;
+}
+function heatColour(pct) { return pct === 0 ? 'transparent' : pct < 20 ? 'var(--success)' : pct < 40 ? 'var(--warning)' : 'var(--danger)'; }
+VIEWS['team-calendar'] = () => {
+  const c = state.ui.calendar;
+  const people = calendarPeople(); const ids = new Set(people.map(p => p.id));
+  const reqs = state.requests.filter(r => ACTIVE.has(r.status) && ids.has(r.employeeId) && (c.type === 'all' || r.typeId === c.type));
+  const bh = new Map(state.bankHolidays.map(b => [b.date, b.name]));
+  const teamForBlackout = c.team;
+  const blackoutOn = iso => state.blackouts.filter(b => b.start <= iso && iso <= b.end && (b.teamId === null || teamForBlackout === 'all' || b.teamId === teamForBlackout));
+  const filters = `<div class="filters no-print">
+      <div class="field"><label for="calTeam">Team</label><select id="calTeam" data-cal="team"><option value="all">All teams</option>${state.teams.map(t => `<option value="${t.id}" ${c.team === t.id ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div>
+      <div class="field"><label for="calPerson">Person</label><select id="calPerson" data-cal="person"><option value="all">Everyone</option>${state.employees.filter(e => c.team === 'all' || e.teamId === c.team).map(e => `<option value="${e.id}" ${c.person === e.id ? 'selected' : ''}>${esc(e.name)}</option>`).join('')}</select></div>
+      <div class="field"><label for="calType">Leave type</label><select id="calType" data-cal="type"><option value="all">All types</option>${state.leaveTypes.map(t => `<option value="${t.id}" ${c.type === t.id ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div>
+      <div class="field"><label id="lblView">View</label><div class="seg" role="group" aria-labelledby="lblView"><button data-calview="month" aria-pressed="${c.view === 'month'}">Month</button><button data-calview="week" aria-pressed="${c.view === 'week'}">Week</button></div></div>
+      <button class="btn" data-act="print">${ICON.print} Print</button></div>`;
+  const legend = `<div class="legend mb"><span><i class="type-dot" style="background:var(--surface-3);outline:1px dashed var(--text-3)"></i>Dashed = pending</span>${state.leaveTypes.map(t => `<span><i class="type-dot" style="background:${t.colour}"></i>${esc(t.name)}</span>`).join('')}<span><i class="type-dot" style="background:var(--danger-soft);border:1px solid var(--danger)"></i>Bank holiday</span><span><i class="type-dot" style="background:repeating-linear-gradient(135deg,transparent 0 2px,rgba(209,52,56,.4) 2px 4px)"></i>Blackout</span><span>Heat bar: % of team off (green &lt;20%, amber &lt;40%, red ≥40%)</span></div>`;
+  let grid = '';
+  if (c.view === 'month') {
+    const first = new Date(c.year, c.month, 1); const offset = (first.getDay() + 6) % 7; const dim = new Date(c.year, c.month + 1, 0).getDate();
+    const prevDim = new Date(c.year, c.month, 0).getDate();
+    const cells = [];
+    const total = offset + dim; const rows = Math.ceil(total / 7) * 7;
+    for (let i = 0; i < rows; i++) {
+      let d, mOff = 0; if (i < offset) { d = prevDim - offset + i + 1; mOff = -1; } else if (i - offset < dim) d = i - offset + 1; else { d = i - offset - dim + 1; mOff = 1; }
+      const dt = new Date(c.year, c.month + mOff, d); const iso = toISO(dt);
+      const other = mOff !== 0; const we = isWeekend(iso); const bhName = bh.get(iso); const bos = blackoutOn(iso);
+      const off = reqs.filter(r => r.start <= iso && iso <= r.end);
+      const pct = people.length && !we ? Math.round(100 * off.length / people.length) : 0;
+      const chips = off.slice(0, 3).map(r => { const e = empById(r.employeeId), t = typeById(r.typeId); return `<button class="lv-chip ${r.status}" style="background:${t.colour}" data-act="view" data-id="${r.id}" title="${esc(e.name)} — ${esc(t.name)} (${r.status}) ${fmtRange(r.start, r.end)}">${esc(e.name.split(' ')[0])} ${esc(e.name.split(' ')[1][0])}. <span style="opacity:.8">· ${esc(t.name.split(' ')[0])}</span></button>`; }).join('');
+      cells.push(`<div class="cal-cell ${other ? 'other' : ''} ${we ? 'weekend' : ''} ${bhName ? 'bh' : ''} ${bos.length ? 'blackout' : ''} ${iso === TODAY ? 'today' : ''}" aria-label="${fmtDate(iso)}${bhName ? ', ' + bhName : ''}, ${off.length} off">
+        <span class="heat" style="background:${heatColour(pct)}" title="${pct}% of team off"></span>
+        <span class="dnum">${d}</span>${bhName ? `<span class="bh-label">${esc(bhName)}</span>` : ''}${bos.map(b => `<span class="bo-label">⛔ ${esc(b.name)}</span>`).join('')}
+        ${chips}${off.length > 3 ? `<span class="more">+${off.length - 3} more</span>` : ''}${pct ? `<span class="more" style="margin-inline-start:auto">${pct}%</span>` : ''}</div>`);
+    }
+    grid = `<div class="cal-head"><div class="row"><button class="btn" data-act="calPrev" aria-label="Previous month">${ICON.chevL}</button><h2 style="min-width:190px;text-align:center">${MONTHS[c.month]} ${c.year}</h2><button class="btn" data-act="calNext" aria-label="Next month">${ICON.chevR}</button><button class="btn subtle" data-act="calToday">Today</button></div><div class="muted small">${people.length} people · ${reqs.filter(r => r.start.slice(0, 7) === `${c.year}-${pad(c.month + 1)}` || r.end.slice(0, 7) === `${c.year}-${pad(c.month + 1)}`).length} leave records this month</div></div>
+      <div class="cal-grid" aria-label="Month calendar">${DOW_S.map(d => `<div class="dow">${d}</div>`).join('')}${cells.join('')}</div>`;
+  } else {
+    const ws = c.weekStart || (() => { const d = parseISO(TODAY); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return toISO(d); })();
+    c.weekStart = ws;
+    const days = Array.from({ length: 7 }, (_, i) => addDays(ws, i));
+    const header = `<div class="name hd" style="align-items:flex-start">Person</div>${days.map(d => `<div class="hd ${d === TODAY ? 'today' : ''}"><span>${DOW_S[(parseISO(d).getDay() + 6) % 7]}</span><span style="font-size:15px">${parseISO(d).getDate()}</span>${bh.get(d) ? `<span class="small" style="color:var(--danger)">BH</span>` : ''}</div>`).join('')}`;
+    const rows = people.map(p => `<div class="name">${avatar(p, 'sm')}<span>${esc(p.name)}</span></div>${days.map(d => { const we = isWeekend(d) || !isWorkingDay(p, d); const r = reqs.find(x => x.employeeId === p.id && x.start <= d && d <= x.end); const t = r && typeById(r.typeId); return `<div class="${we ? 'we' : ''} ${bh.get(d) ? 'bhc' : ''}">${r ? `<button class="lv ${r.status}" style="background:${t.colour}" data-act="view" data-id="${r.id}" title="${esc(t.name)} (${r.status})">${esc(t.name.split(' ')[0])}${(d === r.start && r.startHalf) || (d === r.end && r.endHalf) ? ' ½' : ''}</button>` : ''}</div>`; }).join('')}`).join('');
+    const cap = `<div class="small muted" style="display:flex;align-items:center">Capacity (% off)</div>${days.map(d => { const we = isWeekend(d); const n = reqs.filter(r => r.start <= d && d <= r.end).length; const pct = people.length && !we ? Math.round(100 * n / people.length) : 0; return `<div class="cap" style="background:${pct ? heatColour(pct) : 'var(--surface-3)'};color:${pct ? '#fff' : 'var(--text-2)'}">${we ? '—' : pct + '%'}</div>`; }).join('')}`;
+    grid = `<div class="cal-head"><div class="row"><button class="btn" data-act="weekPrev" aria-label="Previous week">${ICON.chevL}</button><h2 style="min-width:260px;text-align:center">Week of ${fmtDate(ws)}</h2><button class="btn" data-act="weekNext" aria-label="Next week">${ICON.chevR}</button><button class="btn subtle" data-act="calToday">This week</button></div></div>
+      <div class="week-grid" aria-label="Week calendar">${header}${people.length ? rows : '<div style="grid-column:1/-1" class="empty">No people match the filter.</div>'}</div><div class="cap-row">${cap}</div>`;
+  }
+  return `<div class="page-head"><div><h1>Team Calendar</h1><p>Who is off, when — with bank holidays, blackout periods and daily capacity.</p></div><a class="btn primary no-print" href="#/new-request">${ICON.plus} New request</a></div>
+    <div class="card">${filters}${legend}${grid}</div>`;
+};
+function calendarAction(act) {
+  const c = state.ui.calendar;
+  if (act === 'calPrev') { c.month--; if (c.month < 0) { c.month = 11; c.year--; } }
+  if (act === 'calNext') { c.month++; if (c.month > 11) { c.month = 0; c.year++; } }
+  if (act === 'calToday') { const d = parseISO(TODAY); c.year = d.getFullYear(); c.month = d.getMonth(); c.weekStart = null; }
+  if (act === 'weekPrev') c.weekStart = addDays(c.weekStart, -7);
+  if (act === 'weekNext') c.weekStart = addDays(c.weekStart, 7);
+  render();
+}
+
+/* ───────────────────────────── APPROVALS ────────────────────────── */
+VIEWS['approvals'] = () => {
+  const u = me(); const a = state.ui.approvals;
+  let q = approvalQueue(u.id);
+  q.sort((x, y) => a.sort === 'waiting' ? waitingDays(y) - waitingDays(x) : a.sort === 'start' ? x.start.localeCompare(y.start) : y.days - x.days);
+  const sel = a.selected; [...sel].forEach(id => { if (!q.some(r => r.id === id)) sel.delete(id); });
+  const p = state.policy;
+  const myDelegation = state.delegations.find(d => d.fromId === u.id);
+  const decided = state.requests.filter(r => r.approvals.some(ap => ap.by === u.id || (ap.approverId === u.id && ap.status !== 'pending'))).filter(r => !PENDING.has(r.status)).sort((x, y) => y.timeline.at(-1).at.localeCompare(x.timeline.at(-1).at)).slice(0, 8);
+  const card = r => {
+    const e = empById(r.employeeId); const t = typeById(r.typeId); const bal = t.deducts ? balanceFor(e.id) : null;
+    const cov = teamCoverage(e.teamId, r.start, r.end, e.id); const bos = blackoutsFor(e.teamId, r.start, r.end);
+    const wait = waitingDays(r); const sla = wait > p.escalationDays ? 'bad' : wait >= Math.ceil(p.escalationDays / 2) ? 'warn' : 'ok';
+    const cur = currentApproval(r);
+    const conflicts = [];
+    if (cov.peak) conflicts.push(`${cov.peak} colleague${cov.peak > 1 ? 's' : ''} also off (${cov.pct}% of team) — ${cov.people.map(x => x.name.split(' ')[0]).join(', ')}`);
+    bos.forEach(b => conflicts.push(`Blackout: ${b.name}${b.hard ? ' (hard)' : ''}`));
+    if (bal && bal.remaining - r.days < 0) conflicts.push('Would take balance negative');
+    if (t.requiresEvidence && !r.attachments.length) conflicts.push('No evidence attached');
+    return `<article class="appr ${sel.has(r.id) ? 'selected' : ''}" aria-label="${r.id}">
+      <input type="checkbox" data-sel="${r.id}" ${sel.has(r.id) ? 'checked' : ''} aria-label="Select ${r.id}">
+      <div>
+        <div class="row"><b>${esc(e.name)}</b><span class="muted small">${esc(e.title)} · ${esc(teamById(e.teamId).name)}</span>${statusChip(r.status)}${cur?.step === 2 ? '<span class="tag">HR step 2</span>' : ''}${cur?.escalated ? '<span class="tag">Escalated</span>' : ''}<span class="sla ${sla}" title="Days waiting">⏱ ${wait}d waiting</span></div>
+        <div class="mt" style="margin-top:6px">${typeLabel(r.typeId)} · <b>${fmtRange(r.start, r.end)}</b> · <b>${fmtDays(r.days)}</b> <span class="muted small">(${halfLabel(r)})</span></div>
+        <div class="meta"><span>Ref <span class="mono">${r.id}</span></span>${bal ? `<span>Balance after: <b>${fmtDays(bal.remaining - r.days)}</b> of ${bal.total}</span>` : '<span>Not deducted from balance</span>'}<span>Coverage: <b>${cov.peak}</b> other off (${cov.pct}%)</span>${r.coverId ? `<span>Cover: ${esc(empById(r.coverId).name)}</span>` : ''}${r.notes ? `<span>“${esc(r.notes)}”</span>` : ''}</div>
+        ${conflicts.length ? `<div class="row" style="margin-top:6px">${conflicts.map(cf => `<span class="conflict">${ICON.warn.replace('<svg', '<svg style="width:14px;height:14px;fill:currentColor"')} ${esc(cf)}</span>`).join('')}</div>` : '<div class="small" style="margin-top:6px;color:var(--success)">✓ No conflicts detected</div>'}
+      </div>
+      <div class="acts"><button class="btn success sm" data-act="approve" data-id="${r.id}">Approve</button><button class="btn danger sm" data-act="reject" data-id="${r.id}">Reject…</button><button class="btn sm" data-act="changes" data-id="${r.id}">Request changes</button><button class="btn sm subtle" data-act="view" data-id="${r.id}">Details</button>${wait > p.escalationDays && !cur?.escalated ? `<button class="btn sm subtle" data-act="escalate" data-id="${r.id}">Escalate ↑</button>` : ''}</div>
+    </article>`;
+  };
+  return `<div class="page-head"><div><h1>Approvals</h1><p>${q.length} request${q.length === 1 ? '' : 's'} awaiting ${isHR(u) && a.filter === 'all' ? 'a decision across the organisation' : 'your decision'} · SLA target ${p.escalationDays} days</p></div>
+    <div class="row"><button class="btn" data-act="delegate">${myDelegation ? `Delegated to ${esc(empById(myDelegation.toId).name)} until ${fmtDate(myDelegation.to)}` : 'Delegate my approvals…'}</button></div></div>
+    <div class="card mb">
+      <div class="toolbar">
+        ${isHR(u) ? `<div class="seg" role="group" aria-label="Queue scope"><button data-aprfilter="mine" aria-pressed="${a.filter === 'mine'}">Assigned to me</button><button data-aprfilter="all" aria-pressed="${a.filter === 'all'}">All pending</button></div>` : ''}
+        <div class="field" style="flex-direction:row;align-items:center;gap:6px"><label for="aprSort">Sort</label><select id="aprSort" data-aprsort><option value="waiting" ${a.sort === 'waiting' ? 'selected' : ''}>Longest waiting</option><option value="start" ${a.sort === 'start' ? 'selected' : ''}>Start date</option><option value="days" ${a.sort === 'days' ? 'selected' : ''}>Duration</option></select></div>
+        <span class="grow"></span>
+        <label class="row small"><input type="checkbox" data-act="selAll" ${q.length && sel.size === q.length ? 'checked' : ''}> Select all</label>
+        <button class="btn primary" data-act="bulkApprove" ${sel.size ? '' : 'disabled'}>Approve selected (${sel.size})</button>
+      </div>
+      ${q.length ? q.map(card).join('') : emptyState('Nothing waiting for you — nice work.')}
+    </div>
+    <div class="card"><h3>Recently decided by you</h3>${decided.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Ref</th><th scope="col">Employee</th><th scope="col">Dates</th><th scope="col">Days</th><th scope="col">Outcome</th><th scope="col">When</th></tr></thead><tbody>${decided.map(r => `<tr><td><button class="btn sm subtle mono" data-act="view" data-id="${r.id}">${r.id}</button></td><td>${esc(empById(r.employeeId).name)}</td><td>${fmtRange(r.start, r.end)}</td><td>${r.days}</td><td>${statusChip(r.status)}</td><td class="small muted">${fmtDT(r.timeline.at(-1).at)}</td></tr>`).join('')}</tbody></table></div>` : '<p class="muted">No decisions yet in this session.</p>'}</div>`;
+};
+async function approvalsAction(act) {
+  const a = state.ui.approvals; const u = me();
+  if (act === 'selAll') { const q = approvalQueue(u.id); if (a.selected.size === q.length) a.selected.clear(); else q.forEach(r => a.selected.add(r.id)); render(); }
+  if (act === 'bulkApprove') {
+    const ids = [...a.selected]; if (!ids.length) return;
+    const ok = await confirmModal({ title: `Approve ${ids.length} request${ids.length > 1 ? 's' : ''}?`, body: `<ul class="plain">${ids.map(id => { const r = reqById(id); return `<li><b>${esc(empById(r.employeeId).name)}</b> — ${fmtRange(r.start, r.end)} (${fmtDays(r.days)})</li>`; }).join('')}</ul><p class="small muted">Requests with conflicts are still approved — review them individually if unsure.</p>`, confirmText: 'Approve all' });
+    if (ok) { ids.forEach(id => decideRequest(reqById(id), 'approved', 'Bulk approved')); a.selected.clear(); toast(`${ids.length} request${ids.length > 1 ? 's' : ''} approved.`, 'success'); render(); }
+  }
+  if (act === 'delegate') {
+    const others = state.employees.filter(e => e.id !== u.id && (e.managerId === null || e.isHR || directReports(e.id).length));
+    const existing = state.delegations.find(d => d.fromId === u.id);
+    const res = await new Promise(resolve => {
+      openLayer(`<div class="scrim" data-scrim><div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlT"><header><span id="dlT">Delegate approvals</span><button class="icon-btn" data-cancel aria-label="Close">${ICON.close}</button></header>
+        <div class="body"><p class="small muted">While delegated, requests assigned to you appear in the delegate's queue. Existing decisions are unaffected.</p>
+        <div class="form-grid"><div class="field"><label for="dlTo">Delegate to</label><select id="dlTo" data-autofocus>${others.map(e => `<option value="${e.id}" ${existing?.toId === e.id ? 'selected' : ''}>${esc(e.name)} — ${esc(e.title)}</option>`).join('')}</select></div>
+        <div class="field"><label for="dlFrom">From</label><input type="date" id="dlFrom" value="${existing?.from || TODAY}"></div><div class="field"><label for="dlTo2">Until</label><input type="date" id="dlTo2" value="${existing?.to || addDays(TODAY, 7)}"></div></div></div>
+        <footer>${existing ? '<button class="btn danger" data-remove>Remove delegation</button>' : ''}<button class="btn" data-cancel>Cancel</button><button class="btn primary" data-ok>Save</button></footer></div></div>`);
+      const L = $('#layer');
+      $$('[data-cancel]', L).forEach(b => b.addEventListener('click', () => { closeLayer(); resolve(null); }));
+      L.querySelector('[data-scrim]').addEventListener('click', e => { if (e.target.hasAttribute('data-scrim')) { closeLayer(); resolve(null); } });
+      L.querySelector('[data-remove]')?.addEventListener('click', () => { closeLayer(); resolve('remove'); });
+      L.querySelector('[data-ok]').addEventListener('click', () => { const v = { toId: $('#dlTo').value, from: $('#dlFrom').value, to: $('#dlTo2').value }; closeLayer(); resolve(v); });
+    });
+    if (res === 'remove') { state.delegations = state.delegations.filter(d => d.fromId !== u.id); toast('Delegation removed.', 'success'); render(); }
+    else if (res) { state.delegations = state.delegations.filter(d => d.fromId !== u.id); state.delegations.push({ fromId: u.id, ...res }); notify(res.toId, `${u.name} delegated their approvals to you (${fmtRange(res.from, res.to)}).`, 'approvals'); toast(`Approvals delegated to ${empById(res.toId).name}.`, 'success'); render(); }
+  }
+}
+
+/* ───────────────────────────── REPORTS ──────────────────────────── */
+function reportScope() {
+  const u = me(); const rp = state.ui.reports;
+  let people = state.employees;
+  if (state.role === 'manager') people = teamMembers(u.teamId);
+  else if (rp.team !== 'all') people = people.filter(e => e.teamId === rp.team);
+  const ids = new Set(people.map(p => p.id));
+  const reqs = state.requests.filter(r => ids.has(r.employeeId) && r.start.startsWith(String(YEAR)));
+  return { people, reqs };
+}
+function workingDaysInMonth(m) { let n = 0; const bh = bankHolidaySet(); const dim = new Date(YEAR, m + 1, 0).getDate(); for (let d = 1; d <= dim; d++) { const iso = `${YEAR}-${pad(m + 1)}-${pad(d)}`; if (!isWeekend(iso) && !bh.has(iso)) n++; } return n; }
+function daysInMonthForReq(r, m) {
+  const emp = empById(r.employeeId); const bh = bankHolidaySet(); let n = 0;
+  eachDay(r.start, r.end, d => { if (parseISO(d).getMonth() === m && isWorkingDay(emp, d, bh)) n++; });
+  if (n && r.start === r.end && r.startHalf) n -= .5; else { if (n && r.startHalf === 'PM' && parseISO(r.start).getMonth() === m) n -= .5; if (n && r.endHalf === 'AM' && parseISO(r.end).getMonth() === m) n -= .5; }
+  return Math.max(0, n);
+}
+VIEWS['reports'] = () => {
+  const { people, reqs } = reportScope(); const rp = state.ui.reports;
+  const approved = reqs.filter(r => r.status === 'approved');
+  const byMonth = MONTHS_S.map((m, i) => ({ label: MONTHS[i], short: m, value: approved.reduce((s, r) => s + daysInMonthForReq(r, i), 0) }));
+  const byDept = state.teams.filter(t => people.some(p => p.teamId === t.id)).map(t => ({ label: t.name, value: approved.filter(r => empById(r.employeeId).teamId === t.id).reduce((s, r) => s + r.days, 0), colour: t.colour }));
+  const byType = state.leaveTypes.map(t => ({ label: t.name, value: approved.filter(r => r.typeId === t.id).reduce((s, r) => s + r.days, 0), colour: t.colour })).filter(x => x.value > 0);
+  const sickByMonth = MONTHS_S.map((m, i) => { const sick = approved.filter(r => r.typeId === 'sick').reduce((s, r) => s + daysInMonthForReq(r, i), 0); const cap = people.length * workingDaysInMonth(i); return { label: MONTHS[i], short: m, value: cap ? +(100 * sick / cap).toFixed(2) : 0 }; });
+  const ytdSick = approved.filter(r => r.typeId === 'sick' && r.end <= TODAY).reduce((s, r) => s + r.days, 0);
+  const ytdCap = people.length * MONTHS_S.reduce((s, _, i) => s + (i <= parseISO(TODAY).getMonth() ? workingDaysInMonth(i) : 0), 0);
+  const util = people.map(p => { const b = balanceFor(p.id); return { p, b, pct: Math.round(100 * (b.taken + b.booked) / b.total) }; }).sort((x, y) => y.pct - x.pct);
+  const monthsLeft = 12 - parseISO(TODAY).getMonth() - 1 + (1 - parseISO(TODAY).getDate() / 30);
+  const risk = util.map(x => ({ ...x, atRisk: Math.max(0, x.b.remaining - state.policy.carryOverMax), rate: (x.b.remaining / Math.max(.5, monthsLeft)).toFixed(1) })).filter(x => x.atRisk > 0).sort((x, y) => y.atRisk - x.atRisk);
+  const totalApproved = approved.reduce((s, r) => s + r.days, 0);
+  const avgUtil = Math.round(util.reduce((s, x) => s + x.pct, 0) / (util.length || 1));
+  return `<div class="page-head"><div><h1>Reports</h1><p>${YEAR} leave year · ${people.length} people · ${state.role === 'manager' ? esc(teamById(me().teamId).name) : rp.team === 'all' ? 'All teams' : esc(teamById(rp.team).name)}</p></div>
+    <div class="row no-print">${state.role === 'hr' ? `<div class="field"><label for="rpTeam" class="sr-only">Team</label><select id="rpTeam" data-rpteam><option value="all">All teams</option>${state.teams.map(t => `<option value="${t.id}" ${rp.team === t.id ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div>` : ''}<button class="btn" data-act="exportCSV">${ICON.download} Export CSV</button><button class="btn" data-act="exportBalances">${ICON.download} Balances CSV</button><button class="btn" data-act="print">${ICON.print} Print</button></div></div>
+    <div class="grid kpis mb">
+      <div class="card kpi"><div class="label">Approved days YTD+booked</div><div class="value">${totalApproved}</div><div class="hint">${approved.length} approved requests</div></div>
+      <div class="card kpi" style="--kpi-color:#D13438"><div class="label">Absence rate YTD</div><div class="value">${ytdCap ? (100 * ytdSick / ytdCap).toFixed(1) : 0}<small>%</small></div><div class="hint">${ytdSick} sick days / ${ytdCap} available</div></div>
+      <div class="card kpi" style="--kpi-color:#107C10"><div class="label">Avg utilisation</div><div class="value">${avgUtil}<small>%</small></div><div class="hint">taken + booked vs entitlement</div></div>
+      <div class="card kpi" style="--kpi-color:#C19C00"><div class="label">Pending decisions</div><div class="value">${reqs.filter(r => PENDING.has(r.status)).length}</div><div class="hint">${reqs.filter(r => PENDING.has(r.status) && waitingDays(r) > state.policy.escalationDays).length} beyond SLA</div></div>
+      <div class="card kpi" style="--kpi-color:#8764B8"><div class="label">Unused-balance risk</div><div class="value">${risk.reduce((s, x) => s + x.atRisk, 0)}<small>days</small></div><div class="hint">${risk.length} people above carry-over cap</div></div>
+    </div>
+    <div class="grid two mb">
+      <div class="card"><h3>Leave usage by month (approved working days)</h3>${barChartSVG(byMonth, { label: 'Leave days by month' })}</div>
+      <div class="card"><h3>Absence (sickness) rate by month</h3>${lineChartSVG(sickByMonth, { valueFmt: v => v.toFixed(1) + '%', label: 'Absence rate by month' })}</div>
+      <div class="card"><h3>Approved days by department</h3>${byDept.length ? hBarChartSVG(byDept, { colourFn: d => d.colour, label: 'Days by department' }) : emptyState('No data')}</div>
+      <div class="card"><h3>Approved days by leave type</h3><div class="donut-wrap">${donutSVG(byType, 170, 26)}<div class="donut-legend">${byType.map(t => `<span><i class="type-dot" style="background:${t.colour}"></i>${esc(t.label)}<b>${t.value}</b></span>`).join('')}</div></div></div>
+    </div>
+    <div class="grid two">
+      <div class="card"><h3>Utilisation vs entitlement</h3><div class="table-wrap" style="max-height:420px"><table><thead><tr><th scope="col">Employee</th><th scope="col">Total</th><th scope="col">Taken</th><th scope="col">Booked</th><th scope="col">Remaining</th><th scope="col" style="min-width:140px">Utilisation</th></tr></thead><tbody>
+        ${util.map(({ p, b, pct }) => `<tr><td>${avatar(p, 'sm')} ${esc(p.name)}<div class="small muted">${esc(teamById(p.teamId).name)}</div></td><td>${b.total}</td><td>${b.taken}</td><td>${b.booked}</td><td><b>${b.remaining}</b></td><td><div class="row"><div class="progress grow"><span class="${pct < 40 ? 'bad' : pct < 60 ? 'warn' : ''}" style="width:${clamp(pct, 0, 100)}%"></span></div><span class="small">${pct}%</span></div></td></tr>`).join('')}</tbody></table></div></div>
+      <div class="card"><h3>Top unused-balance risk</h3><p class="small muted">Remaining days above the ${state.policy.carryOverMax}-day carry-over cap that would be lost at year end unless booked. Burn-rate = days per month needed from now.</p>
+        ${risk.length ? `<ul class="list">${risk.slice(0, 8).map(x => `<li>${avatar(x.p)}<div class="grow"><b>${esc(x.p.name)}</b><div class="small muted">${x.b.remaining} remaining · ${x.b.pending ? x.b.pending + ' pending · ' : ''}needs ${x.rate} days/month</div></div><span class="chip rejected">${x.atRisk} at risk</span></li>`).join('')}</ul>` : alertBox('ok', 'No one is at risk of losing days.')}</div>
+    </div>`;
+};
+function downloadCSV(name, rows) {
+  const csv = rows.map(r => r.map(v => { const s = String(v ?? ''); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }).join(',')).join('\r\n');
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  toast(`${name} downloaded (${rows.length - 1} rows).`, 'success');
+}
+function exportRequestsCSV(reqs, name) {
+  downloadCSV(name, [['Ref', 'Employee', 'Team', 'Type', 'Start', 'End', 'Half-day start', 'Half-day end', 'Working days', 'Status', 'Cover', 'Notes', 'Submitted'], ...reqs.map(r => [r.id, empById(r.employeeId).name, teamById(empById(r.employeeId).teamId).name, typeById(r.typeId).name, r.start, r.end, r.startHalf, r.endHalf, r.days, r.status, r.coverId ? empById(r.coverId).name : '', r.notes, r.createdAt.slice(0, 10)])]);
+}
+
+/* ───────────────────────────── POLICIES ─────────────────────────── */
+const calcState = { start: '2026-09-01', fte: 1, daysPerWeek: 5, base: null };
+function proRata({ start, fte, daysPerWeek, base }) {
+  const yearStart = `${YEAR}-01-01`, yearEnd = `${YEAR}-12-31`;
+  const s = start > yearStart ? start : yearStart;
+  const remaining = daysBetween(s, yearEnd) + 1;
+  const fraction = clamp(remaining / 365, 0, 1);
+  const raw = base * (daysPerWeek / 5) * fraction;
+  const bhInYear = state.bankHolidays.filter(b => b.date >= s).length * (daysPerWeek / 5);
+  return { remaining, fraction, entitlement: Math.round(raw * 2) / 2, bh: Math.round(bhInYear * 2) / 2 };
+}
+VIEWS['policies'] = () => {
+  const p = state.policy; const c = calcState; c.base = c.base ?? p.baseEntitlement;
+  const res = proRata(c);
+  return `<div class="page-head"><div><h1>Leave Policy</h1><p>Contoso UK · Effective 1 January ${YEAR} · Version 4.2 (sample policy text)</p></div><button class="btn no-print" data-act="print">${ICON.print} Print</button></div>
+    <div class="grid two">
+      <div class="stack" style="gap:16px">
+        <section class="card" id="pol-entitlement"><h3>1. Entitlement</h3><p>Full-time employees receive <b>${p.baseEntitlement} days</b> of paid annual leave per leave year (1 January – 31 December), rising by one day after each 5 years' service to a maximum of 30, <b>plus</b> the 8 public (bank) holidays in England &amp; Wales. Heads of function receive 28 days.</p><p>Entitlement is credited in full on 1 January; joiners and leavers are pro-rated by calendar days remaining/served.</p></section>
+        <section class="card" id="pol-carry"><h3>2. Carry-over</h3><p>Up to <b>${p.carryOverMax} days</b> of unused leave may be carried into the next leave year. Carried days must be used by <b>${fmtDate(p.carryOverExpiry)}</b> and are consumed first. Unused carried days are forfeited without payment, except where statutory leave could not be taken because of sickness or family leave.</p></section>
+        <section class="card" id="pol-notice"><h3>3. Notice periods &amp; approvals</h3><ul class="plain"><li>Give notice of at least <b>${p.noticeMultiplier}× the duration</b> of the leave, with a minimum of <b>${p.minNoticeDays} working days</b>.</li><li>Requests over <b>${p.hrApprovalThresholdDays} working days</b> require a second approval from HR. Maximum <b>${p.maxConsecutiveDays} consecutive working days</b> without Director sign-off.</li><li>Managers respond within <b>${p.escalationDays} working days</b>; unanswered requests may be escalated.</li><li>Blackout periods are published by team leads; leave in a <em>hard</em> blackout is not permitted, <em>soft</em> blackouts require HR sign-off.</li><li>Team coverage guidance: no more than <b>${p.teamCoverageWarnPct}%</b> of a team off on the same day.</li></ul></section>
+        <section class="card" id="pol-sick"><h3>4. Sickness reporting</h3><p>Notify your manager by <b>09:30</b> on the first day of absence (phone or Teams call, not text). Record the absence in this system on return. Self-certification covers up to <b>${p.sickSelfCertDays} calendar days</b>; a GP fit note is required thereafter. Return-to-work conversations take place after every absence.</p></section>
+        <section class="card" id="pol-bh"><h3>5. Bank holidays ${YEAR}</h3><ul class="list">${state.bankHolidays.map(b => `<li><span class="when">${fmtDateShort(b.date)}</span>${esc(b.name)}</li>`).join('')}</ul><p class="small muted mt">Bank holidays are in addition to annual leave and are not deducted. Part-time staff receive a pro-rated bank holiday allowance.</p></section>
+        <section class="card" id="pol-pt"><h3>6. Part-time &amp; pro-rata</h3><p>Entitlement is pro-rated by contracted days per week (FTE). For example, working 4 days a week (0.8 FTE) gives ${(p.baseEntitlement * .8)} days plus ${(8 * .8).toFixed(1)} bank holiday days. Leave is deducted only for contracted working days.</p></section>
+        <section class="card"><h3>7. Other leave</h3><ul class="plain">${state.leaveTypes.filter(t => t.id !== 'annual').map(t => `<li><b>${esc(t.name)}</b> — ${esc(t.desc)} ${t.paid ? '' : '<span class="tag">Unpaid</span>'}${t.requiresEvidence ? '<span class="tag">Evidence required</span>' : ''}</li>`).join('')}</ul></section>
+      </div>
+      <div><div class="card" style="position:sticky;top:calc(var(--top-h) + 16px)"><h3>Entitlement calculator</h3><p class="small muted">Pro-rata for joiners and part-time staff, ${YEAR} leave year.</p>
+        <div class="form-grid">
+          <div class="field"><label for="cStart">Start date</label><input type="date" id="cStart" data-calc="start" value="${c.start}"></div>
+          <div class="field"><label for="cDays">Contracted days / week</label><select id="cDays" data-calc="daysPerWeek">${[1, 2, 3, 4, 5].map(d => `<option value="${d}" ${c.daysPerWeek === d ? 'selected' : ''}>${d}</option>`).join('')}</select></div>
+          <div class="field"><label for="cBase">Full-time entitlement</label><input type="number" id="cBase" data-calc="base" value="${c.base}" min="20" max="35" step="1"></div>
+        </div>
+        <div class="mt card" style="background:var(--surface-2)">
+          <div class="muted small">Pro-rata annual leave</div><div class="calc-days">${res.entitlement} <small style="font-size:14px;color:var(--text-2)">days</small></div>
+          <div class="small muted">FTE ${(c.daysPerWeek / 5).toFixed(1)} · ${res.remaining} of 365 days remaining (${Math.round(res.fraction * 100)}%) · plus ${res.bh} bank holiday days</div>
+          <div class="small mt mono">${c.base} × ${(c.daysPerWeek / 5).toFixed(1)} × ${res.fraction.toFixed(3)} = ${(c.base * c.daysPerWeek / 5 * res.fraction).toFixed(2)} → rounded to nearest ½</div>
+        </div></div></div>
+    </div>`;
+};
+
+/* ───────────────────────────── ADMIN / SETTINGS ─────────────────── */
+VIEWS['admin'] = () => {
+  const tab = state.ui.admin.tab; const p = state.policy;
+  const tabs = [['types', 'Leave types'], ['entitlements', 'Entitlements'], ['blackouts', 'Blackout periods'], ['chain', 'Approval chain'], ['holidays', 'Bank holidays'], ['rules', 'Rules']];
+  let body = '';
+  if (tab === 'types') body = `<div class="toolbar"><span class="muted small">Changes apply immediately across the wizard, calendar and reports.</span><span class="grow"></span><button class="btn primary" data-act="editType" data-id="">+ Add leave type</button></div>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Colour</th><th scope="col">Name</th><th scope="col">ID</th><th scope="col">Paid</th><th scope="col">Deducts balance</th><th scope="col">Evidence</th><th scope="col">Active</th><th scope="col">In use</th><th scope="col" class="right">Actions</th></tr></thead><tbody>
+    ${state.leaveTypes.map(t => `<tr><td><span class="color-swatch" style="background:${t.colour}"></span></td><td><b>${esc(t.name)}</b><div class="small muted">${esc(t.desc)}</div></td><td class="mono">${t.id}</td><td>${t.paid ? '✓' : '—'}</td><td>${t.deducts ? '✓' : '—'}</td><td>${t.requiresEvidence ? '✓' : '—'}</td><td><button class="switch" role="switch" aria-checked="${t.active}" data-toggle-type="${t.id}" aria-label="Toggle ${esc(t.name)}"></button></td><td>${state.requests.filter(r => r.typeId === t.id).length}</td><td class="right"><button class="btn sm" data-act="editType" data-id="${t.id}">Edit</button></td></tr>`).join('')}</tbody></table></div>`;
+  if (tab === 'entitlements') body = `<p class="small muted">Edit base entitlement, carry-over (capped at ${p.carryOverMax}) and TOIL. Balances recalculate live.</p>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Employee</th><th scope="col">Team</th><th scope="col">Manager</th><th scope="col">FTE</th><th scope="col">Entitlement</th><th scope="col">Carry-over</th><th scope="col">TOIL</th><th scope="col">Remaining</th></tr></thead><tbody>
+    ${state.employees.map(e => { const b = balanceFor(e.id); return `<tr><td>${avatar(e, 'sm')} ${esc(e.name)}<div class="small muted">${esc(e.title)}</div></td><td>${esc(teamById(e.teamId).name)}</td><td><select data-ent="managerId" data-emp="${e.id}" aria-label="Manager for ${esc(e.name)}"><option value="">— (HR approves)</option>${state.employees.filter(m => m.id !== e.id).map(m => `<option value="${m.id}" ${e.managerId === m.id ? 'selected' : ''}>${esc(m.name)}</option>`).join('')}</select></td><td>${e.fte}</td><td><input type="number" min="0" max="40" step="0.5" value="${e.entitlement}" data-ent="entitlement" data-emp="${e.id}" aria-label="Entitlement for ${esc(e.name)}"></td><td><input type="number" min="0" max="${p.carryOverMax}" step="0.5" value="${e.carryOver}" data-ent="carryOver" data-emp="${e.id}" aria-label="Carry-over for ${esc(e.name)}"></td><td><input type="number" min="0" max="20" step="0.5" value="${e.toil}" data-ent="toil" data-emp="${e.id}" aria-label="TOIL for ${esc(e.name)}"></td><td><b>${b.remaining}</b> <span class="muted small">/ ${b.total}</span></td></tr>`; }).join('')}</tbody></table></div>`;
+  if (tab === 'blackouts') body = `<div class="toolbar"><span class="muted small">Hard blackouts block annual leave; soft blackouts show a warning and flag the request to approvers.</span><span class="grow"></span><button class="btn primary" data-act="editBlackout" data-id="">+ Add blackout</button></div>
+    ${state.blackouts.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Dates</th><th scope="col">Scope</th><th scope="col">Type</th><th scope="col">Note</th><th scope="col">Affected requests</th><th scope="col" class="right">Actions</th></tr></thead><tbody>
+    ${state.blackouts.map(b => `<tr><td><b>${esc(b.name)}</b></td><td>${fmtRange(b.start, b.end)}</td><td>${b.teamId ? esc(teamById(b.teamId).name) : 'All teams'}</td><td>${b.hard ? '<span class="chip rejected">Hard</span>' : '<span class="chip pending">Soft</span>'}</td><td class="small">${esc(b.note)}</td><td>${state.requests.filter(r => ACTIVE.has(r.status) && overlaps(r.start, r.end, b.start, b.end) && (!b.teamId || empById(r.employeeId).teamId === b.teamId)).length}</td><td class="right"><button class="btn sm" data-act="editBlackout" data-id="${b.id}">Edit</button> <button class="btn sm danger" data-act="delBlackout" data-id="${b.id}">Delete</button></td></tr>`).join('')}</tbody></table></div>` : emptyState('No blackout periods defined.')}`;
+  if (tab === 'chain') body = `<div class="grid two"><div>
+      <h3>Approval steps</h3>
+      <ol class="timeline"><li><b>Step 1 — Line manager</b><div class="small muted">Always required. Employees without a line manager route to HR.</div></li>
+      <li class="${p.hrSecondStep ? '' : 'cancelled'}"><b>Step 2 — HR Business Partner</b><div class="small muted">${p.hrSecondStep ? `Required when the request exceeds ${p.hrApprovalThresholdDays} working days.` : 'Disabled.'}</div></li></ol>
+      <div class="rule-row"><div><b>Enable HR second step</b><div class="desc">Adds an HR approval for long requests.</div></div><button class="switch" role="switch" aria-checked="${p.hrSecondStep}" data-rule="hrSecondStep" aria-label="Enable HR second step"></button></div>
+      <div class="rule-row"><div><b>HR threshold (working days)</b><div class="desc">Requests longer than this need step 2.</div></div><input type="number" min="1" max="30" value="${p.hrApprovalThresholdDays}" data-rulenum="hrApprovalThresholdDays" aria-label="HR threshold days" style="width:80px"></div>
+      <div class="rule-row"><div><b>SLA / escalation (days)</b><div class="desc">Requests waiting longer can be escalated to the approver's manager or HR.</div></div><input type="number" min="1" max="30" value="${p.escalationDays}" data-rulenum="escalationDays" aria-label="Escalation days" style="width:80px"></div>
+    </div><div><h3>Active delegations</h3>${state.delegations.length ? `<ul class="list">${state.delegations.map(d => `<li><div class="grow"><b>${esc(empById(d.fromId).name)}</b> → ${esc(empById(d.toId).name)}<div class="small muted">${fmtRange(d.from, d.to)}</div></div><button class="btn sm danger" data-act="delDelegation" data-id="${d.fromId}">Remove</button></li>`).join('')}</ul>` : '<p class="muted small">None. Managers can delegate from the Approvals page.</p>'}
+      <h3 class="mt">Approvers</h3><ul class="list">${state.employees.filter(e => directReports(e.id).length || e.isHR).map(e => `<li>${avatar(e, 'sm')}<div class="grow">${esc(e.name)}<div class="small muted">${e.isHR ? 'HR · ' : ''}${directReports(e.id).length} direct report${directReports(e.id).length === 1 ? '' : 's'}</div></div><span class="tag">${approvalQueue(e.id).length} pending</span></li>`).join('')}</ul></div></div>`;
+  if (tab === 'holidays') body = `<div class="toolbar"><span class="muted small">England &amp; Wales ${YEAR}. Changes recalculate working days for all requests.</span><span class="grow"></span><button class="btn primary" data-act="addHoliday">+ Add bank holiday</button></div>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Date</th><th scope="col">Day</th><th scope="col">Name</th><th scope="col" class="right">Actions</th></tr></thead><tbody>${state.bankHolidays.slice().sort((a, b) => a.date.localeCompare(b.date)).map(b => `<tr><td>${fmtDate(b.date)}</td><td>${DOW_S[(parseISO(b.date).getDay() + 6) % 7]}</td><td>${esc(b.name)}</td><td class="right"><button class="btn sm danger" data-act="delHoliday" data-id="${b.date}">Remove</button></td></tr>`).join('')}</tbody></table></div>`;
+  if (tab === 'rules') {
+    const toggle = (key, label, desc) => `<div class="rule-row"><div><b>${label}</b><div class="desc">${desc}</div></div><button class="switch" role="switch" aria-checked="${p[key]}" data-rule="${key}" aria-label="${label}"></button></div>`;
+    const num = (key, label, desc, min, max, step = 1) => `<div class="rule-row"><div><b>${label}</b><div class="desc">${desc}</div></div><input type="number" min="${min}" max="${max}" step="${step}" value="${p[key]}" data-rulenum="${key}" aria-label="${label}" style="width:90px"></div>`;
+    body = `<div class="grid two"><div><h3>Validation rules</h3>${toggle('enforceNotice', 'Enforce notice period', 'Block requests that do not meet the notice rule.')}${toggle('enforceBlackouts', 'Enforce blackout periods', 'Hard blackouts block; soft ones warn.')}${toggle('enforceCoverage', 'Team coverage warnings', 'Warn when too many of the team are off.')}${toggle('halfDaysEnabled', 'Allow half days', 'AM/PM options in the request wizard.')}${toggle('allowNegativeBalance', 'Allow negative balance', 'Turns the insufficient-balance error into a warning.')}</div>
+      <div><h3>Thresholds</h3>${num('baseEntitlement', 'Base entitlement (days)', 'Default for new full-time joiners and the calculator.', 20, 35)}${num('carryOverMax', 'Max carry-over (days)', 'Cap applied to every employee.', 0, 15)}<div class="rule-row"><div><b>Carry-over expiry</b><div class="desc">Unused carried days are lost after this date.</div></div><input type="date" value="${p.carryOverExpiry}" data-ruledate="carryOverExpiry" aria-label="Carry-over expiry"></div>${num('noticeMultiplier', 'Notice multiplier (× duration)', 'Working days of notice per day requested.', 1, 5, 0.5)}${num('minNoticeDays', 'Minimum notice (working days)', 'Floor for the notice rule.', 0, 30)}${num('maxConsecutiveDays', 'Max consecutive working days', 'Longer requests are blocked (parental exempt).', 5, 60)}${num('teamCoverageWarnPct', 'Team coverage threshold (%)', 'Warn when this % of the team would be off.', 10, 100, 5)}${num('sickSelfCertDays', 'Self-certification (days)', 'Sickness without a fit note.', 1, 14)}</div></div>`;
+  }
+  return `<div class="page-head"><div><h1>Admin / Settings</h1><p>HR configuration — every change is applied live to the in-memory model.</p></div><button class="btn" data-act="resetData">Reset sample data</button></div>
+    <div class="card"><div class="tabs" role="tablist">${tabs.map(([id, l]) => `<button role="tab" aria-selected="${tab === id}" data-admintab="${id}">${l}</button>`).join('')}</div>${body}</div>`;
+};
+async function adminAction(act, id) {
+  const L = () => $('#layer');
+  if (act === 'editType') {
+    const t = state.leaveTypes.find(x => x.id === id) || { id: '', name: '', colour: '#0078D4', paid: true, requiresEvidence: false, deducts: false, active: true, desc: '' };
+    const isNew = !id;
+    const res = await new Promise(resolve => {
+      openLayer(`<div class="scrim" data-scrim><div class="modal" role="dialog" aria-modal="true" aria-labelledby="ltT"><header><span id="ltT">${isNew ? 'Add leave type' : 'Edit leave type'}</span><button class="icon-btn" data-cancel aria-label="Close">${ICON.close}</button></header><div class="body"><div class="form-grid">
+        <div class="field"><label for="ltName">Name</label><input id="ltName" value="${esc(t.name)}" data-autofocus required></div>
+        <div class="field"><label for="ltId">ID</label><input id="ltId" value="${esc(t.id)}" ${isNew ? '' : 'readonly'} pattern="[a-z0-9-]+" placeholder="e.g. volunteering"></div>
+        <div class="field"><label for="ltColour">Colour</label><input type="color" id="ltColour" value="${t.colour}"></div>
+        <div class="field" style="grid-column:1/-1"><label for="ltDesc">Description</label><input id="ltDesc" value="${esc(t.desc)}"></div>
+        <label class="row"><input type="checkbox" id="ltPaid" ${t.paid ? 'checked' : ''}> Paid</label><label class="row"><input type="checkbox" id="ltDed" ${t.deducts ? 'checked' : ''}> Deducts annual balance</label><label class="row"><input type="checkbox" id="ltEv" ${t.requiresEvidence ? 'checked' : ''}> Requires evidence</label><label class="row"><input type="checkbox" id="ltAct" ${t.active ? 'checked' : ''}> Active</label>
+      </div></div><footer><button class="btn" data-cancel>Cancel</button><button class="btn primary" data-ok>Save</button></footer></div></div>`);
+      $$('[data-cancel]', L()).forEach(b => b.addEventListener('click', () => { closeLayer(); resolve(null); }));
+      L().querySelector('[data-ok]').addEventListener('click', () => {
+        const v = { name: $('#ltName').value.trim(), id: $('#ltId').value.trim().toLowerCase().replace(/[^a-z0-9-]/g, '-') || $('#ltName').value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-'), colour: $('#ltColour').value, desc: $('#ltDesc').value.trim(), paid: $('#ltPaid').checked, deducts: $('#ltDed').checked, requiresEvidence: $('#ltEv').checked, active: $('#ltAct').checked };
+        if (!v.name) { toast('Name is required.', 'error'); return; }
+        if (isNew && state.leaveTypes.some(x => x.id === v.id)) { toast(`ID "${v.id}" already exists.`, 'error'); return; }
+        closeLayer(); resolve(v);
+      });
+    });
+    if (res) { if (isNew) state.leaveTypes.push(res); else Object.assign(t, res); toast(`Leave type "${res.name}" saved.`, 'success'); render(); }
+  }
+  if (act === 'editBlackout') {
+    const b = state.blackouts.find(x => x.id === id) || { id: '', name: '', start: TODAY, end: addDays(TODAY, 4), teamId: null, hard: false, note: '' };
+    const res = await new Promise(resolve => {
+      openLayer(`<div class="scrim" data-scrim><div class="modal" role="dialog" aria-modal="true" aria-labelledby="boT"><header><span id="boT">${id ? 'Edit blackout period' : 'Add blackout period'}</span><button class="icon-btn" data-cancel aria-label="Close">${ICON.close}</button></header><div class="body"><div class="form-grid">
+        <div class="field" style="grid-column:1/-1"><label for="boName">Name</label><input id="boName" value="${esc(b.name)}" data-autofocus></div>
+        <div class="field"><label for="boStart">Start</label><input type="date" id="boStart" value="${b.start}"></div><div class="field"><label for="boEnd">End</label><input type="date" id="boEnd" value="${b.end}"></div>
+        <div class="field"><label for="boTeam">Scope</label><select id="boTeam"><option value="">All teams</option>${state.teams.map(t => `<option value="${t.id}" ${b.teamId === t.id ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div>
+        <div class="field"><label for="boHard">Type</label><select id="boHard"><option value="soft" ${!b.hard ? 'selected' : ''}>Soft (warn)</option><option value="hard" ${b.hard ? 'selected' : ''}>Hard (block annual leave)</option></select></div>
+        <div class="field" style="grid-column:1/-1"><label for="boNote">Note shown to employees</label><input id="boNote" value="${esc(b.note)}"></div>
+      </div></div><footer><button class="btn" data-cancel>Cancel</button><button class="btn primary" data-ok>Save</button></footer></div></div>`);
+      $$('[data-cancel]', L()).forEach(x => x.addEventListener('click', () => { closeLayer(); resolve(null); }));
+      L().querySelector('[data-ok]').addEventListener('click', () => { const v = { name: $('#boName').value.trim(), start: $('#boStart').value, end: $('#boEnd').value, teamId: $('#boTeam').value || null, hard: $('#boHard').value === 'hard', note: $('#boNote').value.trim() }; if (!v.name || !v.start || !v.end || v.end < v.start) { toast('Please provide a name and a valid date range.', 'error'); return; } closeLayer(); resolve(v); });
+    });
+    if (res) { if (id) Object.assign(b, res); else state.blackouts.push({ id: uid('b'), ...res }); toast(`Blackout "${res.name}" saved.`, 'success'); render(); }
+  }
+  if (act === 'delBlackout') { const b = state.blackouts.find(x => x.id === id); if (await confirmModal({ title: 'Delete blackout?', body: `<p>Remove <b>${esc(b.name)}</b>?</p>`, confirmText: 'Delete', danger: true })) { state.blackouts = state.blackouts.filter(x => x.id !== id); toast('Blackout removed.', 'success'); render(); } }
+  if (act === 'delDelegation') { state.delegations = state.delegations.filter(d => d.fromId !== id); toast('Delegation removed.', 'success'); render(); }
+  if (act === 'addHoliday') {
+    const res = await new Promise(resolve => {
+      openLayer(`<div class="scrim" data-scrim><div class="modal" role="dialog" aria-modal="true" aria-labelledby="bhT"><header><span id="bhT">Add bank holiday</span><button class="icon-btn" data-cancel aria-label="Close">${ICON.close}</button></header><div class="body"><div class="form-grid"><div class="field"><label for="bhDate">Date</label><input type="date" id="bhDate" value="${YEAR}-06-05" data-autofocus></div><div class="field"><label for="bhName">Name</label><input id="bhName" placeholder="e.g. Special bank holiday"></div></div></div><footer><button class="btn" data-cancel>Cancel</button><button class="btn primary" data-ok>Add</button></footer></div></div>`);
+      $$('[data-cancel]', L()).forEach(x => x.addEventListener('click', () => { closeLayer(); resolve(null); }));
+      L().querySelector('[data-ok]').addEventListener('click', () => { const v = { date: $('#bhDate').value, name: $('#bhName').value.trim() }; if (!v.date || !v.name) { toast('Date and name are required.', 'error'); return; } if (state.bankHolidays.some(b => b.date === v.date)) { toast('That date is already a bank holiday.', 'error'); return; } closeLayer(); resolve(v); });
+    });
+    if (res) { state.bankHolidays.push(res); recalcAllDays(); toast(`Bank holiday "${res.name}" added — working days recalculated.`, 'success'); render(); }
+  }
+  if (act === 'delHoliday') { state.bankHolidays = state.bankHolidays.filter(b => b.date !== id); recalcAllDays(); toast('Bank holiday removed — working days recalculated.', 'success'); render(); }
+  if (act === 'resetData') { if (await confirmModal({ title: 'Reset sample data?', body: '<p>All changes made in this session will be discarded and the seed data reloaded.</p>', confirmText: 'Reset', danger: true })) { seedStore(); state.delegations = []; state.ui.wizard = null; toast('Sample data reset.', 'success'); renderTopbar(); render(); } }
+}
+function recalcAllDays() { state.requests.forEach(r => { r.days = workingDays(empById(r.employeeId), r.start, r.end, r.startHalf, r.endHalf); }); }
+
+/* ───────────────────────────── ABOUT / DESIGN NOTES ─────────────── */
+function openAbout() {
+  openLayer(`<div class="scrim" data-scrim><div class="modal wide" role="dialog" aria-modal="true" aria-labelledby="abT"><header><span id="abT">About · Information architecture &amp; data model</span><button class="icon-btn" data-cancel aria-label="Close" data-autofocus>${ICON.close}</button></header>
+    <div class="body"><div class="grid two">
+      <div><h3>Information architecture</h3><ul class="plain small">
+        <li><b>Dashboard</b> — personal balance KPIs, donut breakdown, upcoming leave, bank holidays, activity feed; team/org snapshot for managers &amp; HR.</li>
+        <li><b>My Leave</b> — filter/sort table, detail drawer with audit timeline; edit, withdraw, cancel, duplicate, continue drafts.</li>
+        <li><b>New Request</b> — 4-step wizard: type → dates (half days, live working-day calc, rule validation) → details (cover, notes, evidence) → review &amp; submit.</li>
+        <li><b>Team Calendar</b> — month/week grids, type/status colour coding, bank holidays, blackout hatching, capacity heat, filters.</li>
+        <li><b>Approvals</b> — queue with balance-after, coverage, conflict flags, SLA; approve / reject (reason) / request changes; bulk approve; delegation; escalation.</li>
+        <li><b>Reports</b> — inline-SVG charts (month, department, type, absence rate), utilisation table, unused-balance risk, CSV export, print.</li>
+        <li><b>Policies</b> — readable policy driven by live rule values, pro-rata calculator.</li>
+        <li><b>Admin</b> — leave types, entitlements &amp; managers, blackouts, approval chain, bank holidays, rule toggles.</li></ul>
+        <h3 class="mt">Roles</h3><p class="small">The role switcher swaps the signed-in persona: <b>Employee</b> = Ryan Bowen, <b>Manager</b> = Sarah Bergg (Head of Cloud Solutions), <b>HR Admin</b> = Grace Chen. Navigation, notifications and queues follow the persona.</p>
+        <h3 class="mt">Keyboard</h3><p class="small"><span class="kbd">N</span> new request · <span class="kbd">/</span> search · <span class="kbd">T</span> theme · <span class="kbd">?</span> this panel · <span class="kbd">Esc</span> close · <span class="kbd">1</span>–<span class="kbd">8</span> navigate</p></div>
+      <div><h3>Data model (entities)</h3><pre class="mono small" style="white-space:pre-wrap;background:var(--surface-2);padding:10px;border-radius:6px;margin:0">Employee { id, name, title, teamId, managerId, entitlement, carryOver, fte, workingDays[], startDate, toil, isHR }
+Team { id, name, leadId, colour }
+LeaveType { id, name, colour, paid, deducts, requiresEvidence, active, desc }
+LeaveRequest { id, employeeId, typeId, start, end, startHalf, endHalf, days, status, notes, coverId, reason, attachments[], approvals[ApprovalStep], timeline[AuditEvent] }
+  status ∈ draft | pending | amended | approved | rejected | cancelled
+ApprovalStep { step, role, approverId, status, at, by, note, escalated }
+AuditEvent { at, by, action, note }
+Balance (derived) { entitlement, carryOver, carryUsed, carryExpired, total, taken, booked, pending, remaining, available }
+Policy { baseEntitlement, carryOverMax, carryOverExpiry, noticeMultiplier, minNoticeDays, maxConsecutiveDays, teamCoverageWarnPct, hrApprovalThresholdDays, escalationDays, allowNegativeBalance, sickSelfCertDays, enforce* }
+BlackoutPeriod { id, name, start, end, teamId|null, hard, note }
+BankHoliday { date, name }
+Delegation { fromId, toId, from, to }
+Notification { id, at, text, read, route, requestId }</pre>
+        <h3 class="mt">Implementation notes</h3><ul class="plain small"><li>Single HTML file, zero dependencies; charts are inline SVG.</li><li>All state lives in memory (a page refresh restores the seed). Only the theme preference touches storage, guarded by try/catch.</li><li>Unidirectional flow: mutate <code>state</code> → <code>render()</code> re-draws the current route; events are delegated from <code>document</code>.</li><li>Working-day maths respects weekends, per-employee working patterns (e.g. 0.8 FTE Mon–Thu) and bank holidays.</li></ul></div>
+    </div></div><footer><button class="btn primary" data-cancel>Close</button></footer></div></div>`);
+  const L = $('#layer');
+  $$('[data-cancel]', L).forEach(b => b.addEventListener('click', closeLayer));
+  L.querySelector('[data-scrim]').addEventListener('click', e => { if (e.target.hasAttribute('data-scrim')) closeLayer(); });
+}
+
+/* ───────────────────────────── EVENT WIRING ─────────────────────── */
+function wireEvents() {
+  window.addEventListener('hashchange', render);
+  $('#roleSwitch').addEventListener('click', e => { const b = e.target.closest('button[data-role]'); if (b) setRole(b.dataset.role); });
+  $('#themeToggle').addEventListener('click', () => applyTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  $('#aboutBtn').addEventListener('click', openAbout);
+  $('#userChip').addEventListener('click', () => { navigate('dashboard'); toast(`Signed in as ${me().name} (${me().email}) — role: ${roleLabel()}`, 'info'); });
+  $('#hamburger').addEventListener('click', () => { const n = $('#sidenav'); n.classList.toggle('open'); $('#hamburger').setAttribute('aria-expanded', String(n.classList.contains('open'))); });
+  $('#notifBtn').addEventListener('click', () => { state.ui.notifOpen = !state.ui.notifOpen; $('#notifPopover').classList.toggle('hidden', !state.ui.notifOpen); $('#notifBtn').setAttribute('aria-expanded', String(state.ui.notifOpen)); if (state.ui.notifOpen) renderNotifPopover(); });
+  $('#notifPopover').addEventListener('click', e => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    if (b.dataset.act === 'markAllRead') { myNotifs().forEach(n => n.read = true); renderTopbar(); }
+    if (b.dataset.act === 'openNotif') { const n = myNotifs().find(x => x.id === b.dataset.id); n.read = true; state.ui.notifOpen = false; $('#notifPopover').classList.add('hidden'); $('#notifBtn').setAttribute('aria-expanded', 'false'); renderTopbar(); if (n.requestId && reqById(n.requestId)) { navigate(n.route, n.route === 'my-leave' ? { highlight: n.requestId } : {}); setTimeout(() => openDrawer(n.requestId), 50); } else navigate(n.route); }
+  });
+  const gs = $('#globalSearch');
+  gs.addEventListener('input', () => runSearch(gs.value));
+  gs.addEventListener('focus', () => runSearch(gs.value));
+  gs.addEventListener('keydown', e => { if (e.key === 'ArrowDown') { const f = $('#searchResults button'); if (f) { e.preventDefault(); f.focus(); } } if (e.key === 'Escape') { $('#searchResults').classList.add('hidden'); gs.blur(); } });
+  $('#searchResults').addEventListener('keydown', e => { const items = $$('#searchResults button'); const i = items.indexOf(document.activeElement); if (e.key === 'ArrowDown') { e.preventDefault(); items[Math.min(items.length - 1, i + 1)]?.focus(); } if (e.key === 'ArrowUp') { e.preventDefault(); if (i === 0) gs.focus(); else items[i - 1]?.focus(); } });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.search')) $('#searchResults').classList.add('hidden');
+    if (!e.target.closest('#notifPopover') && !e.target.closest('#notifBtn') && state.ui.notifOpen) { state.ui.notifOpen = false; $('#notifPopover').classList.add('hidden'); $('#notifBtn').setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Delegated click handling for the view area and layers
+  document.addEventListener('click', e => {
+    const el = e.target.closest('[data-act],[data-sort],[data-type],[data-half],[data-calview],[data-admintab],[data-aprfilter],[data-toggle-type],[data-rule],[data-att-remove]');
+    if (!el) return;
+    if (el.dataset.sort) { const f = state.ui.myLeave; if (f.sort === el.dataset.sort) f.dir = f.dir === 'asc' ? 'desc' : 'asc'; else { f.sort = el.dataset.sort; f.dir = 'asc'; } render(); return; }
+    if (el.dataset.type) { state.ui.wizard.typeId = el.dataset.type; render(); return; }
+    if (el.dataset.half) { const w = state.ui.wizard; if (el.dataset.half === 'start') w.startHalf = el.dataset.val; else w.endHalf = el.dataset.val; render(); return; }
+    if (el.dataset.calview) { state.ui.calendar.view = el.dataset.calview; render(); return; }
+    if (el.dataset.admintab) { state.ui.admin.tab = el.dataset.admintab; render(); return; }
+    if (el.dataset.aprfilter) { state.ui.approvals.filter = el.dataset.aprfilter; state.ui.approvals.selected.clear(); render(); return; }
+    if (el.dataset.toggleType) { const t = typeById(el.dataset.toggleType); t.active = !t.active; toast(`${t.name} ${t.active ? 'activated' : 'deactivated'}.`, 'info', 2000); render(); return; }
+    if (el.dataset.rule) { state.policy[el.dataset.rule] = !state.policy[el.dataset.rule]; toast('Rule updated.', 'info', 1800); render(); return; }
+    if (el.dataset.attRemove !== undefined) { state.ui.wizard.attachments.splice(+el.dataset.attRemove, 1); render(); return; }
+    const act = el.dataset.act, id = el.dataset.id;
+    if (['view', 'editReq', 'dupReq', 'withdrawReq', 'cancelReq', 'deleteDraft', 'approve', 'reject', 'changes', 'escalate'].includes(act)) return requestAction(act, id);
+    if (act.startsWith('wiz') || act === 'addAttachment') return wizardAction(act, el);
+    if (['calPrev', 'calNext', 'calToday', 'weekPrev', 'weekNext'].includes(act)) return calendarAction(act);
+    if (['selAll', 'bulkApprove', 'delegate'].includes(act)) return approvalsAction(act);
+    if (['editType', 'editBlackout', 'delBlackout', 'delDelegation', 'addHoliday', 'delHoliday', 'resetData'].includes(act)) return adminAction(act, id);
+    if (act === 'clearFilters') { Object.assign(state.ui.myLeave, { status: 'all', type: 'all', year: String(YEAR), q: '', highlight: null }); render(); }
+    if (act === 'print') window.print();
+    if (act === 'exportMine') exportRequestsCSV(state.requests.filter(r => r.employeeId === state.currentUserId), `my-leave-${me().name.replace(/\s+/g, '-').toLowerCase()}-${YEAR}.csv`);
+    if (act === 'exportCSV') exportRequestsCSV(reportScope().reqs, `leave-requests-${YEAR}.csv`);
+    if (act === 'exportBalances') downloadCSV(`leave-balances-${YEAR}.csv`, [['Employee', 'Team', 'FTE', 'Entitlement', 'Carry-over', 'Total', 'Taken', 'Booked', 'Pending', 'Remaining', 'Available'], ...reportScope().people.map(p => { const b = balanceFor(p.id); return [p.name, teamById(p.teamId).name, p.fte, b.entitlement, b.carryOver, b.total, b.taken, b.booked, b.pending, b.remaining, b.available]; })]);
+  });
+  // Delegated change/input handling
+  document.addEventListener('change', e => {
+    const el = e.target;
+    if (el.dataset.filter) { state.ui.myLeave[el.dataset.filter] = el.value; state.ui.myLeave.highlight = null; if (el.dataset.filter !== 'q') render(); return; }
+    if (el.dataset.w) { const w = state.ui.wizard; w[el.dataset.w] = el.value; if (el.dataset.w === 'start' && (!w.end || w.end < w.start)) w.end = w.start; if (w.start !== w.end && w.startHalf === 'AM') w.startHalf = ''; w.ack = false; render(); const again = $(`[data-w="${el.dataset.w}"]`); if (again && el.dataset.w !== 'notes') again.focus(); return; }
+    if (el.dataset.cal) { state.ui.calendar[el.dataset.cal] = el.value; if (el.dataset.cal === 'team') state.ui.calendar.person = 'all'; render(); return; }
+    if (el.hasAttribute('data-aprsort')) { state.ui.approvals.sort = el.value; render(); return; }
+    if (el.hasAttribute('data-rpteam')) { state.ui.reports.team = el.value; render(); return; }
+    if (el.dataset.sel) { const s = state.ui.approvals.selected; el.checked ? s.add(el.dataset.sel) : s.delete(el.dataset.sel); render(); return; }
+    if (el.id === 'wAck') { state.ui.wizard.ack = el.checked; render(); return; }
+    if (el.dataset.calc) { calcState[el.dataset.calc] = el.type === 'date' ? el.value : Number(el.value); render(); return; }
+    if (el.dataset.ent) { const emp = empById(el.dataset.emp); const k = el.dataset.ent; emp[k] = k === 'managerId' ? (el.value || null) : Number(el.value); if (k === 'carryOver') emp.carryOver = clamp(emp.carryOver, 0, state.policy.carryOverMax); toast(`${emp.name}: ${k} updated.`, 'success', 1800); render(); return; }
+    if (el.dataset.rulenum) { state.policy[el.dataset.rulenum] = Number(el.value); toast('Threshold updated.', 'info', 1800); render(); return; }
+    if (el.dataset.ruledate) { state.policy[el.dataset.ruledate] = el.value; toast('Carry-over expiry updated.', 'info', 1800); render(); return; }
+  });
+  document.addEventListener('input', e => {
+    const el = e.target;
+    if (el.dataset.filter === 'q') { state.ui.myLeave.q = el.value; const pos = el.selectionStart; render(); const again = $('#flQ'); if (again) { again.focus(); again.setSelectionRange(pos, pos); } }
+    if (el.dataset.w === 'notes') { state.ui.wizard.notes = el.value; const help = el.parentElement.querySelector('.help'); if (help) help.textContent = `${el.value.length}/300`; }
+  });
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    const tag = document.activeElement?.tagName; const typing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(tag);
+    if (e.key === 'Escape') { if ($('#layer').children.length) { closeLayer(); return; } if (state.ui.notifOpen) { $('#notifBtn').click(); } return; }
+    if (typing || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'n' || e.key === 'N') { e.preventDefault(); startWizard(); }
+    else if (e.key === '/') { e.preventDefault(); $('#globalSearch').focus(); }
+    else if (e.key === 't' || e.key === 'T') applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+    else if (e.key === '?') openAbout();
+    else if (/^[1-8]$/.test(e.key)) { const items = NAV.filter(n => n.roles.includes(state.role)); const n = items[+e.key - 1]; if (n) navigate(n.id); }
+  });
+}
+
+/* ───────────────────────────── BOOT ─────────────────────────────── */
+function boot() {
+  // Theme: stored preference → OS preference → light
+  const stored = safeStore.get('alm-theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+  seedStore();
+  wireEvents();
+  renderTopbar();
+  // First-paint skeleton, then render
+  $('#view').innerHTML = `<div class="grid kpis mb">${'<div class="skeleton" style="height:92px"></div>'.repeat(6)}</div><div class="grid three">${'<div class="skeleton" style="height:260px"></div>'.repeat(3)}</div>`;
+  $('#sidenav').innerHTML = `<div class="stack" style="padding:8px">${'<div class="skeleton" style="height:36px"></div>'.repeat(7)}</div>`;
+  setTimeout(() => { state.ui.booted = true; render(); toast('Welcome, Ryan. Sample data loaded — nothing is persisted.', 'info', 3500); }, 450);
+}
+/* Expose a small namespace for debugging / automation (read-only intent). */
+window.ALM = { state, navigate, render, setRole, startWizard, openDrawer, closeLayer, openAbout, balanceFor, workingDays, validateRequest, approvalQueue, reqById, empById, NAV, applyTheme };
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+</script>
+</body>
+</html>
