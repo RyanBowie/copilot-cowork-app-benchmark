@@ -1,6 +1,6 @@
 {
   "schemaVersion": 8,
-  "generatedAt": "2026-09-23T00:10:17.244Z",
+  "generatedAt": "2026-09-23T01:53:44.872Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -7981,7 +7981,7 @@
     "reviewMode": "external-only",
     "costMode": "complete-app-only",
     "registeredBuilds": 6,
-    "completedBuilds": 2,
+    "completedBuilds": 3,
     "registeredSettings": [
       {
         "test": "test-05",
@@ -8019,9 +8019,14 @@
         "model": "Opus 5.5",
         "effort": "Medium",
         "replicate": 1,
-        "status": "testing",
-        "finalCost": null,
-        "authoringPrompts": null
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 610,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 3
       },
       {
         "test": "test-02",
@@ -8452,7 +8457,101 @@
       {
         "test": "test-02",
         "title": "Live SharePoint requests",
-        "runs": [],
+        "runs": [
+          {
+            "id": "run-03",
+            "model": "Opus 5.5",
+            "effort": "Medium",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 610,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 3,
+            "corrections": 1,
+            "clarifications": 1,
+            "final": {
+              "accepted": true,
+              "functionalPassed": 10,
+              "functionalTotal": 10,
+              "allCriticalPassed": true
+            },
+            "functionalChecks": [
+              {
+                "id": "BC01",
+                "capability": "Runnable private managed app",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC02",
+                "capability": "Live catalogue connection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC03",
+                "capability": "Live dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC04",
+                "capability": "Catalogue search and filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC05",
+                "capability": "Complete saved request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC06",
+                "capability": "Basic request validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC07",
+                "capability": "Live request listing",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC08",
+                "capability": "Reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "BC09",
+                "capability": "Honest data and error states",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "BC10",
+                "capability": "Usable desktop and mobile build",
+                "critical": false,
+                "final": "pass"
+              }
+            ],
+            "timing": {
+              "build": {
+                "seconds": null,
+                "status": "observer-recovery",
+                "note": "Completion confirmation was delayed by the external observer; no model-speed comparison is reported."
+              }
+            },
+            "archived": true,
+            "reviewedRevisionScope": "owner-preview"
+          }
+        ],
         "registeredBuilds": 2,
         "complete": false,
         "meanFinalCredits": null

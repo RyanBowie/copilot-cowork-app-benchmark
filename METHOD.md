@@ -28,6 +28,19 @@ all authoring guidance but not the cost command or external review. Detailed
 capability verdicts, rather than a universal quality percentage, accompany
 each completed result. New-version raw evidence and screenshots remain private.
 
+The first new-version SharePoint app required one build, one read-error
+correction and one clarification to deliver existing schema evidence as files.
+All three are included in its sole 610-credit completed-app reading. The
+repair also changed create/readback guards, so review made one documented
+supplemental native save while preserving all earlier rows and inventory.
+Both created test records were removed with exact ETags only after final
+evidence and cost; all seed fields and ETags stayed unchanged.
+Actual downloaded schema bodies were checked against the live binding and
+server evidence. Their field summaries do not themselves contain nested
+Choice properties or site/list IDs; those details require corroboration.
+Read-failure/Retry coverage is not a permission, throttling or ambiguous-commit
+test, and adds no retroactive verdict to historical untested cases.
+
 Test 5 reused the supplied reference screens and business logic; one correction
 fixed inherited theme styling. This observed strategy was not separately
 randomized, so its cost difference cannot establish a model-only or reuse-only

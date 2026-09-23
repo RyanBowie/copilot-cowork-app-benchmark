@@ -25,18 +25,28 @@ accepted observations remain unchanged.
 
 ## New results: Opus 5.5 / Medium
 
-Two of six registered new-version builds are complete. These are separate
+Three of six registered new-version builds are complete. These are separate
 observations, not replacements for the original Opus 5 measurements.
 
 | Scope | Completed-app credits | Authoring prompts | Independently verified coverage |
 |---|---:|---:|---|
 | Test 1: virtual procurement | **159** | **1** | 20 of 20 functional groups |
+| Test 2: live SharePoint, first build | **610** | **3** | 10 of 10 functional groups |
 | Test 5: HTML reference recreation | **365** | **2** | 20 of 20 functional; 10 of 10 visual groups |
 
-The first SharePoint build is under independent review; its repeat and Tests
-3-4 have no completed result yet. No unfinished cost or prompt total is published.
+The second SharePoint build and Tests 3-4 have no completed result yet.
+No unfinished cost, partial prompt total or two-build SharePoint mean is published.
 Final repaired revisions were reviewed in the owner preview, not claimed
 republished.
+
+The SharePoint app initially passed nine groups but represented a real failed
+read as an empty request list. One correction produced explicit errors and a
+working Retry. Independent review verified actual schema files, successful
+native saves, server readback, persistence after reopening and unchanged
+inventory. A third prompt only made the existing schema files downloadable;
+it is included in both the three-prompt count and the sole 610-credit total.
+This bounded error coverage does not establish production resilience, and
+historical untested error cases are not reclassified as failures.
 
 The Test 5 app reused the reference screens and business logic and required
 one targeted styling correction. Its 365 credits are below every original
