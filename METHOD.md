@@ -41,6 +41,18 @@ Choice properties or site/list IDs; those details require corroboration.
 Read-failure/Retry coverage is not a permission, throttling or ambiguous-commit
 test, and adds no retroactive verdict to historical untested cases.
 
+The second SharePoint build received the identical initial prompt and reached
+the same ten-group target for 419 credits with two authoring prompts. Its one
+correction addressed the same demonstrated failed-read/false-empty defect and
+also requested actual downloadable schema files, avoiding a separate
+evidence-delivery turn. A changed save/readback path again justified exactly
+one guarded supplemental native save without resetting the existing fixture.
+Its failure scenario covered request-list reads; do not claim all connector
+failure modes were exercised. Both runs retain their original 9/10 outcomes
+and explicit presentation limitations. The completed pair's 514.5-credit and
+2.5-prompt means are descriptive n=2 statistics, not a stable price, a causal
+prompt-cost estimate or an Opus 5 repeat.
+
 Test 5 reused the supplied reference screens and business logic; one correction
 fixed inherited theme styling. This observed strategy was not separately
 randomized, so its cost difference cannot establish a model-only or reuse-only

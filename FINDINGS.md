@@ -25,26 +25,37 @@ accepted observations remain unchanged.
 
 ## New results: Opus 5.5 / Medium
 
-Three of six registered new-version builds are complete. These are separate
+Four of six registered new-version builds are complete. These are separate
 observations, not replacements for the original Opus 5 measurements.
 
 | Scope | Completed-app credits | Authoring prompts | Independently verified coverage |
 |---|---:|---:|---|
 | Test 1: virtual procurement | **159** | **1** | 20 of 20 functional groups |
 | Test 2: live SharePoint, first build | **610** | **3** | 10 of 10 functional groups |
+| Test 2: live SharePoint, second build | **419** | **2** | 10 of 10 functional groups |
 | Test 5: HTML reference recreation | **365** | **2** | 20 of 20 functional; 10 of 10 visual groups |
 
-The second SharePoint build and Tests 3-4 have no completed result yet.
-No unfinished cost, partial prompt total or two-build SharePoint mean is published.
+The SharePoint pair averages **514.5 credits and 2.5 authoring prompts**,
+with observed costs **419-610**. Both used the identical initial prompt and
+the same scoped acceptance criteria; subsequent guidance remained adaptive.
+Tests 3-4 have no completed result yet. No unfinished costs or partial prompt
+totals are published.
 Final repaired revisions were reviewed in the owner preview, not claimed
 republished.
 
-The SharePoint app initially passed nine groups but represented a real failed
+Both SharePoint apps initially passed nine groups but represented a real failed
 read as an empty request list. One correction produced explicit errors and a
 working Retry. Independent review verified actual schema files, successful
 native saves, server readback, persistence after reopening and unchanged
 inventory. A third prompt only made the existing schema files downloadable;
-it is included in both the three-prompt count and the sole 610-credit total.
+it is included in both the first build's three-prompt count and sole 610-credit total.
+The second build's correction also requested those downloadable files, so it
+needed no separate clarification: two prompts and a sole 419-credit total.
+The difference cannot be attributed only to that extra prompt; build strategy,
+generated output and run-to-run variation were not controlled separately.
+Both final reviews verified all ten groups, not identical overall presentation:
+the second app retains very small mobile dashboard chart labels, while its
+catalogue and the rubric's named mobile controls remain readable and usable.
 This bounded error coverage does not establish production resilience, and
 historical untested error cases are not reclassified as failures.
 

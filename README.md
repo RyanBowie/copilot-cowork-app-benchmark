@@ -12,11 +12,11 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**43 completed app measurements across five test scopes:** the original 20 apps,
+**44 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
 capability-stress observations for Test 4 and five accepted HTML-reference
-recreations for Test 5, one matched Test 5 repeat and three new Opus 5.5 results.
+recreations for Test 5, one matched Test 5 repeat and four new Opus 5.5 results.
 All five original Test 5 settings are finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
@@ -28,7 +28,10 @@ groups. Its reference-reuse strategy is disclosed, not treated as a causal
 model-price saving. The first Test 2 SharePoint app completed for **610 credits
 with three prompts**, verifying all **10/10 groups** after one read-error
 correction and one schema-evidence delivery clarification. Its second build
-and Tests 3-4 have no completed result yet; no paired SharePoint mean is reported.
+completed for **419 credits with two prompts**, also verifying **10/10 groups**.
+The **two-build mean is 514.5 credits and 2.5 prompts**; both needed a read-error
+correction, with schema delivery included in that correction on the second build.
+This is an exploratory pair, not a stable price. Tests 3-4 remain unfinished.
 Original Opus 5 averages are unchanged.
 
 **First matched repeat:** Sonnet 5 / High Test 5 cost **3,153 credits / six
