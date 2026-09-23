@@ -13,6 +13,36 @@ Test 5 separately recreates a private Annual Leave Manager HTML reference.
 All five original settings are finalized; only accepted completed-app costs
 are published, with one adaptive observation per selected setting.
 
+## New model version: Opus 5.5 / Medium
+
+Six fresh apps are registered across the original five scopes: Test 5 first,
+then Test 1, two Test 2 SharePoint builds, Test 3 and Test 4. Medium was the
+observed native default. Frozen business prompts, reference bytes, fixtures
+and scope-specific criteria are preserved; independent review and bounded
+adaptive corrections stay in the same app. Only one final cumulative cost
+is taken after completion. Unfinished builds have no published cost.
+
+This is a new-version cohort, not a replacement for or repeat of Opus 5.
+Neither version nor different test scopes are pooled. Prompt totals include
+all authoring guidance but not the cost command or external review. Detailed
+capability verdicts, rather than a universal quality percentage, accompany
+each completed result. New-version raw evidence and screenshots remain private.
+
+Test 5 reused the supplied reference screens and business logic; one correction
+fixed inherited theme styling. This observed strategy was not separately
+randomized, so its cost difference cannot establish a model-only or reuse-only
+saving. One observation per scope, or two SharePoint observations when
+complete, remains exploratory.
+
+## Test 5: matched adaptive repeat
+
+A separately registered repeat uses the same original model version, effort,
+prompt, attachment and target in a fresh task. The completed Sonnet 5 / High
+pair contains both actual costs and prompt counts; its arithmetic mean is
+descriptive, not a stable price. Remaining original-version repeat slots are
+unstarted. Opus 5.5 observations never fill an Opus 5 repeat slot. Guided replay
+is a third, distinct design and remains unstarted.
+
 ## Test 5: reference fidelity and completed-app cost
 
 Five fresh original tasks use the same frozen initial prompt and byte-identical

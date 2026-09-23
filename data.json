@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 6,
-  "generatedAt": "2026-09-22T13:06:33.654Z",
+  "schemaVersion": 8,
+  "generatedAt": "2026-09-23T00:10:17.244Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -7518,5 +7518,964 @@
     "costNote": "Only cumulative task credits after full independent review and joint acceptance. No interim, repair-only or initial-output credit figures. Free cost commands do not count as authoring prompts.",
     "limitation": "One original observation per setting; selected model and effort, not a proven internal worker model or a causal ranking. Guided replay is not included in this original cohort.",
     "privacy": "The exact HTML reference and selected final app-only screenshots are available in the authorized Test 5 showcase. The fixture is fictional. Transcripts, generated source, account/task/resource identifiers and other raw evidence remain private."
+  },
+  "htmlReferenceRepeats": {
+    "test": "test-05",
+    "route": "test-05",
+    "cohort": "matched-adaptive-repeat",
+    "title": "Test 5: matched adaptive repeats",
+    "reviewMode": "external-only",
+    "protocolSha256": "8ca487b03edfacf06a51444cb384af9488135dc2cc5a7332002c6ba41d3cd018",
+    "buildPromptSha256": "c3c9e4e9de95e488fde6ecd99c7ba443be63302664b587c86ffc2bb6f1ef17ff",
+    "referenceSha256": "b04d8b8bb71e18b2429a4ddf995b698fcaebfbeac1f9926c804f437d256b0d28",
+    "referenceBytes": 188501,
+    "costMode": "complete-app-only",
+    "runs": [
+      {
+        "id": "run-06",
+        "model": "Sonnet 5",
+        "effort": "High",
+        "replicate": 2,
+        "matchedOriginalRunId": "run-05",
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 3153,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 6,
+        "corrections": 5,
+        "clarifications": 0,
+        "freeCostCommands": 1,
+        "final": {
+          "accepted": true,
+          "functionalPassed": 17,
+          "functionalTotal": 20,
+          "visualPassed": 8,
+          "visualTotal": 10,
+          "allCriticalPassed": true
+        },
+        "functionalChecks": [
+          {
+            "id": "HF01",
+            "capability": "Working managed app, complete role-aware scope and reference fixture",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF02",
+            "capability": "Derived dashboards and balances",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF03",
+            "capability": "My Leave filters, sorting and empty states",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF04",
+            "capability": "Request detail and retained history",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF05",
+            "capability": "Four-step request wizard",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF06",
+            "capability": "Working-day and half-day arithmetic",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF07",
+            "capability": "Blocking validation",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF08",
+            "capability": "Warnings and policy-dependent validation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF09",
+            "capability": "Draft, edit and duplicate lifecycle",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF10",
+            "capability": "Submission, approval routing and notifications",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF11",
+            "capability": "Withdraw and cancel with balance reconciliation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF12",
+            "capability": "Manager decisions and reasons",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF13",
+            "capability": "HR second-step and no-manager routing",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF14",
+            "capability": "Bulk decisions, delegation and escalation",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF15",
+            "capability": "Team calendars",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF16",
+            "capability": "Scoped reports and actual CSV exports",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF17",
+            "capability": "Live policy and pro-rata calculator",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HF18",
+            "capability": "Six working HR settings tabs",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HF19",
+            "capability": "Search, notifications, themes and keyboard interaction",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HF20",
+            "capability": "Faithful demo lifecycle and isolation",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "visualChecks": [
+          {
+            "id": "HV01",
+            "capability": "Reference identity and shell",
+            "critical": true,
+            "final": "pass"
+          },
+          {
+            "id": "HV02",
+            "capability": "Dashboard composition",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV03",
+            "capability": "Wizard and form hierarchy",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV04",
+            "capability": "Tables, filters and status treatment",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV05",
+            "capability": "Calendar visual encoding",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV06",
+            "capability": "Reports, charts and settings layouts",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV07",
+            "capability": "Light/dark palette and typography",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV08",
+            "capability": "Cards, spacing and content density",
+            "critical": false,
+            "final": "fail"
+          },
+          {
+            "id": "HV09",
+            "capability": "Dialogs, drawers and feedback",
+            "critical": false,
+            "final": "pass"
+          },
+          {
+            "id": "HV10",
+            "capability": "Responsive correspondence",
+            "critical": true,
+            "final": "pass"
+          }
+        ],
+        "timing": {
+          "build": {
+            "seconds": 4536.348,
+            "lowerBoundSeconds": null,
+            "observation": "upper-bound-only",
+            "authoringPrompts": 6,
+            "observedPrompts": 6
+          }
+        },
+        "archived": true
+      }
+    ],
+    "registeredSettings": [
+      {
+        "runId": "run-06",
+        "model": "Sonnet 5",
+        "effort": "High",
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 3153,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 6
+      },
+      {
+        "runId": "run-07",
+        "model": "Opus 5",
+        "effort": "Medium",
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "runId": "run-08",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "runId": "run-09",
+        "model": "Opus 5",
+        "effort": "High",
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "runId": "run-10",
+        "model": "Sonnet 5",
+        "effort": "Medium",
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      }
+    ],
+    "meanFinalCredits": 3153,
+    "complete": false,
+    "scope": "Annual Leave Manager: role-aware leave requests, approvals, calendars, reports and six HR settings tabs; fictional in-memory data only.",
+    "method": "Identical initial prompt and frozen HTML bytes in five fresh tasks. Independent native functional and visual review; targeted repairs in the same app. No arbitrary authoring-time or credit cutoff and no paid self-review.",
+    "acceptanceNote": "The frozen minimum requires 17 of 20 functional groups and 8 of 10 visual groups, including every critical group. Passing that minimum does not mean complete parity; all remaining failed groups are shown.",
+    "costNote": "Only cumulative task credits after full independent review and joint acceptance. No interim, repair-only or initial-output credit figures. Free cost commands do not count as authoring prompts.",
+    "limitation": "One additional adaptive observation per original setting, in reverse order. Two observations remain exploratory; compare both delivered capability results. The separately guided replay is not pooled with these runs.",
+    "privacy": "Only allowlisted measurements and capability outcomes are public. All repeat screenshots, transcripts, generated source and identifiers remain private. The original showcase permission is not extended.",
+    "comparison": {
+      "method": "matched-adaptive-repeat",
+      "completePairs": 1,
+      "complete": false,
+      "pairs": [
+        {
+          "model": "Sonnet 5",
+          "effort": "Medium",
+          "originalRunId": "run-01",
+          "repeatRunId": null,
+          "observations": 1,
+          "completePair": false,
+          "credits": {
+            "original": 2517,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "authoringPrompts": {
+            "original": 8,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "capabilityChanges": {
+            "functional": null,
+            "visual": null
+          }
+        },
+        {
+          "model": "Opus 5",
+          "effort": "High",
+          "originalRunId": "run-02",
+          "repeatRunId": null,
+          "observations": 1,
+          "completePair": false,
+          "credits": {
+            "original": 3197,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "authoringPrompts": {
+            "original": 3,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "capabilityChanges": {
+            "functional": null,
+            "visual": null
+          }
+        },
+        {
+          "model": "GPT 5.5",
+          "effort": "Medium",
+          "originalRunId": "run-03",
+          "repeatRunId": null,
+          "observations": 1,
+          "completePair": false,
+          "credits": {
+            "original": 659,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "authoringPrompts": {
+            "original": 7,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "capabilityChanges": {
+            "functional": null,
+            "visual": null
+          }
+        },
+        {
+          "model": "Opus 5",
+          "effort": "Medium",
+          "originalRunId": "run-04",
+          "repeatRunId": null,
+          "observations": 1,
+          "completePair": false,
+          "credits": {
+            "original": 3220,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "authoringPrompts": {
+            "original": 2,
+            "repeat": null,
+            "mean": null,
+            "minimum": null,
+            "maximum": null
+          },
+          "capabilityChanges": {
+            "functional": null,
+            "visual": null
+          }
+        },
+        {
+          "model": "Sonnet 5",
+          "effort": "High",
+          "originalRunId": "run-05",
+          "repeatRunId": "run-06",
+          "observations": 2,
+          "completePair": true,
+          "credits": {
+            "original": 2523,
+            "repeat": 3153,
+            "mean": 2838,
+            "minimum": 2523,
+            "maximum": 3153
+          },
+          "authoringPrompts": {
+            "original": 3,
+            "repeat": 6,
+            "mean": 4.5,
+            "minimum": 3,
+            "maximum": 6
+          },
+          "capabilityChanges": {
+            "functional": [
+              {
+                "id": "HF04",
+                "original": "pass",
+                "repeat": "fail"
+              },
+              {
+                "id": "HF09",
+                "original": "pass",
+                "repeat": "fail"
+              },
+              {
+                "id": "HF15",
+                "original": "fail",
+                "repeat": "pass"
+              }
+            ],
+            "visual": [
+              {
+                "id": "HV05",
+                "original": "fail",
+                "repeat": "pass"
+              },
+              {
+                "id": "HV08",
+                "original": "pass",
+                "repeat": "fail"
+              }
+            ]
+          }
+        }
+      ],
+      "limitation": "Two observations per setting are exploratory, not a stable ranking or guaranteed budget. The acceptance target is fixed, but passed capability groups can differ; inspect both results. Guided replay is excluded."
+    }
+  },
+  "newModelSuite": {
+    "id": "opus55-suite-20260922",
+    "cohort": "new-model-adaptive",
+    "model": "Opus 5.5",
+    "effort": "Medium",
+    "reviewMode": "external-only",
+    "costMode": "complete-app-only",
+    "registeredBuilds": 6,
+    "completedBuilds": 2,
+    "registeredSettings": [
+      {
+        "test": "test-05",
+        "runId": "run-01",
+        "model": "Opus 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 365,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 2
+      },
+      {
+        "test": "test-01",
+        "runId": "run-02",
+        "model": "Opus 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 159,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 1
+      },
+      {
+        "test": "test-02",
+        "runId": "run-03",
+        "model": "Opus 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "testing",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "test": "test-02",
+        "runId": "run-04",
+        "model": "Opus 5.5",
+        "effort": "Medium",
+        "replicate": 2,
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "test": "test-03",
+        "runId": "run-05",
+        "model": "Opus 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      },
+      {
+        "test": "test-04",
+        "runId": "run-06",
+        "model": "Opus 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "pending",
+        "finalCost": null,
+        "authoringPrompts": null
+      }
+    ],
+    "cohorts": [
+      {
+        "test": "test-05",
+        "title": "HTML reference recreation",
+        "runs": [
+          {
+            "id": "run-01",
+            "model": "Opus 5.5",
+            "effort": "Medium",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 365,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 2,
+            "corrections": 1,
+            "clarifications": 0,
+            "freeCostCommands": 1,
+            "final": {
+              "accepted": true,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "visualPassed": 10,
+              "visualTotal": 10,
+              "allCriticalPassed": true
+            },
+            "functionalChecks": [
+              {
+                "id": "HF01",
+                "capability": "Working managed app, complete role-aware scope and reference fixture",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF02",
+                "capability": "Derived dashboards and balances",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF03",
+                "capability": "My Leave filters, sorting and empty states",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF04",
+                "capability": "Request detail and retained history",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF05",
+                "capability": "Four-step request wizard",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF06",
+                "capability": "Working-day and half-day arithmetic",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF07",
+                "capability": "Blocking validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF08",
+                "capability": "Warnings and policy-dependent validation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF09",
+                "capability": "Draft, edit and duplicate lifecycle",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF10",
+                "capability": "Submission, approval routing and notifications",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF11",
+                "capability": "Withdraw and cancel with balance reconciliation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF12",
+                "capability": "Manager decisions and reasons",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF13",
+                "capability": "HR second-step and no-manager routing",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF14",
+                "capability": "Bulk decisions, delegation and escalation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF15",
+                "capability": "Team calendars",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF16",
+                "capability": "Scoped reports and actual CSV exports",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF17",
+                "capability": "Live policy and pro-rata calculator",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF18",
+                "capability": "Six working HR settings tabs",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HF19",
+                "capability": "Search, notifications, themes and keyboard interaction",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HF20",
+                "capability": "Faithful demo lifecycle and isolation",
+                "critical": true,
+                "final": "pass"
+              }
+            ],
+            "visualChecks": [
+              {
+                "id": "HV01",
+                "capability": "Reference identity and shell",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "HV02",
+                "capability": "Dashboard composition",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV03",
+                "capability": "Wizard and form hierarchy",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV04",
+                "capability": "Tables, filters and status treatment",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV05",
+                "capability": "Calendar visual encoding",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV06",
+                "capability": "Reports, charts and settings layouts",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV07",
+                "capability": "Light/dark palette and typography",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV08",
+                "capability": "Cards, spacing and content density",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV09",
+                "capability": "Dialogs, drawers and feedback",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "HV10",
+                "capability": "Responsive correspondence",
+                "critical": true,
+                "final": "pass"
+              }
+            ],
+            "timing": {
+              "build": {
+                "seconds": 633.225,
+                "lowerBoundSeconds": 608.26,
+                "observation": "interval-bounded",
+                "authoringPrompts": 2,
+                "observedPrompts": 2
+              }
+            },
+            "archived": true
+          }
+        ],
+        "registeredBuilds": 1,
+        "complete": true,
+        "meanFinalCredits": 365,
+        "strategy": "Reused the supplied reference screens and business logic. One targeted correction fixed inherited theme styles; final review verified all functional and visual groups.",
+        "strategyCaveat": "Reuse was observed, not separately randomized. This does not isolate a model-only or reuse-only saving."
+      },
+      {
+        "test": "test-01",
+        "title": "Virtual procurement",
+        "runs": [
+          {
+            "id": "run-02",
+            "model": "Opus 5.5",
+            "effort": "Medium",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 159,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "corrections": 0,
+            "clarifications": 0,
+            "final": {
+              "accepted": true,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "allCriticalPassed": true
+            },
+            "functionalChecks": [
+              {
+                "id": "AC01",
+                "capability": "Exact catalogue",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC02",
+                "capability": "Search and empty state",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC03",
+                "capability": "Combined filtering",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC04",
+                "capability": "Unavailable stock",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC05",
+                "capability": "Dashboard arithmetic",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC06",
+                "capability": "Valid request",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC07",
+                "capability": "Required fields",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC08",
+                "capability": "Quantity validation",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC09",
+                "capability": "Date validation",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC10",
+                "capability": "Approval",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC11",
+                "capability": "Rejection",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC12",
+                "capability": "Oversell prevention",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC13",
+                "capability": "Single state transition",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC14",
+                "capability": "Virtual/local reopen persistence",
+                "critical": true,
+                "final": "pass"
+              },
+              {
+                "id": "AC15",
+                "capability": "Requester scoping",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC16",
+                "capability": "Safe repeatable reset",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC17",
+                "capability": "Keyboard and labels",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC18",
+                "capability": "Responsive layout",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC19",
+                "capability": "Honest demo boundary",
+                "critical": false,
+                "final": "pass"
+              },
+              {
+                "id": "AC20",
+                "capability": "Actual private managed app",
+                "critical": true,
+                "final": "pass"
+              }
+            ],
+            "timing": {
+              "build": {
+                "seconds": 361.767,
+                "lowerBoundSeconds": 350.923,
+                "observation": "interval-bounded",
+                "authoringPrompts": 1,
+                "observedPrompts": 1
+              }
+            },
+            "archived": true,
+            "reviewedRevisionScope": "owner-preview"
+          }
+        ],
+        "registeredBuilds": 1,
+        "complete": true,
+        "meanFinalCredits": 159
+      },
+      {
+        "test": "test-02",
+        "title": "Live SharePoint requests",
+        "runs": [],
+        "registeredBuilds": 2,
+        "complete": false,
+        "meanFinalCredits": null
+      },
+      {
+        "test": "test-03",
+        "title": "Complex lifecycle",
+        "runs": [],
+        "registeredBuilds": 1,
+        "complete": false,
+        "meanFinalCredits": null
+      },
+      {
+        "test": "test-04",
+        "title": "Policy and state integrity",
+        "runs": [],
+        "registeredBuilds": 1,
+        "complete": false,
+        "meanFinalCredits": null
+      }
+    ],
+    "method": "The original frozen business inputs and scope-specific acceptance criteria in six fresh tasks: Test 5 first, then Tests 1–4, with two SharePoint builds. Medium was the observed native default. Independent review, adaptive repairs in the same app and one actual completed-app cost.",
+    "limitation": "New model version, not an Opus 5 repeat. No pooled cross-version or cross-scope average. One observation per scope, or two SharePoint observations when complete, is exploratory rather than a stable price or causal ranking.",
+    "privacy": "Only allowlisted measurements and capability verdicts are public. New-version screenshots, transcripts, generated source and account/resource identifiers remain private."
   }
 }

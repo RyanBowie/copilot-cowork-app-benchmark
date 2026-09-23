@@ -23,7 +23,40 @@ Test 5 adds a supplied HTML reference with separate functional and visual
 acceptance. Its five-setting original cohort is complete; the preceding 34
 accepted observations remain unchanged.
 
-## Test 5: HTML-reference recreation
+## New results: Opus 5.5 / Medium
+
+Two of six registered new-version builds are complete. These are separate
+observations, not replacements for the original Opus 5 measurements.
+
+| Scope | Completed-app credits | Authoring prompts | Independently verified coverage |
+|---|---:|---:|---|
+| Test 1: virtual procurement | **159** | **1** | 20 of 20 functional groups |
+| Test 5: HTML reference recreation | **365** | **2** | 20 of 20 functional; 10 of 10 visual groups |
+
+The first SharePoint build is under independent review; its repeat and Tests
+3-4 have no completed result yet. No unfinished cost or prompt total is published.
+Final repaired revisions were reviewed in the owner preview, not claimed
+republished.
+
+The Test 5 app reused the reference screens and business logic and required
+one targeted styling correction. Its 365 credits are below every original
+Test 5 observation, with all functional and visual groups verified. However,
+this single observation does not isolate the effect of the new model from its
+build strategy, product changes or run-to-run variation. Do not interpret it
+as a guaranteed saving or pool it with Opus 5 averages.
+
+## Test 5: first completed matched repeat
+
+Sonnet 5 / High used **3,153 credits and six authoring prompts** on its second
+fresh app, compared with **2,523 credits and three prompts** originally.
+The two-build mean is **2,838 credits**; the observed range is **2,523-3,153**.
+Both met the same frozen minimum, but verified coverage differed: **18/20**
+functional groups originally versus **17/20** in the repeat, with **8/10**
+visual groups in each. Extra prompts therefore did not establish better
+coverage. This n=2 pair is exploratory; other matched repeats remain
+unstarted and there is no balanced five-setting repeat mean yet.
+
+## Test 5: original HTML-reference recreation
 
 All five original settings are finalized. All received the same
 initial prompt, identical frozen HTML bytes and the same joint acceptance

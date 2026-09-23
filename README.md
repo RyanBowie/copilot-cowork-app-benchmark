@@ -12,13 +12,25 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**39 completed app measurements across five test scopes:** the original 20 apps,
+**42 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
 capability-stress observations for Test 4 and five accepted HTML-reference
-recreations for Test 5. All five original Test 5 settings are finalized. Compare
+recreations for Test 5, one matched Test 5 repeat and two new Opus 5.5 results.
+All five original Test 5 settings are finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
+
+**New model: Opus 5.5 / Medium.** Test 1 completed for **159 credits with one
+authoring prompt**, verifying 20/20 functional groups. Test 5 completed for
+**365 credits with two prompts**, verifying 20/20 functional and 10/10 visual
+groups. Its reference-reuse strategy is disclosed, not treated as a causal
+model-price saving. The first SharePoint app is under review; its repeat and
+Tests 3-4 remain pending. Original Opus 5 averages are unchanged.
+
+**First matched repeat:** Sonnet 5 / High Test 5 cost **3,153 credits / six
+prompts**, giving a **2,838-credit mean across two builds**. This is exploratory;
+there is not yet a balanced repeat average across all five settings.
 
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)
