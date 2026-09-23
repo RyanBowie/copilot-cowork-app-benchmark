@@ -12,11 +12,11 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**44 completed app measurements across five test scopes:** the original 20 apps,
+**45 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
 capability-stress observations for Test 4 and five accepted HTML-reference
-recreations for Test 5, one matched Test 5 repeat and four new Opus 5.5 results.
+recreations for Test 5, one matched Test 5 repeat and five new Opus 5.5 results.
 All five original Test 5 settings are finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
@@ -31,8 +31,11 @@ correction and one schema-evidence delivery clarification. Its second build
 completed for **419 credits with two prompts**, also verifying **10/10 groups**.
 The **two-build mean is 514.5 credits and 2.5 prompts**; both needed a read-error
 correction, with schema delivery included in that correction on the second build.
-This is an exploratory pair, not a stable price. Tests 3-4 remain unfinished.
-Original Opus 5 averages are unchanged.
+This is an exploratory pair, not a stable price. **Test 3 completed for
+920 credits with four planned authoring prompts and no corrective guidance**,
+verifying 20/20 lifecycle groups. The genuine missing-profile-value branch was
+not exercised because all optional fields were present. **Test 4 is running**
+and has no completed-app cost yet. Original Opus 5 averages are unchanged.
 
 **First matched repeat:** Sonnet 5 / High Test 5 cost **3,153 credits / six
 prompts**, giving a **2,838-credit mean across two builds**. This is exploratory;

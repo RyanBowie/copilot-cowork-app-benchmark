@@ -1,6 +1,6 @@
 {
   "schemaVersion": 8,
-  "generatedAt": "2026-09-23T02:47:05.644Z",
+  "generatedAt": "2026-09-23T11:52:34.828Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -7981,7 +7981,7 @@
     "reviewMode": "external-only",
     "costMode": "complete-app-only",
     "registeredBuilds": 6,
-    "completedBuilds": 4,
+    "completedBuilds": 5,
     "registeredSettings": [
       {
         "test": "test-05",
@@ -8049,9 +8049,14 @@
         "model": "Opus 5.5",
         "effort": "Medium",
         "replicate": 1,
-        "status": "pending",
-        "finalCost": null,
-        "authoringPrompts": null
+        "status": "accepted",
+        "finalCost": {
+          "status": "observed",
+          "value": 920,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 4
       },
       {
         "test": "test-04",
@@ -8059,7 +8064,7 @@
         "model": "Opus 5.5",
         "effort": "Medium",
         "replicate": 1,
-        "status": "pending",
+        "status": "testing",
         "finalCost": null,
         "authoringPrompts": null
       }
@@ -8659,10 +8664,195 @@
       {
         "test": "test-03",
         "title": "Complex lifecycle",
-        "runs": [],
+        "runs": [
+          {
+            "id": "run-05",
+            "model": "Opus 5.5",
+            "effort": "Medium",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 920,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "corrections": 0,
+            "clarifications": 0,
+            "plannedStages": 4,
+            "plannedChanges": 3,
+            "firstCompleteTarget": {
+              "authoringPrompts": 4,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "cost": null
+            },
+            "final": {
+              "accepted": true,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "allCriticalPassed": true
+            },
+            "functionalChecks": [
+              {
+                "id": "CX01",
+                "capability": "Same private app opens with all seven navigable screens",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX02",
+                "capability": "Exact six-device/four-request relational seed and derived initial metrics",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX03",
+                "capability": "Catalogue search, combined category/stock filters and zero-stock protection",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX04",
+                "capability": "Multi-line draft creation, line edits/removal and accurate GBP totals",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX05",
+                "capability": "Required fields, dates, whole positive quantities, duplicates and stock validation",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX06",
+                "capability": "Draft/persona isolation, edits and exact-once submission with stable IDs",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX07",
+                "capability": "Controller-created draft, IDs, lines and timeline survive all three planned changes and reopen",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX08",
+                "capability": "Virtual manager/finance role gates and approval transitions at the final threshold",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX09",
+                "capability": "Rejection comments, append-only actor/timestamp history and terminal action guards",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX10",
+                "capability": "Request changes, requester edit/resubmit and cancellation preserve identity/history",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX11",
+                "capability": "Atomic fulfilment, stock revalidation, per-unit assets and duplicate-fulfilment protection",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX12",
+                "capability": "Good/damaged asset returns and duplicate-return protection",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX13",
+                "capability": "Current-user Office 365 Users profile actually reads through supported app binding",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX14",
+                "capability": "Profile loading/error/retry and genuinely missing optional fields are honest",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX15",
+                "capability": "Explicit light/dark mode applies across all screens and persists on reopen",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX16",
+                "capability": "Local preference Save/Cancel, density and default department work without directory writes",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX17",
+                "capability": "Cost-centre migration, persistence and department mismatch validation",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX18",
+                "capability": "Derived status/asset/stock metrics, low-stock navigation and combined request filters",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX19",
+                "capability": "All screens and key forms are usable at actual wide desktop and 390px mobile widths",
+                "critical": true,
+                "first": "pass",
+                "final": "pass"
+              },
+              {
+                "id": "CX20",
+                "capability": "Labels, visible keyboard focus, readable contrast and reachable form errors",
+                "critical": false,
+                "first": "pass",
+                "final": "pass"
+              }
+            ],
+            "timing": {
+              "build": {
+                "seconds": 1473.303,
+                "lowerBoundSeconds": 1379.479,
+                "observation": "interval-bounded",
+                "authoringPrompts": 4,
+                "observedPrompts": 4
+              }
+            },
+            "archived": true,
+            "reviewedRevisionScope": "owner-preview"
+          }
+        ],
         "registeredBuilds": 1,
-        "complete": false,
-        "meanFinalCredits": null
+        "complete": true,
+        "meanFinalCredits": 920,
+        "reviewCaveat": "All optional profile values were present, so genuinely missing-value behavior was not exercised. One native low-stock review justification differed only by a hyphen; all numeric, date, persona and workflow inputs matched. The frozen authoring prompts were unchanged."
       },
       {
         "test": "test-04",

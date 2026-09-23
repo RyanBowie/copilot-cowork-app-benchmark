@@ -25,7 +25,7 @@ accepted observations remain unchanged.
 
 ## New results: Opus 5.5 / Medium
 
-Four of six registered new-version builds are complete. These are separate
+Five of six registered new-version builds are complete. These are separate
 observations, not replacements for the original Opus 5 measurements.
 
 | Scope | Completed-app credits | Authoring prompts | Independently verified coverage |
@@ -33,13 +33,14 @@ observations, not replacements for the original Opus 5 measurements.
 | Test 1: virtual procurement | **159** | **1** | 20 of 20 functional groups |
 | Test 2: live SharePoint, first build | **610** | **3** | 10 of 10 functional groups |
 | Test 2: live SharePoint, second build | **419** | **2** | 10 of 10 functional groups |
+| Test 3: complex lifecycle | **920** | **4** | 20 of 20 lifecycle groups; four planned stages, no repairs |
 | Test 5: HTML reference recreation | **365** | **2** | 20 of 20 functional; 10 of 10 visual groups |
 
 The SharePoint pair averages **514.5 credits and 2.5 authoring prompts**,
 with observed costs **419-610**. Both used the identical initial prompt and
 the same scoped acceptance criteria; subsequent guidance remained adaptive.
-Tests 3-4 have no completed result yet. No unfinished costs or partial prompt
-totals are published.
+Test 4 is running and has no completed result yet. No unfinished costs or
+partial prompt totals are published.
 Final repaired revisions were reviewed in the owner preview, not claimed
 republished.
 
@@ -58,6 +59,17 @@ the second app retains very small mobile dashboard chart labels, while its
 catalogue and the rubric's named mobile controls remain readable and usable.
 This bounded error coverage does not establish production resilience, and
 historical untested error cases are not reclassified as failures.
+
+Test 3 needed **no extra authoring prompts beyond the four planned stages**.
+Independent review verified the live own-profile connection; saved-request and
+old-policy carryover; exact GBP1,440/GBP1,560 approval routing; same-ID
+resubmission and confirmed cancellation; atomic stock allocation, per-unit
+assets and good/damaged returns; preferences; and desktop/mobile light/dark
+usability. The one cumulative completed-app reading was **920 credits**.
+All optional profile fields were present, so a genuinely missing-value response
+was not exercised. A hyphen-only review-justification variation is disclosed
+in the method; all numeric and workflow inputs matched. This single result is
+not a stable price or a causal comparison with earlier model versions.
 
 The Test 5 app reused the reference screens and business logic and required
 one targeted styling correction. Its 365 credits are below every original

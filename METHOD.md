@@ -53,6 +53,25 @@ and explicit presentation limitations. The completed pair's 514.5-credit and
 2.5-prompt means are descriptive n=2 statistics, not a stable price, a causal
 prompt-cost estimate or an Opus 5 repeat.
 
+The new Test 3 lifecycle app completed after its four unchanged planned prompts:
+one build and three planned changes, with no corrections or clarifications.
+Stage transitions required independently retained same-app/data/profile
+evidence, not interim cost commands. Its only cost reading was **920 credits**
+after final functional review and inspection of 70 native screenshots across
+desktop/mobile and light/dark scenes. The original draft and old-policy request
+survived the changes before their registered final review actions.
+Real own-profile loading, read failure, Retry and reopen were exercised.
+All optional profile values were present; genuinely absent-value handling was
+not exercised or fabricated. One controller-created low-stock request used a
+hyphenated justification instead of the frozen unhyphenated wording; device,
+quantity, price, date, persona, workflow and resulting stock all matched.
+This review-input variation is retained, not presented as byte-identical input.
+The four authoring prompts themselves were unchanged. The final owner preview
+was reviewed, not republished; the exact initial published resource was deleted
+once after evidence/cost, with read-only verification that other apps remained.
+Test 4 has started separately; neither its unfinished cost nor a cross-test
+suite average is published.
+
 Test 5 reused the supplied reference screens and business logic; one correction
 fixed inherited theme styling. This observed strategy was not separately
 randomized, so its cost difference cannot establish a model-only or reuse-only
