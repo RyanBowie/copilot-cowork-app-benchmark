@@ -25,8 +25,10 @@ accepted observations remain unchanged.
 
 ## New results: Opus 5.5 / Medium
 
-Five of six registered new-version builds are complete. These are separate
-observations, not replacements for the original Opus 5 measurements.
+All five reported builds across Tests 1, 2, 3 and 5 are complete. The unfinished
+new-version Test 4 run is omitted from this update at the user's request.
+These are separate observations, not replacements for the original Opus 5
+measurements or historical Test 4 results.
 
 | Scope | Completed-app credits | Authoring prompts | Independently verified coverage |
 |---|---:|---:|---|
@@ -39,8 +41,8 @@ observations, not replacements for the original Opus 5 measurements.
 The SharePoint pair averages **514.5 credits and 2.5 authoring prompts**,
 with observed costs **419-610**. Both used the identical initial prompt and
 the same scoped acceptance criteria; subsequent guidance remained adaptive.
-Test 4 is running and has no completed result yet. No unfinished costs or
-partial prompt totals are published.
+No unfinished costs, partial prompt totals or capability verdicts from the
+omitted run are published.
 Final repaired revisions were reviewed in the owner preview, not claimed
 republished.
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 8,
-  "generatedAt": "2026-09-23T11:52:34.828Z",
+  "generatedAt": "2026-09-23T13:35:12.794Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -7981,6 +7981,18 @@
     "reviewMode": "external-only",
     "costMode": "complete-app-only",
     "registeredBuilds": 6,
+    "reportedBuilds": 5,
+    "reportingScope": {
+      "includedTests": [
+        "test-05",
+        "test-01",
+        "test-02",
+        "test-03"
+      ],
+      "omittedIncompleteTests": [
+        "test-04"
+      ]
+    },
     "completedBuilds": 5,
     "registeredSettings": [
       {
@@ -8057,16 +8069,6 @@
           "scope": "Cowork task"
         },
         "authoringPrompts": 4
-      },
-      {
-        "test": "test-04",
-        "runId": "run-06",
-        "model": "Opus 5.5",
-        "effort": "Medium",
-        "replicate": 1,
-        "status": "testing",
-        "finalCost": null,
-        "authoringPrompts": null
       }
     ],
     "cohorts": [
@@ -8853,17 +8855,9 @@
         "complete": true,
         "meanFinalCredits": 920,
         "reviewCaveat": "All optional profile values were present, so genuinely missing-value behavior was not exercised. One native low-stock review justification differed only by a hyphen; all numeric, date, persona and workflow inputs matched. The frozen authoring prompts were unchanged."
-      },
-      {
-        "test": "test-04",
-        "title": "Policy and state integrity",
-        "runs": [],
-        "registeredBuilds": 1,
-        "complete": false,
-        "meanFinalCredits": null
       }
     ],
-    "method": "The original frozen business inputs and scope-specific acceptance criteria in six fresh tasks: Test 5 first, then Tests 1–4, with two SharePoint builds. Medium was the observed native default. Independent review, adaptive repairs in the same app and one actual completed-app cost.",
+    "method": "Six fresh tasks were originally registered: Test 5 first, then Tests 1–4, with two SharePoint builds. The original frozen business inputs and scope-specific criteria were retained. Medium was the observed native default. Independent review, adaptive repairs in the same app and one actual completed-app cost. Reporting is limited to the requested scopes; omitted incomplete builds contribute no cost, prompt total or capability result.",
     "limitation": "New model version, not an Opus 5 repeat. No pooled cross-version or cross-scope average. One observation per scope, or two SharePoint observations when complete, is exploratory rather than a stable price or causal ranking.",
     "privacy": "Only allowlisted measurements and capability verdicts are public. New-version screenshots, transcripts, generated source and account/resource identifiers remain private."
   }

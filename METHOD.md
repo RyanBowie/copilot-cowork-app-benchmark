@@ -15,12 +15,16 @@ are published, with one adaptive observation per selected setting.
 
 ## New model version: Opus 5.5 / Medium
 
-Six fresh apps are registered across the original five scopes: Test 5 first,
+Six fresh apps were originally registered across the five scopes: Test 5 first,
 then Test 1, two Test 2 SharePoint builds, Test 3 and Test 4. Medium was the
 observed native default. Frozen business prompts, reference bytes, fixtures
 and scope-specific criteria are preserved; independent review and bounded
 adaptive corrections stay in the same app. Only one final cumulative cost
-is taken after completion. Unfinished builds have no published cost.
+is taken after completion. This update reports the five completed builds across
+Tests 1, 2, 3 and 5. The unfinished new-version Test 4 run is omitted at the
+user's request; its exclusion changes reporting only, not the frozen execution
+registration or any historical measurement. No cost, partial prompt total or
+capability result is inferred for the omitted run.
 
 This is a new-version cohort, not a replacement for or repeat of Opus 5.
 Neither version nor different test scopes are pooled. Prompt totals include
@@ -69,8 +73,7 @@ This review-input variation is retained, not presented as byte-identical input.
 The four authoring prompts themselves were unchanged. The final owner preview
 was reviewed, not republished; the exact initial published resource was deleted
 once after evidence/cost, with read-only verification that other apps remained.
-Test 4 has started separately; neither its unfinished cost nor a cross-test
-suite average is published.
+No cross-test suite average is published.
 
 Test 5 reused the supplied reference screens and business logic; one correction
 fixed inherited theme styling. This observed strategy was not separately

@@ -34,8 +34,10 @@ correction, with schema delivery included in that correction on the second build
 This is an exploratory pair, not a stable price. **Test 3 completed for
 920 credits with four planned authoring prompts and no corrective guidance**,
 verifying 20/20 lifecycle groups. The genuine missing-profile-value branch was
-not exercised because all optional fields were present. **Test 4 is running**
-and has no completed-app cost yet. Original Opus 5 averages are unchanged.
+not exercised because all optional fields were present. **All five reported
+new-version builds across Tests 1, 2, 3 and 5 are complete.** The unfinished
+new-version Test 4 run is omitted from this update at the user's request;
+historical Test 4 results and original Opus 5 averages are unchanged.
 
 **First matched repeat:** Sonnet 5 / High Test 5 cost **3,153 credits / six
 prompts**, giving a **2,838-credit mean across two builds**. This is exploratory;
