@@ -12,11 +12,11 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**45 completed app measurements across five test scopes:** the original 20 apps,
+**47 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
 capability-stress observations for Test 4 and five accepted HTML-reference
-recreations for Test 5, one matched Test 5 repeat and five new Opus 5.5 results.
+recreations for Test 5, three matched Test 5 repeats and five new Opus 5.5 results.
 All five original Test 5 settings are finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
@@ -39,9 +39,21 @@ new-version builds across Tests 1, 2, 3 and 5 are complete.** The unfinished
 new-version Test 4 run is omitted from this update at the user's request;
 historical Test 4 results and original Opus 5 averages are unchanged.
 
-**First matched repeat:** Sonnet 5 / High Test 5 cost **3,153 credits / six
-prompts**, giving a **2,838-credit mean across two builds**. This is exploratory;
-there is not yet a balanced repeat average across all five settings.
+**Three Test 5 setting pairs are complete:**
+
+| Setting | Original / repeat credits | Mean credits, n=2 | Original / repeat prompts |
+|---|---:|---:|---:|
+| Sonnet 5 / Medium | 2,517 / 3,309 | **2,913** | 8 / 3 |
+| GPT 5.5 / Medium | 659 / 7,464 | **4,061.5** | 7 / 16 |
+| Sonnet 5 / High | 2,523 / 3,153 | **2,838** | 3 / 6 |
+
+These exploratory pairs reached the same minimum, not identical capabilities.
+The Sonnet Medium repeat verified 18/20 functional and 8/10 visual groups;
+print layout, search/shortcuts, typography and report-density gaps remain.
+The GPT repeat verified 20/20 functional and 8/10 visual groups; its cost
+includes seven publication clarifications and its accepted revision remained
+in the owner preview. Opus 5 is unavailable and is not replaced with Opus 5.5;
+there is no balanced five-setting repeat average.
 
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)

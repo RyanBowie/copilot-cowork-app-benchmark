@@ -84,15 +84,29 @@ complete, remains exploratory.
 ## Test 5: matched adaptive repeat
 
 A separately registered repeat uses the same original model version, effort,
-prompt, attachment and target in a fresh task. The completed Sonnet 5 / High
-pair contains both actual costs and prompt counts; its arithmetic mean is
-descriptive, not a stable price. On 24 September, the user authorized resuming
+prompt, attachment and target in a fresh task. The completed Sonnet 5 / High,
+GPT 5.5 / Medium and Sonnet 5 / Medium pairs contain both actual costs and
+prompt counts; their arithmetic means are descriptive, not stable prices.
+On 24 September, the user authorized resuming
 the GPT 5.5 / Medium and Sonnet 5 / Medium repeats. An explicit order amendment
 skips the unavailable Opus 5 slots, retaining GPT before Sonnet and preserving
 the original run IDs, inputs, review criteria and completed-app-only costs.
 Each accepted repeat is published independently; the other settings need not
 finish first. Opus 5.5 observations never fill an Opus 5 repeat slot.
 Guided replay is a third, distinct design and remains unstarted.
+
+For the Sonnet Medium repeat, all 30 groups were adjudicated and eight final
+app-only images inspected before its sole cumulative cost reading. It met the
+minimum at 18/20 functional and 8/10 visual groups, so optional polishing
+stopped despite the disclosed print, search/shortcut, typography and density
+failures. Seven real CSV downloads matched the full reference schemas and
+values; a visible Print button did not substitute for a working print layout.
+Owner-preview acceptance does not establish published-revision parity.
+The exact published resource was independently bound through the native
+preview's Open in browser action and verified in the owner library before
+authorized deletion. Its successful deletion was never repeated when the
+first readback did not settle; later read-only verification preserved all
+other observed entries. Raw repeat evidence stays private.
 
 Until all five matched pairs are complete, the overview retains the original
 five completed costs and their original-cohort average. The detailed results

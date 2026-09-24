@@ -80,16 +80,39 @@ this single observation does not isolate the effect of the new model from its
 build strategy, product changes or run-to-run variation. Do not interpret it
 as a guaranteed saving or pool it with Opus 5 averages.
 
-## Test 5: first completed matched repeat
+## Test 5: completed matched repeats
 
-Sonnet 5 / High used **3,153 credits and six authoring prompts** on its second
-fresh app, compared with **2,523 credits and three prompts** originally.
-The two-build mean is **2,838 credits**; the observed range is **2,523-3,153**.
-Both met the same frozen minimum, but verified coverage differed: **18/20**
-functional groups originally versus **17/20** in the repeat, with **8/10**
-visual groups in each. Extra prompts therefore did not establish better
-coverage. This n=2 pair is exploratory; other matched repeats remain
-unstarted and there is no balanced five-setting repeat mean yet.
+Three settings now have a second independently accepted fresh app:
+
+| Setting | Original / repeat credits | Mean credits | Observed range | Original / repeat authoring prompts | Functional groups, original / repeat |
+|---|---:|---:|---:|---:|---:|
+| Sonnet 5 / Medium | 2,517 / 3,309 | **2,913** | 2,517-3,309 | 8 / 3 | 17/20 / 18/20 |
+| GPT 5.5 / Medium | 659 / 7,464 | **4,061.5** | 659-7,464 | 7 / 16 | 17/20 / 20/20 |
+| Sonnet 5 / High | 2,523 / 3,153 | **2,838** | 2,523-3,153 | 3 / 6 | 18/20 / 17/20 |
+
+All six apps passed every critical group and 8/10 visual groups, but the
+particular remaining failures differ. The detailed page compares all 30 groups
+for each pair. These are n=2 observations, not stable prices or a causal ranking.
+Opus 5 is unavailable; its two pending repeat slots are not filled by Opus 5.5.
+There is still no balanced five-setting repeat mean.
+
+The Sonnet Medium repeat needed one build and two corrections. Native review
+verified the restored fixture, draft deletion confirmation, week-calendar
+pending/half-day cues and all seven actual CSV exports. Print was present but
+its print layout still collapsed the main grid; global search and advertised
+shortcuts also remained incomplete. Typography and report-density differences
+account for the two visual failures. A transient preview input freeze required
+one native reload; the cause remains unresolved. Later interaction checks
+passed. The author reported private republication, but independent acceptance
+covers the owner preview rather than asserting published-revision parity.
+
+The GPT repeat cost includes one build, eight corrections and seven publication
+clarifications. Its last private publication attempt timed out; the final
+fixture-only correction was explicitly preview-only. Its fuller functional
+coverage and much higher total cannot be attributed solely to model choice or
+to a particular prompt. Sonnet High's extra guidance did not produce higher
+functional coverage. Compare both delivered outcomes, not cost or prompt count
+alone. All repeat screenshots, transcripts and generated source remain private.
 
 ## Test 5: original HTML-reference recreation
 
