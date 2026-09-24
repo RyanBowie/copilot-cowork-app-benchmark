@@ -86,9 +86,19 @@ complete, remains exploratory.
 A separately registered repeat uses the same original model version, effort,
 prompt, attachment and target in a fresh task. The completed Sonnet 5 / High
 pair contains both actual costs and prompt counts; its arithmetic mean is
-descriptive, not a stable price. Remaining original-version repeat slots are
-unstarted. Opus 5.5 observations never fill an Opus 5 repeat slot. Guided replay
-is a third, distinct design and remains unstarted.
+descriptive, not a stable price. On 24 September, the user authorized resuming
+the GPT 5.5 / Medium and Sonnet 5 / Medium repeats. An explicit order amendment
+skips the unavailable Opus 5 slots, retaining GPT before Sonnet and preserving
+the original run IDs, inputs, review criteria and completed-app-only costs.
+Each accepted repeat is published independently; the other settings need not
+finish first. Opus 5.5 observations never fill an Opus 5 repeat slot.
+Guided replay is a third, distinct design and remains unstarted.
+
+Until all five matched pairs are complete, the overview retains the original
+five completed costs and their original-cohort average. The detailed results
+show each completed pair's two costs, mean, range and capability outcomes.
+There is no mixed average combining single observations with two-build means,
+and an unfinished repeat never hides or invalidates its completed original.
 
 ## Test 5: reference fidelity and completed-app cost
 

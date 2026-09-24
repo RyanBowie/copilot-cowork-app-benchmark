@@ -1,6 +1,6 @@
 {
   "schemaVersion": 8,
-  "generatedAt": "2026-09-23T13:35:12.794Z",
+  "generatedAt": "2026-09-24T11:16:23.700Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -7778,7 +7778,7 @@
         "runId": "run-08",
         "model": "GPT 5.5",
         "effort": "Medium",
-        "status": "pending",
+        "status": "testing",
         "finalCost": null,
         "authoringPrompts": null
       },
