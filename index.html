@@ -69,13 +69,64 @@ html[data-theme="dark"] {
   --cp-sheen: rgba(255, 255, 255, 0.04);
   --cp-highlight: rgba(253, 142, 161, 0.12);
 }
+/* Keep the benchmark family aligned with the approved load-test report palette. */
 :root {
-  --cp-chart-blue: var(--cp-accent);
-  --cp-chart-indigo: var(--cp-accent);
-  --cp-chart-purple: var(--cp-accent);
-  --cp-chart-violet: var(--cp-accent);
-  --cp-chart-magenta: var(--cp-accent);
-  --cp-chart-track: var(--cp-border);
+  --cp-bg: #f2f2f8;
+  --cp-bg-elevated: #f8f7fc;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f2f2f8;
+  --cp-border: #e3dfed;
+  --cp-border-strong: #9285aa;
+  --cp-text: #102631;
+  --cp-text-muted: #52637a;
+  --cp-text-soft: #667287;
+  --cp-accent: #7653ae;
+  --cp-accent-hover: #58378b;
+  --cp-accent-soft: #eee8f7;
+  --cp-accent-fg: #ffffff;
+  --cp-link: #066bc7;
+  --cp-success: #207346;
+  --cp-danger: #b4233e;
+  --cp-warning: #8c6208;
+  --cp-chart-blue: #0877dd;
+  --cp-chart-indigo: #5364ba;
+  --cp-chart-purple: #7653ae;
+  --cp-chart-violet: #9651bb;
+  --cp-chart-magenta: #b535c3;
+  --cp-chart-track: #e8e3f0;
+  --cp-transparent: transparent;
+  --cp-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-highlight: rgba(118, 83, 174, 0.12);
+}
+html[data-theme="dark"] {
+  --cp-bg: #171717;
+  --cp-bg-elevated: #222222;
+  --cp-surface: #1f1f1f;
+  --cp-surface-soft: #262626;
+  --cp-border: #3b3b3b;
+  --cp-border-strong: #858585;
+  --cp-text: #f2f2f2;
+  --cp-text-muted: #bdbdbd;
+  --cp-text-soft: #aaaaaa;
+  --cp-accent: #c3a0ef;
+  --cp-accent-hover: #debeff;
+  --cp-accent-soft: #2b2b2b;
+  --cp-accent-fg: #181818;
+  --cp-link: #80baff;
+  --cp-chart-blue: #69aeff;
+  --cp-chart-indigo: #98a5ff;
+  --cp-chart-purple: #bc98ed;
+  --cp-chart-violet: #d097ee;
+  --cp-chart-magenta: #ed8fea;
+  --cp-chart-track: #3b3b3b;
+  --cp-shadow: 0 0 2px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.28);
+  --cp-overlay: rgba(31, 31, 31, 0.88);
+  --cp-panel: rgba(31, 31, 31, 0.72);
+  --cp-panel-strong: rgba(31, 31, 31, 0.96);
+  --cp-highlight: rgba(195, 160, 239, 0.12);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -92,6 +143,7 @@ header{background:var(--cp-surface);border-bottom:1px solid var(--cp-border)}
 .brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cp-accent)}
 nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
 h1{font-size:clamp(28px,3.4vw,44px);font-weight:600;line-height:1.15;letter-spacing:-.025em;margin:20px 0 12px;color:var(--cp-text)}
+@supports(background-clip:text){h1{background:linear-gradient(105deg,var(--cp-chart-blue),var(--cp-chart-purple) 56%,var(--cp-chart-magenta));background-clip:text;color:var(--cp-transparent)}}
 h2{font-size:30px;font-weight:600;line-height:1.25;margin:0 0 16px}
 h3{font-size:21px;font-weight:600;margin:0 0 16px}
 p{max-width:980px;margin:12px 0}
@@ -200,20 +252,26 @@ footer{font-size:13px;color:var(--cp-text-muted);border-top:1px solid var(--cp-b
 .section-picker{display:flex;align-items:center;gap:8px;font-size:13px}
 .section-picker select{min-width:0;max-width:210px;border:1px solid var(--cp-border);border-radius:.625rem;padding:8px;background:var(--cp-surface);color:var(--cp-text)}
 section,.experiment{scroll-margin-top:100px}
-.test-library{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:24px 0}
-.test-family{min-width:0}
-.test-family>h3{font-size:16px;margin:0 0 4px}
-.family-description{font-size:13px;color:var(--cp-text-soft);margin:0 0 16px}
-.test-family .overview-card{padding:20px;margin:0 0 16px}
-.test-family .overview-card h3{font-size:20px;margin:4px 0 12px}
-.test-family .overview-average{margin:0 0 12px;padding:12px 0}
-.test-family .overview-average strong{font-size:28px}
+main:has(.test-library){max-width:1920px;padding-inline:32px}
+.test-library{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:16px;margin:24px 0}
+.test-library .overview-card{padding:20px;margin:0;box-shadow:var(--cp-shadow)}
+.test-library .eyebrow{font-size:11px;letter-spacing:.04em}
+.test-library .overview-card h3{font-size:20px;line-height:1.25;min-height:2.5em;margin:8px 0}
+.overview-summary{font-size:13px;line-height:1.5;color:var(--cp-text-muted);margin:0 0 12px}
+.test-library .overview-average{margin:0 0 16px;padding:12px 0}
+.test-library .overview-average strong{font-size:28px}
+.test-library .mini-chart{margin:0 0 16px}
+.test-library .mini-chart h4{font-size:13px;margin:0 0 12px}
+.test-library .mini-bars{gap:10px}
+.test-library .mini-bars .track{height:8px;border-radius:4px}
+.test-library .mini-bars .bar-row{gap:4px 8px;align-items:start}
+.test-library .mini-value{font-size:15px}
+.test-library .overview-link{font-size:14px;padding:8px}
 .cohort-tags{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 12px;font-size:12px;color:var(--cp-text)}
 .cohort-tags span{background:var(--cp-surface-soft);border:1px solid var(--cp-border);border-radius:6px;padding:2px 6px}
 .card-breakdown{margin-bottom:12px}
 .card-breakdown summary{font-size:13px;padding:8px 0;color:var(--cp-accent)}
 .card-breakdown .overview-description{margin-top:12px}
-.card-breakdown .mini-chart{margin-top:20px}
 .report-disclosure{margin:16px 0;border:1px solid var(--cp-border);border-radius:16px;background:var(--cp-surface)}
 .report-disclosure>summary{padding:20px 24px;line-height:1.4}
 .report-disclosure>summary small{display:block;margin:4px 0 0 20px;font-weight:400;color:var(--cp-text-soft)}
@@ -227,18 +285,18 @@ html[data-theme="dark"] .lead,html[data-theme="dark"] .note,
 html[data-theme="dark"] .metric span,html[data-theme="dark"] .overview-facts,
 html[data-theme="dark"] .overview-average span,html[data-theme="dark"] .overview-build-time,
 html[data-theme="dark"] .benchmark-attribution{color:var(--cp-text-soft)}
-@media(max-width:1100px){.toolbar-inner{padding:12px 28px}.test-library{gap:12px}.test-family .overview-card{padding:16px}.section-picker select{max-width:160px}}
+@media(min-width:1600px){.test-library{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:1100px){.toolbar-inner{padding:12px 28px}.section-picker select{max-width:160px}}
+@media(max-width:999px){.test-library{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){
- .test-library{grid-template-columns:1fr}.test-family{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
- .test-family>h3,.family-description{grid-column:1/-1}
  .toolbar-inner{flex-wrap:wrap;gap:4px}.switch{flex-basis:100%;min-width:0}
  .section-picker{width:100%;padding:0 4px}.section-picker select{flex:1;max-width:none;padding:6px}
  section,.experiment{scroll-margin-top:144px}
 }
 @media(max-width:540px){
- .hero-inner{padding:20px}.toolbar-inner{padding:8px 16px}.test-family{display:block}
+ .hero-inner,main:has(.test-library){padding:20px}.toolbar-inner{padding:8px 16px}.test-library{grid-template-columns:1fr}
  .report-disclosure>summary{padding:16px}.report-disclosure>section{padding:16px}
- .test-family .overview-card{padding:20px}.test-family .overview-link{padding:8px;font-size:14px}
+ .test-library .overview-card h3{min-height:0}
 }
 [hidden]{display:none!important}
 @media(forced-colors:active){h1{background:none;color:var(--cp-text)}.track{border:1px solid var(--cp-text)}.fill{border-bottom:36px solid var(--cp-text)}}
@@ -825,9 +883,9 @@ function renderOverview(){
  }).join('');
  const complexityScopes=[...experiments,...(DATA.stressTest?[{id:'test-04',route:'test-04'}]:[]),...(DATA.htmlReferenceTest?[{id:'test-05',route:'test-05'}]:[])];
  document.getElementById('experiment').innerHTML='<section id="overview" aria-labelledby="overview-title"><div class="eyebrow">47 completed measurements · 5 test scopes</div><h2 id="overview-title">Choose the app scope. Compare the cost.</h2>'+
-  '<p class="overview-help">Browse related tests together. Open a test for its full results, or expand a card for model-by-model costs. Cohort badges count completed measurements, not interchangeable apps.</p><p class="overview-help"><a href="#complexity-comparison">Compare app complexity across all five tests.</a> <a href="#model-value-overview">Did higher cost buy better apps?</a></p>'+
+  '<p class="overview-help">Compare the model and reasoning costs for each app below. Colours identify the same settings across tests; bars share a credit scale, but different app scopes are not equivalent. Open a test for capabilities, guidance and full results. Cohort badges count completed measurements, not interchangeable apps.</p><p class="overview-help"><a href="#complexity-comparison">Compare app complexity across all five tests.</a> <a href="#model-value-overview">Did higher cost buy better apps?</a></p>'+
   '<p class="note score-scope-note">'+escape(scoreScopeNote)+'</p>'+
-  '<div class="overview-grid" style="--overview-columns:2">'+cards+stressOverviewCard(max)+htmlOverviewCard(max)+'</div>'+
+  '<div class="overview-grid">'+cards+stressOverviewCard(max)+htmlOverviewCard(max)+'</div>'+
   '<p class="note muted">Tests 1–3 card averages retain their original cohorts; additional measurements remain separate below.'+(DATA.stressTest?' Test 4 reports its accepted completed sample with independent core and advanced scorecards.':'')+(DATA.htmlReferenceTest?' Test 5 shows completed-app costs only and excludes unfinished settings from its average.':'')+' Chart bars are per-configuration means, with observation counts shown; one build is not a repeatability estimate. All charts share a credit scale, but the scopes and review methods differ: compare settings within each test, not as equivalent apps. Final costs include required guidance.</p>'+
   '<p class="note muted">Build times sum observed authoring turns, excluding external review and gaps between prompts. Acceptance is not full coverage or production readiness; detailed results retain each app’s capability limits.</p><p><a href="METHOD.md">Benchmark method</a> · <a href="FINDINGS.md">Full findings</a> · <a href="data.json">Download measurements</a></p></section>'+newModelSection()+renderValueOverview(experiments)+renderComplexityComparison(complexityScopes);
  if(DATA.stressTest){
@@ -851,23 +909,23 @@ function renderOverview(){
 function organizeOverview(){
  const grid=document.querySelector('#overview>.overview-grid');
  const cards=[...grid.children];
- const families=[
-  ['procurement','Procurement','Virtual data and real SharePoint lists.',['test-01','test-02-sharepoint-clean']],
-  ['workflow','Workflow & resilience','Multi-stage apps and harder business rules.',['test-03','test-04']],
-  ['reference','Reference recreation','Rebuild a supplied app and compare fidelity.',['test-05']]
- ];
+ const summaries={
+  'test-01':['Procurement','Device catalogue, procurement requests and availability using virtual data.'],
+  'test-02-sharepoint-clean':['Procurement','The same procurement workflow connected to a live SharePoint list.'],
+  'test-03':['Workflow & resilience','Staged device lifecycle workflows, returns and read-only user profiles.'],
+  'test-04':['Workflow & resilience','Policy, pricing, stock and budgets challenged with stale-state and import cases.'],
+  'test-05':['Reference recreation','Annual Leave Manager recreated from the same HTML reference.']
+ };
  grid.className='test-library';
  grid.removeAttribute('style');
- for(const [id,title,description,tests] of families){
-  const members=cards.filter(card=>tests.includes(card.dataset.overviewTest));
-  if(!members.length)continue;
-  const family=document.createElement('section');
-  family.className='test-family';
-  family.setAttribute('aria-labelledby','family-'+id);
-  family.innerHTML='<h3 id="family-'+id+'">'+escape(title)+'</h3><p class="family-description">'+escape(description)+'</p>';
-  for(const card of members){
+ for(const card of cards){
    const test=card.dataset.overviewTest;
    const route=test==='test-02-sharepoint-clean'?'test-02':test;
+   const [family,description]=summaries[test];
+   card.dataset.family=family;
+   card.querySelector('.eyebrow').textContent+=' · '+family;
+   const summary=document.createElement('p');summary.className='overview-summary';summary.textContent=description;
+   card.querySelector('h3').after(summary);
    const original=DATA.experiments.find(e=>e.id===test)?.runs.length??
     (test==='test-04'?DATA.stressTest.runs.length:DATA.htmlReferenceTest.runs.length);
    const additional=test==='test-03'?DATA.complexValidation?.runs.length??0:
@@ -877,19 +935,16 @@ function organizeOverview(){
    const tags=document.createElement('div');tags.className='cohort-tags';
    tags.innerHTML=[[original,test==='test-04'?'accepted':'original'],[additional,'additional'],[repeats,'repeats'],[newModels,'new model']]
     .filter(([count])=>count).map(([count,label])=>'<span>'+count+' '+label+'</span>').join('');
-   card.querySelector('h3').after(tags);
+   summary.after(tags);
    if(DATA.experiments.some(e=>e.id===test)){
     card.querySelector('.overview-average span').textContent='average final credits per original app';
    }
    const details=document.createElement('details');details.className='card-breakdown';
-   details.innerHTML='<summary>Scope & model costs<span class="sr-only"> for Test '+Number(route.slice(-2))+'</span></summary>';
+   details.innerHTML='<summary>Scope & method details<span class="sr-only"> for Test '+Number(route.slice(-2))+'</span></summary>';
    for(const child of [...card.children]){
-    if(child.matches('.overview-description,.overview-facts,.mini-chart,.overview-build-time,.note'))details.append(child);
+    if(child.matches('.overview-description,.overview-facts,.overview-build-time,.note'))details.append(child);
    }
-   card.querySelector('.overview-average').after(details);
-   family.append(card);
-  }
-  grid.append(family);
+   card.querySelector('.mini-chart').after(details);
  }
  const scopeNotes=document.createElement('details');scopeNotes.className='overview-scope-notes';
  scopeNotes.innerHTML='<summary>How to interpret these averages and scores</summary>';

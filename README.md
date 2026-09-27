@@ -58,11 +58,19 @@ there is no balanced five-setting repeat average.
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)
 
-The main page opens with a **compact test library**, grouped into **Procurement**
-(Tests 1–2), **Workflow & resilience** (Tests 3–4), and **Reference recreation**
-(Test 5). Each card shows its cohort average and separate counts for original,
-additional, repeat and new-model measurements. Expand **Scope & model costs**
-for its description and configuration chart, or open the full results.
+The main page opens with **visible model-and-reasoning charts for every app scope**,
+in slimmer cards: **three across on desktop, five on wide screens**, two on tablets
+and one on phones. The established purple/blue palette and gradient heading match
+the [Copilot Studio load-test report](https://ryanbowie.github.io/copilot-studio-load-test/);
+each model/reasoning setting keeps its distinct chart colour across tests.
+Preserve this shared visual identity when adjusting the layout.
+
+Each card names the app being built, shows its cohort average and model costs,
+and keeps original, additional, repeat and new-model counts separate. Family labels
+identify **Procurement** (Tests 1–2), **Workflow & resilience** (Tests 3–4), and
+**Reference recreation** (Test 5) without stacking related cards in separate columns.
+Only supporting **Scope & method details** are collapsed; model charts need no
+extra click. Open the full results for capability coverage and guidance counts.
 
 New-model results, model-selection guidance, scope comparisons and additional
 measurements are expandable sections rather than one long feed. The test switcher
