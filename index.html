@@ -5,6 +5,14 @@
 <script>
   (() => {
     const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
     const theme = param === "light" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", theme);
   })();
@@ -62,52 +70,12 @@ html[data-theme="dark"] {
   --cp-highlight: rgba(253, 142, 161, 0.12);
 }
 :root {
-  --cp-bg: #f2f2f8;
-  --cp-bg-elevated: #f8f7fc;
-  --cp-surface: #ffffff;
-  --cp-surface-soft: #f2f2f8;
-  --cp-border: #e3dfed;
-  --cp-border-strong: #9285aa;
-  --cp-text: #102631;
-  --cp-text-muted: #52637a;
-  --cp-text-soft: #667287;
-  --cp-accent: #7653ae;
-  --cp-accent-hover: #58378b;
-  --cp-accent-soft: #eee8f7;
-  --cp-accent-fg: #ffffff;
-  --cp-link: #066bc7;
-  --cp-success: #207346;
-  --cp-danger: #b4233e;
-  --cp-warning: #8c6208;
-  --cp-chart-blue: #0877dd;
-  --cp-chart-indigo: #5364ba;
-  --cp-chart-purple: #7653ae;
-  --cp-chart-violet: #9651bb;
-  --cp-chart-magenta: #b535c3;
-  --cp-chart-track: #e8e3f0;
-  --cp-transparent: transparent;
-}
-html[data-theme="dark"] {
-  --cp-bg: #171717;
-  --cp-bg-elevated: #222222;
-  --cp-surface: #1f1f1f;
-  --cp-surface-soft: #262626;
-  --cp-border: #3b3b3b;
-  --cp-border-strong: #858585;
-  --cp-text: #f2f2f2;
-  --cp-text-muted: #bdbdbd;
-  --cp-text-soft: #aaaaaa;
-  --cp-accent: #c3a0ef;
-  --cp-accent-hover: #debeff;
-  --cp-accent-soft: #2b2b2b;
-  --cp-accent-fg: #181818;
-  --cp-link: #80baff;
-  --cp-chart-blue: #69aeff;
-  --cp-chart-indigo: #98a5ff;
-  --cp-chart-purple: #bc98ed;
-  --cp-chart-violet: #d097ee;
-  --cp-chart-magenta: #ed8fea;
-  --cp-chart-track: #3b3b3b;
+  --cp-chart-blue: var(--cp-accent);
+  --cp-chart-indigo: var(--cp-accent);
+  --cp-chart-purple: var(--cp-accent);
+  --cp-chart-violet: var(--cp-accent);
+  --cp-chart-magenta: var(--cp-accent);
+  --cp-chart-track: var(--cp-border);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -123,12 +91,11 @@ header{background:var(--cp-surface);border-bottom:1px solid var(--cp-border)}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cp-accent)}
 nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
-h1{font-size:clamp(36px,5vw,64px);font-weight:450;line-height:1.12;max-width:1080px;letter-spacing:-.035em;margin:28px 0 20px;color:var(--cp-chart-blue)}
-@supports (background-clip:text){h1{background:linear-gradient(105deg,var(--cp-chart-blue),var(--cp-chart-purple) 56%,var(--cp-chart-magenta));background-clip:text;color:var(--cp-transparent)}}
+h1{font-size:clamp(28px,3.4vw,44px);font-weight:600;line-height:1.15;letter-spacing:-.025em;margin:20px 0 12px;color:var(--cp-text)}
 h2{font-size:30px;font-weight:600;line-height:1.25;margin:0 0 16px}
 h3{font-size:21px;font-weight:600;margin:0 0 16px}
 p{max-width:980px;margin:12px 0}
-.lead{font-size:22px;color:var(--cp-text-muted);max-width:1000px}
+.lead{font-size:18px;color:var(--cp-text-muted);max-width:1000px}
 .muted,small{color:var(--cp-text-muted)}
 .switch{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 16px}
 .card{background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:16px;padding:32px;margin:28px 0}
@@ -145,7 +112,7 @@ th,td{padding:16px 12px;border-bottom:1px solid var(--cp-border);vertical-align:
 th{color:var(--cp-accent);background:var(--cp-surface-soft);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .pill{display:inline-block;border:1px solid var(--cp-border);border-radius:6px;padding:2px 8px;font-size:12px;white-space:nowrap}
-.pass{color:var(--cp-success)}.fail{color:var(--cp-danger)}
+.pass,.fail{color:var(--cp-text)}.pass{border-color:var(--cp-success)}.fail{border-color:var(--cp-danger)}
 .comparison{background:var(--cp-surface-soft);border:0;padding:32px}
 .comparison h3{font-size:32px;font-weight:450;letter-spacing:-.02em}
 .comparison-intro{font-size:18px;color:var(--cp-text-muted)}
@@ -221,21 +188,74 @@ footer{font-size:13px;color:var(--cp-text-muted);border-top:1px solid var(--cp-b
 .validation-matched{padding:16px;border:1px solid var(--cp-border-strong);border-radius:.625rem;background:var(--cp-surface-soft)}
 @media(max-width:900px){.validation-grid{grid-template-columns:1fr}}
 @media(max-width:1100px){.overview-grid{grid-template-columns:1fr}.overview-card{padding:24px}.overview-description{max-width:none}}
+.benchmark-attribution{margin:12px 0;font-size:13px}
+.benchmark-caveat{margin:16px 0 0;padding:12px 16px;border-width:1px;border-left-width:4px}
+.benchmark-caveat h2{font-size:16px;margin:0 0 4px}
+.benchmark-caveat p,.benchmark-caveat .note{font-size:14px;line-height:1.5}
+.benchmark-caveat summary{padding:4px 0;font-size:13px;color:var(--cp-accent)}
+.report-toolbar{position:sticky;top:0;z-index:10;background:var(--cp-surface);border-bottom:1px solid var(--cp-border)}
+.toolbar-inner{max-width:1320px;margin:auto;padding:12px 48px;display:flex;align-items:center;gap:16px}
+.switch{flex:1;flex-wrap:nowrap;gap:8px;margin:0;overflow-x:auto;padding:4px}
+.switch button{white-space:nowrap;padding:8px 12px;font-size:13px}
+.section-picker{display:flex;align-items:center;gap:8px;font-size:13px}
+.section-picker select{min-width:0;max-width:210px;border:1px solid var(--cp-border);border-radius:.625rem;padding:8px;background:var(--cp-surface);color:var(--cp-text)}
+section,.experiment{scroll-margin-top:100px}
+.test-library{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:24px 0}
+.test-family{min-width:0}
+.test-family>h3{font-size:16px;margin:0 0 4px}
+.family-description{font-size:13px;color:var(--cp-text-soft);margin:0 0 16px}
+.test-family .overview-card{padding:20px;margin:0 0 16px}
+.test-family .overview-card h3{font-size:20px;margin:4px 0 12px}
+.test-family .overview-average{margin:0 0 12px;padding:12px 0}
+.test-family .overview-average strong{font-size:28px}
+.cohort-tags{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 12px;font-size:12px;color:var(--cp-text)}
+.cohort-tags span{background:var(--cp-surface-soft);border:1px solid var(--cp-border);border-radius:6px;padding:2px 6px}
+.card-breakdown{margin-bottom:12px}
+.card-breakdown summary{font-size:13px;padding:8px 0;color:var(--cp-accent)}
+.card-breakdown .overview-description{margin-top:12px}
+.card-breakdown .mini-chart{margin-top:20px}
+.report-disclosure{margin:16px 0;border:1px solid var(--cp-border);border-radius:16px;background:var(--cp-surface)}
+.report-disclosure>summary{padding:20px 24px;line-height:1.4}
+.report-disclosure>summary small{display:block;margin:4px 0 0 20px;font-weight:400;color:var(--cp-text-soft)}
+.report-disclosure>section{margin:0;padding:24px;border:0}
+.report-disclosure .card{box-shadow:none}
+.overview-help{font-size:14px;color:var(--cp-text-soft)}
+.overview-scope-notes{margin:16px 0}
+.overview-scope-notes summary{font-size:14px}
+html[data-theme="dark"] .muted,html[data-theme="dark"] small,
+html[data-theme="dark"] .lead,html[data-theme="dark"] .note,
+html[data-theme="dark"] .metric span,html[data-theme="dark"] .overview-facts,
+html[data-theme="dark"] .overview-average span,html[data-theme="dark"] .overview-build-time,
+html[data-theme="dark"] .benchmark-attribution{color:var(--cp-text-soft)}
+@media(max-width:1100px){.toolbar-inner{padding:12px 28px}.test-library{gap:12px}.test-family .overview-card{padding:16px}.section-picker select{max-width:160px}}
+@media(max-width:800px){
+ .test-library{grid-template-columns:1fr}.test-family{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+ .test-family>h3,.family-description{grid-column:1/-1}
+ .toolbar-inner{flex-wrap:wrap;gap:4px}.switch{flex-basis:100%;min-width:0}
+ .section-picker{width:100%;padding:0 4px}.section-picker select{flex:1;max-width:none;padding:6px}
+ section,.experiment{scroll-margin-top:144px}
+}
+@media(max-width:540px){
+ .hero-inner{padding:20px}.toolbar-inner{padding:8px 16px}.test-family{display:block}
+ .report-disclosure>summary{padding:16px}.report-disclosure>section{padding:16px}
+ .test-family .overview-card{padding:20px}.test-family .overview-link{padding:8px;font-size:14px}
+}
 [hidden]{display:none!important}
 @media(forced-colors:active){h1{background:none;color:var(--cp-text)}.track{border:1px solid var(--cp-text)}.fill{border-bottom:36px solid var(--cp-text)}}
-@media print{button,.switch{display:none}header,main{padding:0}.card,.metric{break-inside:avoid}details{display:block}a{color:var(--cp-text)}body{background:var(--cp-surface)}}
+@media print{button,.report-toolbar{display:none}header,main{padding:0}.card,.metric{break-inside:avoid}.test-library{display:block}details{display:block}a{color:var(--cp-text)}body{background:var(--cp-surface)}}
 </style></head><body>
 <header><div class="hero-inner"><div class="top"><span class="brand">Cowork /app · empirical benchmark</span><nav aria-label="Report sections"><a href="#overview">Overview</a><a href="#results" data-detail-only hidden>Results</a><a href="#timing" data-detail-only hidden>Time</a><a href="#pairs" data-detail-only hidden>Repeats</a><a href="#capabilities" data-detail-only hidden>Capabilities</a><a href="#method" data-detail-only hidden>Method</a><a href="#limits" data-detail-only hidden>Limits</a><a href="https://github.com/RyanBowie/copilot-cowork-app-benchmark">Repository</a></nav></div>
 <h1>What does the same managed app cost to build?</h1>
 <p class="lead">Consistent specifications within each test. Different models and effort settings. Real app builds, independent acceptance checks and actual Cowork <span class="code">/cost</span> readings—not estimated token prices.</p>
 <p class="benchmark-attribution">Testing conducted by <strong>Ryan Bowen</strong>, with automation assistance from <strong>GitHub Copilot</strong>.</p>
 <aside class="benchmark-caveat" aria-labelledby="benchmark-caveat-title"><h2 id="benchmark-caveat-title">Demo benchmark — indicative costs only</h2>
-<p>This is a small demonstration benchmark using synthetic apps in demo tenant(s), not a production-cost study.</p>
+<p>Small synthetic-app tests in demo tenant(s). Costs vary with prompts and use cases; these are build credits, not a price quote or running-cost estimate.</p>
+<details><summary>Read the comparison limits</summary><p>This is a small demonstration benchmark using synthetic apps in demo tenant(s), not a production-cost study.</p>
 <p><strong>Your prompts and use cases can produce substantially different costs.</strong> App complexity, tenant setup, model/reasoning settings and follow-up work also matter. Use these results only as a brief indication of what an app can cost to build, not a quote, guaranteed price or complete running cost.</p>
-<p class="note">The managed app builder is available in Copilot Cowork and Copilot Studio. These measurements use Cowork <span class="code">/cost</span> credits only; Copilot Studio costs were not measured separately.</p></aside>
-<div class="notice" data-detail-only hidden><strong>47 completed measurements across 5 test scopes.</strong> Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.</div>
-<div class="switch" role="group" aria-label="Choose report view"><button data-route="overview" aria-pressed="true">Overview · all tests</button><button data-test="test-01" data-route="test-01" aria-pressed="false">Test 1 · virtual-data results</button><button data-test="test-02-sharepoint-clean" data-route="test-02" aria-pressed="false">Test 2 · SharePoint results</button><button data-test="test-03" data-route="test-03" aria-pressed="false">Test 3 · complex virtual apps</button><button data-test="test-04" data-route="test-04" aria-pressed="false">Test 4 · capability stress</button><button data-test="test-05" data-route="test-05" aria-pressed="false">Test 5 · HTML reference</button></div>
-</div></header><main><div id="experiment" class="experiment"></div><div id="detail-sections" hidden>
+<p class="note">The managed app builder is available in Copilot Cowork and Copilot Studio. These measurements use Cowork <span class="code">/cost</span> credits only; Copilot Studio costs were not measured separately.</p></details></aside>
+</div></header>
+<div class="report-toolbar"><div class="toolbar-inner"><div class="switch" role="group" aria-label="Choose report view"><button data-route="overview" aria-pressed="true">Overview · all tests</button><button data-test="test-01" data-route="test-01" aria-pressed="false">Test 1 · virtual-data results</button><button data-test="test-02-sharepoint-clean" data-route="test-02" aria-pressed="false">Test 2 · SharePoint results</button><button data-test="test-03" data-route="test-03" aria-pressed="false">Test 3 · complex virtual apps</button><button data-test="test-04" data-route="test-04" aria-pressed="false">Test 4 · capability stress</button><button data-test="test-05" data-route="test-05" aria-pressed="false">Test 5 · HTML reference</button></div><label class="section-picker">Jump to<select id="section-picker" aria-label="Jump to a report section"></select></label></div></div>
+<main><div id="experiment" class="experiment"></div><div id="detail-sections" hidden>
 <section id="timing" class="card"><div class="eyebrow">Authoring time</div><h2>How long did each app take to build?</h2>
 <p class="note">Observed build time per app sums the authoring turns: build, planned updates, clarifications and corrections. It excludes external review and screenshot-taking gaps between prompts, /cost commands and native self-review. Within-turn waits and observation uncertainty remain included; this is not pure model compute time. Missing authoring coverage is not estimated from elapsed test time.</p>
 <div class="table-wrap"><table><thead><tr><th>Run / configuration</th><th>Observed build time</th></tr></thead><tbody id="timing-rows"></tbody></table></div>
@@ -805,7 +825,7 @@ function renderOverview(){
  }).join('');
  const complexityScopes=[...experiments,...(DATA.stressTest?[{id:'test-04',route:'test-04'}]:[]),...(DATA.htmlReferenceTest?[{id:'test-05',route:'test-05'}]:[])];
  document.getElementById('experiment').innerHTML='<section id="overview" aria-labelledby="overview-title"><div class="eyebrow">47 completed measurements · 5 test scopes</div><h2 id="overview-title">Choose the app scope. Compare the cost.</h2>'+
-  '<p>Each card shows what was built, its cohort average cost per shown app and a compact comparison of the selected model/reasoning settings. <a href="#complexity-comparison">Compare app complexity across all five tests.</a> <a href="#model-value-overview">Did higher cost buy better apps?</a></p>'+
+  '<p class="overview-help">Browse related tests together. Open a test for its full results, or expand a card for model-by-model costs. Cohort badges count completed measurements, not interchangeable apps.</p><p class="overview-help"><a href="#complexity-comparison">Compare app complexity across all five tests.</a> <a href="#model-value-overview">Did higher cost buy better apps?</a></p>'+
   '<p class="note score-scope-note">'+escape(scoreScopeNote)+'</p>'+
   '<div class="overview-grid" style="--overview-columns:2">'+cards+stressOverviewCard(max)+htmlOverviewCard(max)+'</div>'+
   '<p class="note muted">Tests 1–3 card averages retain their original cohorts; additional measurements remain separate below.'+(DATA.stressTest?' Test 4 reports its accepted completed sample with independent core and advanced scorecards.':'')+(DATA.htmlReferenceTest?' Test 5 shows completed-app costs only and excludes unfinished settings from its average.':'')+' Chart bars are per-configuration means, with observation counts shown; one build is not a repeatability estimate. All charts share a credit scale, but the scopes and review methods differ: compare settings within each test, not as equivalent apps. Final costs include required guidance.</p>'+
@@ -826,6 +846,69 @@ function renderOverview(){
   document.querySelector('#overview>p').insertAdjacentHTML('beforeend',' <a href="#complex-validation">See '+DATA.complexValidation.runs.length+' additional complex-app measurements.</a>');
  }
  document.getElementById('experiment').insertAdjacentHTML('beforeend',renderComplexValidation());
+ organizeOverview();
+}
+function organizeOverview(){
+ const grid=document.querySelector('#overview>.overview-grid');
+ const cards=[...grid.children];
+ const families=[
+  ['procurement','Procurement','Virtual data and real SharePoint lists.',['test-01','test-02-sharepoint-clean']],
+  ['workflow','Workflow & resilience','Multi-stage apps and harder business rules.',['test-03','test-04']],
+  ['reference','Reference recreation','Rebuild a supplied app and compare fidelity.',['test-05']]
+ ];
+ grid.className='test-library';
+ grid.removeAttribute('style');
+ for(const [id,title,description,tests] of families){
+  const members=cards.filter(card=>tests.includes(card.dataset.overviewTest));
+  if(!members.length)continue;
+  const family=document.createElement('section');
+  family.className='test-family';
+  family.setAttribute('aria-labelledby','family-'+id);
+  family.innerHTML='<h3 id="family-'+id+'">'+escape(title)+'</h3><p class="family-description">'+escape(description)+'</p>';
+  for(const card of members){
+   const test=card.dataset.overviewTest;
+   const route=test==='test-02-sharepoint-clean'?'test-02':test;
+   const original=DATA.experiments.find(e=>e.id===test)?.runs.length??
+    (test==='test-04'?DATA.stressTest.runs.length:DATA.htmlReferenceTest.runs.length);
+   const additional=test==='test-03'?DATA.complexValidation?.runs.length??0:
+    DATA.validation?.cohorts.find(cohort=>cohort.test===route)?.runs.length??0;
+   const repeats=test==='test-05'?DATA.htmlReferenceRepeats?.runs.length??0:0;
+   const newModels=DATA.newModelSuite?.cohorts.find(cohort=>cohort.test===route)?.runs.length??0;
+   const tags=document.createElement('div');tags.className='cohort-tags';
+   tags.innerHTML=[[original,test==='test-04'?'accepted':'original'],[additional,'additional'],[repeats,'repeats'],[newModels,'new model']]
+    .filter(([count])=>count).map(([count,label])=>'<span>'+count+' '+label+'</span>').join('');
+   card.querySelector('h3').after(tags);
+   if(DATA.experiments.some(e=>e.id===test)){
+    card.querySelector('.overview-average span').textContent='average final credits per original app';
+   }
+   const details=document.createElement('details');details.className='card-breakdown';
+   details.innerHTML='<summary>Scope & model costs<span class="sr-only"> for Test '+Number(route.slice(-2))+'</span></summary>';
+   for(const child of [...card.children]){
+    if(child.matches('.overview-description,.overview-facts,.mini-chart,.overview-build-time,.note'))details.append(child);
+   }
+   card.querySelector('.overview-average').after(details);
+   family.append(card);
+  }
+  grid.append(family);
+ }
+ const scopeNotes=document.createElement('details');scopeNotes.className='overview-scope-notes';
+ scopeNotes.innerHTML='<summary>How to interpret these averages and scores</summary>';
+ grid.after(scopeNotes);
+ for(const note of document.querySelectorAll('#overview>p.note'))scopeNotes.append(note);
+ const labels={
+  'new-model-suite':['New model results','Opus 5.5 observations, kept separate from the original model versions.'],
+  'model-value-overview':['Model-selection guidance','What extra credits did (and did not) improve.'],
+  'complexity-comparison':['Compare all test scopes','Screens, workflows, data sources and authoring methods.'],
+  'validation':['Additional procurement measurements','External-review cross-checks for Tests 1 and 2.'],
+  'complex-validation':['Additional workflow measurements','Test 3 repeats and matched-setting comparisons.']
+ };
+ for(const section of document.querySelectorAll('#experiment>section:not(#overview)')){
+  const heading=section.querySelector('h2');
+  const [title,note]=labels[section.id]??[heading?.textContent??'More results','Expand to explore this separate cohort.'];
+  const details=document.createElement('details');details.className='report-disclosure';
+  details.innerHTML='<summary>'+escape(title)+'<small>'+escape(note)+'</small></summary>';
+  section.before(details);details.append(section);
+ }
 }
 function render(id){
  if(id==='test-05'&&DATA.htmlReferenceTest){renderHtmlReference();return;}
@@ -873,32 +956,105 @@ function render(id){
  document.getElementById('results').insertAdjacentHTML('afterend',renderValueDetail(e));
  document.getElementById('experiment').insertAdjacentHTML('afterbegin',newModelSection(e.route));
 }
-function changeView(route){
+let currentView='overview';
+let lastLocation='';
+const isView=route=>route==='overview'||(route==='test-04'&&DATA.stressTest)||
+ (route==='test-05'&&DATA.htmlReferenceTest)||DATA.experiments.some(e=>e.route===route||e.id===route);
+function prepareView(route){
  render(route);
+ currentView=document.querySelector('button[data-route][aria-pressed="true"]').dataset.route;
+ const sections=[...document.querySelectorAll('#experiment section[id],#detail-sections>section')]
+  .filter(section=>!section.hidden&&!section.closest('[hidden]')&&section.querySelector('h2'));
+ const labels={overview:'Test library',results:'Original results',pairs:'Configuration averages',
+  capabilities:'Capability checks',timing:'Build time',stages:'Authoring stages',
+  'new-model-suite':'New model results','model-value-overview':'Model-selection guidance',
+  'complexity-comparison':'Compare test scopes',validation:'Additional procurement runs',
+  'complex-validation':'Additional workflow runs','html-repeats':'Matched repeat results',
+  'html-settings':'All reference settings','stress-settings':'All stress-test settings',
+  'model-value':'Cost vs capability',limits:'Comparison limits',evidence:'Evidence & downloads'};
+ document.getElementById('section-picker').innerHTML=sections.map(section=>'<option value="'+escape(section.id)+'">'+
+  escape(labels[section.id]??(section.id.startsWith('new-model-')?'New model results':section.querySelector('h2').textContent))+'</option>').join('');
+ const selected=document.querySelector('button[data-route][aria-pressed="true"]');
+ const strip=selected.parentElement;
+ strip.scrollLeft=Math.max(0,selected.offsetLeft-strip.offsetLeft-(strip.clientWidth-selected.offsetWidth)/2);
+}
+function changeView(route){
+ prepareView(route);
  const heading=document.querySelector('#overview h2, #results h2');
  heading.setAttribute('tabindex','-1');
  heading.focus({preventScroll:true});
  document.getElementById('experiment').scrollIntoView({behavior:'instant',block:'start'});
 }
 function navigate(route){
- if(location.hash!=='#'+route)history.pushState(null,'','#'+route);
+ const url=new URL(location.href);url.searchParams.delete('test');url.hash=route;
+ if(location.href!==url.href)history.pushState(null,'',url);
  changeView(route);
+ lastLocation=location.href;
 }
-document.querySelectorAll('button[data-route]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.route)));
+function revealSection(id,focus=true){
+ const target=document.getElementById(id);
+ if(!target)return;
+ for(let parent=target.parentElement;parent;parent=parent.parentElement){
+  if(parent.tagName==='DETAILS')parent.open=true;
+ }
+ if(target.tagName==='DETAILS')target.open=true;
+ if(focus){
+  const heading=target.querySelector('h2,h3,summary')??target;
+  heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
+  target.scrollIntoView({behavior:'instant',block:'start'});
+ }
+ const picker=document.getElementById('section-picker');
+ if([...picker.options].some(option=>option.value===id))picker.value=id;
+}
+function navigateSection(id){
+ const url=new URL(location.href);url.hash=id;
+ if(currentView==='overview')url.searchParams.delete('test');else url.searchParams.set('test',currentView);
+ if(location.href!==url.href)history.pushState(null,'',url);
+ revealSection(id);
+ lastLocation=location.href;
+}
+const shortLabels={'overview':'All tests','test-01':'1 · Virtual data','test-02':'2 · SharePoint','test-03':'3 · Lifecycle','test-04':'4 · Stress','test-05':'5 · Reference'};
+document.querySelectorAll('button[data-route]').forEach(button=>{
+ button.setAttribute('aria-label',button.textContent);
+ button.textContent=shortLabels[button.dataset.route];
+ button.addEventListener('click',()=>navigate(button.dataset.route));
+});
+document.getElementById('section-picker').addEventListener('change',event=>navigateSection(event.target.value));
 document.addEventListener('click',event=>{
  if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
  const link=event.target.closest('a[href^="#"]');
  const route=link?.getAttribute('href').slice(1);
- if(route==='overview'||(route==='test-04'&&DATA.stressTest)||(route==='test-05'&&DATA.htmlReferenceTest)||DATA.experiments.some(e=>e.route===route||e.id===route)){
+ if(isView(route)){
   event.preventDefault();
   navigate(route);
+ }else if(route&&document.getElementById(route)){
+  event.preventDefault();
+  navigateSection(route);
  }
 });
-window.addEventListener('hashchange',()=>{
+function restoreView(){
+ if(lastLocation===location.href)return;
  const route=location.hash.slice(1);
- if(route==='overview'||(route==='test-04'&&DATA.stressTest)||(route==='test-05'&&DATA.htmlReferenceTest)||DATA.experiments.some(e=>e.route===route||e.id===route)||!document.getElementById(route))changeView(route);
+ const scope=new URLSearchParams(location.search).get('test');
+ const detailAnchor=document.getElementById(route)?.closest('#detail-sections')||
+  ['results','pairs','capabilities','stages','html-repeats','html-settings','html-method','stress-settings','stress-value','stress-method'].includes(route);
+ const anchorScope=route.startsWith('html-')?'test-05':route.startsWith('stress-')?'test-04':
+  route.startsWith('new-model-test-')?route.slice('new-model-'.length):null;
+ prepareView(isView(route)?route:isView(scope)?scope:isView(anchorScope)?anchorScope:detailAnchor?DATA.activeExperiment:'overview');
+ if(!isView(route)&&document.getElementById(route))revealSection(route);
+ else if(lastLocation){
+  const heading=document.querySelector('#overview h2,#results h2');
+  heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
+ }
+ lastLocation=location.href;
+}
+window.addEventListener('hashchange',restoreView);
+window.addEventListener('popstate',restoreView);
+let printDetails=[];
+window.addEventListener('beforeprint',()=>{
+ printDetails=[...document.querySelectorAll('details:not([open])')];
+ printDetails.forEach(details=>{details.open=true;});
 });
-const initialRoute=location.hash.slice(1);
-const detailAnchor=document.getElementById(initialRoute)?.closest('#detail-sections')||['results','pairs','capabilities','stages'].includes(initialRoute);
-render(detailAnchor?DATA.activeExperiment:initialRoute);
+window.addEventListener('afterprint',()=>{printDetails.forEach(details=>{details.open=false;});printDetails=[];});
+restoreView();
 </script></body></html>

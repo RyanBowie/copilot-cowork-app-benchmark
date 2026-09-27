@@ -58,10 +58,19 @@ there is no balanced five-setting repeat average.
 **[Open the interactive report](https://ryanbowie.github.io/copilot-cowork-app-benchmark/)** |
 [Findings](FINDINGS.md) | [Method](METHOD.md) | [Measurement data](data.json)
 
-The main page opens with an **overview of all five tests**: short app/test
-descriptions, average credits per app, compact charts of configuration averages
-and links to each detailed result. The charts use a shared credit scale and show
-how many builds contribute to each configuration; the test scopes remain separate.
+The main page opens with a **compact test library**, grouped into **Procurement**
+(Tests 1–2), **Workflow & resilience** (Tests 3–4), and **Reference recreation**
+(Test 5). Each card shows its cohort average and separate counts for original,
+additional, repeat and new-model measurements. Expand **Scope & model costs**
+for its description and configuration chart, or open the full results.
+
+New-model results, model-selection guidance, scope comparisons and additional
+measurements are expandable sections rather than one long feed. The test switcher
+stays available while scrolling, alongside a **Jump to** section menu.
+Section links open the relevant disclosure automatically and preserve the selected
+test when shared or reloaded. Existing test links and the app/reference showcase
+remain available. The charts retain a shared credit scale and observation counts;
+grouping tests visually does not pool their costs or acceptance criteria.
 
 **Did higher cost buy better apps? Not consistently.** Tests 1 and 2 showed
 the same verified capability coverage within their respective cohorts.
