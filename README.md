@@ -12,14 +12,24 @@ The interactive report defaults to dark regardless of OS preference. Use
 > estimate. Readings come from Cowork `/cost`; Copilot Studio was not measured
 > separately.
 
-**47 completed app measurements across five test scopes:** the original 20 apps,
+**49 completed app measurements across five test scopes:** the original 20 apps,
 plus nine additional external-review observations for Tests 1 and 2 and three
 additional complex-app observations for Test 3, plus two separately scored
 capability-stress observations for Test 4 and five accepted HTML-reference
-recreations for Test 5, three matched Test 5 repeats and five new Opus 5.5 results.
+recreations for Test 5, three matched Test 5 repeats, five new Opus 5.5 results
+and two same-tenant GPT 5.5 / Medium Test 1 repeats.
 All five original Test 5 settings are finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
+
+**Latest matched pair: GPT 5.5 / Medium, Test 1.** Two fresh builds in one demo
+tenant cost **281 and 221 credits**, for a **251-credit mean** and **221-281**
+observed range (width: 60). Both used the identical initial prompt and one
+storage-isolation correction: **two authoring prompts each**, no paid self-review.
+Coverage was **20/20 and 19/20 groups**. The second app's mobile dashboard
+overflows; its mobile request and approval still work, and every critical gate
+passed. This is a separate n=2 sample, not a stable price or an average pooled
+with the original paid-review cohort. [Pair findings](FINDINGS.md#test-1-same-tenant-gpt-medium-pair).
 
 **New model: Opus 5.5 / Medium.** Test 1 completed for **159 credits with one
 authoring prompt**, verifying 20/20 functional groups. Test 5 completed for
@@ -80,8 +90,9 @@ test when shared or reloaded. Existing test links and the app/reference showcase
 remain available. The charts retain a shared credit scale and observation counts;
 grouping tests visually does not pool their costs or acceptance criteria.
 
-**Did higher cost buy better apps? Not consistently.** Tests 1 and 2 showed
-the same verified capability coverage within their respective cohorts.
+**Did higher cost buy better apps? Not consistently.** The historical Tests 1
+and 2 model comparisons showed the same verified capability coverage within
+their respective cohorts; the latest GPT repeat pair retains the mobile gap above.
 Test 3 sometimes gained fuller preferences and sampled accessibility, but High
 reasoning did not consistently improve on Medium. Each test page now compares
 every published model/effort setting's costs, corrections and actual feature

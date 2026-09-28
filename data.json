@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 8,
-  "generatedAt": "2026-09-24T18:23:44.441Z",
+  "schemaVersion": 9,
+  "generatedAt": "2026-09-28T16:49:14.280Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -9354,5 +9354,405 @@
     "method": "Six fresh tasks were originally registered: Test 5 first, then Tests 1–4, with two SharePoint builds. The original frozen business inputs and scope-specific criteria were retained. Medium was the observed native default. Independent review, adaptive repairs in the same app and one actual completed-app cost. Reporting is limited to the requested scopes; omitted incomplete builds contribute no cost, prompt total or capability result.",
     "limitation": "New model version, not an Opus 5 repeat. No pooled cross-version or cross-scope average. One observation per scope, or two SharePoint observations when complete, is exploratory rather than a stable price or causal ranking.",
     "privacy": "Only allowlisted measurements and capability verdicts are public. New-version screenshots, transcripts, generated source and account/resource identifiers remain private."
+  },
+  "testOneRepeatPair": {
+    "test": "test-01",
+    "cohort": "same-tenant-adaptive-pair",
+    "model": "GPT 5.5",
+    "effort": "Medium",
+    "date": "2026-09-28",
+    "sampleSize": 2,
+    "complete": true,
+    "reviewMode": "external-only",
+    "costMode": "complete-app-only",
+    "tenantScope": "One demo tenant",
+    "runs": [
+      {
+        "id": "run-01",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "replicate": 1,
+        "status": "accepted",
+        "final": {
+          "points": 100,
+          "accepted": true,
+          "allCriticalPassed": true,
+          "passed": 20,
+          "total": 20
+        },
+        "finalCost": {
+          "status": "observed",
+          "value": 281,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 2,
+        "corrections": 1,
+        "clarifications": 0,
+        "reviews": 0,
+        "archived": true,
+        "timing": {
+          "build": {
+            "seconds": 866.943,
+            "lowerBoundSeconds": 832.146,
+            "observation": "interval-bounded",
+            "authoringPrompts": 2,
+            "observedPrompts": 2
+          }
+        },
+        "responsiveLayout": {
+          "status": "pass",
+          "overflowScenes": []
+        },
+        "firstOutput": {
+          "cost": null,
+          "passed": 0,
+          "incomplete": 19
+        },
+        "checks": [
+          {
+            "id": "AC01",
+            "capability": "Exact catalogue",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC02",
+            "capability": "Search and empty state",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC03",
+            "capability": "Combined filtering",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC04",
+            "capability": "Unavailable stock",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC05",
+            "capability": "Dashboard arithmetic",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC06",
+            "capability": "Valid request",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC07",
+            "capability": "Required fields",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC08",
+            "capability": "Quantity validation",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC09",
+            "capability": "Date validation",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC10",
+            "capability": "Approval",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC11",
+            "capability": "Rejection",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC12",
+            "capability": "Oversell prevention",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC13",
+            "capability": "Single state transition",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC14",
+            "capability": "Virtual/local reopen persistence",
+            "critical": true,
+            "first": "fail",
+            "final": "pass"
+          },
+          {
+            "id": "AC15",
+            "capability": "Requester scoping",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC16",
+            "capability": "Safe repeatable reset",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC17",
+            "capability": "Keyboard and labels",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC18",
+            "capability": "Responsive layout",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC19",
+            "capability": "Honest demo boundary",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC20",
+            "capability": "Actual private managed app",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          }
+        ],
+        "reviewedRevisionScope": "owner-preview",
+        "latestRevisionRepublished": false
+      },
+      {
+        "id": "run-02",
+        "model": "GPT 5.5",
+        "effort": "Medium",
+        "replicate": 2,
+        "status": "accepted",
+        "final": {
+          "points": 95,
+          "accepted": true,
+          "allCriticalPassed": true,
+          "passed": 19,
+          "total": 20
+        },
+        "finalCost": {
+          "status": "observed",
+          "value": 221,
+          "unit": "credits",
+          "scope": "Cowork task"
+        },
+        "authoringPrompts": 2,
+        "corrections": 1,
+        "clarifications": 0,
+        "reviews": 0,
+        "archived": true,
+        "timing": {
+          "build": {
+            "seconds": 513.598,
+            "lowerBoundSeconds": 466.893,
+            "observation": "interval-bounded",
+            "authoringPrompts": 2,
+            "observedPrompts": 2
+          }
+        },
+        "responsiveLayout": {
+          "status": "fail",
+          "overflowScenes": [
+            {
+              "view": "Dashboard",
+              "viewportWidth": 390,
+              "contentWidth": 669
+            }
+          ]
+        },
+        "firstOutput": {
+          "cost": null,
+          "passed": 0,
+          "incomplete": 19
+        },
+        "checks": [
+          {
+            "id": "AC01",
+            "capability": "Exact catalogue",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC02",
+            "capability": "Search and empty state",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC03",
+            "capability": "Combined filtering",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC04",
+            "capability": "Unavailable stock",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC05",
+            "capability": "Dashboard arithmetic",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC06",
+            "capability": "Valid request",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC07",
+            "capability": "Required fields",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC08",
+            "capability": "Quantity validation",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC09",
+            "capability": "Date validation",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC10",
+            "capability": "Approval",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC11",
+            "capability": "Rejection",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC12",
+            "capability": "Oversell prevention",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC13",
+            "capability": "Single state transition",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC14",
+            "capability": "Virtual/local reopen persistence",
+            "critical": true,
+            "first": "fail",
+            "final": "pass"
+          },
+          {
+            "id": "AC15",
+            "capability": "Requester scoping",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC16",
+            "capability": "Safe repeatable reset",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC17",
+            "capability": "Keyboard and labels",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC18",
+            "capability": "Responsive layout",
+            "critical": false,
+            "first": "blocked",
+            "final": "fail"
+          },
+          {
+            "id": "AC19",
+            "capability": "Honest demo boundary",
+            "critical": false,
+            "first": "blocked",
+            "final": "pass"
+          },
+          {
+            "id": "AC20",
+            "capability": "Actual private managed app",
+            "critical": true,
+            "first": "blocked",
+            "final": "pass"
+          }
+        ],
+        "reviewedRevisionScope": "owner-preview",
+        "latestRevisionRepublished": false
+      }
+    ],
+    "meanFinalCredits": 251,
+    "minimumCredits": 221,
+    "maximumCredits": 281,
+    "rangeCredits": 60,
+    "note": "Two fresh apps with the identical Test 1 business prompt and setting. Each final cumulative cost includes all guidance; no paid self-review or interim cost.",
+    "limitation": "Separate from historical cohorts: review and persistence scope differ from original Test 1. Two observations do not establish stable pricing, a confidence interval or model superiority. Owner preview was reviewed; no separately verified deployment is claimed."
   }
 }

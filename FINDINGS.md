@@ -23,6 +23,37 @@ Test 5 adds a supplied HTML reference with separate functional and visual
 acceptance. Its five-setting original cohort is complete; the preceding 34
 accepted observations remain unchanged.
 
+## Test 1: same-tenant GPT Medium pair
+
+On 28 September 2026, two fresh GPT 5.5 / Medium apps received the identical
+procurement prompt in one demo tenant. Both met the unchanged 85-point and
+all-critical acceptance gate.
+
+| Observation | Final credits | Authoring prompts | Corrections | Verified groups | Score |
+|---|---:|---:|---:|---:|---:|
+| Build 1 | **281** | 2 | 1 | 20/20 | 100/100 |
+| Build 2 | **221** | 2 | 1 | 19/20 | 95/100 |
+| Pair mean | **251** | **2** | **1** | Not pooled | Not pooled |
+
+The observed minimum-maximum is **221-281 credits**, with a **60-credit range**.
+Each sole final cumulative `/cost` includes its build and correction; no interim
+cost or paid model self-review was taken.
+
+Both first outputs used a local-storage key already present on the preview
+origin. The controller contained that module before execution: this was an
+observed source-level isolation defect, not demonstrated corruption. The same
+narrow correction established an app-specific namespace. Independent native
+review verified the exact seed, validation, approvals/rejections, stock and
+oversell protection, requester views, actual reload/reopen persistence and reset.
+
+The second app's dashboard measured **669px of content at a 390px viewport**.
+The responsive group was not awarded, although native mobile request and approval
+completed successfully. No optional polish prompt was purchased after acceptance.
+The outputs therefore meet the same minimum but are not identical in usability.
+This within-setting variation cannot establish that higher spending caused better
+quality. Keep the pair separate from original paid-review measurements and other
+cohorts; n=2 is insufficient to claim stable pricing or a model ranking.
+
 ## New results: Opus 5.5 / Medium
 
 All five reported builds across Tests 1, 2, 3 and 5 are complete. The unfinished

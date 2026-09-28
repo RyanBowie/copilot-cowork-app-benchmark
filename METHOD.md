@@ -13,6 +13,34 @@ Test 5 separately recreates a private Annual Leave Manager HTML reference.
 All five original settings are finalized; only accepted completed-app costs
 are published, with one adaptive observation per selected setting.
 
+## Same-tenant Test 1 pair: 28 September 2026
+
+Exactly two fresh GPT 5.5 / Medium builds were registered in one demo tenant,
+with identical initial business prompts and the external-only twenty-group
+procurement rubric. No replacement builds, paid self-review, controller source
+edits or injected business data were allowed. Native owner and model/effort
+controls were confirmed for each start. The second build began only after the
+first was accepted and costed.
+
+Existing preview-origin stores were read and protected before app execution.
+Each first output contained the same existing-key collision, sealed before
+guidance; both received the same targeted isolation correction. No actual
+cross-app overwrite is claimed. Corrected workflows were exercised through
+native controls, including reload/reopen and desktop/mobile interaction.
+
+Acceptance remains at least 85/100 with every critical check, not mandatory
+perfection. Build 2 retains a failed responsive group because its mobile
+dashboard overflowed; primary mobile request and approval worked. Its 95-point
+accepted result is not labelled fully responsive. Build 1 received 100 points.
+The final owner previews were reviewed, not separately verified republished.
+
+Only one final cumulative `/cost` followed each completed review and actual
+final-image inspection: 281 and 221 credits. Every submitted authoring prompt,
+visible output, final app/cost image and review result is retained privately.
+The separately reported 251-credit mean and 60-credit range describe two
+observations, not a price guarantee. Original Test 1 included paid native review
+and a different persistence-scoring scope, so its average is not recalculated.
+
 ## New model version: Opus 5.5 / Medium
 
 Six fresh apps were originally registered across the five scopes: Test 5 first,
