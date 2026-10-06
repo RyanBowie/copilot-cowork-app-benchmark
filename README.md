@@ -358,3 +358,11 @@ credentials, tenant identifiers, connection identifiers or private app links.
 
 Measured in September 2026. This is an independent empirical report, not a
 Microsoft pricing commitment.
+
+## Licence and disclaimer
+
+**Community project, built with GitHub Copilot.** Released under the
+[MIT licence](LICENSE). It isn't a Microsoft product and isn't supported by
+Microsoft. Provided "as is", without warranty of any kind; no SLA or support
+commitment. Microsoft product names, trademarks and interface screenshots belong
+to their respective owners and aren't covered by the MIT licence.
