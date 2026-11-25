@@ -22,6 +22,18 @@ All five original Test 5 settings are finalized. Compare
 selected models, reasoning settings, final capabilities, guidance and actual
 Cowork `/cost` readings without silently combining different methods.
 
+**In progress: November 2026 new-model cohort.** Auto, GPT 6.2 Astra, GPT 6.2
+Sol, Opus 5.5, Sonnet 5.5 and Fable 5.2 (all Medium, the default) are rebuilding
+every test in fresh Cowork chats with the same frozen prompts. A new **Test 6**
+adds a two-office (UK and US) hot-desk booking app with a SharePoint backend,
+2D floor plans and an interactive 3D building view. **14 of 42 planned apps are
+accepted so far:** Test 5 (mean **502 credits**, range 115-1,192), Test 1 (mean
+**151 credits**, range 45-306) and two Test 4 apps (Auto 1,067; GPT 6.2 Astra
+669). All six Test 6 apps are built and under independent review; their costs
+are read only after review. Tests 2 and 3 are queued. Auto is labelled with its
+observation date because its routing can change. This cohort is kept separate
+from all earlier measurements. [Cohort findings](FINDINGS.md#november-2026-new-model-cohort-in-progress).
+
 **Latest matched pair: GPT 5.5 / Medium, Test 1.** Two fresh builds in one demo
 tenant cost **281 and 221 credits**, for a **251-credit mean** and **221-281**
 observed range (width: 60). Both used the identical initial prompt and one

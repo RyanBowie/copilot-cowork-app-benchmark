@@ -23,6 +23,35 @@ Test 5 adds a supplied HTML reference with separate functional and visual
 acceptance. Its five-setting original cohort is complete; the preceding 34
 accepted observations remain unchanged.
 
+## November 2026 new-model cohort (in progress)
+
+Six settings, all at Medium (default) reasoning: Auto, GPT 6.2 Astra, GPT 6.2
+Sol, Opus 5.5, Sonnet 5.5 and Fable 5.2. One fresh Cowork chat per app; one
+final `/cost` per completed app, including every correction and continuation.
+Interim results; single builds per setting, so these are observations, not rankings.
+
+| Test | Setting | Credits | Authoring prompts | Build time | Review |
+|---|---|---:|---|---:|---|
+| 5 | GPT 6.2 Sol | 115 | 1 | 11m 28s | 19/20 functional, 10/10 visual |
+| 5 | Sonnet 5.5 | 146 | 3 (1 correction, 1 continuation) | 12m 38s | 20/20, 9/10 |
+| 5 | GPT 6.2 Astra | 280 | 1 | 9m 27s | 20/20, 9/10 |
+| 5 | Auto (observed 2026-11-24) | 330 | 1 | 10m 58s | 20/20, 9/10 |
+| 5 | Opus 5.5 | 949 | 1 | 28m 47s | 20/20, 10/10 |
+| 5 | Fable 5.2 | 1,192 | 2 (1 correction) | 30m 27s | 20/20, 10/10 |
+| 1 | Sonnet 5.5 | 45 | 1 | 5m 20s | 20/20 |
+| 1 | GPT 6.2 Sol | 53 | 1 | 5m 34s | 20/20 |
+| 1 | Auto (observed 2026-11-25) | 159 | 1 | 7m 58s | 19/20 |
+| 1 | GPT 6.2 Astra | 170 | 1 | 5m 38s | 20/20 |
+| 1 | Opus 5.5 | 171 | 1 | 8m 21s | 19/20 |
+| 1 | Fable 5.2 | 306 | 1 | 9m 52s | 20/20 |
+| 4 | GPT 6.2 Astra | 669 | 4 planned stages | 17m 21s | Core 100/100; advanced 10/10 |
+| 4 | Auto (observed 2026-11-25) | 1,067 | 4 planned stages | 40m 22s | Core 100/100; advanced 9/10 |
+
+Test 4's remaining four settings and all of Tests 2, 3 and 6 are pending.
+Test 6 (two-office hot-desk booking with a SharePoint backend and 2D/3D floor
+plans) is new: six apps are built and under independent UI and SharePoint
+readback review. No Test 6 cost is published until review completes.
+
 ## Test 1: same-tenant GPT Medium pair
 
 On 28 September 2026, two fresh GPT 5.5 / Medium apps received the identical

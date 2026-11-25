@@ -1,6 +1,6 @@
 {
   "schemaVersion": 9,
-  "generatedAt": "2026-09-28T16:49:14.280Z",
+  "generatedAt": "2026-11-25T14:48:06.577Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -9754,5 +9754,582 @@
     "rangeCredits": 60,
     "note": "Two fresh apps with the identical Test 1 business prompt and setting. Each final cumulative cost includes all guidance; no paid self-review or interim cost.",
     "limitation": "Separate from historical cohorts: review and persistence scope differ from original Test 1. Two observations do not establish stable pricing, a confidence interval or model superiority. Owner preview was reviewed; no separately verified deployment is claimed."
+  },
+  "november2026Suite": {
+    "id": "new-models-2026-11",
+    "title": "November 2026 new-model cohort",
+    "status": "in-progress",
+    "updatedAt": "2026-11-25T14:48:06.574Z",
+    "settings": [
+      "Auto",
+      "GPT 6.2 Astra",
+      "GPT 6.2 Sol",
+      "Opus 5.5",
+      "Sonnet 5.5",
+      "Fable 5.2"
+    ],
+    "effort": "Medium (default)",
+    "plannedBuilds": 42,
+    "acceptedBuilds": 14,
+    "reviewMode": "external-only",
+    "costMode": "complete-app-only",
+    "method": "Each app is built in a fresh Cowork chat with the same frozen prompts used by earlier cohorts. One final /cost reading is recorded per completed app and includes every stage, correction and continuation. Apps are reviewed independently through the running UI (and SharePoint readback where in scope); there is no paid self-review.",
+    "autoNote": "Auto lets Cowork choose the underlying model. It is reported with its observation date because the routing can change over time.",
+    "testSixNote": "Test 6 is new in this cohort: a two-office (UK and US) hot-desk booking app with a SharePoint backend, 2D floor plans and an interactive 3D building view. Costs are read only after independent review completes.",
+    "limitation": "Single build per setting (two for Test 2). Results are exploratory observations, not model rankings; different test scopes are not comparable.",
+    "privacy": "Prompts, transcripts, generated source, tenant identifiers and screenshots of cost cards remain private.",
+    "tests": [
+      {
+        "test": "test-06",
+        "title": "Two-office hot-desk booking (SharePoint, 2D/3D floor plans)",
+        "plannedBuilds": 6,
+        "builtApps": 6,
+        "accepted": 0,
+        "complete": false,
+        "progress": "Built; independent review in progress",
+        "meanFinalCredits": null,
+        "runs": []
+      },
+      {
+        "test": "test-05",
+        "title": "HTML reference recreation",
+        "plannedBuilds": 6,
+        "builtApps": 6,
+        "accepted": 6,
+        "complete": true,
+        "progress": "Complete",
+        "meanFinalCredits": 502,
+        "runs": [
+          {
+            "id": "run-08",
+            "test": "test-05",
+            "model": "Auto (observed 2026-11-24)",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 330,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "visualPoints": 90,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "visualPassed": 9,
+              "visualTotal": 10,
+              "notPassed": [
+                "HV07"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 658,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-09",
+            "test": "test-05",
+            "model": "GPT 6.2 Astra",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 280,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "visualPoints": 90,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "visualPassed": 9,
+              "visualTotal": 10,
+              "notPassed": [
+                "HV07"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 567,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-10",
+            "test": "test-05",
+            "model": "GPT 6.2 Sol",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 115,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 95,
+              "visualPoints": 100,
+              "functionalPassed": 19,
+              "functionalTotal": 20,
+              "visualPassed": 10,
+              "visualTotal": 10,
+              "notPassed": [
+                "HF19"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 688,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-11",
+            "test": "test-05",
+            "model": "Opus 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 949,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "visualPoints": 100,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "visualPassed": 10,
+              "visualTotal": 10,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 1727,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-12",
+            "test": "test-05",
+            "model": "Sonnet 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 146,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 3,
+            "plannedStages": 1,
+            "corrections": 1,
+            "continuations": 1,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "visualPoints": 90,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "visualPassed": 9,
+              "visualTotal": 10,
+              "notPassed": [
+                "HV07"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 758,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-13",
+            "test": "test-05",
+            "model": "Fable 5.2",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 1192,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 2,
+            "plannedStages": 1,
+            "corrections": 1,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "visualPoints": 100,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "visualPassed": 10,
+              "visualTotal": 10,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 1827,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          }
+        ]
+      },
+      {
+        "test": "test-01",
+        "title": "Device procurement (local persistence)",
+        "plannedBuilds": 6,
+        "builtApps": 6,
+        "accepted": 6,
+        "complete": true,
+        "progress": "Complete",
+        "meanFinalCredits": 151,
+        "runs": [
+          {
+            "id": "run-15",
+            "test": "test-01",
+            "model": "Auto (observed 2026-11-25)",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 159,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 95,
+              "functionalPassed": 19,
+              "functionalTotal": 20,
+              "notPassed": [
+                "AC17"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 478,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-16",
+            "test": "test-01",
+            "model": "GPT 6.2 Astra",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 170,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 338,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-17",
+            "test": "test-01",
+            "model": "GPT 6.2 Sol",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 53,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 334,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-18",
+            "test": "test-01",
+            "model": "Opus 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 171,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 95,
+              "functionalPassed": 19,
+              "functionalTotal": 20,
+              "notPassed": [
+                "AC17"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 501,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-19",
+            "test": "test-01",
+            "model": "Sonnet 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 45,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 320,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-20",
+            "test": "test-01",
+            "model": "Fable 5.2",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 306,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 100,
+              "functionalPassed": 20,
+              "functionalTotal": 20,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 592,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          }
+        ]
+      },
+      {
+        "test": "test-04",
+        "title": "Relational stress test (four stages)",
+        "plannedBuilds": 6,
+        "builtApps": 3,
+        "accepted": 2,
+        "complete": false,
+        "progress": "Two accepted; one built and under review; three queued",
+        "meanFinalCredits": null,
+        "runs": [
+          {
+            "id": "run-43",
+            "test": "test-04",
+            "model": "Auto (observed 2026-11-25)",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 1067,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "plannedStages": 4,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "corePoints": 100,
+              "advancedPoints": 90,
+              "advancedPassed": 9,
+              "advancedTotal": 10,
+              "notPassed": [
+                "TA10"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 2422,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-44",
+            "test": "test-04",
+            "model": "GPT 6.2 Astra",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 669,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "plannedStages": 4,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "corePoints": 100,
+              "advancedPoints": 100,
+              "advancedPassed": 10,
+              "advancedTotal": 10,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 1041,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          }
+        ]
+      },
+      {
+        "test": "test-02",
+        "title": "Four-view SharePoint request app",
+        "plannedBuilds": 12,
+        "builtApps": 0,
+        "accepted": 0,
+        "complete": false,
+        "progress": "Queued",
+        "meanFinalCredits": null,
+        "runs": []
+      },
+      {
+        "test": "test-03",
+        "title": "Four-stage lifecycle app",
+        "plannedBuilds": 6,
+        "builtApps": 0,
+        "accepted": 0,
+        "complete": false,
+        "progress": "Queued",
+        "meanFinalCredits": null,
+        "runs": []
+      }
+    ]
   }
 }

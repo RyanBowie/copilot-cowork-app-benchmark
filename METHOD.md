@@ -13,6 +13,18 @@ Test 5 separately recreates a private Annual Leave Manager HTML reference.
 All five original settings are finalized; only accepted completed-app costs
 are published, with one adaptive observation per selected setting.
 
+## November 2026 new-model cohort (in progress)
+
+Six settings observed in the native Cowork model menu (Auto, GPT 6.2 Astra,
+GPT 6.2 Sol, Opus 5.5, Sonnet 5.5 and Fable 5.2), each at the default Medium
+reasoning, rebuild Tests 1-5 with their unchanged frozen prompts and the new
+Test 6. Each app is built in a fresh chat, one at a time. Only one final
+cumulative `/cost` is read per completed app, with no interim or stage costs.
+Build time is the sum of submitted-to-complete authoring turns. Review is
+external and UI-only (with SharePoint readback where in scope); there is no paid
+self-review. Auto is reported with its observation date. Results are a separate
+cohort and are never averaged with earlier measurements.
+
 ## Same-tenant Test 1 pair: 28 September 2026
 
 Exactly two fresh GPT 5.5 / Medium builds were registered in one demo tenant,
