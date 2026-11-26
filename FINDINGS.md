@@ -69,6 +69,44 @@ stage, a read-only view of the signed-in user's own profile, waits on an expired
 profile connection in the demo tenant. Test 2 is queued; its SharePoint test
 data has been confirmed intact.
 
+## Separate benchmark: 3D Cologne Cathedral managed apps
+
+This benchmark runs alongside the Cowork tests and stresses 3D modelling rather
+than business workflow. Each model received the same research-only Cologne
+Cathedral pack (sources, plans and archive images, with no prescribed
+dimensions) and one fixed kickoff prompt. It then built and deployed an
+interactive 3D explorer to Copilot Managed Runtime. Requirements included
+code-generated three.js geometry, orbit and fly-to navigation, levels and
+sections, sourced hotspots, a guided tour, day and night lighting and a 2D
+fallback. Each model built in the GitHub Copilot app's coding agent (autopilot),
+in its own isolated session and clean folder, with no repair prompts.
+
+| Model / reasoning | Score (0–10) | Rank of 8 | Credits | Time to verified app |
+|---|---:|---:|---:|---:|
+| GPT-6 Astra / Max | 7.5 | 1 | 3,110 | 1 h 20 min |
+| GPT-6.2 Astra / Max | 7.2 | 2 | 2,548 | 38 min 42 s |
+| Claude Opus 5.5 / Max | 6.7 | 5 | 19,830 | 11 h 20 min |
+| Claude Sonnet 5.5 / Max | 5.5 | 7 | 3,217 | 3 h 28 min |
+
+- GPT-6 Astra produced the best likeness: dark weathered stone, lattice spires,
+  chevet chapels, and the Rhine and Hohenzollern Bridge.
+- GPT-6.2 Astra was the fastest, at 39 minutes with no compactions, and close
+  behind on quality.
+- Opus 5.5 implemented every rubric feature, but took over 11 hours and six to
+  eight times the credits of the GPT builds, and its stone reads pale grey.
+- Sonnet 5.5 had the lightest geometry at 60 fps, but its cathedral looks
+  blocky and small.
+
+The score uses seven weighted criteria: likeness 25%, Gothic detail 15%,
+interior and sections 15%, navigation 10%, learning 15%, UI 10% and
+performance 10%. Scoring is harsh, by one reviewer, provisional, and based on
+one build per model. Credits are the cumulative AI credits of the completed
+app session. These results use a different harness, prompt, credit source and
+scoring from Tests 1–6, so do not compare or pool them with Cowork `/cost`
+figures. Four further builds (Gemini 4 Neon, Carbon and Argon, and Grok 4.7),
+plus live static mirrors of every app, are on the
+[cathedral benchmark page](https://ryanbow230.com/cathedral-benchmarks/).
+
 ## Test 1: same-tenant GPT Medium pair
 
 On 28 September 2026, two fresh GPT 5.5 / Medium apps received the identical

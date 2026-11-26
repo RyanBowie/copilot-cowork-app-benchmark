@@ -25,6 +25,20 @@ external and UI-only (with SharePoint readback where in scope); there is no paid
 self-review. Auto is reported with its observation date. Results are a separate
 cohort and are never averaged with earlier measurements.
 
+## Separate 3D benchmark: Cologne Cathedral
+
+The 3D cathedral results shown in this report come from a separate benchmark,
+not a Cowork test. Every model received an identical research-only pack and one
+fixed kickoff prompt in an isolated GitHub Copilot app session in autopilot,
+with a clean folder per model. It built a three.js managed app, deployed it to
+Copilot Managed Runtime and verified it in the managed-app player. No repair
+prompts were given. Credits are the completed session's cumulative AI credits,
+and time runs from the kickoff prompt to a verified deployed app. One reviewer
+scored each app 0–10 across seven weighted criteria. This report shows only the
+OpenAI and Anthropic builds; the full method, rubric and all eight builds are
+on the [cathedral benchmark page](https://ryanbow230.com/cathedral-benchmarks/).
+Its figures are never pooled or compared with Cowork `/cost` readings.
+
 ## Same-tenant Test 1 pair: 28 September 2026
 
 Exactly two fresh GPT 5.5 / Medium builds were registered in one demo tenant,

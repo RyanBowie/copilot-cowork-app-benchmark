@@ -36,6 +36,18 @@ queued. Auto is labelled with its observation date because its routing can
 change. This cohort is kept separate from all earlier measurements.
 [Cohort findings](FINDINGS.md#november-2026-new-model-cohort-in-progress).
 
+**Separate benchmark: 3D Cologne Cathedral managed apps.** Using a research-only
+pack and one fixed prompt, GPT-6 Astra, GPT-6.2 Astra, Opus 5.5 and Sonnet 5.5
+(all at Max) each built and deployed an interactive 3D cathedral explorer to
+Copilot Managed Runtime through the GitHub Copilot app's coding agent, not
+Cowork. GPT-6 Astra scored highest (**7.5/10**, 3,110 credits, 1 h 20 min).
+GPT-6.2 Astra was fastest (**7.2/10**, 2,548 credits, 39 min). Opus 5.5 scored
+6.7/10 for 19,830 credits over 11 h 20 min, and Sonnet 5.5 scored 5.5/10
+(3,217 credits, 3 h 28 min). The harness, credit source and scoring differ, so
+these figures are not comparable with Cowork `/cost`.
+[Cathedral findings](FINDINGS.md#separate-benchmark-3d-cologne-cathedral-managed-apps) ·
+[all eight builds](https://ryanbow230.com/cathedral-benchmarks/).
+
 **Latest matched pair: GPT 5.5 / Medium, Test 1.** Two fresh builds in one demo
 tenant cost **281 and 221 credits**, for a **251-credit mean** and **221-281**
 observed range (width: 60). Both used the identical initial prompt and one

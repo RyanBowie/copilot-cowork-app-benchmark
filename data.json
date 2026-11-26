@@ -1,6 +1,6 @@
 {
   "schemaVersion": 9,
-  "generatedAt": "2026-11-26T01:58:44.842Z",
+  "generatedAt": "2026-11-26T11:53:29.787Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -10526,6 +10526,176 @@
         "progress": "Paused: first app passed stage 1; stage 2 (read-only own profile) waits on the demo tenant's expired profile connection",
         "meanFinalCredits": null,
         "runs": []
+      }
+    ]
+  },
+  "cathedralBenchmark": {
+    "title": "3D public-building benchmark: Cologne Cathedral Explorer",
+    "summary": "Each model received the same research-only pack about Cologne Cathedral (sources, plans and archive images, with no prescribed dimensions) and one fixed kickoff prompt. It then designed, built and deployed an interactive 3D managed app: code-generated three.js geometry with orbit and fly-to navigation, levels from the excavations to the spires, sections and x-ray, sourced hotspots, search, a guided tour, day and night lighting and a 2D fallback.",
+    "harness": "GitHub Copilot app coding agent in autopilot, one isolated session and clean folder per model, deployed to Copilot Managed Runtime and verified in the managed-app player. Not built through Cowork chat.",
+    "metricNote": "Credits are the cumulative AI credits for the completed app session; time runs from the kickoff prompt to a verified deployed app. No repair prompts were given. The score is 0–10 across seven weighted criteria, scored harshly by one reviewer (provisional, one build per model).",
+    "comparability": "Separate harness, prompt, credit source and scoring. Do not compare these credits with Cowork /cost figures or pool them with Tests 1–6.",
+    "selection": "Shown: the four OpenAI and Anthropic builds, matching this report’s model focus. Eight builds in total, including Gemini and Grok, are ranked on the full cathedral benchmark page.",
+    "totalBuilds": 8,
+    "link": "https://ryanbow230.com/cathedral-benchmarks/",
+    "repo": "https://github.com/RyanBowie/cathedral-benchmarks",
+    "criteria": [
+      {
+        "key": "likeness",
+        "name": "Architectural likeness",
+        "weight": 25
+      },
+      {
+        "key": "gothic",
+        "name": "Gothic detail & materials",
+        "weight": 15
+      },
+      {
+        "key": "interior",
+        "name": "Interior, levels & sections",
+        "weight": 15
+      },
+      {
+        "key": "navigation",
+        "name": "Navigation & camera",
+        "weight": 10
+      },
+      {
+        "key": "learning",
+        "name": "Exploration & learning",
+        "weight": 15
+      },
+      {
+        "key": "ui",
+        "name": "UI & polish",
+        "weight": 10
+      },
+      {
+        "key": "perf",
+        "name": "Performance & robustness",
+        "weight": 10
+      }
+    ],
+    "builds": [
+      {
+        "id": "gpt-6-astra",
+        "model": "GPT-6 Astra",
+        "vendor": "OpenAI",
+        "reasoning": "Max",
+        "date": "19 Nov 2026",
+        "credits": 3110,
+        "buildMinutes": 80,
+        "buildTime": "1 h 20 min",
+        "repairPrompts": 0,
+        "selfCheck": {
+          "functional": 100,
+          "visual": 93
+        },
+        "score": 7.5,
+        "rankOfAll": 1,
+        "criteria": {
+          "likeness": 7.5,
+          "gothic": 6.5,
+          "interior": 7.5,
+          "navigation": 8,
+          "learning": 7.5,
+          "ui": 8,
+          "perf": 8
+        },
+        "stack": "React",
+        "image": "assets/cathedral/gpt-6-astra.jpg",
+        "strength": "Best likeness so far: dark weathered stone, lattice spires, chevet chapels, the Rhine and the Hohenzollern Bridge",
+        "weakness": "Window tracery, gables and pinnacles simplified at close range"
+      },
+      {
+        "id": "gpt-6.2-astra",
+        "model": "GPT-6.2 Astra",
+        "vendor": "OpenAI",
+        "reasoning": "Max",
+        "date": "19 Nov 2026",
+        "credits": 2548,
+        "buildMinutes": 39,
+        "buildTime": "38 min 42 s",
+        "repairPrompts": 0,
+        "selfCheck": {
+          "functional": 100,
+          "visual": 88
+        },
+        "score": 7.2,
+        "rankOfAll": 2,
+        "criteria": {
+          "likeness": 7,
+          "gothic": 6,
+          "interior": 7,
+          "navigation": 7.5,
+          "learning": 7.5,
+          "ui": 8,
+          "perf": 8
+        },
+        "stack": "React + TypeScript (Vite)",
+        "image": "assets/cathedral/gpt-6.2-astra.jpg",
+        "strength": "Fastest run (38 min) and among the cheapest",
+        "weakness": "Stone reads mid-brown rather than Cologne's dark weathered grey"
+      },
+      {
+        "id": "claude-opus-5.5",
+        "model": "Claude Opus 5.5",
+        "vendor": "Anthropic",
+        "reasoning": "Max",
+        "date": "18 Nov 2026",
+        "credits": 19830,
+        "buildMinutes": 680,
+        "buildTime": "11 h 20 min",
+        "repairPrompts": 0,
+        "selfCheck": {
+          "functional": 100,
+          "visual": 75
+        },
+        "score": 6.7,
+        "rankOfAll": 5,
+        "criteria": {
+          "likeness": 7,
+          "gothic": 5.8,
+          "interior": 6.5,
+          "navigation": 7,
+          "learning": 7.5,
+          "ui": 6,
+          "perf": 7
+        },
+        "stack": "Vite + TypeScript",
+        "image": "assets/cathedral/claude-opus-5.5.jpg",
+        "strength": "Every rubric requirement working: levels, three cut planes, x-ray, minimap, 33 sourced places, 13-stop tour, 533-step climb",
+        "weakness": "Exterior stone reads pale grey rather than Cologne's dark weathered stone"
+      },
+      {
+        "id": "claude-sonnet-5.5",
+        "model": "Claude Sonnet 5.5",
+        "vendor": "Anthropic",
+        "reasoning": "Max",
+        "date": "19 Nov 2026",
+        "credits": 3217,
+        "buildMinutes": 208,
+        "buildTime": "3 h 28 min",
+        "repairPrompts": 0,
+        "selfCheck": {
+          "functional": 96,
+          "visual": 58
+        },
+        "score": 5.5,
+        "rankOfAll": 7,
+        "criteria": {
+          "likeness": 4.5,
+          "gothic": 4,
+          "interior": 5,
+          "navigation": 7,
+          "learning": 7.5,
+          "ui": 4.5,
+          "perf": 7.5
+        },
+        "stack": "No framework",
+        "image": "assets/cathedral/claude-sonnet-5.5.jpg",
+        "strength": "Lightest geometry (36k triangles) and 60 fps everywhere",
+        "weakness": "Cathedral looks blocky and small in its setting"
       }
     ]
   }
