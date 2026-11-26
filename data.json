@@ -1,6 +1,6 @@
 {
   "schemaVersion": 9,
-  "generatedAt": "2026-11-25T14:48:06.577Z",
+  "generatedAt": "2026-11-26T01:58:44.842Z",
   "publicationScope": "completed-results",
   "activeExperiment": "test-05",
   "scopeNote": "Five distinct test scopes, including HTML-to-managed-app fidelity. Original, repeat, follow-up and HTML-reference cohorts remain separate. Compare settings against the same scope and demonstrated capabilities, not pooled scores or averages.",
@@ -9758,8 +9758,8 @@
   "november2026Suite": {
     "id": "new-models-2026-11",
     "title": "November 2026 new-model cohort",
-    "status": "in-progress",
-    "updatedAt": "2026-11-25T14:48:06.574Z",
+    "status": "paused",
+    "updatedAt": "2026-11-26T01:58:44.842Z",
     "settings": [
       "Auto",
       "GPT 6.2 Astra",
@@ -9770,12 +9770,12 @@
     ],
     "effort": "Medium (default)",
     "plannedBuilds": 42,
-    "acceptedBuilds": 14,
+    "acceptedBuilds": 20,
     "reviewMode": "external-only",
     "costMode": "complete-app-only",
     "method": "Each app is built in a fresh Cowork chat with the same frozen prompts used by earlier cohorts. One final /cost reading is recorded per completed app and includes every stage, correction and continuation. Apps are reviewed independently through the running UI (and SharePoint readback where in scope); there is no paid self-review.",
     "autoNote": "Auto lets Cowork choose the underlying model. It is reported with its observation date because the routing can change over time.",
-    "testSixNote": "Test 6 is new in this cohort: a two-office (UK and US) hot-desk booking app with a SharePoint backend, 2D floor plans and an interactive 3D building view. Costs are read only after independent review completes.",
+    "testSixNote": "Test 6 is new in this cohort: a two-office (UK and US) hot-desk booking app with a SharePoint backend, 2D floor plans and an interactive 3D building view. Scores are functional and visual points out of 100; costs are read only after independent review completes.",
     "limitation": "Single build per setting (two for Test 2). Results are exploratory observations, not model rankings; different test scopes are not comparable.",
     "privacy": "Prompts, transcripts, generated source, tenant identifiers and screenshots of cost cards remain private.",
     "tests": [
@@ -9784,11 +9784,72 @@
         "title": "Two-office hot-desk booking (SharePoint, 2D/3D floor plans)",
         "plannedBuilds": 6,
         "builtApps": 6,
-        "accepted": 0,
+        "accepted": 2,
         "complete": false,
-        "progress": "Built; independent review in progress",
+        "progress": "Two accepted; four corrected and awaiting final re-review (review needs a specific UK-time booking window)",
         "meanFinalCredits": null,
-        "runs": []
+        "runs": [
+          {
+            "id": "run-01",
+            "test": "test-06",
+            "model": "Auto (observed 2026-11-24)",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 693,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 92,
+              "visualPoints": 100
+            },
+            "timing": {
+              "build": {
+                "seconds": 1012,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-05",
+            "test": "test-06",
+            "model": "Sonnet 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 314,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 1,
+            "plannedStages": 1,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "functionalPoints": 94,
+              "visualPoints": 85
+            },
+            "timing": {
+              "build": {
+                "seconds": 924,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          }
+        ]
       },
       {
         "test": "test-05",
@@ -10232,11 +10293,11 @@
         "test": "test-04",
         "title": "Relational stress test (four stages)",
         "plannedBuilds": 6,
-        "builtApps": 3,
-        "accepted": 2,
-        "complete": false,
-        "progress": "Two accepted; one built and under review; three queued",
-        "meanFinalCredits": null,
+        "builtApps": 6,
+        "accepted": 6,
+        "complete": true,
+        "progress": "Complete",
+        "meanFinalCredits": 862,
         "runs": [
           {
             "id": "run-43",
@@ -10305,6 +10366,142 @@
                 "note": "Sum of submitted-to-complete authoring turns; excludes review."
               }
             }
+          },
+          {
+            "id": "run-45",
+            "test": "test-04",
+            "model": "GPT 6.2 Sol",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 281,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "plannedStages": 4,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "corePoints": 100,
+              "advancedPoints": 100,
+              "advancedPassed": 10,
+              "advancedTotal": 10,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 1255,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-46",
+            "test": "test-04",
+            "model": "Opus 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 1014,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "plannedStages": 4,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "corePoints": 100,
+              "advancedPoints": 90,
+              "advancedPassed": 9,
+              "advancedTotal": 10,
+              "notPassed": [
+                "TA10"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 2216,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-47",
+            "test": "test-04",
+            "model": "Sonnet 5.5",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 492,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "plannedStages": 4,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "corePoints": 100,
+              "advancedPoints": 100,
+              "advancedPassed": 10,
+              "advancedTotal": 10,
+              "notPassed": []
+            },
+            "timing": {
+              "build": {
+                "seconds": 2268,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
+          },
+          {
+            "id": "run-48",
+            "test": "test-04",
+            "model": "Fable 5.2",
+            "effort": "Medium (default)",
+            "replicate": 1,
+            "status": "accepted",
+            "finalCost": {
+              "status": "observed",
+              "value": 1647,
+              "unit": "credits",
+              "scope": "Cowork task"
+            },
+            "authoringPrompts": 4,
+            "plannedStages": 4,
+            "corrections": 0,
+            "continuations": 0,
+            "final": {
+              "accepted": true,
+              "corePoints": 100,
+              "advancedPoints": 90,
+              "advancedPassed": 9,
+              "advancedTotal": 10,
+              "notPassed": [
+                "TA10"
+              ]
+            },
+            "timing": {
+              "build": {
+                "seconds": 2483,
+                "observation": "interval-bounded",
+                "note": "Sum of submitted-to-complete authoring turns; excludes review."
+              }
+            }
           }
         ]
       },
@@ -10315,7 +10512,7 @@
         "builtApps": 0,
         "accepted": 0,
         "complete": false,
-        "progress": "Queued",
+        "progress": "Queued (SharePoint fixture verified intact); paused",
         "meanFinalCredits": null,
         "runs": []
       },
@@ -10326,7 +10523,7 @@
         "builtApps": 0,
         "accepted": 0,
         "complete": false,
-        "progress": "Queued",
+        "progress": "Paused: first app passed stage 1; stage 2 (read-only own profile) waits on the demo tenant's expired profile connection",
         "meanFinalCredits": null,
         "runs": []
       }

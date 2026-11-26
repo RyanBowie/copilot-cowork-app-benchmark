@@ -29,6 +29,7 @@ Six settings, all at Medium (default) reasoning: Auto, GPT 6.2 Astra, GPT 6.2
 Sol, Opus 5.5, Sonnet 5.5 and Fable 5.2. One fresh Cowork chat per app; one
 final `/cost` per completed app, including every correction and continuation.
 Interim results; single builds per setting, so these are observations, not rankings.
+20 of 42 planned apps are accepted; testing is currently paused.
 
 | Test | Setting | Credits | Authoring prompts | Build time | Review |
 |---|---|---:|---|---:|---|
@@ -44,13 +45,29 @@ Interim results; single builds per setting, so these are observations, not ranki
 | 1 | GPT 6.2 Astra | 170 | 1 | 5m 38s | 20/20 |
 | 1 | Opus 5.5 | 171 | 1 | 8m 21s | 19/20 |
 | 1 | Fable 5.2 | 306 | 1 | 9m 52s | 20/20 |
+| 4 | GPT 6.2 Sol | 281 | 4 planned stages | 20m 55s | Core 100/100; advanced 10/10 |
+| 4 | Sonnet 5.5 | 492 | 4 planned stages | 37m 48s | Core 100/100; advanced 10/10 |
 | 4 | GPT 6.2 Astra | 669 | 4 planned stages | 17m 21s | Core 100/100; advanced 10/10 |
+| 4 | Opus 5.5 | 1,014 | 4 planned stages | 36m 56s | Core 100/100; advanced 9/10 |
 | 4 | Auto (observed 2026-11-25) | 1,067 | 4 planned stages | 40m 22s | Core 100/100; advanced 9/10 |
+| 4 | Fable 5.2 | 1,647 | 4 planned stages | 41m 23s | Core 100/100; advanced 9/10 |
+| 6 | Sonnet 5.5 | 314 | 1 | 15m 24s | Functional 94/100; visual 85/100 |
+| 6 | Auto (observed 2026-11-24) | 693 | 1 | 16m 52s | Functional 92/100; visual 100/100 |
 
-Test 4's remaining four settings and all of Tests 2, 3 and 6 are pending.
+Test 4 is complete (mean 862 credits). The three apps that missed one advanced
+challenge all missed the same one (TA10). Cost did not track quality here: the
+cheapest app (GPT 6.2 Sol) and the most expensive one (Fable 5.2) differed by
+almost six times in credits, yet both had perfect core scores.
+
 Test 6 (two-office hot-desk booking with a SharePoint backend and 2D/3D floor
-plans) is new: six apps are built and under independent UI and SharePoint
-readback review. No Test 6 cost is published until review completes.
+plans) is new. Two apps are accepted. The other four have had one correction
+each and are awaiting final re-review, which needs a specific UK-time booking
+window. Their costs are published only after that review.
+
+Testing is paused. Test 3's first app (Auto) passed its first stage. Its second
+stage, a read-only view of the signed-in user's own profile, waits on an expired
+profile connection in the demo tenant. Test 2 is queued; its SharePoint test
+data has been confirmed intact.
 
 ## Test 1: same-tenant GPT Medium pair
 
